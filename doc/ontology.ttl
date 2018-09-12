@@ -1,0 +1,3658 @@
+@prefix : <http://w3id.org/reproduceme#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://w3id.org/reproduceme> .
+
+<http://w3id.org/reproduceme> rdf:type owl:Ontology ;
+                               owl:imports <http://purl.org/net/p-plan#> ,
+                                           <http://www.w3.org/ns/prov-o-20130430> ;
+                               <http://purl.org/dc/terms/contributor> <http://fusion.cs.uni-jena.de/fusion/members/birgitta-konig-ries/> ;
+                               <http://purl.org/dc/terms/created> "2016-12-01"@en ;
+                               <http://purl.org/dc/terms/creator> <http://fusion.cs.uni-jena.de/fusion/members/sheeba-samuel/> ;
+                               <http://purl.org/dc/terms/description> "The REPRODUCE-ME ontology describes a scientific experiment taking into focus the use-case of microscopy. The ontology describes the lifecycle of an experiment from its input to its result. The ontology describes the property of a microscopic image and its acquisition. It also describes terms from the OME data model. The Experiment describes the activities, entities, agents, steps, plans, variables, locations and time that is related to an experiment."@en ;
+                               <http://purl.org/dc/terms/license> "http://creativecommons.org/licenses/by-nc-sa/2.0/"^^xsd:string ;
+                               <http://purl.org/dc/terms/title> "REPRODUCE-ME Ontology"^^xsd:string ;
+                               <http://purl.org/vocab/vann/preferredNamespacePrefix> "repr"@en ;
+                               owl:versionInfo "1.0"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty ;
+                                       rdfs:subPropertyOf <http://purl.org/dc/terms/creator> .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://w3id.org/reproduceme#hasSetting
+:hasSetting rdf:type owl:ObjectProperty ;
+            owl:inverseOf <https://w3id.org/reproduceme#isSettingOf> ;
+            rdfs:label "hasSetting"@en .
+
+
+###  http://w3id.org/reproduceme#isAccessibleTo
+:isAccessibleTo rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasInfluencedBy> ;
+                rdfs:comment "isAccessibleTo is a property which describes that an Entity is accessible or available to an Agent."@en ;
+                rdfs:label "isAccessibleTo"@en .
+
+
+###  http://w3id.org/reproduceme#isPartOf
+:isPartOf rdf:type owl:ObjectProperty ;
+          owl:inverseOf <https://w3id.org/reproduceme#hasPart> ;
+          rdfs:comment "An entity is part of another entity if one of its part belong to the other entity."^^xsd:string ;
+          rdfs:label "isPartOf"@en .
+
+
+###  http://w3id.org/reproduceme#isRelatedTo
+:isRelatedTo rdf:type owl:ObjectProperty ;
+             rdfs:label "isRelatedTo"@en .
+
+
+###  http://w3id.org/reproduceme#reference
+:reference rdf:type owl:ObjectProperty ;
+           rdfs:comment "An entity which has used another entity as reference."@en ;
+           rdfs:label "reference"@en .
+
+
+###  http://w3id.org/reproduceme#storedAt
+:storedAt rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://www.w3.org/ns/prov#atLocation> ;
+          rdfs:label "storedAt"@en .
+
+
+###  http://w3id.org/reproduceme#usedMethod
+:usedMethod rdf:type owl:ObjectProperty ;
+            rdfs:comment "A process which used a method to achieve something."@en ;
+            rdfs:label "usedMethod"@en .
+
+
+###  http://w3id.org/reproduceme#wasCreatedBy
+:wasCreatedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAttributedTo> ;
+              rdfs:comment "A relationship between an entity to its creator agent."@en ;
+              rdfs:label "wasCreatedBy"@en .
+
+
+###  http://w3id.org/reproduceme#wasDistributedBy
+:wasDistributedBy rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAttributedTo> ;
+                  rdfs:comment "A relationship between an entity to its distributor agent."@en ;
+                  rdfs:label "wasDistributedBy"@en .
+
+
+###  http://w3id.org/reproduceme#wasExtractedFrom
+:wasExtractedFrom rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasDerivedFrom> ;
+                  rdfs:comment "An experiment material which is extracted from another material."@en ;
+                  rdfs:label "wasExtractedFrom"@en .
+
+
+###  http://w3id.org/reproduceme#wasUpdatedBy
+:wasUpdatedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+              rdfs:comment "An entity which is updated by another entity or an agent."@en ;
+              rdfs:label "wasUpdatedBy"@en .
+
+
+###  https://w3id.org/reproduceme#generated
+<https://w3id.org/reproduceme#generated> rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf <http://purl.org/net/p-plan#hasOutputVar> .
+
+
+###  https://w3id.org/reproduceme#hasExperimentMaterial
+<https://w3id.org/reproduceme#hasExperimentMaterial> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf <http://purl.org/net/p-plan#hasInputVar> .
+
+
+###  https://w3id.org/reproduceme#hasExperimentalCondition
+<https://w3id.org/reproduceme#hasExperimentalCondition> rdf:type owl:ObjectProperty ;
+                                                        rdfs:subPropertyOf <http://purl.org/net/p-plan#hasInputVar> .
+
+
+###  https://w3id.org/reproduceme#hasExperimentalData
+<https://w3id.org/reproduceme#hasExperimentalData> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf <http://purl.org/net/p-plan#hasInputVar> .
+
+
+###  https://w3id.org/reproduceme#hasPart
+<https://w3id.org/reproduceme#hasPart> rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://w3id.org/reproduceme#isSettingOf
+<https://w3id.org/reproduceme#isSettingOf> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://w3id.org/reproduceme#used
+<https://w3id.org/reproduceme#used> rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/net/p-plan#hasInputVar> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://w3id.org/reproduceme#id
+:id rdf:type owl:DatatypeProperty ;
+    rdfs:comment "A unique identifier of an entity."@en ;
+    rdfs:label "Id"@en .
+
+
+###  http://w3id.org/reproduceme#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The name of a thing."@en ;
+      rdfs:label "Name"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://w3id.org/reproduceme#AcquisitionMode
+:AcquisitionMode rdf:type owl:Class ;
+                 rdfs:subClassOf :ImagingMethod ;
+                 rdfs:comment "Describes the type of microscopy performed for each channel"@en ;
+                 rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel_AcquisitionMode> ;
+                 rdfs:label "Acquistion Mode"@en .
+
+
+###  http://w3id.org/reproduceme#AdditionalInformation
+:AdditionalInformation rdf:type owl:Class ;
+                       rdfs:subClassOf :ExperimentalData ;
+                       rdfs:comment "Data that provides additional information of an experiment."@en ;
+                       rdfs:label "Additional Information"@en .
+
+
+###  http://w3id.org/reproduceme#AirPressure
+:AirPressure rdf:type owl:Class ;
+             rdfs:subClassOf :ImagingEnvironment ;
+             rdfs:label "Air Pressure"@en .
+
+
+###  http://w3id.org/reproduceme#AliquotsReceiver
+:AliquotsReceiver rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ,
+                                  <http://www.w3.org/ns/prov#Role> ;
+                  rdfs:comment "A person or an organisation responsible for receiving the experiment aliquots."@en ;
+                  rdfs:label "AliquotsReceiver"@en .
+
+
+###  http://w3id.org/reproduceme#Amplification
+:Amplification rdf:type owl:Class ;
+               rdfs:subClassOf :MaterialPreparationStep ;
+               rdfs:label "Amplification"@en .
+
+
+###  http://w3id.org/reproduceme#AmplificationGain
+:AmplificationGain rdf:type owl:Class ;
+                   rdfs:subClassOf :DetectorSetting ;
+                   rdfs:comment "electronic Gain applied to the detector signal."@en ;
+                   rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Detector_AmplificationGain> ;
+                   rdfs:label "AmplificationGain"@en .
+
+
+###  http://w3id.org/reproduceme#AmplificationLevel
+:AmplificationLevel rdf:type owl:Class ;
+                    rdfs:subClassOf :Setting ;
+                    rdfs:comment "The level of the amplification applied to a resource."@en ;
+                    rdfs:label "AmplificationLevel"@en .
+
+
+###  http://w3id.org/reproduceme#Annotation
+:Annotation rdf:type owl:Class ;
+            rdfs:subClassOf :ExperimentalData ;
+            rdfs:comment "A description added to a thing which provides comment, note or description."@en ;
+            rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Annotation> ;
+            rdfs:label "Annotation"@en .
+
+
+###  http://w3id.org/reproduceme#Arc
+:Arc rdf:type owl:Class ;
+     rdfs:subClassOf :LightSource ;
+     rdfs:comment "The Arc element is used to describe various kinds of Arc lamps - Hg, Xe, HgXe."@en ;
+     rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Arc> ;
+     rdfs:label "Arc"@en .
+
+
+###  http://w3id.org/reproduceme#ArcType
+:ArcType rdf:type owl:Class ;
+         rdfs:subClassOf :Arc ;
+         rdfs:comment "The type of Arc Lamp."@en ;
+         rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Arc_Type> ;
+         rdfs:label "Arc Type"@en .
+
+
+###  http://w3id.org/reproduceme#Argument
+:Argument rdf:type owl:Class ;
+          rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+          rdfs:comment """A parameter.
+For example, an argument of parameter of a function."""@en ;
+          rdfs:label "Argument"@en .
+
+
+###  http://w3id.org/reproduceme#Attenuation
+:Attenuation rdf:type owl:Class ;
+             rdfs:subClassOf :LightSettings ;
+             rdfs:comment "The Attenuation of the light source, A fraction, as a value from 0.0 to 1.0."@en ;
+             rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#LightSourceSettings_Attenuation> ;
+             rdfs:label "Attenuation"@en .
+
+
+###  http://w3id.org/reproduceme#BacterialResistance
+:BacterialResistance rdf:type owl:Class ;
+                     rdfs:subClassOf :ExperimentMaterial ;
+                     rdfs:comment "The Bacterial Resistance used to transform a bacteria."@en ;
+                     rdfs:label "Bacterial Resistance"@en .
+
+
+###  http://w3id.org/reproduceme#BacterialStrain
+:BacterialStrain rdf:type owl:Class ;
+                 rdfs:subClassOf :ExperimentMaterial ;
+                 rdfs:comment "A subtype of a microorganism bacteria"@en ;
+                 rdfs:label "Bacterial Strain"@en .
+
+
+###  http://w3id.org/reproduceme#BathSolution
+:BathSolution rdf:type owl:Class ;
+              rdfs:subClassOf :Solution ;
+              rdfs:label "Bath Solution"@en .
+
+
+###  http://w3id.org/reproduceme#Binning
+:Binning rdf:type owl:Class ;
+         rdfs:subClassOf :DetectorSetting ;
+         rdfs:comment "Represents the number of pixels that are combined to form larger pixels."@en ;
+         rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Binning> ;
+         rdfs:label "Binning"@en .
+
+
+###  http://w3id.org/reproduceme#BioFormats
+:BioFormats rdf:type owl:Class ;
+            rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+            rdfs:comment "BIO-Formats is an image translation library which reads and writes life sciences image file formats. It converts the proprietary microscopy data to a open standard model called OME data model, particularly into the OME-TIFF file format, which then can be used by other tools."@en ;
+            rdfs:label "Bio-Formats"@en .
+
+
+###  http://w3id.org/reproduceme#CASNumber
+:CASNumber rdf:type owl:Class ;
+           rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+           rdfs:comment "CAS number is a uniquely numerical identifier assigned by Chemical Abstracts Service (CAS) to every chemical substance."@en ;
+           rdfs:label "CASNumber"@en .
+
+
+###  http://w3id.org/reproduceme#CO2Percent
+:CO2Percent rdf:type owl:Class ;
+            rdfs:subClassOf :ImagingEnvironment ;
+            rdfs:label "CO2 Percent"@en .
+
+
+###  http://w3id.org/reproduceme#CalibratedMagnification
+:CalibratedMagnification rdf:type owl:Class ;
+                         rdfs:subClassOf :ObjectiveSettings ;
+                         rdfs:comment "The magnification of the lens as measured by a calibration process- i.e. '59.987' for a 60X lens."@en ;
+                         rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective_CalibratedMagnification> ;
+                         rdfs:label "Calibrated Magnification"@en .
+
+
+###  http://w3id.org/reproduceme#Cell
+:Cell rdf:type owl:Class ;
+      rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
+      rdfs:comment """A cell is a multiline text input field in an Interactive Notebook which can either be code cells where code can be excuted or markdown cells where a descriptive text can be provided or raw cells where output can directly be entered. 
+For example, a Jupyter Notebook cell."""@en ;
+      rdfs:label "Notebok Cell"@en .
+
+
+###  http://w3id.org/reproduceme#CellExecution
+:CellExecution rdf:type owl:Class ;
+               rdfs:subClassOf <http://purl.org/net/p-plan#Activity> ;
+               rdfs:comment "The run of a cell of a Interactive Notebook."@en ;
+               rdfs:label "Notebook Cell Execution"@en .
+
+
+###  http://w3id.org/reproduceme#Channel
+:Channel rdf:type owl:Class ;
+         owl:equivalentClass :LogicalChannel ;
+         rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+         rdfs:comment "A component of an Image."@en ;
+         rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel> ;
+         rdfs:label "Channel"@en .
+
+
+###  http://w3id.org/reproduceme#ChannelBinding
+:ChannelBinding rdf:type owl:Class ;
+                rdfs:subClassOf :PixelsSetting ;
+                rdfs:label "Channel Binding"@en .
+
+
+###  http://w3id.org/reproduceme#ChannelFluorophore
+:ChannelFluorophore rdf:type owl:Class ;
+                    rdfs:subClassOf :ChannelSetting ;
+                    rdfs:comment "The Fluor attribute is used for fluorescence images. This is the name of the fluorophore used to produce this channel"@en ;
+                    rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel_Fluor> ;
+                    rdfs:label "Channel Fluorophore"@en .
+
+
+###  http://w3id.org/reproduceme#ChannelSetting
+:ChannelSetting rdf:type owl:Class ;
+                rdfs:subClassOf :Setting ;
+                rdfs:comment "The settings of channel."@en ;
+                rdfs:label "ChannelSetting"@en .
+
+
+###  http://w3id.org/reproduceme#ChecksumAlgorithm
+:ChecksumAlgorithm rdf:type owl:Class ;
+                   rdfs:subClassOf :Method ;
+                   rdfs:comment "The method which yields the checksum from a data input  for the purpose of detecting errors."@en ;
+                   rdfs:label "CheckSum Algorithm"@en .
+
+
+###  http://w3id.org/reproduceme#Chemical
+:Chemical rdf:type owl:Class ;
+          rdfs:subClassOf :ExperimentMaterial ;
+          rdfs:comment "A pure substance with constant chemical composition and properties used in an experiment."@en ;
+          rdfs:label "Chemical"@en .
+
+
+###  http://w3id.org/reproduceme#Cloning
+:Cloning rdf:type owl:Class ;
+         rdfs:subClassOf :MaterialPreparationStep ;
+         rdfs:comment "The procedure to replicate specimen."@en ;
+         rdfs:label "Cloning"@en .
+
+
+###  http://w3id.org/reproduceme#ColumnNamingConvention
+:ColumnNamingConvention rdf:type owl:Class ;
+                        rdfs:subClassOf :PlateSetting ;
+                        rdfs:comment "The column naming convention for plates."@en ;
+                        rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plate_ColumnNamingConvention> ;
+                        rdfs:label "Column Naming Convention"@en .
+
+
+###  http://w3id.org/reproduceme#Columns
+:Columns rdf:type owl:Class ;
+         rdfs:subClassOf :PlateSetting ;
+         rdfs:comment "The number of columns in the plate."@en ;
+         rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plate_Columns> ;
+         rdfs:label "Columns"@en .
+
+
+###  http://w3id.org/reproduceme#Concentration
+:Concentration rdf:type owl:Class ;
+               rdfs:subClassOf :MaterialPreparationStep ;
+               rdfs:label "Concentration"@en .
+
+
+###  http://w3id.org/reproduceme#Configuration
+:Configuration rdf:type owl:Class ;
+               rdfs:subClassOf :Setting ;
+               rdfs:comment "The settings or changes applied to an instrument."@en ;
+               rdfs:label "Configuration"@en .
+
+
+###  http://w3id.org/reproduceme#ConfigureMicroscope
+:ConfigureMicroscope rdf:type owl:Class ;
+                     rdfs:subClassOf :ExperimentSetup ;
+                     rdfs:comment "Configuration of the microscope used in the lab."^^xsd:string ;
+                     rdfs:label "Microscope Configuration"@en .
+
+
+###  http://w3id.org/reproduceme#ContactPerson
+:ContactPerson rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ,
+                               <http://www.w3.org/ns/prov#Role> ;
+               rdfs:comment "A person who has the role of being a contact person for a certain thing."@en ;
+               rdfs:label "ContactPerson"@en .
+
+
+###  http://w3id.org/reproduceme#ContrastMethod
+:ContrastMethod rdf:type owl:Class ;
+                rdfs:subClassOf :ImagingMethod ;
+                rdfs:comment "Describes the technique used to achieve contrast for each channel."@en ;
+                rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel_ContrastMethod> ;
+                rdfs:label "Contrast Method"@en .
+
+
+###  http://w3id.org/reproduceme#Correction
+:Correction rdf:type owl:Class ;
+            rdfs:subClassOf :ObjectiveSettings ;
+            rdfs:comment "The correction applied to the lens."@en ;
+            rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective_Correction> ;
+            rdfs:label "Correction"@en .
+
+
+###  http://w3id.org/reproduceme#CorrectionCollar
+:CorrectionCollar rdf:type owl:Class ;
+                  rdfs:subClassOf :ObjectiveSettings ;
+                  rdfs:comment "The CorrectionCollar is normally an adjustable ring on the objective. Each has an arbitrary scale on it so the values is unit-less."@en ;
+                  rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ObjectiveSettings_CorrectionCollar> ;
+                  rdfs:label "Correction Collar"@en .
+
+
+###  http://w3id.org/reproduceme#CutIn
+:CutIn rdf:type owl:Class ;
+       rdfs:subClassOf :TransmittanceRange ;
+       rdfs:comment "CutIn is the wavelength below which there is less than 50% transmittance for a filter."@en ;
+       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#TransmittanceRange_CutIn> ;
+       rdfs:label "CutIn"@en .
+
+
+###  http://w3id.org/reproduceme#CutInTolerance
+:CutInTolerance rdf:type owl:Class ;
+                rdfs:subClassOf :TransmittanceRange ;
+                rdfs:comment "CutIn Tolerance."@en ;
+                rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#TransmittanceRange_CutInTolerance> ;
+                rdfs:label "CutIn Tolerance"@en .
+
+
+###  http://w3id.org/reproduceme#CutOut
+:CutOut rdf:type owl:Class ;
+        rdfs:subClassOf :TransmittanceRange ;
+        rdfs:comment "CutOut is the wavelength above which there is less than 50% transmittance for a filter."@en ;
+        rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#TransmittanceRange_CutOut> ;
+        rdfs:label "CutOut"@en .
+
+
+###  http://w3id.org/reproduceme#CutOutTolerance
+:CutOutTolerance rdf:type owl:Class ;
+                 rdfs:subClassOf :TransmittanceRange ;
+                 rdfs:comment "CutOut Tolerance."@en ;
+                 rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#TransmittanceRange_CutOutTolerance> ;
+                 rdfs:label "CutOut Tolerance"@en .
+
+
+###  http://w3id.org/reproduceme#DNA
+:DNA rdf:type owl:Class ;
+     rdfs:subClassOf :ExperimentMaterial ;
+     rdfs:comment "Deoxyribonucleic acid which is carries genetic instructions for the many functions like growth, development and reproduction."@en ;
+     rdfs:label "DNA"@en .
+
+
+###  http://w3id.org/reproduceme#DataType
+:DataType rdf:type owl:Class ;
+          rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+          rdfs:comment "A type or format of a thing."@en ;
+          rdfs:label "DataType"@en .
+
+
+###  http://w3id.org/reproduceme#Dataset
+:Dataset rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/ns/prov#Collection> ;
+         rdfs:comment "An element specifying a collection of images that are always processed together."@en ;
+         rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Dataset> ;
+         rdfs:label "Dataset"@en .
+
+
+###  http://w3id.org/reproduceme#DeltaT
+:DeltaT rdf:type owl:Class ;
+        rdfs:subClassOf :PlaneSetting ;
+        rdfs:label "DeltaT"@en .
+
+
+###  http://w3id.org/reproduceme#Describe
+:Describe rdf:type owl:Class ;
+          rdfs:subClassOf :ExperimentSetup ;
+          rdfs:comment "The activity of describing things."@en ;
+          rdfs:label "Describe"@en .
+
+
+###  http://w3id.org/reproduceme#Description
+:Description rdf:type owl:Class ;
+             rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+             rdfs:comment "The text which is used to provide information about a thing."@en ;
+             rdfs:label "Description"@en .
+
+
+###  http://w3id.org/reproduceme#Detector
+:Detector rdf:type owl:Class ;
+          rdfs:subClassOf :Instrument ;
+          rdfs:comment "An instrument capture the image."@en ;
+          rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Detector> ;
+          rdfs:label "Detector"@en .
+
+
+###  http://w3id.org/reproduceme#DetectorSetting
+:DetectorSetting rdf:type owl:Class ;
+                 rdfs:subClassOf :InstrumentSetting ;
+                 rdfs:comment "The setting applied to a detector"@en ;
+                 rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#DetectorSetting> ;
+                 rdfs:label "Detector Setting"@en .
+
+
+###  http://w3id.org/reproduceme#DetectorType
+:DetectorType rdf:type owl:Class ;
+              rdfs:subClassOf :Detector ;
+              rdfs:comment "The Type of detector. E.g. CCD, PMT, EMCCD etc."@en ;
+              rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Detector_Type> ;
+              rdfs:label "Detector Type"@en .
+
+
+###  http://w3id.org/reproduceme#Dichroic
+:Dichroic rdf:type owl:Class ;
+          rdfs:subClassOf :Instrument ;
+          rdfs:comment "The dichromatic beamsplitter or dichroic mirror used for the filter combination."@en ;
+          rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Dichroic> ;
+          rdfs:label "Dichroic"@en .
+
+
+###  http://w3id.org/reproduceme#DimensionOrder
+:DimensionOrder rdf:type owl:Class ;
+                rdfs:subClassOf :PixelsSetting ;
+                rdfs:comment "The order in which the individual planes of data are interleaved."@en ;
+                rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_DimensionOrder> ;
+                rdfs:label "Dimension Order"@en .
+
+
+###  http://w3id.org/reproduceme#Distributor
+:Distributor rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ,
+                             <http://www.w3.org/ns/prov#Role> ;
+             rdfs:comment "Distributor is a person who is responsible for the distribution of materials."@en ;
+             rdfs:label "Distributor"@en .
+
+
+###  http://w3id.org/reproduceme#ElectronicGain
+:ElectronicGain rdf:type owl:Class ;
+                rdfs:subClassOf :DetectorSetting ;
+                rdfs:comment "The detector gain."@en ;
+                rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Detector_Gain> ;
+                rdfs:label "ElectronicGain"@en .
+
+
+###  http://w3id.org/reproduceme#EmissionWavelength
+:EmissionWavelength rdf:type owl:Class ;
+                    rdfs:subClassOf :ChannelSetting ;
+                    rdfs:comment "Wavelength of emission for a particular channel."@en ;
+                    rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel_EmissionWavelength> ;
+                    rdfs:label "Emission Wavelength"@en .
+
+
+###  http://w3id.org/reproduceme#EnvironmentAttribute
+:EnvironmentAttribute rdf:type owl:Class ;
+                      rdfs:subClassOf <https://w3id.org/reproduceme#ExperimentalCondition> ;
+                      rdfs:comment "The attributes of the experimental execution environment."@en ;
+                      rdfs:label "Environment Attribute"@en .
+
+
+###  http://w3id.org/reproduceme#EnvironmentSetup
+:EnvironmentSetup rdf:type owl:Class ;
+                  rdfs:subClassOf :ExperimentSetup ;
+                  rdfs:comment "To setup the environment to perform an experiment."@en ;
+                  rdfs:label "Environment Setup"@en .
+
+
+###  http://w3id.org/reproduceme#EnvironmentSetupSetting
+:EnvironmentSetupSetting rdf:type owl:Class ;
+                         rdfs:subClassOf :Setting ;
+                         rdfs:comment "The various attribute needed to setup the environment for an experiment."@en ;
+                         rdfs:label "Environment Setup Setting"@en .
+
+
+###  http://w3id.org/reproduceme#EukaryoticCellResistance
+:EukaryoticCellResistance rdf:type owl:Class ;
+                          rdfs:subClassOf :ExperimentMaterial ;
+                          rdfs:comment "The resistance of Eukaryotic Cells."@en ;
+                          rdfs:label "Eukaryotic Cell Resistance"@en .
+
+
+###  http://w3id.org/reproduceme#Event
+:Event rdf:type owl:Class ;
+       rdfs:subClassOf <http://purl.org/net/p-plan#Activity> ;
+       rdfs:comment "The activity which uses or generates data."^^xsd:string ;
+       rdfs:label "Event"@en .
+
+
+###  http://w3id.org/reproduceme#ExcitationWavelength
+:ExcitationWavelength rdf:type owl:Class ;
+                      rdfs:subClassOf :ChannelSetting ;
+                      rdfs:comment "Wavelength of excitation for a particular channel"@en ;
+                      rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel_ExcitationWavelength> ;
+                      rdfs:label "Excitation Wavelength"@en .
+
+
+###  http://w3id.org/reproduceme#Experiment
+:Experiment rdf:type owl:Class ;
+            rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ;
+            rdfs:comment "Experiment is an entity which describes the collective activity conducted in a science lab."^^xsd:string ;
+            rdfs:label "Experiment"@en .
+
+
+###  http://w3id.org/reproduceme#ExperimentEnvironmentSetup
+:ExperimentEnvironmentSetup rdf:type owl:Class ;
+                            rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ;
+                            rdfs:comment "A set of instructions to setup the environment for experiment."@en ;
+                            rdfs:label "Experiment Environment Setup"@en .
+
+
+###  http://w3id.org/reproduceme#ExperimentMaterial
+:ExperimentMaterial rdf:type owl:Class ;
+                    rdfs:subClassOf <http://purl.org/net/p-plan#Entity> ,
+                                    <http://purl.org/net/p-plan#Variable> ;
+                    rdfs:comment """The materials or things used in an experiment.
+For example, a specimen."""@en ;
+                    rdfs:label "Experiment Material"@en .
+
+
+###  http://w3id.org/reproduceme#ExperimentMaterialPreparation
+:ExperimentMaterialPreparation rdf:type owl:Class ;
+                               rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ;
+                               rdfs:comment "A procedure to prepare experiment materials."@en ;
+                               rdfs:label "Experiment Material Preparation"@en .
+
+
+###  http://w3id.org/reproduceme#ExperimentSetup
+:ExperimentSetup rdf:type owl:Class ;
+                 rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
+                 rdfs:comment "To setup the execution environment of an experiment."@en ;
+                 rdfs:label "Experiment Setup"@en .
+
+
+###  http://w3id.org/reproduceme#ExperimentType
+:ExperimentType rdf:type owl:Class ;
+                rdfs:subClassOf :Experiment ;
+                rdfs:comment "Refers to the type of an experiment."@en ;
+                rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Experiment_Type> ;
+                rdfs:label "Experiment Type"@en .
+
+
+###  http://w3id.org/reproduceme#ExperimentalData
+:ExperimentalData rdf:type owl:Class ;
+                  rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ,
+                                  <http://www.w3.org/ns/prov#Entity> ;
+                  rdfs:comment "Data used in an experiment."@en ;
+                  rdfs:label "Experimental Data"@en .
+
+
+###  http://w3id.org/reproduceme#Experimenter
+:Experimenter rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ,
+                              <http://www.w3.org/ns/prov#Role> ;
+              rdfs:comment "Experimenter is a person who is the owner of the Experiment and has its responsibility."^^xsd:string ;
+              rdfs:label "Experimenter"@en .
+
+
+###  http://w3id.org/reproduceme#ExperimenterGroupConfig
+:ExperimenterGroupConfig rdf:type owl:Class ;
+                         rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+                         rdfs:comment "Configuration of an experimenter group."@en ;
+                         rdfs:label "Experimenter Group Config"@en .
+
+
+###  http://w3id.org/reproduceme#ExposureTime
+:ExposureTime rdf:type owl:Class ;
+              rdfs:subClassOf :PlaneSetting ;
+              rdfs:comment "The length of the exposure."@en ;
+              rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plane_ExposureTime> ;
+              rdfs:label "Exposure Time"@en .
+
+
+###  http://w3id.org/reproduceme#Expression
+:Expression rdf:type owl:Class ;
+            rdfs:subClassOf :MaterialPreparationStep ;
+            rdfs:comment "The procedure of expression of materials."@en ;
+            rdfs:label "Expression"@en .
+
+
+###  http://w3id.org/reproduceme#ExpressionSystem
+:ExpressionSystem rdf:type owl:Class ;
+                  rdfs:subClassOf :ExperimentMaterial ;
+                  rdfs:comment "The procedure used for the expression of experiment materials like Vectors, Protein."@en ;
+                  rdfs:label "Expression System"@en .
+
+
+###  http://w3id.org/reproduceme#ExternalIdentifier
+:ExternalIdentifier rdf:type owl:Class ;
+                    rdfs:subClassOf :PlateSetting ;
+                    rdfs:comment "The ExternalIdentifier attribute may contain a reference to an external database."@en ;
+                    rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plate_ExternalIdentifier> ;
+                    rdfs:label "ExternalIdentifier"@en .
+
+
+###  http://w3id.org/reproduceme#Family
+:Family rdf:type owl:Class ;
+        rdfs:subClassOf :ChannelBinding ;
+        rdfs:label "Family"@en .
+
+
+###  http://w3id.org/reproduceme#FieldIndex
+:FieldIndex rdf:type owl:Class ;
+            rdfs:subClassOf :PlateSetting ;
+            rdfs:comment "The index of the WellSample."@en ;
+            rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plate_FieldIndex> ;
+            rdfs:label "Field Index"@en .
+
+
+###  http://w3id.org/reproduceme#Filament
+:Filament rdf:type owl:Class ;
+          rdfs:subClassOf :LightSource ;
+          rdfs:comment " Describe various kinds of filament bulbs such as Incadescent or Halogen."@en ;
+          rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Filament> ;
+          rdfs:label "Filament"@en .
+
+
+###  http://w3id.org/reproduceme#FilamentType
+:FilamentType rdf:type owl:Class ;
+              rdfs:subClassOf :Filament ;
+              rdfs:comment "The type of filament."@en ;
+              rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Filament_Type> ;
+              rdfs:label "Filament Type"@en .
+
+
+###  http://w3id.org/reproduceme#File
+:File rdf:type owl:Class ;
+      rdfs:subClassOf :ExperimentalData ;
+      rdfs:comment "A storage to store data. For example, a computer file."@en ;
+      rdfs:label "File"@en .
+
+
+###  http://w3id.org/reproduceme#Filter
+:Filter rdf:type owl:Class ;
+        rdfs:subClassOf :Instrument ;
+        rdfs:comment "A filter is either an excitation or emission filters."@en ;
+        rdfs:label "Filter"@en .
+
+
+###  http://w3id.org/reproduceme#FilterSetting
+:FilterSetting rdf:type owl:Class ;
+               rdfs:subClassOf :InstrumentSetting ;
+               rdfs:comment "The settings of filter."@en ;
+               rdfs:label "Filter Setting"@en .
+
+
+###  http://w3id.org/reproduceme#FilterType
+:FilterType rdf:type owl:Class ;
+            rdfs:subClassOf :Filter ;
+            rdfs:comment "The type of filter."@en ;
+            rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Filter_Type> ;
+            rdfs:label "Filter Type"@en .
+
+
+###  http://w3id.org/reproduceme#FilterWheel
+:FilterWheel rdf:type owl:Class ;
+             rdfs:subClassOf :FilterSetting ;
+             rdfs:comment "A filter 'wheel' in OME can refer to any arrangement of filters in a filter holder of any shape. It could, for example, be a filter slider."@en ;
+             rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Filter_FilterWheel> ;
+             rdfs:label "Filter Wheel"@en .
+
+
+###  http://w3id.org/reproduceme#Filterset
+:Filterset rdf:type owl:Class ;
+           rdfs:subClassOf :Instrument ;
+           rdfs:comment "The FilterSet"@en ;
+           rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#FilterSet> ;
+           rdfs:label "Filterset"@en .
+
+
+###  http://w3id.org/reproduceme#Fixation
+:Fixation rdf:type owl:Class ;
+          rdfs:subClassOf :MaterialPreparationStep ;
+          rdfs:label "Fixation"@en .
+
+
+###  http://w3id.org/reproduceme#FluorescentProtein
+:FluorescentProtein rdf:type owl:Class ;
+                    rdfs:subClassOf :ExperimentMaterial ;
+                    rdfs:comment "A protein composed of 238 amino acid residues (26.9 kDa) that exhibits bright green fluorescence when exposed to light in the blue to ultraviolet range."@en ;
+                    rdfs:label "Fluoroscent Protein"@en .
+
+
+###  http://w3id.org/reproduceme#FrequencyMultiplication
+:FrequencyMultiplication rdf:type owl:Class ;
+                         rdfs:subClassOf :LaserSetting ;
+                         rdfs:comment "FrequencyMultiplication that may be specified."@en ;
+                         rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Laser_FrequencyMultiplication> ;
+                         rdfs:label "Frequency Multiplication"@en .
+
+
+###  http://w3id.org/reproduceme#Function
+:Function rdf:type owl:Class ;
+          rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
+          rdfs:comment "A programming language code snippet in a script which describes a procedure or a routine."@en ;
+          rdfs:label "Function"@en .
+
+
+###  http://w3id.org/reproduceme#FunctionActivation
+:FunctionActivation rdf:type owl:Class ;
+                    rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
+                    rdfs:comment "Function Activation is when a function is activated or run."@en ;
+                    rdfs:label "Function Activation"@en .
+
+
+###  http://w3id.org/reproduceme#GenericExcitationSource
+:GenericExcitationSource rdf:type owl:Class ;
+                         rdfs:subClassOf :LightSource ;
+                         rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#GenericExcitationSource> ;
+                         rdfs:label "Generic Excitation Source"@en .
+
+
+###  http://w3id.org/reproduceme#GrowthCondition
+:GrowthCondition rdf:type owl:Class ;
+                 rdfs:subClassOf <https://w3id.org/reproduceme#ExperimentalCondition> ;
+                 rdfs:comment "The growth condition of a specimen."@en ;
+                 rdfs:label "Growth Condition"@en .
+
+
+###  http://w3id.org/reproduceme#HeatInactivation
+:HeatInactivation rdf:type owl:Class ;
+                  rdfs:subClassOf :EnvironmentAttribute ;
+                  rdfs:label "Heat Inactivation"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#Humidity
+:Humidity rdf:type owl:Class ;
+          rdfs:subClassOf :ImagingEnvironment ;
+          rdfs:comment "Humidity around the sample."@en ;
+          rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ImagingEnvironment_Humidity> ;
+          rdfs:label "Humidity"@en .
+
+
+###  http://w3id.org/reproduceme#Illumination
+:Illumination rdf:type owl:Class ;
+              rdfs:subClassOf :ImagingMethod ;
+              rdfs:comment "The method of illumination used to capture the channel."@en ;
+              rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel_IlluminationType> ;
+              rdfs:label "Illumination"@en .
+
+
+###  http://w3id.org/reproduceme#Image
+:Image rdf:type owl:Class ;
+       rdfs:subClassOf :ExperimentalData ;
+       rdfs:comment """An image or picture generated in an experiment by a device.
+For example, a microscopic image with metadata."""@en ;
+       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Image> ;
+       rdfs:label "Image"@en .
+
+
+###  http://w3id.org/reproduceme#ImageAcquisition
+:ImageAcquisition rdf:type owl:Class ;
+                  rdfs:subClassOf :ExperimentSetup ;
+                  rdfs:comment "The process of acquiring image from device."@en ;
+                  rdfs:label "Image Acquisition"@en .
+
+
+###  http://w3id.org/reproduceme#ImageFormat
+:ImageFormat rdf:type owl:Class ;
+             rdfs:subClassOf :DataType ;
+             rdfs:comment "The file format of an Image."@en ;
+             rdfs:label "Format"@en .
+
+
+###  http://w3id.org/reproduceme#ImageSetting
+:ImageSetting rdf:type owl:Class ;
+              rdfs:subClassOf :Setting ;
+              rdfs:comment "The properties of an image while its acquisition."@en ;
+              rdfs:label "Image Setting"@en .
+
+
+###  http://w3id.org/reproduceme#ImagingEnvironment
+:ImagingEnvironment rdf:type owl:Class ;
+                    rdfs:subClassOf :EnvironmentAttribute ;
+                    rdfs:comment "The experiment environment when the image was captured."@en ;
+                    rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ImagingEnvironment> ;
+                    rdfs:label "Imaging Environment"@en .
+
+
+###  http://w3id.org/reproduceme#ImagingMethod
+:ImagingMethod rdf:type owl:Class ;
+               rdfs:subClassOf :Method ;
+               rdfs:label "Imaging Method"@en .
+
+
+###  http://w3id.org/reproduceme#Immersion
+:Immersion rdf:type owl:Class ;
+           rdfs:subClassOf :ObjectiveSettings ;
+           rdfs:comment "The immersion medium the lens is designed for."@en ;
+           rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective_Immersion> ;
+           rdfs:label "Immersion"@en .
+
+
+###  http://w3id.org/reproduceme#Incubation
+:Incubation rdf:type owl:Class ;
+            rdfs:subClassOf :MaterialPreparationStep ;
+            rdfs:label "Incubation"@en .
+
+
+###  http://w3id.org/reproduceme#Instrument
+:Instrument rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+            rdfs:comment "A device used to capture images."@en ;
+            rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Instrument> ;
+            rdfs:label "Instrument"@en .
+
+
+###  http://w3id.org/reproduceme#InstrumentSetting
+:InstrumentSetting rdf:type owl:Class ;
+                   rdfs:subClassOf :Setting ;
+                   rdfs:comment "The settings of an instrument."@en ;
+                   rdfs:label "Instrument Setting"@en .
+
+
+###  http://w3id.org/reproduceme#Integration
+:Integration rdf:type owl:Class ;
+             rdfs:subClassOf :DetectorSetting ;
+             rdfs:comment "the number of sequential frames that get averaged, to improve the signal-to-noise ratio."@en ;
+             rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#DetectorSettings_Integration> ;
+             rdfs:label "Integration"@en .
+
+
+###  http://w3id.org/reproduceme#Iris
+:Iris rdf:type owl:Class ;
+      rdfs:subClassOf :ObjectiveSettings ;
+      rdfs:comment "Records whether or not the objective was fitted with an Iris."@en ;
+      rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective_Iris> ;
+      rdfs:label "Iris"@en .
+
+
+###  http://w3id.org/reproduceme#IsolationOfProtein
+:IsolationOfProtein rdf:type owl:Class ;
+                    rdfs:subClassOf :MaterialPreparationStep ;
+                    rdfs:label "Isolation of Protein"@en .
+
+
+###  http://w3id.org/reproduceme#Job
+:Job rdf:type owl:Class ;
+     rdfs:subClassOf <http://purl.org/net/p-plan#Activity> ;
+     rdfs:comment """A task or a piece of work.
+For example, OMERO performs the task of script execution or import of metadata to the system."""@en ;
+     rdfs:label "Job"@en .
+
+
+###  http://w3id.org/reproduceme#Kernel
+:Kernel rdf:type owl:Class ;
+        rdfs:subClassOf :Setting ;
+        rdfs:comment "An Interactive Notebook computation engine that executes the code written in a programming language."@en ;
+        rdfs:label "Kernel"@en .
+
+
+###  http://w3id.org/reproduceme#Laser
+:Laser rdf:type owl:Class ;
+       rdfs:subClassOf :LightSource ;
+       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Laser> ;
+       rdfs:label "Laser"@en .
+
+
+###  http://w3id.org/reproduceme#LaserSetting
+:LaserSetting rdf:type owl:Class ;
+              rdfs:subClassOf :InstrumentSetting ;
+              rdfs:label "Laser Setting"@en .
+
+
+###  http://w3id.org/reproduceme#LaserTuneable
+:LaserTuneable rdf:type owl:Class ;
+               rdfs:subClassOf :LaserSetting ;
+               rdfs:comment "Whether or not the laser is Tuneable"@en ;
+               rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Laser_Tuneable> ;
+               rdfs:label "Laser Tuneable"@en .
+
+
+###  http://w3id.org/reproduceme#LaserType
+:LaserType rdf:type owl:Class ;
+           rdfs:subClassOf :Laser ;
+           rdfs:comment "The type of the Laser."@en ;
+           rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Laser_Type> ;
+           rdfs:label "Laser Type"@en .
+
+
+###  http://w3id.org/reproduceme#LensNA
+:LensNA rdf:type owl:Class ;
+        rdfs:subClassOf :ObjectiveSettings ;
+        rdfs:comment "The numerical aperture of the lens."@en ;
+        rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective_LensNA> ;
+        rdfs:label "Lens Numerical Aperture"@en .
+
+
+###  http://w3id.org/reproduceme#LightEmittingDiode
+:LightEmittingDiode rdf:type owl:Class ;
+                    rdfs:subClassOf :LightSource ;
+                    rdfs:comment "The LightEmittingDiode element is used to describe         various kinds of LED lamps."@en ;
+                    rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#LightEmittingDiode> ;
+                    rdfs:label "Light Emitting Diode"@en .
+
+
+###  http://w3id.org/reproduceme#LightPath
+:LightPath rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.w3.org/ns/prov#Collection> ;
+           rdfs:comment "The light path."@en ;
+           rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#LightPath> ;
+           rdfs:label "Light Path"@en .
+
+
+###  http://w3id.org/reproduceme#LightSettings
+:LightSettings rdf:type owl:Class ;
+               rdfs:subClassOf :InstrumentSetting ;
+               rdfs:comment "The settings of the light source."@en ;
+               rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#LightSourceSettings> ;
+               rdfs:label "Light Settings"@en .
+
+
+###  http://w3id.org/reproduceme#LightSource
+:LightSource rdf:type owl:Class ;
+             rdfs:subClassOf :Instrument ;
+             rdfs:comment "The lightsource for the instrument.  An instrument may have several light sources. The type of lightsource is specified by one of the child-elements which are 'Laser', 'Filament', 'Arc' or 'LightEmittingDiode'."@en ;
+             rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#LightSource> ;
+             rdfs:label "Light Source"@en .
+
+
+###  http://w3id.org/reproduceme#Log
+:Log rdf:type owl:Class ;
+     rdfs:subClassOf :ExperimentalData ;
+     rdfs:comment "A log file records all the events, interactions or messages generated in a system."@en ;
+     rdfs:label "Log"@en .
+
+
+###  http://w3id.org/reproduceme#LogicalChannel
+:LogicalChannel rdf:type owl:Class ;
+                rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+                rdfs:label "Logical Channel"@en .
+
+
+###  http://w3id.org/reproduceme#LogicalChannelSetting
+:LogicalChannelSetting rdf:type owl:Class ;
+                       rdfs:subClassOf :ImageSetting ;
+                       rdfs:comment "The properties of a logical channel."@en ;
+                       rdfs:label "Logical Channel Setting"@en .
+
+
+###  http://w3id.org/reproduceme#LotNumber
+:LotNumber rdf:type owl:Class ;
+           rdfs:subClassOf :ManufactuerSpec ;
+           rdfs:comment "The lot number of the component."@en ;
+           rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ManufacturerSpec_LotNumber> ;
+           rdfs:label "Lot Number"@en .
+
+
+###  http://w3id.org/reproduceme#ManufactuerSpec
+:ManufactuerSpec rdf:type owl:Class ;
+                 rdfs:subClassOf :InstrumentSetting ;
+                 rdfs:comment "The attributes for recording common properties of the components such as Manufacturer name, Model etc."@en ;
+                 rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ManufacturerSpec> ;
+                 rdfs:label "ManufactuerSpec"@en .
+
+
+###  http://w3id.org/reproduceme#MaterialPreparationStep
+:MaterialPreparationStep rdf:type owl:Class ;
+                         rdfs:subClassOf :ExperimentSetup ;
+                         rdfs:comment "The step where materials are prepared for the experiment."@en ;
+                         rdfs:label "Material Preparation Step"@en .
+
+
+###  http://w3id.org/reproduceme#MaterialTransferAgreement
+:MaterialTransferAgreement rdf:type owl:Class ;
+                           rdfs:subClassOf :ExperimentalData ;
+                           rdfs:comment "A Material Transfer Aggrement defines the rights that governs the transfer of materials between agents."@en ;
+                           rdfs:label "Material Transfer Agreement"@en .
+
+
+###  http://w3id.org/reproduceme#Medium
+:Medium rdf:type owl:Class ;
+        rdfs:subClassOf :LaserSetting ,
+                        :ObjectiveSettings ;
+        rdfs:comment "The Medium is the actual immersion medium used for the lens."@en ;
+        rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ObjectiveSettings_Medium> ;
+        rdfs:label "Medium"@en .
+
+
+###  http://w3id.org/reproduceme#Method
+:Method rdf:type owl:Class ;
+        rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+        rdfs:comment "The procedure used to perform a process."@en ;
+        rdfs:label "Method"@en .
+
+
+###  http://w3id.org/reproduceme#MethylationSensitivity
+:MethylationSensitivity rdf:type owl:Class ;
+                        rdfs:subClassOf :EnvironmentAttribute ;
+                        rdfs:label "Methylation Sensitivity"@en .
+
+
+###  http://w3id.org/reproduceme#MicrobeamManipulation
+:MicrobeamManipulation rdf:type owl:Class ;
+                       rdfs:subClassOf :ExperimentSetup ;
+                       rdfs:comment "A microbeam operation applied to an image."@en ;
+                       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#MicrobeamManipulation> ;
+                       rdfs:label "Microbeam Manipulation"@en .
+
+
+###  http://w3id.org/reproduceme#MicrobeamManipulationType
+:MicrobeamManipulationType rdf:type owl:Class ;
+                           rdfs:subClassOf :ImagingMethod ;
+                           rdfs:comment "The type of a microbeam operation applied to an image."@en ;
+                           rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#MicrobeamManipulation_Type> ;
+                           rdfs:label "Microbeam Manipulation Type"@en .
+
+
+###  http://w3id.org/reproduceme#Microscope
+:Microscope rdf:type owl:Class ;
+            rdfs:subClassOf :Instrument ;
+            rdfs:comment "An instrument to observe and capture images."@en ;
+            rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Microscope> ;
+            rdfs:label "Microscope"@en .
+
+
+###  http://w3id.org/reproduceme#MicroscopeType
+:MicroscopeType rdf:type owl:Class ;
+                rdfs:subClassOf :Microscope ;
+                rdfs:comment "The type of microscope."@en ;
+                rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Microscope_Type> ;
+                rdfs:label "Microscope Type"@en .
+
+
+###  http://w3id.org/reproduceme#Model
+:Model rdf:type owl:Class ;
+       rdfs:subClassOf :ManufactuerSpec ;
+       rdfs:comment "The model of the instrument."@en ;
+       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ManufacturerSpec_Model> ;
+       rdfs:label "Model"@en .
+
+
+###  http://w3id.org/reproduceme#Modification
+:Modification rdf:type owl:Class ;
+              rdfs:subClassOf :Setting ;
+              rdfs:label "Modification"@en .
+
+
+###  http://w3id.org/reproduceme#Module
+:Module rdf:type owl:Class ;
+        rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ;
+        rdfs:comment "A part of a computer program or a software."@en ;
+        rdfs:label "Module"@en .
+
+
+###  http://w3id.org/reproduceme#MolecularFormula
+:MolecularFormula rdf:type owl:Class ;
+                  rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+                  rdfs:comment "The molecular formula of a chemical substance."@en ;
+                  rdfs:label "Molecular Formula"@en .
+
+
+###  http://w3id.org/reproduceme#MolecularWeight
+:MolecularWeight rdf:type owl:Class ;
+                 rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+                 rdfs:comment "The molecular weight of a chemical substance."@en ;
+                 rdfs:label "Molecular Weight"@en .
+
+
+###  http://w3id.org/reproduceme#NeutralDensityFilter
+:NeutralDensityFilter rdf:type owl:Class ;
+                      rdfs:subClassOf :ChannelSetting ;
+                      rdfs:comment "Specifies the combined effect of any neutral density filters used. The amount of light the filter transmits at a maximum"@en ;
+                      rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel_NDFilter> ;
+                      rdfs:label "Neutral Density Filter"@en .
+
+
+###  http://w3id.org/reproduceme#NominalMagnification
+:NominalMagnification rdf:type owl:Class ;
+                      rdfs:subClassOf :ObjectiveSettings ;
+                      rdfs:comment "The magnification of the lens as specified by the manufacturer - i.e. '60' is a 60X lens."@en ;
+                      rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective_NominalMagnification> ;
+                      rdfs:label "Nominal Magnification"@en .
+
+
+###  http://w3id.org/reproduceme#Note
+:Note rdf:type owl:Class ;
+      rdfs:subClassOf :ExperimentalData ;
+      rdfs:comment "A comment or description of an experiment."@en ;
+      rdfs:label "Note"@en .
+
+
+###  http://w3id.org/reproduceme#Notebook
+:Notebook rdf:type owl:Class ;
+          rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ,
+                          :ExperimentalData ;
+          rdfs:comment """Interactive Notebook is a notebook for interactive computation and allow users to run code.
+For example, Jupyter Notebook"""@en ;
+          rdfs:label "Notebok"@en .
+
+
+###  http://w3id.org/reproduceme#Noting
+:Noting rdf:type owl:Class ;
+        rdfs:subClassOf :ExperimentSetup ;
+        rdfs:comment "The step to note the description of things."@en ;
+        rdfs:label "Noting"@en .
+
+
+###  http://w3id.org/reproduceme#Objective
+:Objective rdf:type owl:Class ;
+           rdfs:subClassOf :Instrument ;
+           rdfs:comment "The microscope's objective lens."@en ;
+           rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective> ;
+           rdfs:label "Objective"@en .
+
+
+###  http://w3id.org/reproduceme#ObjectiveSettings
+:ObjectiveSettings rdf:type owl:Class ;
+                   rdfs:subClassOf :InstrumentSetting ;
+                   rdfs:comment "The settings of microscope's objective lens."@en ;
+                   rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ObjectiveSettings> ;
+                   rdfs:label "Objective Settings"@en .
+
+
+###  http://w3id.org/reproduceme#Offset
+:Offset rdf:type owl:Class ;
+        rdfs:subClassOf :DetectorSetting ;
+        rdfs:comment "The Detector Offset."@en ;
+        rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Detector_Offset> ;
+        rdfs:label "Offset"@en .
+
+
+###  http://w3id.org/reproduceme#Oligonucleotide
+:Oligonucleotide rdf:type owl:Class ;
+                 rdfs:subClassOf :ExperimentMaterial ;
+                 rdfs:comment "Short DNA or RNA molecules."@en ;
+                 rdfs:label "OligoNucleotide"@en .
+
+
+###  http://w3id.org/reproduceme#OperatingSystem
+:OperatingSystem rdf:type owl:Class ;
+                 rdfs:subClassOf :Setting ;
+                 rdfs:label "Operating System"@en .
+
+
+###  http://w3id.org/reproduceme#OpticalTransferFunction
+:OpticalTransferFunction rdf:type owl:Class ;
+                         rdfs:subClassOf :Method ;
+                         rdfs:comment "Specifies how different spatial frequencies are handled by the optical  system such as microscope, camera etc."@en ;
+                         rdfs:label "OpticalTransferFunction"@en .
+
+
+###  http://w3id.org/reproduceme#Organism
+:Organism rdf:type owl:Class ;
+          rdfs:subClassOf :ExperimentMaterial ;
+          rdfs:comment "The specimens used in an experiment."@en ;
+          rdfs:label "Organism"@en .
+
+
+###  http://w3id.org/reproduceme#OriginInformationCollection
+:OriginInformationCollection rdf:type owl:Class ;
+                             rdfs:subClassOf :ExperimentSetup ;
+                             rdfs:comment "A step to collect original information of materials like the provenance of a thing."@en ;
+                             rdfs:label "Origin Information Collection"@en .
+
+
+###  http://w3id.org/reproduceme#OriginalCreator
+:OriginalCreator rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ,
+                                 <http://www.w3.org/ns/prov#Role> ;
+                 rdfs:comment "The original attribution of a thing belongs to the OriginalCreator."@en ;
+                 rdfs:label "Original Creator"@en .
+
+
+###  http://w3id.org/reproduceme#Output
+:Output rdf:type owl:Class ;
+        rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+        rdfs:comment "The result obtained after an activity."@en ;
+        rdfs:label "Output"@en .
+
+
+###  http://w3id.org/reproduceme#Owner
+:Owner rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ,
+                       <http://www.w3.org/ns/prov#Role> ;
+       rdfs:comment "A person who owns a certain thing."@en ;
+       rdfs:label "Owner"@en .
+
+
+###  http://w3id.org/reproduceme#PhotometricInterpretation
+:PhotometricInterpretation rdf:type owl:Class ;
+                           rdfs:subClassOf :LogicalChannelSetting ;
+                           rdfs:label "Photometric Interpretation"@en .
+
+
+###  http://w3id.org/reproduceme#PhysicalSizeX
+:PhysicalSizeX rdf:type owl:Class ;
+               rdfs:subClassOf :PixelsSetting ;
+               rdfs:comment "Physical size of a pixel."@en ;
+               rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_PhysicalSizeX> ;
+               rdfs:label "PhysicalSizeX"@en .
+
+
+###  http://w3id.org/reproduceme#PhysicalSizeY
+:PhysicalSizeY rdf:type owl:Class ;
+               rdfs:subClassOf :PixelsSetting ;
+               rdfs:comment "Physical size of a pixel."@en ;
+               rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_PhysicalSizeY> ;
+               rdfs:label "PhysicalSizeY"@en .
+
+
+###  http://w3id.org/reproduceme#PhysicalSizeZ
+:PhysicalSizeZ rdf:type owl:Class ;
+               rdfs:subClassOf :PixelsSetting ;
+               rdfs:comment "Physical size of a pixel."@en ;
+               rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_PhysicalSizeZ> ;
+               rdfs:label "PhysicalSizeZ"@en .
+
+
+###  http://w3id.org/reproduceme#PinholeSize
+:PinholeSize rdf:type owl:Class ;
+             rdfs:subClassOf :ChannelSetting ;
+             rdfs:comment "PinholeSize attribute allows specifying adjustable pin hole diameters for confocal microscopes."@en ;
+             rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel_PinholeSize> ;
+             rdfs:label "Pinhole Size"@en .
+
+
+###  http://w3id.org/reproduceme#PipetteSolution
+:PipetteSolution rdf:type owl:Class ;
+                 rdfs:subClassOf :Solution ;
+                 rdfs:label "Pipette Solution"@en .
+
+
+###  http://w3id.org/reproduceme#Pixels
+:Pixels rdf:type owl:Class ;
+        rdfs:subClassOf :ImageSetting ;
+        rdfs:comment "The Pixels element contain a list of BinData or TiffData, each containing a single plane of pixels."@en ;
+        rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels> ;
+        rdfs:label "Pixels"@en .
+
+
+###  http://w3id.org/reproduceme#PixelsSetting
+:PixelsSetting rdf:type owl:Class ;
+               rdfs:subClassOf :ImageSetting ;
+               rdfs:comment "The properties of pixels element."@en ;
+               rdfs:label "Pixels Setting"@en .
+
+
+###  http://w3id.org/reproduceme#PixelsType
+:PixelsType rdf:type owl:Class ;
+            rdfs:subClassOf :PixelsSetting ;
+            rdfs:comment "The variable type used to represent each pixel in the image."@en ;
+            rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_Type> ;
+            rdfs:label "Pixels Type"@en .
+
+
+###  http://w3id.org/reproduceme#Plane
+:Plane rdf:type owl:Class ;
+       rdfs:subClassOf :ImageSetting ;
+       rdfs:comment "The Plane object holds microscope stage and image timing data for a given channel/z-section/timepoint."@en ;
+       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plane> ;
+       rdfs:label "Plane Information"@en .
+
+
+###  http://w3id.org/reproduceme#PlaneSetting
+:PlaneSetting rdf:type owl:Class ;
+              rdfs:subClassOf :ImageSetting ;
+              rdfs:comment "The setting of a Plane object."@en ;
+              rdfs:label "Plane Setting"@en .
+
+
+###  http://w3id.org/reproduceme#Plasmid
+:Plasmid rdf:type owl:Class ;
+         rdfs:subClassOf :ExperimentMaterial ;
+         rdfs:comment "A small circular DNA strand usually found in the cytoplasm."@en ;
+         rdfs:label "Plasmid"@en .
+
+
+###  http://w3id.org/reproduceme#Plate
+:Plate rdf:type owl:Class ;
+       rdfs:subClassOf :Image ;
+       rdfs:comment "Identifies microtiter plates within a screen."@en ;
+       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plate> ;
+       rdfs:label "Plate"@en .
+
+
+###  http://w3id.org/reproduceme#PlateAcquisition
+:PlateAcquisition rdf:type owl:Class ;
+                  rdfs:subClassOf :ExperimentSetup ;
+                  rdfs:comment "The process of plate acquisition."@en ;
+                  rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#PlateAcquisition> ;
+                  rdfs:label "Plate Acquisition"@en .
+
+
+###  http://w3id.org/reproduceme#PlateSetting
+:PlateSetting rdf:type owl:Class ;
+              rdfs:subClassOf :ImageSetting ;
+              rdfs:comment "The settings for plate acquiistion."@en ;
+              rdfs:label "Plate Setting"@en .
+
+
+###  http://w3id.org/reproduceme#PockelCell
+:PockelCell rdf:type owl:Class ;
+            rdfs:subClassOf :LaserSetting ;
+            rdfs:comment "The laser has a PockelCell to rotate the polarization of the beam."@en ;
+            rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Laser_PockelCell> ;
+            rdfs:label "PockelCell"@en .
+
+
+###  http://w3id.org/reproduceme#PockelCellSetting
+:PockelCellSetting rdf:type owl:Class ;
+                   rdfs:subClassOf :ChannelSetting ;
+                   rdfs:comment "The PockelCellSetting used for this channel. This is the amount the polarization of the beam is rotated by."@en ;
+                   rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel_PockelCellSetting> ;
+                   rdfs:label "PockelCell Setting"@en .
+
+
+###  http://w3id.org/reproduceme#PositionX
+:PositionX rdf:type owl:Class ;
+           rdfs:subClassOf :PlaneSetting ;
+           rdfs:comment "The X position of the stage."@en ;
+           rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plane_PositionX> ;
+           rdfs:label "PositionX"@en .
+
+
+###  http://w3id.org/reproduceme#PositionY
+:PositionY rdf:type owl:Class ;
+           rdfs:subClassOf :PlaneSetting ;
+           rdfs:comment "The Y position of the stage."@en ;
+           rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plane_PositionY> ;
+           rdfs:label "PositionY"@en .
+
+
+###  http://w3id.org/reproduceme#PositionZ
+:PositionZ rdf:type owl:Class ;
+           rdfs:subClassOf :PlaneSetting ;
+           rdfs:comment "The Z position of the stage."@en ;
+           rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plane_PositionZ> ;
+           rdfs:label "PositionZ"@en .
+
+
+###  http://w3id.org/reproduceme#Power
+:Power rdf:type owl:Class ;
+       rdfs:subClassOf :LightSettings ;
+       rdfs:comment "The light-source power."@en ;
+       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#LightSource_Power> ;
+       rdfs:label "Power"@en .
+
+
+###  http://w3id.org/reproduceme#Preparation
+:Preparation rdf:type owl:Class ;
+             rdfs:subClassOf :MaterialPreparationStep ;
+             rdfs:comment "Step of preparing something."@en ;
+             rdfs:label "Preparation"@en .
+
+
+###  http://w3id.org/reproduceme#PrincipalInvestigator
+:PrincipalInvestigator rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ,
+                                       <http://www.w3.org/ns/prov#Role> ;
+                       rdfs:comment "An important person responsible for a ResearchProject."@en ;
+                       rdfs:label "Principal Investigator"@en .
+
+
+###  http://w3id.org/reproduceme#ProgrammingLanguage
+:ProgrammingLanguage rdf:type owl:Class ;
+                     rdfs:subClassOf :Setting ;
+                     rdfs:comment "The language used for scripting. For eg. Java, Python."@en ;
+                     rdfs:label "Programming Language"@en .
+
+
+###  http://w3id.org/reproduceme#Protein
+:Protein rdf:type owl:Class ;
+         rdfs:subClassOf :ExperimentMaterial ;
+         rdfs:comment "Biomoelcules responsible for performing variety of functions in an organism."@en ;
+         rdfs:label "Protein"@en .
+
+
+###  http://w3id.org/reproduceme#ProtocolDescription
+:ProtocolDescription rdf:type owl:Class ;
+                     rdfs:subClassOf :ScreenSetting ;
+                     rdfs:comment """A description of the screen protocol; may contain very detailed information to
+reproduce some of that found in a screening database."""@en ;
+                     rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Screen_ProtocolDescription> ;
+                     rdfs:label "Protocol Description"@en .
+
+
+###  http://w3id.org/reproduceme#ProtocolIdentifier
+:ProtocolIdentifier rdf:type owl:Class ;
+                    rdfs:subClassOf :ScreenSetting ;
+                    rdfs:comment "A pointer to an externally defined protocol, usually in a screening database."@en ;
+                    rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Screen_ProtocolIdentifier> ;
+                    rdfs:label "Protocol Identifier"@en .
+
+
+###  http://w3id.org/reproduceme#Publication
+:Publication rdf:type owl:Class ;
+             rdfs:subClassOf :ExperimentalData ;
+             rdfs:comment "A printed work or a file describing the work of one or more agents."@en ;
+             rdfs:label "Publication"@en .
+
+
+###  http://w3id.org/reproduceme#Pulse
+:Pulse rdf:type owl:Class ;
+       rdfs:subClassOf :LaserSetting ;
+       rdfs:comment "The Pulse mode of the laser."@en ;
+       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Laser_Pulse> ;
+       rdfs:label "Pulse"@en .
+
+
+###  http://w3id.org/reproduceme#PurificationOfProtein
+:PurificationOfProtein rdf:type owl:Class ;
+                       rdfs:subClassOf :MaterialPreparationStep ;
+                       rdfs:comment "The step for the purification of protein."@en ;
+                       rdfs:label "Purification of Protein"@en .
+
+
+###  http://w3id.org/reproduceme#Purity
+:Purity rdf:type owl:Class ;
+        rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+        rdfs:comment "The purity of a substance."@en ;
+        rdfs:label "Purity"@en .
+
+
+###  http://w3id.org/reproduceme#RNA
+:RNA rdf:type owl:Class ;
+     rdfs:subClassOf :ExperimentMaterial ;
+     rdfs:comment "Ribonucleic acid (RNA) is a polymeric molecule essential in various biological roles in coding, decoding, regulation, and expression of genes."@en ;
+     rdfs:label "RNA"@en .
+
+
+###  http://w3id.org/reproduceme#RNAInjection
+:RNAInjection rdf:type owl:Class ;
+              rdfs:subClassOf :MaterialPreparationStep ;
+              rdfs:label "RNA Injection"@en .
+
+
+###  http://w3id.org/reproduceme#ROI
+:ROI rdf:type owl:Class ;
+     rdfs:subClassOf :ImageSetting ;
+     rdfs:comment "A four dimensional 'Region of Interest'. If they are not used, and the Image has more than one plane, the entire set of planes is assumed to be included in the ROI."@en ;
+     rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ROI> ;
+     rdfs:label "Region of Interest"@en .
+
+
+###  http://w3id.org/reproduceme#Rating
+:Rating rdf:type owl:Class ;
+        rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+        rdfs:comment "The overall review provided by an agent to a thing."@en ;
+        rdfs:label "Rating"@en .
+
+
+###  http://w3id.org/reproduceme#ReactionCondition
+:ReactionCondition rdf:type owl:Class ;
+                   rdfs:subClassOf :EnvironmentAttribute ;
+                   rdfs:label "Reaction Condition"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#ReadOutRate
+:ReadOutRate rdf:type owl:Class ;
+             rdfs:subClassOf :DetectorSetting ;
+             rdfs:comment "The speed at which the detector can count pixels. This is the bytes per second that can be read from the detector"@en ;
+             rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#DetectorSettings_ReadOutRate> ;
+             rdfs:label "ReadOut Rate"@en .
+
+
+###  http://w3id.org/reproduceme#Reagent
+:Reagent rdf:type owl:Class ;
+         rdfs:subClassOf :ExperimentalData ;
+         rdfs:comment "A chemical or a physical parameter used in an experiment."@en ;
+         rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Reagent> ;
+         rdfs:label "Reagent"@en .
+
+
+###  http://w3id.org/reproduceme#ReagentSetDescription
+:ReagentSetDescription rdf:type owl:Class ;
+                       rdfs:subClassOf :ScreenSetting ;
+                       rdfs:comment "The Pulse mode of the laser."@en ;
+                       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Screen_ReagentSetDescription> ;
+                       rdfs:label "ReagentSet Description"@en .
+
+
+###  http://w3id.org/reproduceme#ReagentSetIdentifier
+:ReagentSetIdentifier rdf:type owl:Class ;
+                      rdfs:subClassOf :ScreenSetting ;
+                      rdfs:label "ReagentSetIdentifier"@en .
+
+
+###  http://w3id.org/reproduceme#RefractiveIndex
+:RefractiveIndex rdf:type owl:Class ;
+                 rdfs:subClassOf :ObjectiveSettings ;
+                 rdfs:comment "The RefractiveIndex is that of the immersion medium."@en ;
+                 rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ObjectiveSettings_RefractiveIndex> ;
+                 rdfs:label "Refractive Index"@en .
+
+
+###  http://w3id.org/reproduceme#RenderingDef
+:RenderingDef rdf:type owl:Class ;
+              rdfs:subClassOf :PixelsSetting ;
+              rdfs:label "Rendering Def"@en .
+
+
+###  http://w3id.org/reproduceme#RenderingModel
+:RenderingModel rdf:type owl:Class ;
+                rdfs:subClassOf :ImageSetting ;
+                rdfs:label "Rendering Model"@en .
+
+
+###  http://w3id.org/reproduceme#RepetitionRate
+:RepetitionRate rdf:type owl:Class ;
+                rdfs:subClassOf :LaserSetting ;
+                rdfs:comment "The is the rate in Hz at which the laser pulses if the Pulse type is 'Repetitive'."@en ;
+                rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Laser_RepetitionRate> ;
+                rdfs:label "Repetition Rate"@en .
+
+
+###  http://w3id.org/reproduceme#ResearchGroup
+:ResearchGroup rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.w3.org/ns/prov#Organization> ;
+               rdfs:comment "Group is an organization which belongs to a department of an institution consisting of people responsible for research and education."^^xsd:string ;
+               rdfs:label "Research Group"@en .
+
+
+###  http://w3id.org/reproduceme#ResearchProject
+:ResearchProject rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.w3.org/ns/prov#Organization> ;
+                 rdfs:comment "A person or collaborative group working on a research plan to achieve certain goals."@en ;
+                 rdfs:label "Research Project"@en .
+
+
+###  http://w3id.org/reproduceme#RestrictionEnzyme
+:RestrictionEnzyme rdf:type owl:Class ;
+                   rdfs:subClassOf :ExperimentMaterial ;
+                   rdfs:comment "A restriction enzyme or restriction endonuclease is an enzyme that cleaves DNA into fragments at or near specific recognition sites within the molecule known as restriction sites."@en ;
+                   rdfs:label "Restriction Enzyme"@en .
+
+
+###  http://w3id.org/reproduceme#RestrictionSite
+:RestrictionSite rdf:type owl:Class ;
+                 rdfs:subClassOf :EnvironmentAttribute ;
+                 rdfs:label "RestrictionSite"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#Result
+:Result rdf:type owl:Class ;
+        rdfs:subClassOf :ExperimentalData ;
+        rdfs:comment "The output of a step."@en ;
+        rdfs:label "Result"@en .
+
+
+###  http://w3id.org/reproduceme#RowNamingConvention
+:RowNamingConvention rdf:type owl:Class ;
+                     rdfs:subClassOf :PlateSetting ;
+                     rdfs:comment "The Convention for Naming rows in plate."@en ;
+                     rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plate_RowNamingConvention> ;
+                     rdfs:label "RowNaming Convention"@en .
+
+
+###  http://w3id.org/reproduceme#Rows
+:Rows rdf:type owl:Class ;
+      rdfs:subClassOf :PlateSetting ;
+      rdfs:comment "The number of rows in the plate."@en ;
+      rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plate_Rows> ;
+      rdfs:label "Rows"@en .
+
+
+###  http://w3id.org/reproduceme#SamplesPerPixel
+:SamplesPerPixel rdf:type owl:Class ;
+                 rdfs:subClassOf :ChannelSetting ;
+                 rdfs:comment "The number of samples the detector takes to form each pixel value."@en ;
+                 rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel_SamplesPerPixel> ;
+                 rdfs:label "Samples Per Pixel"@en .
+
+
+###  http://w3id.org/reproduceme#Screen
+:Screen rdf:type owl:Class ;
+        rdfs:subClassOf :Image ;
+        rdfs:comment "The Screen element is a grouping for Plates."@en ;
+        rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Screen> ;
+        rdfs:label "Screen"@en .
+
+
+###  http://w3id.org/reproduceme#ScreenSetting
+:ScreenSetting rdf:type owl:Class ;
+               rdfs:subClassOf :ImageSetting ;
+               rdfs:comment "The properties of a High Content Screen."@en ;
+               rdfs:label "Screen Setting"@en .
+
+
+###  http://w3id.org/reproduceme#Script
+:Script rdf:type owl:Class ;
+        rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ,
+                        :ExperimentalData ;
+        rdfs:comment "A computer program written to perform a task in a scripting language."@en ;
+        rdfs:label "Script"@en .
+
+
+###  http://w3id.org/reproduceme#Sequencing
+:Sequencing rdf:type owl:Class ;
+            rdfs:subClassOf :MaterialPreparationStep ;
+            rdfs:label "Sequencing"@en .
+
+
+###  http://w3id.org/reproduceme#SerialNumber
+:SerialNumber rdf:type owl:Class ;
+              rdfs:subClassOf :ManufactuerSpec ;
+              rdfs:comment "The serial number of the component."@en ;
+              rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ManufacturerSpec_SerialNumber> ;
+              rdfs:label "Serial Number"@en .
+
+
+###  http://w3id.org/reproduceme#Session
+:Session rdf:type owl:Class ;
+         rdfs:subClassOf <http://purl.org/net/p-plan#Activity> ;
+         rdfs:comment "A period of activity between a user is logged in and logged out of a system. For example, A OMERO session, JupyterNotebook session."@en ;
+         rdfs:label "Session"@en .
+
+
+###  http://w3id.org/reproduceme#SessionSetting
+:SessionSetting rdf:type owl:Class ;
+                rdfs:subClassOf :Setting ;
+                rdfs:comment "A setting of a system in a session."@en ;
+                rdfs:label "Session Setting"@en .
+
+
+###  http://w3id.org/reproduceme#Setting
+:Setting rdf:type owl:Class ;
+         rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ,
+                         <http://www.w3.org/ns/prov#Entity> ;
+         rdfs:comment "The parameters or the situation in which the experiment was performed."@en ;
+         rdfs:label "Setting"@en .
+
+
+###  http://w3id.org/reproduceme#Shape
+:Shape rdf:type owl:Class ;
+       rdfs:subClassOf :ImageSetting ;
+       rdfs:comment """The shape element contains a single specific ROI shape and links that to any channels, and a timepoint and a z-section. It also
+records any transform applied to the ROI shape."""@en ;
+       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Shape> ;
+       rdfs:label "Shape"@en .
+
+
+###  http://w3id.org/reproduceme#SignificantBits
+:SignificantBits rdf:type owl:Class ;
+                 rdfs:subClassOf :PixelsSetting ;
+                 rdfs:comment "The number of bits within the type storing each pixel that are significant. For e.g. you can store 12 bit data within a 16 bit type."@en ;
+                 rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_SignificantBits> ;
+                 rdfs:label "Significant Bits"@en .
+
+
+###  http://w3id.org/reproduceme#Size
+:Size rdf:type owl:Class ;
+      rdfs:subClassOf :Setting ;
+      rdfs:comment "A dimension of a thing."@en ;
+      rdfs:label "Size"@en .
+
+
+###  http://w3id.org/reproduceme#SizeC
+:SizeC rdf:type owl:Class ;
+       rdfs:subClassOf :PixelsSetting ;
+       rdfs:comment "Dimensional size of pixel data array"@en ;
+       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_SizeC> ;
+       rdfs:label "SizeC"@en .
+
+
+###  http://w3id.org/reproduceme#SizeT
+:SizeT rdf:type owl:Class ;
+       rdfs:subClassOf :PixelsSetting ;
+       rdfs:comment "Dimensional size of pixel data array"@en ;
+       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_SizeT> ;
+       rdfs:label "SizeT"@en .
+
+
+###  http://w3id.org/reproduceme#SizeX
+:SizeX rdf:type owl:Class ;
+       rdfs:subClassOf :PixelsSetting ;
+       rdfs:comment "Dimensional size of pixel data array"@en ;
+       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_SizeX> ;
+       rdfs:label "SizeX"@en .
+
+
+###  http://w3id.org/reproduceme#SizeY
+:SizeY rdf:type owl:Class ;
+       rdfs:subClassOf :PixelsSetting ;
+       rdfs:comment "Dimensional size of pixel data array"@en ;
+       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_SizeY> ;
+       rdfs:label "SizeY"@en .
+
+
+###  http://w3id.org/reproduceme#SizeZ
+:SizeZ rdf:type owl:Class ;
+       rdfs:subClassOf :PixelsSetting ;
+       rdfs:comment "Dimensional size of pixel data array"@en ;
+       rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_SizeZ> ;
+       rdfs:label "SizeZ"@en .
+
+
+###  http://w3id.org/reproduceme#Solution
+:Solution rdf:type owl:Class ;
+          rdfs:subClassOf :ExperimentMaterial ;
+          rdfs:comment """A homogeneous mixture of substances.
+For example, a chemical solution used in an experiment."""@en ;
+          rdfs:label "Solution"@en .
+
+
+###  http://w3id.org/reproduceme#Solvent
+:Solvent rdf:type owl:Class ;
+         rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+         rdfs:comment "A substance to dissolve other substances."@en ;
+         rdfs:label "Solvent"@en .
+
+
+###  http://w3id.org/reproduceme#Source
+:Source rdf:type owl:Class ;
+        rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+        rdfs:label "Source"@en .
+
+
+###  http://w3id.org/reproduceme#Specimen
+:Specimen rdf:type owl:Class ;
+          rdfs:subClassOf :ExperimentMaterial ;
+          rdfs:comment "Specimen is a part of a thing used in an Experiment or a study to determine the character of the whole thing."@en ;
+          rdfs:label "Specimen"@en .
+
+
+###  http://w3id.org/reproduceme#StageLabel
+:StageLabel rdf:type owl:Class ;
+            rdfs:subClassOf :ImageSetting ;
+            rdfs:comment "The StageLabel is used to specify a name and position for a stage position in the microscope's reference frame."@en ;
+            rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#StageLabel> ;
+            rdfs:label "Stage Label"@en .
+
+
+###  http://w3id.org/reproduceme#StandardOperatingProcedure
+:StandardOperatingProcedure rdf:type owl:Class ;
+                            rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ;
+                            rdfs:comment "A set of steb-by-step instructions  to carry out a complex routine."@en ;
+                            rdfs:label "Standard Operating Procedure"@en .
+
+
+###  http://w3id.org/reproduceme#Status
+:Status rdf:type owl:Class ;
+        rdfs:subClassOf :PlateSetting ;
+        rdfs:comment "A textual annotation of the current state of the plate with respect to the experiment work-flow; e.g. 1. Seed cell: done; 2. Transfection: done;      3. Gel doc: todo."@en ;
+        rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plate_Status> ;
+        rdfs:label "Plate Status"@en .
+
+
+###  http://w3id.org/reproduceme#StockSolution
+:StockSolution rdf:type owl:Class ;
+               rdfs:subClassOf :Solution ;
+               rdfs:label "Stock Solution"@en .
+
+
+###  http://w3id.org/reproduceme#StructuralFormula
+:StructuralFormula rdf:type owl:Class ;
+                   rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+                   rdfs:comment "The Structural Formula of a chemical substance."@en ;
+                   rdfs:label "Structural Formula"@en .
+
+
+###  http://w3id.org/reproduceme#SupportedFileFormat
+:SupportedFileFormat rdf:type owl:Class ;
+                     rdfs:subClassOf :BioFormats ;
+                     rdfs:comment "The file formats supported by BIO-Format"@en ;
+                     rdfs:label "Supported File Format"@en .
+
+
+###  http://w3id.org/reproduceme#Tag
+:Tag rdf:type owl:Class ;
+     rdfs:subClassOf :ExperimentalData ;
+     rdfs:comment """A label attached to something to identify it.
+For example, an experiment tag to identify and categorize the experiments."""@en ;
+     rdfs:label "Tag"@en .
+
+
+###  http://w3id.org/reproduceme#Tagging
+:Tagging rdf:type owl:Class ;
+         rdfs:subClassOf :ExperimentSetup ;
+         rdfs:comment "The process of tagging with tags."@en ;
+         rdfs:label "Tagging"@en .
+
+
+###  http://w3id.org/reproduceme#Temperature
+:Temperature rdf:type owl:Class ;
+             rdfs:subClassOf :ImagingEnvironment ;
+             rdfs:comment "The temperature of the imaging environment"@en ;
+             rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ImagingEnvironment_Temperature> ;
+             rdfs:label "Temperature"@en .
+
+
+###  http://w3id.org/reproduceme#TheC
+:TheC rdf:type owl:Class ;
+      rdfs:subClassOf :PlaneSetting ;
+      rdfs:comment "The channel the plane is for."@en ;
+      rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plane_TheC> ;
+      rdfs:label "TheC"@en .
+
+
+###  http://w3id.org/reproduceme#TheT
+:TheT rdf:type owl:Class ;
+      rdfs:subClassOf :PlaneSetting ;
+      rdfs:comment "The timepoint the plane is for."@en ;
+      rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plane_TheT> ;
+      rdfs:label "TheT"@en .
+
+
+###  http://w3id.org/reproduceme#TheZ
+:TheZ rdf:type owl:Class ;
+      rdfs:subClassOf :PlaneSetting ;
+      rdfs:comment "The timepoint the plane is for."@en ;
+      rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plane_TheZ> ;
+      rdfs:label "TheZ"@en .
+
+
+###  http://w3id.org/reproduceme#Thumbnail
+:Thumbnail rdf:type owl:Class ;
+           rdfs:subClassOf :ImageSetting ;
+           rdfs:comment "A short representation of an entity."@en ;
+           rdfs:label "Thumbnail"@en .
+
+
+###  http://w3id.org/reproduceme#TimeIncrement
+:TimeIncrement rdf:type owl:Class ;
+               rdfs:subClassOf :PixelsSetting ;
+               rdfs:comment """TimeIncrement is used for time series that have a global timing specification instead of per-timepoint timing info.
+For example in a video stream."""@en ;
+               rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels_TimeIncrement> ;
+               rdfs:label "TimeIncrement"@en .
+
+
+###  http://w3id.org/reproduceme#Transfection
+:Transfection rdf:type owl:Class ;
+              rdfs:subClassOf :MaterialPreparationStep ;
+              rdfs:label "Transfection"@en .
+
+
+###  http://w3id.org/reproduceme#Transmittance
+:Transmittance rdf:type owl:Class ;
+               rdfs:subClassOf :TransmittanceRange ;
+               rdfs:comment "The amount of light the filter transmits at a maximum [units:none] A fraction, as a value from 0.0 to 1.0."@en ;
+               rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#TransmittanceRange_Transmittance> ;
+               rdfs:label "Transmittance"@en .
+
+
+###  http://w3id.org/reproduceme#TransmittanceRange
+:TransmittanceRange rdf:type owl:Class ;
+                    rdfs:subClassOf :FilterSetting ;
+                    rdfs:comment "The range of wavelengths that are transmitted by the filter."@en ;
+                    rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#TransmittanceRange> ;
+                    rdfs:label "Transmittance Range"@en .
+
+
+###  http://w3id.org/reproduceme#Trial
+:Trial rdf:type owl:Class ;
+       rdfs:subClassOf <http://purl.org/net/p-plan#Activity> ;
+       rdfs:comment """A run or execution of an activity.
+For example, one execution of a script."""@en ;
+       rdfs:label "Trial"@en .
+
+
+###  http://w3id.org/reproduceme#Unit
+:Unit rdf:type owl:Class ;
+      rdfs:subClassOf :Setting ;
+      rdfs:comment "A standard quantity of measurement."@en ;
+      rdfs:label "Unit"@en .
+
+
+###  http://w3id.org/reproduceme#Vector
+:Vector rdf:type owl:Class ;
+        rdfs:subClassOf :ExperimentMaterial ;
+        rdfs:comment "A DNA molecule used as a vehicle to artificially carry foreign genetic material into another cell."@en ;
+        rdfs:label "Vector"@en .
+
+
+###  http://w3id.org/reproduceme#Verification
+:Verification rdf:type owl:Class ;
+              rdfs:subClassOf :MaterialPreparationStep ;
+              rdfs:label "Verification"@en .
+
+
+###  http://w3id.org/reproduceme#Version
+:Version rdf:type owl:Class ;
+         rdfs:subClassOf :Setting ;
+         rdfs:label "Version"@en .
+
+
+###  http://w3id.org/reproduceme#Voltage
+:Voltage rdf:type owl:Class ;
+         rdfs:subClassOf :DetectorSetting ;
+         rdfs:comment "The Voltage of the detector"@en ;
+         rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Detector_Voltage> ;
+         rdfs:label "Voltage"@en .
+
+
+###  http://w3id.org/reproduceme#Wavelength
+:Wavelength rdf:type owl:Class ;
+            rdfs:subClassOf :LaserSetting ,
+                            :LightSettings ;
+            rdfs:comment "The Wavelength of the light source."@en ;
+            rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#LightSourceSettings_Wavelength> ;
+            rdfs:label "Wavelength"@en .
+
+
+###  http://w3id.org/reproduceme#Well
+:Well rdf:type owl:Class ;
+      rdfs:subClassOf :Image ;
+      rdfs:comment """A Well is a component of the Well/Plate/Screen construct to describe screening applications.
+A Well has a number of WellSample elements that link to the Images collected in this well."""@en ;
+      rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Well> ;
+      rdfs:label "Well"@en .
+
+
+###  http://w3id.org/reproduceme#WellOriginX
+:WellOriginX rdf:type owl:Class ;
+             rdfs:subClassOf :PlateSetting ;
+             rdfs:comment """This defines the X position to use for the origin of the fields (individual images) taken in a well. It is used with the X in the WellSample to display the fields
+            in the correct position relative to each other. Each Well in the plate has the same well origin."""@en ;
+             rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plate_WellOriginX> ;
+             rdfs:label "WellOriginX"@en .
+
+
+###  http://w3id.org/reproduceme#WellOriginY
+:WellOriginY rdf:type owl:Class ;
+             rdfs:subClassOf :PlateSetting ;
+             rdfs:comment """This defines the Y position to use for the origin of the fields (individual images) taken in a well. It is used with the Y in the WellSample to display the fields
+            in the correct position relative to each other. Each Well in the plate has the same well origin."""@en ;
+             rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Plate_WellOriginY> ;
+             rdfs:label "WellOriginY"@en .
+
+
+###  http://w3id.org/reproduceme#WellSample
+:WellSample rdf:type owl:Class ;
+            rdfs:subClassOf :Image ;
+            rdfs:comment "WellSample is an individual image that has been captured within a Well."@en ;
+            rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#WellSample> ;
+            rdfs:label "Well Sample"@en .
+
+
+###  http://w3id.org/reproduceme#WorkingDistance
+:WorkingDistance rdf:type owl:Class ;
+                 rdfs:subClassOf :ObjectiveSettings ;
+                 rdfs:comment "The working distance of the lens."@en ;
+                 rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective_WorkingDistance> ;
+                 rdfs:label "Working Distance"@en .
+
+
+###  http://w3id.org/reproduceme#Zoom
+:Zoom rdf:type owl:Class ;
+      rdfs:subClassOf :DetectorSetting ;
+      rdfs:comment "The fixed Zoom for a detector."@en ;
+      rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Detector_Zoom> ;
+      rdfs:label "Zoom"@en .
+
+
+###  http://w3id.org/reproduceme#cDNASource
+:cDNASource rdf:type owl:Class ;
+            rdfs:subClassOf :ExperimentMaterial ;
+            rdfs:comment "Complementary DNA source"@en ;
+            rdfs:label "cDNA Source"@en .
+
+
+###  http://w3id.org/reproduceme#pH
+:pH rdf:type owl:Class ;
+    rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+    rdfs:comment "A numerical scale used to express the acidity or alkalinity of a solution."@en ;
+    rdfs:label "pH"@en .
+
+
+###  https://w3id.org/reproduceme#Author
+<https://w3id.org/reproduceme#Author> rdf:type owl:Class ;
+                                      rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ,
+                                                      <http://www.w3.org/ns/prov#Role> ;
+                                      rdfs:comment "The person who authors a piece of work."@en ;
+                                      rdfs:label "Author"@en .
+
+
+###  https://w3id.org/reproduceme#CellLine
+<https://w3id.org/reproduceme#CellLine> rdf:type owl:Class ;
+                                        rdfs:subClassOf :ExperimentMaterial ;
+                                        rdfs:label "Cell Line"@en .
+
+
+###  https://w3id.org/reproduceme#ExperimentalCondition
+<https://w3id.org/reproduceme#ExperimentalCondition> rdf:type owl:Class ;
+                                                     rdfs:subClassOf :Setting ;
+                                                     rdfs:comment "The attributes or the conditions while an experiment is performed."@en ;
+                                                     rdfs:label "Experimental Condition"@en .
+
+
+###  https://w3id.org/reproduceme#HighContentScreening
+<https://w3id.org/reproduceme#HighContentScreening> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
+                                                    rdfs:comment "A method that is used in biological research and drug discovery to identify substances such as small molecules, peptides, or RNAi that alter the phenotype of a cell in a desired manner"@en ;
+                                                    rdfs:isDefinedBy "https://en.wikipedia.org/wiki/High-content_screening"@en ;
+                                                    rdfs:label "High Content Screening"@en .
+
+
+###  https://w3id.org/reproduceme#License
+<https://w3id.org/reproduceme#License> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+                                       rdfs:comment "An official permission required to perform or own something."@en ;
+                                       rdfs:label "License"@en .
+
+
+###  https://w3id.org/reproduceme#ProcessedData
+<https://w3id.org/reproduceme#ProcessedData> rdf:type owl:Class ;
+                                             rdfs:subClassOf :ExperimentalData ;
+                                             rdfs:comment "The data which is modified and processed for analysis or other experiments."@en ;
+                                             rdfs:label "Processed Data"@en .
+
+
+###  https://w3id.org/reproduceme#Protocol
+<https://w3id.org/reproduceme#Protocol> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ;
+                                        rdfs:comment "A set of instructions needed to perform an activity."@en ;
+                                        rdfs:label "Protocol"@en .
+
+
+###  https://w3id.org/reproduceme#RawData
+<https://w3id.org/reproduceme#RawData> rdf:type owl:Class ;
+                                       rdfs:subClassOf :ExperimentalData ;
+                                       rdfs:comment "The data directly generated from an experiment without any modification or processing."@en ;
+                                       rdfs:label "Raw Data"@en .
+
+
+###  https://w3id.org/reproduceme#Study
+<https://w3id.org/reproduceme#Study> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://purl.org/net/p-plan#Plan> .
+
+
+###  https://w3id.org/reproduceme#SubExperiment
+<https://w3id.org/reproduceme#SubExperiment> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
+                                             rdfs:label "SubExperiment"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://w3id.org/reproduceme#AIM
+:AIM rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "AIM"@en .
+
+
+###  http://w3id.org/reproduceme#APD
+:APD rdf:type owl:NamedIndividual ,
+              :DetectorType ;
+     rdfs:label "APD"@en .
+
+
+###  http://w3id.org/reproduceme#ARF
+:ARF rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "Axon Raw Format (ARF)"@en .
+
+
+###  http://w3id.org/reproduceme#AVI
+:AVI rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "AVI (Audio Video Interleave)"@en .
+
+
+###  http://w3id.org/reproduceme#Alicona
+:Alicona rdf:type owl:NamedIndividual ,
+                  :SupportedFileFormat ;
+         rdfs:label "Alicona 3D"@en .
+
+
+###  http://w3id.org/reproduceme#AmershamBiosciencesGel
+:AmershamBiosciencesGel rdf:type owl:NamedIndividual ,
+                                 :SupportedFileFormat ;
+                        rdfs:label "Amersham Biosciences Gel"@en .
+
+
+###  http://w3id.org/reproduceme#AmiraMesh
+:AmiraMesh rdf:type owl:NamedIndividual ,
+                    :SupportedFileFormat ;
+           rdfs:label "Amira Mesh"@en .
+
+
+###  http://w3id.org/reproduceme#AmnisFlowSight
+:AmnisFlowSight rdf:type owl:NamedIndividual ,
+                         :SupportedFileFormat ;
+                rdfs:label "Amnis FlowSight"@en .
+
+
+###  http://w3id.org/reproduceme#AnalogVideo
+:AnalogVideo rdf:type owl:NamedIndividual ,
+                      :DetectorType ;
+             rdfs:label "AnalogVideo"@en .
+
+
+###  http://w3id.org/reproduceme#Analyze7.5
+:Analyze7.5 rdf:type owl:NamedIndividual ,
+                     :SupportedFileFormat ;
+            rdfs:label "Analyze 7.5"@en .
+
+
+###  http://w3id.org/reproduceme#AndorBio-ImagingDivisionTIFF
+:AndorBio-ImagingDivisionTIFF rdf:type owl:NamedIndividual ,
+                                       :SupportedFileFormat ;
+                              rdfs:label "Andor Bio-Imaging Division (ABD) TIFF"@en .
+
+
+###  http://w3id.org/reproduceme#AndorSIF
+:AndorSIF rdf:type owl:NamedIndividual ,
+                   :SupportedFileFormat ;
+          rdfs:label "Andor SIF"@en .
+
+
+###  http://w3id.org/reproduceme#AnimatedPNG
+:AnimatedPNG rdf:type owl:NamedIndividual ,
+                      :SupportedFileFormat ;
+             rdfs:label "Animated PNG"@en .
+
+
+###  http://w3id.org/reproduceme#AperioAFI
+:AperioAFI rdf:type owl:NamedIndividual ,
+                    :SupportedFileFormat ;
+           rdfs:label "Aperio AFI"@en .
+
+
+###  http://w3id.org/reproduceme#AperioSVSTIFF
+:AperioSVSTIFF rdf:type owl:NamedIndividual ,
+                        :SupportedFileFormat ;
+               rdfs:label "Aperio SVS TIFF"@en .
+
+
+###  http://w3id.org/reproduceme#AppliedPrecisionCellWorX
+:AppliedPrecisionCellWorX rdf:type owl:NamedIndividual ,
+                                   :SupportedFileFormat ;
+                          rdfs:label "Applied Precision CellWorX"@en .
+
+
+###  http://w3id.org/reproduceme#BDPathway
+:BDPathway rdf:type owl:NamedIndividual ,
+                    :SupportedFileFormat ;
+           rdfs:label "BD Pathway"@en .
+
+
+###  http://w3id.org/reproduceme#BMP
+:BMP rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "BMP"@en .
+
+
+###  http://w3id.org/reproduceme#BandPass
+:BandPass rdf:type owl:NamedIndividual ,
+                   :FilterType ;
+          rdfs:label "BandPass"@en .
+
+
+###  http://w3id.org/reproduceme#Bio-Rad
+:Bio-Rad rdf:type owl:NamedIndividual ,
+                  :SupportedFileFormat ;
+         rdfs:label "BioRad"@en .
+
+
+###  http://w3id.org/reproduceme#Bio-RadGel
+:Bio-RadGel rdf:type owl:NamedIndividual ,
+                     :SupportedFileFormat ;
+            rdfs:label "Bio-Rad Gel"@en .
+
+
+###  http://w3id.org/reproduceme#Bio-RadSCN
+:Bio-RadSCN rdf:type owl:NamedIndividual ,
+                     :SupportedFileFormat ;
+            rdfs:label "Bio-Rad SCN"@en .
+
+
+###  http://w3id.org/reproduceme#BrightField
+:BrightField rdf:type owl:NamedIndividual ,
+                      :AcquisitionMode ;
+             rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel_AcquisitionMode> ;
+             rdfs:label "BrightField"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#Brightfield
+:Brightfield rdf:type owl:NamedIndividual ,
+                      :ContrastMethod ;
+             rdfs:label "BrightField"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#BrukerMRI
+:BrukerMRI rdf:type owl:NamedIndividual ,
+                    :SupportedFileFormat ;
+           rdfs:label "Bruker MRI"@en .
+
+
+###  http://w3id.org/reproduceme#Burleigh
+:Burleigh rdf:type owl:NamedIndividual ,
+                   :SupportedFileFormat ;
+          rdfs:label "Burleigh"@en .
+
+
+###  http://w3id.org/reproduceme#CCD
+:CCD rdf:type owl:NamedIndividual ,
+              :DetectorType ;
+     rdfs:label "CCD"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#CanonDNG
+:CanonDNG rdf:type owl:NamedIndividual ,
+                   :SupportedFileFormat ;
+          rdfs:label "Canon DNG"@en .
+
+
+###  http://w3id.org/reproduceme#CellH5
+:CellH5 rdf:type owl:NamedIndividual ,
+                 :SupportedFileFormat ;
+        rdfs:label "CellH5"@en .
+
+
+###  http://w3id.org/reproduceme#CellVoyager
+:CellVoyager rdf:type owl:NamedIndividual ,
+                      :SupportedFileFormat ;
+             rdfs:label "CellVoyager"@en .
+
+
+###  http://w3id.org/reproduceme#Cellomics
+:Cellomics rdf:type owl:NamedIndividual ,
+                    :SupportedFileFormat ;
+           rdfs:label "Cellomics"@en .
+
+
+###  http://w3id.org/reproduceme#Colocalization
+:Colocalization rdf:type owl:NamedIndividual ,
+                         :ExperimentType ;
+                rdfs:label "Colocalization"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#CorrelationSpectroscopy
+:CorrelationSpectroscopy rdf:type owl:NamedIndividual ,
+                                  :DetectorType ;
+                         rdfs:label "CorrelationSpectroscopy"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#DIC
+:DIC rdf:type owl:NamedIndividual ,
+              :ContrastMethod ;
+     rdfs:label "DIC"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#DICOM
+:DICOM rdf:type owl:NamedIndividual ,
+                :SupportedFileFormat ;
+       rdfs:label "DICOM"@en .
+
+
+###  http://w3id.org/reproduceme#Darkfield
+:Darkfield rdf:type owl:NamedIndividual ,
+                    :ContrastMethod ;
+           rdfs:label "Darkfield"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#DeltaVision
+:DeltaVision rdf:type owl:NamedIndividual ,
+                      :SupportedFileFormat ;
+             rdfs:label "DeltaVision"@en .
+
+
+###  http://w3id.org/reproduceme#DichroicFilter
+:DichroicFilter rdf:type owl:NamedIndividual ,
+                         :FilterType ;
+                rdfs:label "DichroicFilter"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#Dissection
+:Dissection rdf:type owl:NamedIndividual ,
+                     :MicroscopeType ;
+            rdfs:label "Dissection"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#Dye
+:Dye rdf:type owl:NamedIndividual ,
+              :LaserType ;
+     rdfs:label "Dye"@en .
+
+
+###  http://w3id.org/reproduceme#EBCCD
+:EBCCD rdf:type owl:NamedIndividual ,
+                :DetectorType ;
+       rdfs:label "EBCCD"@en .
+
+
+###  http://w3id.org/reproduceme#ECAT7
+:ECAT7 rdf:type owl:NamedIndividual ,
+                :SupportedFileFormat ;
+       rdfs:label "ECAT7"@en .
+
+
+###  http://w3id.org/reproduceme#EM-CCD
+:EM-CCD rdf:type owl:NamedIndividual ,
+                 :DetectorType ;
+        rdfs:label "EM-CCD"@en .
+
+
+###  http://w3id.org/reproduceme#EPS
+:EPS rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "EPS (Encapsulated PostScript)"@en .
+
+
+###  http://w3id.org/reproduceme#Electrophysiology
+:Electrophysiology rdf:type owl:NamedIndividual ,
+                            :ExperimentType ;
+                   rdfs:label "Electrophysiology"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#ElectrophysiologyMicroscope
+:ElectrophysiologyMicroscope rdf:type owl:NamedIndividual ,
+                                      :MicroscopeType ;
+                             rdfs:label "ElectrophysiologyMicroscope"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#Epifluorescence
+:Epifluorescence rdf:type owl:NamedIndividual ,
+                          :Illumination ;
+                 rdfs:label "Epifluorescence"@en .
+
+
+###  http://w3id.org/reproduceme#EvotecPerkinElmerOperaFlex
+:EvotecPerkinElmerOperaFlex rdf:type owl:NamedIndividual ,
+                                     :SupportedFileFormat ;
+                            rdfs:label "Evotec/PerkinElmer Opera Flex"@en .
+
+
+###  http://w3id.org/reproduceme#Excimer
+:Excimer rdf:type owl:NamedIndividual ,
+                  :LaserType ;
+         rdfs:label "Excimer"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#FEI
+:FEI rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "FEI"@en .
+
+
+###  http://w3id.org/reproduceme#FEITIFF
+:FEITIFF rdf:type owl:NamedIndividual ,
+                  :SupportedFileFormat ;
+         rdfs:label "FEI TIFF"@en .
+
+
+###  http://w3id.org/reproduceme#FISH
+:FISH rdf:type owl:NamedIndividual ,
+               :ExperimentType ;
+      rdfs:label "FISH"@en .
+
+
+###  http://w3id.org/reproduceme#FITS
+:FITS rdf:type owl:NamedIndividual ,
+               :SupportedFileFormat ;
+      rdfs:label "FITS (Flexible Image Transport System)"@en .
+
+
+###  http://w3id.org/reproduceme#FLIP
+:FLIP rdf:type owl:NamedIndividual ,
+               :MicrobeamManipulationType ;
+      rdfs:label "FLIP"@en .
+
+
+###  http://w3id.org/reproduceme#FP
+:FP rdf:type owl:NamedIndividual ,
+             :ExperimentType ;
+    rdfs:label "FP"@en .
+
+
+###  http://w3id.org/reproduceme#FRAP
+:FRAP rdf:type owl:NamedIndividual ,
+               :MicrobeamManipulationType ;
+      rdfs:label "FRAP"@en .
+
+
+###  http://w3id.org/reproduceme#FRET
+:FRET rdf:type owl:NamedIndividual ,
+               :ExperimentType ;
+      rdfs:label "FRET"@en .
+
+
+###  http://w3id.org/reproduceme#FSM
+:FSM rdf:type owl:NamedIndividual ,
+              :AcquisitionMode ;
+     rdfs:label "FSM"@en .
+
+
+###  http://w3id.org/reproduceme#FTIR
+:FTIR rdf:type owl:NamedIndividual ,
+               :DetectorType ;
+      rdfs:label "FTIR"@en .
+
+
+###  http://w3id.org/reproduceme#File-Size-64
+:File-Size-64 rdf:type owl:NamedIndividual ,
+                       :ChecksumAlgorithm ;
+              rdfs:label "File-Size-64"@en .
+
+
+###  http://w3id.org/reproduceme#Fluorescence
+:Fluorescence rdf:type owl:NamedIndividual ,
+                       :ContrastMethod ;
+              rdfs:label "Fluorescence"@en .
+
+
+###  http://w3id.org/reproduceme#FluorescenceCorrelationSpectroscopy
+:FluorescenceCorrelationSpectroscopy rdf:type owl:NamedIndividual ,
+                                              :AcquisitionMode ;
+                                     rdfs:label "Fluorescence Correlation Spectroscopy"^^xsd:string .
+
+
+###  http://w3id.org/reproduceme#FluorescenceLifetime
+:FluorescenceLifetime rdf:type owl:NamedIndividual ,
+                               :AcquisitionMode ;
+                      rdfs:label "Fluorescence Lifetime"@en .
+
+
+###  http://w3id.org/reproduceme#FluorescenceLifetimeExperiment
+:FluorescenceLifetimeExperiment rdf:type owl:NamedIndividual ,
+                                         :ExperimentType ;
+                                rdfs:label "Fluorescence Lifetime Experiment"@en .
+
+
+###  http://w3id.org/reproduceme#FourDPlus
+:FourDPlus rdf:type owl:NamedIndividual ,
+                    :ExperimentType ;
+           rdfs:label "FourDPlus"@en .
+
+
+###  http://w3id.org/reproduceme#FreeElectron
+:FreeElectron rdf:type owl:NamedIndividual ,
+                       :LaserType ;
+              rdfs:label "FreeElectron"@en .
+
+
+###  http://w3id.org/reproduceme#GIF
+:GIF rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "GIF (Graphics Interchange Format)"@en .
+
+
+###  http://w3id.org/reproduceme#Gas
+:Gas rdf:type owl:NamedIndividual ,
+              :LaserType ;
+     rdfs:label "Gas"@en .
+
+
+###  http://w3id.org/reproduceme#GatanDigitalMicrograph
+:GatanDigitalMicrograph rdf:type owl:NamedIndividual ,
+                                 :SupportedFileFormat ;
+                        rdfs:label "Gatan Digital Micrograph"@en .
+
+
+###  http://w3id.org/reproduceme#GatanDigitalMicrograph2
+:GatanDigitalMicrograph2 rdf:type owl:NamedIndividual ,
+                                  :SupportedFileFormat ;
+                         rdfs:label "Gatan Digital Micrograph 2"@en .
+
+
+###  http://w3id.org/reproduceme#Halogen
+:Halogen rdf:type owl:NamedIndividual ,
+                  :FilamentType ;
+         rdfs:label "Halogen"@en .
+
+
+###  http://w3id.org/reproduceme#HamamatsuAquacosmosNAF
+:HamamatsuAquacosmosNAF rdf:type owl:NamedIndividual ,
+                                 :SupportedFileFormat ;
+                        rdfs:label "Hamamatsu Aquacosmos NAF"@en .
+
+
+###  http://w3id.org/reproduceme#HamamatsuHIS
+:HamamatsuHIS rdf:type owl:NamedIndividual ,
+                       :SupportedFileFormat ;
+              rdfs:label "Hamamatsu HIS"@en .
+
+
+###  http://w3id.org/reproduceme#HamamatsuNDPIS
+:HamamatsuNDPIS rdf:type owl:NamedIndividual ,
+                         :SupportedFileFormat ;
+                rdfs:label "Hamamatsu ndpi"@en .
+
+
+###  http://w3id.org/reproduceme#HamamatsuVMS
+:HamamatsuVMS rdf:type owl:NamedIndividual ,
+                       :SupportedFileFormat ;
+              rdfs:label "Hamamatsu VMS"@en .
+
+
+###  http://w3id.org/reproduceme#Hg
+:Hg rdf:type owl:NamedIndividual ,
+             :ArcType ;
+    rdfs:label "Hg"@en .
+
+
+###  http://w3id.org/reproduceme#HgXe
+:HgXe rdf:type owl:NamedIndividual ,
+               :ArcType ;
+      rdfs:label "HgXe"@en .
+
+
+###  http://w3id.org/reproduceme#HitachiS-4800
+:HitachiS-4800 rdf:type owl:NamedIndividual ,
+                        :SupportedFileFormat ;
+               rdfs:label "Hitachi S-4800"@en .
+
+
+###  http://w3id.org/reproduceme#HoffmanModulation
+:HoffmanModulation rdf:type owl:NamedIndividual ,
+                            :ContrastMethod ;
+                   rdfs:label "HoffmanModulation"@en .
+
+
+###  http://w3id.org/reproduceme#I2I
+:I2I rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "I2I"@en .
+
+
+###  http://w3id.org/reproduceme#ICS
+:ICS rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "ICS (Image Cytometry Standard)"@en .
+
+
+###  http://w3id.org/reproduceme#IMAGIC
+:IMAGIC rdf:type owl:NamedIndividual ,
+                 :SupportedFileFormat ;
+        rdfs:label "IMAGIC"@en .
+
+
+###  http://w3id.org/reproduceme#IMOD
+:IMOD rdf:type owl:NamedIndividual ,
+               :SupportedFileFormat ;
+      rdfs:label "IMOD"@en .
+
+
+###  http://w3id.org/reproduceme#INR
+:INR rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "INR"@en .
+
+
+###  http://w3id.org/reproduceme#IPLab
+:IPLab rdf:type owl:NamedIndividual ,
+                :SupportedFileFormat ;
+       rdfs:label "IPLab"@en .
+
+
+###  http://w3id.org/reproduceme#IPW
+:IPW rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "ImagePro Workspace"@en .
+
+
+###  http://w3id.org/reproduceme#IVision
+:IVision rdf:type owl:NamedIndividual ,
+                  :SupportedFileFormat ;
+         rdfs:label "IVision"@en .
+
+
+###  http://w3id.org/reproduceme#Imacon
+:Imacon rdf:type owl:NamedIndividual ,
+                 :SupportedFileFormat ;
+        rdfs:label "Imacon"@en .
+
+
+###  http://w3id.org/reproduceme#ImageProSequence
+:ImageProSequence rdf:type owl:NamedIndividual ,
+                           :SupportedFileFormat ;
+                  rdfs:label "ImagePro Sequence"@en .
+
+
+###  http://w3id.org/reproduceme#Imaris
+:Imaris rdf:type owl:NamedIndividual ,
+                 :SupportedFileFormat ;
+        rdfs:label "Imaris"@en .
+
+
+###  http://w3id.org/reproduceme#Immunocytochemistry
+:Immunocytochemistry rdf:type owl:NamedIndividual ,
+                              :ExperimentType ;
+                     rdfs:label "Immunocytochemistry"@en .
+
+
+###  http://w3id.org/reproduceme#Immunofluorescence
+:Immunofluorescence rdf:type owl:NamedIndividual ,
+                             :ExperimentType ;
+                    rdfs:label "Immunofluorescence"@en .
+
+
+###  http://w3id.org/reproduceme#ImprovisionOpenlabRaw
+:ImprovisionOpenlabRaw rdf:type owl:NamedIndividual ,
+                                :SupportedFileFormat ;
+                       rdfs:label "Improvision Openlab Raw"@en .
+
+
+###  http://w3id.org/reproduceme#ImprovisionTIFF
+:ImprovisionTIFF rdf:type owl:NamedIndividual ,
+                          :SupportedFileFormat ;
+                 rdfs:label "ImprovisionTIFF"@en .
+
+
+###  http://w3id.org/reproduceme#ImspectorOBF
+:ImspectorOBF rdf:type owl:NamedIndividual ,
+                       :SupportedFileFormat ;
+              rdfs:label "Imspector OBF"@en .
+
+
+###  http://w3id.org/reproduceme#InCell
+:InCell rdf:type owl:NamedIndividual ,
+                 :SupportedFileFormat ;
+        rdfs:label "InCell 1000/2000"@en .
+
+
+###  http://w3id.org/reproduceme#InCell3000
+:InCell3000 rdf:type owl:NamedIndividual ,
+                     :SupportedFileFormat ;
+            rdfs:label "InCell 3000"@en .
+
+
+###  http://w3id.org/reproduceme#Incandescent
+:Incandescent rdf:type owl:NamedIndividual ,
+                       :FilamentType ;
+              rdfs:label "Incandescent"@en .
+
+
+###  http://w3id.org/reproduceme#IntensifiedCCD
+:IntensifiedCCD rdf:type owl:NamedIndividual ,
+                         :DetectorType ;
+                rdfs:label "IntensifiedCCD"@en .
+
+
+###  http://w3id.org/reproduceme#Inveon
+:Inveon rdf:type owl:NamedIndividual ,
+                 :SupportedFileFormat ;
+        rdfs:label "Inveon"@en .
+
+
+###  http://w3id.org/reproduceme#InverseFRAP
+:InverseFRAP rdf:type owl:NamedIndividual ,
+                      :MicrobeamManipulationType ;
+             rdfs:label "InverseFRAP"@en .
+
+
+###  http://w3id.org/reproduceme#Inverted
+:Inverted rdf:type owl:NamedIndividual ,
+                   :MicroscopeType ;
+          rdfs:label "Inverted"@en .
+
+
+###  http://w3id.org/reproduceme#IonImaging
+:IonImaging rdf:type owl:NamedIndividual ,
+                     :ExperimentType ;
+            rdfs:label "IonImaging"@en .
+
+
+###  http://w3id.org/reproduceme#JEOL
+:JEOL rdf:type owl:NamedIndividual ,
+               :SupportedFileFormat ;
+      rdfs:label "JEOL"@en .
+
+
+###  http://w3id.org/reproduceme#JPEG
+:JPEG rdf:type owl:NamedIndividual ,
+               :SupportedFileFormat ;
+      rdfs:label "JPEG"@en .
+
+
+###  http://w3id.org/reproduceme#JPEG2000
+:JPEG2000 rdf:type owl:NamedIndividual ,
+                   :SupportedFileFormat ;
+          rdfs:label "JPEG 2000"@en .
+
+
+###  http://w3id.org/reproduceme#JPK
+:JPK rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "JPK"@en .
+
+
+###  http://w3id.org/reproduceme#JPX
+:JPX rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "JPX"@en .
+
+
+###  http://w3id.org/reproduceme#Khoros
+:Khoros rdf:type owl:NamedIndividual ,
+                 :SupportedFileFormat ;
+        rdfs:label "Khoros VIFF (Visualization Image File Format) Bitmap"@en .
+
+
+###  http://w3id.org/reproduceme#KodakBIP
+:KodakBIP rdf:type owl:NamedIndividual ,
+                   :SupportedFileFormat ;
+          rdfs:label "Kodak BIP"@en .
+
+
+###  http://w3id.org/reproduceme#LCM
+:LCM rdf:type owl:NamedIndividual ,
+              :AcquisitionMode ;
+     rdfs:label "LCM"@en .
+
+
+###  http://w3id.org/reproduceme#LEO
+:LEO rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "LEO"@en .
+
+
+###  http://w3id.org/reproduceme#LIF
+:LIF rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "Leica LAS AF LIF (Leica Image File Format)"@en .
+
+
+###  http://w3id.org/reproduceme#LIM
+:LIM rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "LIM (Laboratory Imaging/Nikon)"@en .
+
+
+###  http://w3id.org/reproduceme#LaVisionImspector
+:LaVisionImspector rdf:type owl:NamedIndividual ,
+                            :SupportedFileFormat ;
+                   rdfs:label "LaVision Imspector"@en .
+
+
+###  http://w3id.org/reproduceme#LambertInstrumentsFLIM
+:LambertInstrumentsFLIM rdf:type owl:NamedIndividual ,
+                                 :SupportedFileFormat ;
+                        rdfs:label "Lambert Instruments FLIM"@en .
+
+
+###  http://w3id.org/reproduceme#LaserScanningConfocalMicroscopy
+:LaserScanningConfocalMicroscopy rdf:type owl:NamedIndividual ,
+                                          :AcquisitionMode ;
+                                 rdfs:label "LaserScanningConfocalMicroscopy"@en .
+
+
+###  http://w3id.org/reproduceme#Leica
+:Leica rdf:type owl:NamedIndividual ,
+                :SupportedFileFormat ;
+       rdfs:label "Leica"@en .
+
+
+###  http://w3id.org/reproduceme#LeicaSCN
+:LeicaSCN rdf:type owl:NamedIndividual ,
+                   :SupportedFileFormat ;
+          rdfs:label "Leica SCN"@en .
+
+
+###  http://w3id.org/reproduceme#Li-CorL2D
+:Li-CorL2D rdf:type owl:NamedIndividual ,
+                    :SupportedFileFormat ;
+           rdfs:label "Li-Cor L2D"@en .
+
+
+###  http://w3id.org/reproduceme#LifetimeImaging
+:LifetimeImaging rdf:type owl:NamedIndividual ,
+                          :DetectorType ;
+                 rdfs:label "LifetimeImaging"@en .
+
+
+###  http://w3id.org/reproduceme#LongPass
+:LongPass rdf:type owl:NamedIndividual ,
+                   :FilterType ;
+          rdfs:label "LongPass"@en .
+
+
+###  http://w3id.org/reproduceme#MD5-128
+:MD5-128 rdf:type owl:NamedIndividual ,
+                  :ChecksumAlgorithm ;
+         rdfs:label "MD5-128"@en .
+
+
+###  http://w3id.org/reproduceme#MIAS
+:MIAS rdf:type owl:NamedIndividual ,
+               :SupportedFileFormat ;
+      rdfs:label "MIAS (Maia Scientific)"@en .
+
+
+###  http://w3id.org/reproduceme#MINCMRI
+:MINCMRI rdf:type owl:NamedIndividual ,
+                  :SupportedFileFormat ;
+         rdfs:label "MINC MRI"@en .
+
+
+###  http://w3id.org/reproduceme#MNG
+:MNG rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "MNG (Multiple-image Network Graphics)"@en .
+
+
+###  http://w3id.org/reproduceme#MRC
+:MRC rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "MRC (Medical Research Council)"@en .
+
+
+###  http://w3id.org/reproduceme#MetaMorph7.5TIFF
+:MetaMorph7.5TIFF rdf:type owl:NamedIndividual ,
+                           :SupportedFileFormat ;
+                  rdfs:label "MetaMorph 7.5 TIFF"@en .
+
+
+###  http://w3id.org/reproduceme#MetaMorphStack
+:MetaMorphStack rdf:type owl:NamedIndividual ,
+                         :SupportedFileFormat ;
+                rdfs:label "MetaMorph Stack (STK)"@en .
+
+
+###  http://w3id.org/reproduceme#MetalVapor
+:MetalVapor rdf:type owl:NamedIndividual ,
+                     :LaserType ;
+            rdfs:label "MetalVapor"@en .
+
+
+###  http://w3id.org/reproduceme#MicroManager
+:MicroManager rdf:type owl:NamedIndividual ,
+                       :SupportedFileFormat ;
+              rdfs:label "Micro-Manager"@en .
+
+
+###  http://w3id.org/reproduceme#MinoltaMRW
+:MinoltaMRW rdf:type owl:NamedIndividual ,
+                     :SupportedFileFormat ;
+            rdfs:label "MinoltaMRW"@en .
+
+
+###  http://w3id.org/reproduceme#MolecularImaging
+:MolecularImaging rdf:type owl:NamedIndividual ,
+                           :SupportedFileFormat ;
+                  rdfs:label "Molecular Imaging"@en .
+
+
+###  http://w3id.org/reproduceme#MultiPass
+:MultiPass rdf:type owl:NamedIndividual ,
+                    :FilterType ;
+           rdfs:label "MultiPass"@en .
+
+
+###  http://w3id.org/reproduceme#MultiPhotonMicroscopy
+:MultiPhotonMicroscopy rdf:type owl:NamedIndividual ,
+                                :AcquisitionMode ;
+                       rdfs:label "MultiPhotonMicroscopy"@en .
+
+
+###  http://w3id.org/reproduceme#Murmur3-128
+:Murmur3-128 rdf:type owl:NamedIndividual ,
+                      :ChecksumAlgorithm ;
+             rdfs:label "Murmur3-128"@en .
+
+
+###  http://w3id.org/reproduceme#Murmur3-32
+:Murmur3-32 rdf:type owl:NamedIndividual ,
+                     :ChecksumAlgorithm ;
+            rdfs:label "Murmur3-32"@en .
+
+
+###  http://w3id.org/reproduceme#NIfTI
+:NIfTI rdf:type owl:NamedIndividual ,
+                :SupportedFileFormat ;
+       rdfs:label "NIfTI"@en .
+
+
+###  http://w3id.org/reproduceme#NRRD
+:NRRD rdf:type owl:NamedIndividual ,
+               :SupportedFileFormat ;
+      rdfs:label "NRRD (Nearly Raw Raster Data)"@en .
+
+
+###  http://w3id.org/reproduceme#NearFieldScanningOpticalMicroscopy
+:NearFieldScanningOpticalMicroscopy rdf:type owl:NamedIndividual ,
+                                             :AcquisitionMode ;
+                                    rdfs:label "NearFieldScanningOpticalMicroscopy"@en .
+
+
+###  http://w3id.org/reproduceme#NeutralDensity
+:NeutralDensity rdf:type owl:NamedIndividual ,
+                         :FilterType ;
+                rdfs:label "NeutralDensity"@en .
+
+
+###  http://w3id.org/reproduceme#Nikon
+:Nikon rdf:type owl:NamedIndividual ,
+                :SupportedFileFormat ;
+       rdfs:label "Nikon"@en .
+
+
+###  http://w3id.org/reproduceme#NikonEZ-C1TIFF
+:NikonEZ-C1TIFF rdf:type owl:NamedIndividual ,
+                         :SupportedFileFormat ;
+                rdfs:label "Nikon EZ-C1 TIFF"@en .
+
+
+###  http://w3id.org/reproduceme#NikonElectronicFormat
+:NikonElectronicFormat rdf:type owl:NamedIndividual ,
+                                :SupportedFileFormat ;
+                       rdfs:label "NEF (Nikon Electronic Format)"@en .
+
+
+###  http://w3id.org/reproduceme#NikonElementsTIFF
+:NikonElementsTIFF rdf:type owl:NamedIndividual ,
+                            :SupportedFileFormat ;
+                   rdfs:label "Nikon Elements TIFF"@en .
+
+
+###  http://w3id.org/reproduceme#NikonNISElementsND2
+:NikonNISElementsND2 rdf:type owl:NamedIndividual ,
+                              :SupportedFileFormat ;
+                     rdfs:label "Nikon NIS-Elements ND2"@en .
+
+
+###  http://w3id.org/reproduceme#NonLinear
+:NonLinear rdf:type owl:NamedIndividual ,
+                    :Illumination ;
+           rdfs:label "NonLinear"@en .
+
+
+###  http://w3id.org/reproduceme#OME-TIFF
+:OME-TIFF rdf:type owl:NamedIndividual ,
+                   :SupportedFileFormat ;
+          rdfs:label "OME-TIFF"@en .
+
+
+###  http://w3id.org/reproduceme#OME-XML
+:OME-XML rdf:type owl:NamedIndividual ,
+                  :SupportedFileFormat ;
+         rdfs:label "OME-XML"@en .
+
+
+###  http://w3id.org/reproduceme#OMEROPyramid
+:OMEROPyramid rdf:type owl:NamedIndividual ,
+                       :SupportedFileFormat ;
+              rdfs:label "OMERO Pyramid"@en .
+
+
+###  http://w3id.org/reproduceme#Oblique
+:Oblique rdf:type owl:NamedIndividual ,
+                  :Illumination ;
+         rdfs:label "Oblique"@en .
+
+
+###  http://w3id.org/reproduceme#ObliqueIllumination
+:ObliqueIllumination rdf:type owl:NamedIndividual ,
+                              :ContrastMethod ;
+                     rdfs:label "ObliqueIllumination"@en .
+
+
+###  http://w3id.org/reproduceme#OlympusCellRorAPL
+:OlympusCellRorAPL rdf:type owl:NamedIndividual ,
+                            :SupportedFileFormat ;
+                   rdfs:label "Olympus CellR/APL"@en .
+
+
+###  http://w3id.org/reproduceme#OlympusFluoViewFV1000
+:OlympusFluoViewFV1000 rdf:type owl:NamedIndividual ,
+                                :SupportedFileFormat ;
+                       rdfs:label "Olympus FluoView FV1000"@en .
+
+
+###  http://w3id.org/reproduceme#OlympusSISTIFF
+:OlympusSISTIFF rdf:type owl:NamedIndividual ,
+                         :SupportedFileFormat ;
+                rdfs:label "Olympus SIS TIFF"@en .
+
+
+###  http://w3id.org/reproduceme#OlympusScanR
+:OlympusScanR rdf:type owl:NamedIndividual ,
+                       :SupportedFileFormat ;
+              rdfs:label "Olympus ScanR"@en .
+
+
+###  http://w3id.org/reproduceme#OpticalTrapping
+:OpticalTrapping rdf:type owl:NamedIndividual ,
+                          :MicrobeamManipulationType ;
+                 rdfs:label "OpticalTrapping"@en .
+
+
+###  http://w3id.org/reproduceme#OxfordInstruments
+:OxfordInstruments rdf:type owl:NamedIndividual ,
+                            :SupportedFileFormat ;
+                   rdfs:label "Oxford Instruments"@en .
+
+
+###  http://w3id.org/reproduceme#PALM
+:PALM rdf:type owl:NamedIndividual ,
+               :AcquisitionMode ;
+      rdfs:label "PALM"@en .
+
+
+###  http://w3id.org/reproduceme#PCORAW
+:PCORAW rdf:type owl:NamedIndividual ,
+                 :SupportedFileFormat ;
+        rdfs:label "PCORAW"@en .
+
+
+###  http://w3id.org/reproduceme#PCX
+:PCX rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "PCX (PC Paintbrush)"@en .
+
+
+###  http://w3id.org/reproduceme#PGIDocumentation
+:PGIDocumentation rdf:type owl:NamedIndividual ,
+                           :ExperimentType ;
+                  rdfs:label "PGIDocumentation"@en .
+
+
+###  http://w3id.org/reproduceme#PGM
+:PGM rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "PGM"@en .
+
+
+###  http://w3id.org/reproduceme#PICT
+:PICT rdf:type owl:NamedIndividual ,
+               :SupportedFileFormat ;
+      rdfs:label "PICT (Macintosh Picture)"@en .
+
+
+###  http://w3id.org/reproduceme#PMT
+:PMT rdf:type owl:NamedIndividual ,
+              :DetectorType ;
+     rdfs:label "PMT"@en .
+
+
+###  http://w3id.org/reproduceme#PNG
+:PNG rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "PNG (Portable Network Graphics)"@en .
+
+
+###  http://w3id.org/reproduceme#PSD
+:PSD rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "Adobe Photoshop PSD"@en .
+
+
+###  http://w3id.org/reproduceme#PerkinElmerColumbus
+:PerkinElmerColumbus rdf:type owl:NamedIndividual ,
+                              :SupportedFileFormat ;
+                     rdfs:label "PerkinElmer Columbus"@en .
+
+
+###  http://w3id.org/reproduceme#PerkinElmerDensitometer
+:PerkinElmerDensitometer rdf:type owl:NamedIndividual ,
+                                  :SupportedFileFormat ;
+                         rdfs:label "Perkin Elmer Densitometer"@en .
+
+
+###  http://w3id.org/reproduceme#PerkinElmerNuance
+:PerkinElmerNuance rdf:type owl:NamedIndividual ,
+                            :SupportedFileFormat ;
+                   rdfs:label "PerkinElmer Nuance"@en .
+
+
+###  http://w3id.org/reproduceme#PerkinElmerOperetta
+:PerkinElmerOperetta rdf:type owl:NamedIndividual ,
+                              :SupportedFileFormat ;
+                     rdfs:label "PerkinElmer Operetta"@en .
+
+
+###  http://w3id.org/reproduceme#PerkinElmerUltraVIEW
+:PerkinElmerUltraVIEW rdf:type owl:NamedIndividual ,
+                               :SupportedFileFormat ;
+                      rdfs:label "PerkinElmer UltraVIEW"@en .
+
+
+###  http://w3id.org/reproduceme#Phase
+:Phase rdf:type owl:NamedIndividual ,
+                :ContrastMethod ;
+       rdfs:label "Phase"@en .
+
+
+###  http://w3id.org/reproduceme#Photoablation
+:Photoablation rdf:type owl:NamedIndividual ,
+                        :MicrobeamManipulationType ;
+               rdfs:label "Photoablation"@en .
+
+
+###  http://w3id.org/reproduceme#Photoactivation
+:Photoactivation rdf:type owl:NamedIndividual ,
+                          :MicrobeamManipulationType ;
+                 rdfs:label "Photoactivation"@en .
+
+
+###  http://w3id.org/reproduceme#Photobleaching
+:Photobleaching rdf:type owl:NamedIndividual ,
+                         :ExperimentType ;
+                rdfs:label "Photobleaching"@en .
+
+
+###  http://w3id.org/reproduceme#Photodiode
+:Photodiode rdf:type owl:NamedIndividual ,
+                     :DetectorType ;
+            rdfs:label "Photodiode"@en .
+
+
+###  http://w3id.org/reproduceme#PhotoshopTIFF
+:PhotoshopTIFF rdf:type owl:NamedIndividual ,
+                        :SupportedFileFormat ;
+               rdfs:label "Photoshop TIFF"@en .
+
+
+###  http://w3id.org/reproduceme#PicoQuantBin
+:PicoQuantBin rdf:type owl:NamedIndividual ,
+                       :SupportedFileFormat ;
+              rdfs:label "PicoQuant Bin"@en .
+
+
+###  http://w3id.org/reproduceme#PolarizedLight
+:PolarizedLight rdf:type owl:NamedIndividual ,
+                         :ContrastMethod ;
+                rdfs:label "PolarizedLight"@en .
+
+
+###  http://w3id.org/reproduceme#PrairieTechnologiesTIFF
+:PrairieTechnologiesTIFF rdf:type owl:NamedIndividual ,
+                                  :SupportedFileFormat ;
+                         rdfs:label "Prairie Technologies TIFF"@en .
+
+
+###  http://w3id.org/reproduceme#Quesant
+:Quesant rdf:type owl:NamedIndividual ,
+                  :SupportedFileFormat ;
+         rdfs:label "Quesant"@en .
+
+
+###  http://w3id.org/reproduceme#QuickTimeMovie
+:QuickTimeMovie rdf:type owl:NamedIndividual ,
+                         :SupportedFileFormat ;
+                rdfs:label "QuickTime Movie"@en .
+
+
+###  http://w3id.org/reproduceme#RHK
+:RHK rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "RHK"@en .
+
+
+###  http://w3id.org/reproduceme#SBIG
+:SBIG rdf:type owl:NamedIndividual ,
+               :SupportedFileFormat ;
+      rdfs:label "SBIG"@en .
+
+
+###  http://w3id.org/reproduceme#SDT
+:SDT rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "Becker & Hickl SPCImage"@en .
+
+
+###  http://w3id.org/reproduceme#SHA1-160
+:SHA1-160 rdf:type owl:NamedIndividual ,
+                   :ChecksumAlgorithm ;
+          rdfs:label "SHA1-160"@en .
+
+
+###  http://w3id.org/reproduceme#SMCamera
+:SMCamera rdf:type owl:NamedIndividual ,
+                   :SupportedFileFormat ;
+          rdfs:label "SM Camera"@en .
+
+
+###  http://w3id.org/reproduceme#SPIDER
+:SPIDER rdf:type owl:NamedIndividual ,
+                 :SupportedFileFormat ;
+        rdfs:label "SPIDER"@en .
+
+
+###  http://w3id.org/reproduceme#SPIM
+:SPIM rdf:type owl:NamedIndividual ,
+               :AcquisitionMode ;
+      rdfs:label "SPIM"@en .
+
+
+###  http://w3id.org/reproduceme#STED
+:STED rdf:type owl:NamedIndividual ,
+               :AcquisitionMode ;
+      rdfs:label "STED"@en .
+
+
+###  http://w3id.org/reproduceme#STORM
+:STORM rdf:type owl:NamedIndividual ,
+                :AcquisitionMode ;
+       rdfs:label "STORM"@en .
+
+
+###  http://w3id.org/reproduceme#ScreenExperiment
+:ScreenExperiment rdf:type owl:NamedIndividual ,
+                           :ExperimentType ;
+                  rdfs:label "ScreenExperiment"@en .
+
+
+###  http://w3id.org/reproduceme#SecondHarmonicGenerationImaging
+:SecondHarmonicGenerationImaging rdf:type owl:NamedIndividual ,
+                                          :AcquisitionMode ;
+                                 rdfs:label "SecondHarmonicGenerationImaging"@en .
+
+
+###  http://w3id.org/reproduceme#Seiko
+:Seiko rdf:type owl:NamedIndividual ,
+                :SupportedFileFormat ;
+       rdfs:label "Seiko"@en .
+
+
+###  http://w3id.org/reproduceme#Semiconductor
+:Semiconductor rdf:type owl:NamedIndividual ,
+                        :LaserType ;
+               rdfs:label "Semiconductor"@en .
+
+
+###  http://w3id.org/reproduceme#ShortPass
+:ShortPass rdf:type owl:NamedIndividual ,
+                    :FilterType ;
+           rdfs:label "ShortPass"@en .
+
+
+###  http://w3id.org/reproduceme#SimplePCIandHCImage
+:SimplePCIandHCImage rdf:type owl:NamedIndividual ,
+                              :SupportedFileFormat ;
+                     rdfs:label "SimplePCI and HCImage"@en .
+
+
+###  http://w3id.org/reproduceme#SimplePCIandHCImageTIFF
+:SimplePCIandHCImageTIFF rdf:type owl:NamedIndividual ,
+                                  :SupportedFileFormat ;
+                         rdfs:label "SimplePCI & HCImage TIFF"@en .
+
+
+###  http://w3id.org/reproduceme#SingleMoleculeImaging
+:SingleMoleculeImaging rdf:type owl:NamedIndividual ,
+                                :AcquisitionMode ;
+                       rdfs:label "SingleMoleculeImaging"@en .
+
+
+###  http://w3id.org/reproduceme#SlideBook
+:SlideBook rdf:type owl:NamedIndividual ,
+                    :SupportedFileFormat ;
+           rdfs:label "3i SlideBook"@en .
+
+
+###  http://w3id.org/reproduceme#SlitScanConfocal
+:SlitScanConfocal rdf:type owl:NamedIndividual ,
+                           :AcquisitionMode ;
+                  rdfs:label "SlitScanConfocal"@en .
+
+
+###  http://w3id.org/reproduceme#SolidState
+:SolidState rdf:type owl:NamedIndividual ,
+                     :LaserType ;
+            rdfs:label "SolidState"@en .
+
+
+###  http://w3id.org/reproduceme#SpectralImaging
+:SpectralImaging rdf:type owl:NamedIndividual ,
+                          :AcquisitionMode ;
+                 rdfs:label "SpectralImaging"@en .
+
+
+###  http://w3id.org/reproduceme#SpectralImagingExperiment
+:SpectralImagingExperiment rdf:type owl:NamedIndividual ,
+                                    :ExperimentType ;
+                           rdfs:label "SpectralImagingExperiment"@en .
+
+
+###  http://w3id.org/reproduceme#Spectroscopy
+:Spectroscopy rdf:type owl:NamedIndividual ,
+                       :DetectorType ;
+              rdfs:label "Spectroscopy"@en .
+
+
+###  http://w3id.org/reproduceme#SpinningDiskConfocal
+:SpinningDiskConfocal rdf:type owl:NamedIndividual ,
+                               :AcquisitionMode ;
+                      rdfs:label "SpinningDiskConfocal"@en .
+
+
+###  http://w3id.org/reproduceme#StructuredIllumination
+:StructuredIllumination rdf:type owl:NamedIndividual ,
+                                 :AcquisitionMode ;
+                        rdfs:label "StructuredIllumination"@en .
+
+
+###  http://w3id.org/reproduceme#SweptFieldConfocal
+:SweptFieldConfocal rdf:type owl:NamedIndividual ,
+                             :AcquisitionMode ;
+                    rdfs:label "SweptFieldConfocal"@en .
+
+
+###  http://w3id.org/reproduceme#TCS
+:TCS rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "TCS"@en .
+
+
+###  http://w3id.org/reproduceme#TIFF
+:TIFF rdf:type owl:NamedIndividual ,
+               :SupportedFileFormat ;
+      rdfs:label "TIFF (Tagged Image File Format)"@en .
+
+
+###  http://w3id.org/reproduceme#TIRF
+:TIRF rdf:type owl:NamedIndividual ,
+               :AcquisitionMode ;
+      rdfs:label "TIRF"@en .
+
+
+###  http://w3id.org/reproduceme#Targa
+:Targa rdf:type owl:NamedIndividual ,
+                :SupportedFileFormat ;
+       rdfs:label "Targa"@en .
+
+
+###  http://w3id.org/reproduceme#Text
+:Text rdf:type owl:NamedIndividual ,
+               :SupportedFileFormat ;
+      rdfs:label "Text"@en .
+
+
+###  http://w3id.org/reproduceme#TillPhotonicsTillVision
+:TillPhotonicsTillVision rdf:type owl:NamedIndividual ,
+                                  :SupportedFileFormat ;
+                         rdfs:label "TillPhotonics TillVision"@en .
+
+
+###  http://w3id.org/reproduceme#TimeLapse
+:TimeLapse rdf:type owl:NamedIndividual ,
+                    :ExperimentType ;
+           rdfs:label "TimeLapse"@en .
+
+
+###  http://w3id.org/reproduceme#Topometrix
+:Topometrix rdf:type owl:NamedIndividual ,
+                     :SupportedFileFormat ;
+            rdfs:label "Topometrix"@en .
+
+
+###  http://w3id.org/reproduceme#TotalInternalReflection
+:TotalInternalReflection rdf:type owl:NamedIndividual ,
+                                  :AcquisitionMode ;
+                         rdfs:label "TotalInternalReflection"@en .
+
+
+###  http://w3id.org/reproduceme#Transmitted
+:Transmitted rdf:type owl:NamedIndividual ,
+                      :Illumination ;
+             rdfs:label "Transmitted"@en .
+
+
+###  http://w3id.org/reproduceme#Trestle
+:Trestle rdf:type owl:NamedIndividual ,
+                  :SupportedFileFormat ;
+         rdfs:label "Trestle"@en .
+
+
+###  http://w3id.org/reproduceme#Tuneable
+:Tuneable rdf:type owl:NamedIndividual ,
+                   :FilterType ;
+          rdfs:label "Tuneable"@en .
+
+
+###  http://w3id.org/reproduceme#UBM
+:UBM rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "UBM"@en .
+
+
+###  http://w3id.org/reproduceme#Uncaging
+:Uncaging rdf:type owl:NamedIndividual ,
+                   :MicrobeamManipulationType ;
+          rdfs:label "Uncaging"@en .
+
+
+###  http://w3id.org/reproduceme#Unisoku
+:Unisoku rdf:type owl:NamedIndividual ,
+                  :SupportedFileFormat ;
+         rdfs:label "Unisoku"@en .
+
+
+###  http://w3id.org/reproduceme#Upright
+:Upright rdf:type owl:NamedIndividual ,
+                  :MicroscopeType ;
+         rdfs:label "Upright"@en .
+
+
+###  http://w3id.org/reproduceme#VGSAM
+:VGSAM rdf:type owl:NamedIndividual ,
+                :SupportedFileFormat ;
+       rdfs:label "VG SAM"@en .
+
+
+###  http://w3id.org/reproduceme#VarianFDF
+:VarianFDF rdf:type owl:NamedIndividual ,
+                    :SupportedFileFormat ;
+           rdfs:label "Varian FDF"@en .
+
+
+###  http://w3id.org/reproduceme#VeecoAFM
+:VeecoAFM rdf:type owl:NamedIndividual ,
+                   :SupportedFileFormat ;
+          rdfs:label "Veeco AFM"@en .
+
+
+###  http://w3id.org/reproduceme#VisiTech
+:VisiTech rdf:type owl:NamedIndividual ,
+                   :SupportedFileFormat ;
+          rdfs:label "VisiTech XYS"@en .
+
+
+###  http://w3id.org/reproduceme#Volocity
+:Volocity rdf:type owl:NamedIndividual ,
+                   :SupportedFileFormat ;
+          rdfs:label "Volocity"@en .
+
+
+###  http://w3id.org/reproduceme#VolocityLibraryClipping
+:VolocityLibraryClipping rdf:type owl:NamedIndividual ,
+                                  :SupportedFileFormat ;
+                         rdfs:label "Volocity Library Clipping"@en .
+
+
+###  http://w3id.org/reproduceme#WA-TOP
+:WA-TOP rdf:type owl:NamedIndividual ,
+                 :SupportedFileFormat ;
+        rdfs:label "WA-TOP"@en .
+
+
+###  http://w3id.org/reproduceme#WideField
+:WideField rdf:type owl:NamedIndividual ,
+                    :AcquisitionMode ;
+           rdfs:label "WideField"@en .
+
+
+###  http://w3id.org/reproduceme#Woolz
+:Woolz rdf:type owl:NamedIndividual ,
+                :SupportedFileFormat ;
+       rdfs:label "Woolz"@en .
+
+
+###  http://w3id.org/reproduceme#XYCTZ
+:XYCTZ rdf:type owl:NamedIndividual ,
+                :DimensionOrder ;
+       rdfs:label "XYCTZ"@en .
+
+
+###  http://w3id.org/reproduceme#XYCZT
+:XYCZT rdf:type owl:NamedIndividual ,
+                :DimensionOrder ;
+       rdfs:label "XYCZT"@en .
+
+
+###  http://w3id.org/reproduceme#XYTCZ
+:XYTCZ rdf:type owl:NamedIndividual ,
+                :DimensionOrder ;
+       rdfs:label "XYTCZ"@en .
+
+
+###  http://w3id.org/reproduceme#XYTZC
+:XYTZC rdf:type owl:NamedIndividual ,
+                :DimensionOrder ;
+       rdfs:label "XYTZC"@en .
+
+
+###  http://w3id.org/reproduceme#XYZCT
+:XYZCT rdf:type owl:NamedIndividual ,
+                :DimensionOrder ;
+       rdfs:label "XYZCT"@en .
+
+
+###  http://w3id.org/reproduceme#XYZTC
+:XYZTC rdf:type owl:NamedIndividual ,
+                :DimensionOrder ;
+       rdfs:label "XYZTC"@en .
+
+
+###  http://w3id.org/reproduceme#Xe
+:Xe rdf:type owl:NamedIndividual ,
+             :ArcType ;
+    rdfs:label "Xe"@en .
+
+
+###  http://w3id.org/reproduceme#ZVI
+:ZVI rdf:type owl:NamedIndividual ,
+              :SupportedFileFormat ;
+     rdfs:label "Zeiss AxioVision ZVI (Zeiss Vision Image)"@en .
+
+
+###  http://w3id.org/reproduceme#ZeissAxioCSM
+:ZeissAxioCSM rdf:type owl:NamedIndividual ,
+                       :SupportedFileFormat ;
+              rdfs:label "Zeiss Axio CSM"@en .
+
+
+###  http://w3id.org/reproduceme#ZeissAxioVisionTIFF
+:ZeissAxioVisionTIFF rdf:type owl:NamedIndividual ,
+                              :SupportedFileFormat ;
+                     rdfs:label "Zeiss AxioVision TIFF"@en .
+
+
+###  http://w3id.org/reproduceme#ZeissCZI
+:ZeissCZI rdf:type owl:NamedIndividual ,
+                   :SupportedFileFormat ;
+          rdfs:label "Zeiss CZI"@en .
+
+
+###  http://w3id.org/reproduceme#ZeissLSM
+:ZeissLSM rdf:type owl:NamedIndividual ,
+                   :SupportedFileFormat ;
+          rdfs:label "Zeiss LSM (Laser Scanning Microscope) 510/710"@en .
+
+
+###  http://w3id.org/reproduceme#cellSensVSI
+:cellSensVSI rdf:type owl:NamedIndividual ,
+                      :SupportedFileFormat ;
+             rdfs:label "cellSens VSI"@en .
+
+
+###  https://w3id.org/reproduceme#AIM
+<https://w3id.org/reproduceme#AIM> rdf:type owl:NamedIndividual ,
+                                            :SupportedFileFormat .
+
+
+###  https://w3id.org/reproduceme#Adler-32
+<https://w3id.org/reproduceme#Adler-32> rdf:type owl:NamedIndividual ,
+                                                 :ChecksumAlgorithm ;
+                                        rdfs:label "CRC-32"^^xsd:string .
+
+
+###  https://w3id.org/reproduceme#CMOS
+<https://w3id.org/reproduceme#CMOS> rdf:type owl:NamedIndividual ,
+                                             :DetectorType .
+
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

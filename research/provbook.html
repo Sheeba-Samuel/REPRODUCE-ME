@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Language" content="en"/>    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../css/styles.css">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    
+    <title>REPRODUCE-ME: Reproducibility of Scientific Experiments</title>
+  </head>
+  <body vocab="http://schema.org/">    
+    <div class="licence"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="../images/license.png"/></a>
+    </div>
+    <div class="page" typeof="WebPage">
+        <nav class="navbar navbar-toggleable-md navbar-light">      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" typeof="BreadcrumbList">
+            <li class="nav-item active">
+                <h4><a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a></h4>
+            </li>
+            <li property="itemListElement" typeof="ListItem" class="nav-item">
+                <h4><a property="item" typeof="WebPage" class="nav-link" href="../publications.html">
+                <span property="name">Publications</span>
+                </a></h4>
+                <meta property="position" content="2"/>
+            </li>
+            <li property="itemListElement" typeof="ListItem" class="nav-item">
+                <h4><a property="item" typeof="WebPage" class="nav-link" href="../resources.html">
+                <span property="name">Resources</span>
+                </a></h4>
+                <meta property="position" content="3"/>
+            </li>
+            <li property="itemListElement" typeof="ListItem" class="nav-item">
+                <h4><a property="item" typeof="WebPage" class="nav-link" href="../contact.html">
+                <span property="name">Contact</span>
+                </a></h4>
+                <meta property="position" content="4"/>
+            </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+    <div class="content">       
+        <section>
+            <h3><b>ProvBook</b></h3> 
+            <p>We present ProvBook, an extension of Jupyter Notebook, to capture and view the provenance over the course of time. It also allows the user to share a notebook along with its provenance in RDF and also convert it back to a notebook. We use the REPRODUCE-ME ontology extended from PROV-O and P-Plan to describe the provenance of a notebook. This helps the scientists to compare their previous results with the current ones, check whether the experiments produce the results as expected and query the sequence of executions using SPARQL. The notebook data in RDF can be used in combination with the experiments that used them and help to get a track of the complete path of the scientific experiments.</p>
+            <p>This extension displays the provenance of each notebook cell. Every cell is extended with a provenance area with a slider. The provenance area shows the history of the execution of each code cells. As you move the slider, you could see the start and end time of each execution, how long it took to execute, the number of runs, the source and output of each execution. It also shows the provenance of text cells where it shows the the modified time and the source. 
+                <p>ProvBook provides three features:</p>
+                <p><b>1. provbook</b> : Displays the provenance of a Jupyter Notebook.</p>                
+                <p><b>2. notebook_rdf</b> : Convert Jupyter Notebooks to RDF and the converted RDF back to Jupyter Notebooks.</p>
+                <p><b>3. provbookdiff</b> : The provenance difference of any two executions of a code cell of a Jupyter Notebook. </p>
+            <ul>           
+                <li>
+                    <p><a property="item" typeof="WebPage" href="https://doi.org/10.6084/m9.figshare.6401096.v1">Demo</a></p>
+                </li>
+                <li>
+                    <p><a property="item" typeof="WebPage" href="https://github.com/Sheeba-Samuel/ProvBook">Source Code</a></p>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <p>A Jupyter Notebook code cell with the provenance data of its executions.</p>
+            <div class="provbook"><a rel="provbook">
+                <img alt="ProvBook-Display" style="width:70%;height:70%;" src="../images/provbook1.png"/>
+            </div>
+        </section>
+        <section>
+            <p>A Jupyter Notebook can be downloaded as RDF along with its provenance.</p>
+            <div class="provbook"><a rel="provbook">
+                <img alt="ProvBook-RDF" style="width:70%;height:70%;" src="../images/provbook2.png"/>
+            </div>
+        </section>
+        <section>
+            <p>A user can select two different executions to see the difference in the input and the output.</p>
+            <div class="provbook"><a rel="provbook">
+                <img alt="ProvBookDifference-Select" style="width:70%;height:70%;" src="../images/ProvBookDiff-1.png"/>
+            </div>
+        </section>
+        <section>
+            <p>Provenance Difference of two executions of a Jupyter Notebook code cell.</p>
+            <div class="provbook"><a rel="provbook">
+                <img alt="ProvBookDifference-Display" style="width:70%;height:70%;" src="../images/ProvBookDiff-2.png"/>
+            </div>
+        </section>
+    </div>    
+  </body>
+</html>
