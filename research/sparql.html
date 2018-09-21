@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Language" content="en"/>    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../css/styles.css">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    
+    <title>REPRODUCE-ME: Reproducibility of Scientific Experiments</title>
+  </head>
+  <body vocab="http://schema.org/">    
+    <div class="licence"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="../images/license.png"/></a>
+    </div>
+    <div class="page" typeof="WebPage">
+        <nav class="navbar navbar-toggleable-md navbar-light">      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" typeof="BreadcrumbList">
+            <li class="nav-item active">
+                <h4><a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a></h4>
+            </li>
+            <li property="itemListElement" typeof="ListItem" class="nav-item">
+                <h4><a property="item" typeof="WebPage" class="nav-link" href="../publications.html">
+                <span property="name">Publications</span>
+                </a></h4>
+                <meta property="position" content="2"/>
+            </li>
+            <li property="itemListElement" typeof="ListItem" class="nav-item">
+                <h4><a property="item" typeof="WebPage" class="nav-link" href="../resources.html">
+                <span property="name">Resources</span>
+                </a></h4>
+                <meta property="position" content="3"/>
+            </li>
+            <li property="itemListElement" typeof="ListItem" class="nav-item">
+                <h4><a property="item" typeof="WebPage" class="nav-link" href="../contact.html">
+                <span property="name">Contact</span>
+                </a></h4>
+                <meta property="position" content="4"/>
+            </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+    <div class="content">
+        <section>
+            <h3><b>The SPARQL Queries</b></h3> 
+            <p>The SPARQL Queries used to evaluate the ontology.</p>
+            <h5><b>Query 1:</b></h5>            
+            <p><b>What are the input and output variables of an experiment?</b></p>
+            <pre data-lang="sparql" class="query">SELECT DISTINCT * WHERE
+                {
+                    ?experiment a repr:Experiment .
+                    ?experimentStep p-plan:isStepOfPlan ?experiment .
+                    {
+                    ?experimentInput p-plan:isInputVarOf ?experimentStep .
+                    ?experimentInput rdf:type ?experimentInputType .
+                    OPTIONAL { ?experimentInput repr:name ?experimentInputName } .
+                    }
+                    UNION {
+                    ?experimentOutput p-plan:isOutputVarOf ?experimentStep .
+                    ?experimentOutput rdf:type ?experimentOutputType .
+                    OPTIONAL { ?experimentOutput repr:name ?experimentOutputName } .
+
+                    }
+                }
+            </pre>
+            
+            <h5><b>Query 2:</b></h5>            
+            <p><b>Which are the methods and standard operating procedures used?</b></p>
+            <pre data-lang="sparql"  class="query">SELECT DISTINCT * WHERE
+                    {
+                        ?experiment a repr:Experiment .
+                        ?experimentStep p-plan:isStepOfPlan ?experiment ; 
+                                        repr:usedMethod ?experimentMethod .
+                    }
+            </pre>
+            <h5><b>Query 3:</b></h5>            
+            <p><b>Which are the files and materials that were used in a particular step?</b></p>
+            <pre data-lang="sparql"  class="query">SELECT DISTINCT * WHERE
+                {
+                    ?experiment a repr:Experiment .
+                    ?experimentStep p-plan:isStepOfPlan ?experiment .
+                    {
+                        ?experimentMaterial p-plan:isInputVarOf ?experimentStep ;
+                                  repr:name ?experimentMaterialName .
+                    }
+                }
+            </pre>
+            <h5><b>Query 4:</b></h5>            
+            <p><b>Which are the steps involved in an experiment which used a particular material?</b></p>
+            <pre data-lang="sparql" class="query">SELECT DISTINCT ?experiment ?experimentStep ?experimentOutput ?value WHERE
+                {
+                    ?experiment a repr:Experiment .
+                    ?experimentStep p-plan:isStepOfPlan  ?experiment .
+                    OPTIONAL {
+                        ?experimentOutput repr:reference ?referencedmaterial .
+                        ?referencedmaterial a  repr:GeneSymbol .
+                        ?referencedmaterial rdf:value ?value FILTER (?value='CDC20')
+                    }
+                }
+            </pre>
+            <h5><b>Query 5:</b></h5>            
+            <p><b>What is the complete path taken by a scientist for an experiment?</b></p>
+            <pre data-lang="sparql" class="query">SELECT DISTINCT * WHERE
+                {
+                    ?experiment a repr:Experiment .
+                    ?experiment repr:name "Focused mitotic chromsome condensaton screen using HeLa cells" .
+                    ?experimentStep p-plan:isStepOfPlan ?experiment .
+                    ?experiment prov:wasAttributedTo ?agent .
+                    ?agent repr:hasRole ?role .
+                    OPTIONAL { ?experimentStep p-plan:isPrecededBy ?previousStep } .
+                    {
+                        ?experimentInput p-plan:isInputVarOf ?experimentStep .
+                        ?experimentInput rdf:type ?experimentInputType .
+                        OPTIONAL { ?experimentInput repr:name ?experimentInputName } .
+                    }
+                    UNION {
+                        ?experimentOutput p-plan:isOutputVarOf ?experimentStep .
+                        ?experimentOutput rdf:type ?experimentOutputType .
+                        OPTIONAL { ?experimentOutput repr:name ?experimentOutputName } .
+                        OPTIONAL { ?experimentOutput repr:isAvailableAt ?outputUrl } .
+                        OPTIONAL {?experimentOutput repr:reference ?experimentOutputReference .
+                        ?experimentOutputReference rdf:value ?experimentOutputReferenceValue
+                    }
+
+                    }
+                }
+            </pre>
+            <h5><b>Query 6:</b></h5>            
+            <p><b>Which are the instruments that are associated with an experiment and their settings when the output was generated?</b></p>
+            <pre data-lang="sparql" class="query">SELECT DISTINCT * WHERE
+                {
+                    ?image a repr:Image ; 
+                    ?instrument p-plan:correspondsToVariable ?image .
+                    ?instrument_part a :Detector ; 
+                                    :isPartOf ?instrument .
+                    ?instrument_part :hasSetting ?setting .
+                    ?setting a :Setting ;
+                         rdfs:label ?SettingName .
+                    OPTIONAL { ?setting prov:value ?SettingValue } .
+                    OPTIONAL { 
+                        ?instrument_type prov:specializationOf ?instrument_part ; 
+                                         prov:value ?InstrumentType } . 	
+                }
+            </pre>
+            <h5><b>Query 7:</b></h5>            
+            <p><b>Which are the agents directly or indirectly responsible for an experiment?</b></p>
+            <pre data-lang="sparql" class="query">SELECT DISTINCT ?experiment ?agent ?agentName ?role ?material WHERE
+                {
+                    ?experiment a repr:Experiment .
+                    ?step p-plan:isStepOfPlan ?experiment .
+                    {
+                        ?experiment prov:wasAttributedTo ?agent.
+                        OPTIONAL { ?agent foaf:givenName ?agentName }
+                        ?agent repr:hasRole ?role .
+                    }
+                    UNION
+                    {
+                        ?material p-plan:isInputVarOf ?step .
+                        
+                        ?material prov:wasAttributedTo ?agent .
+                        OPTIONAL { 
+                            ?agent repr:name ?agentName .
+                            ?agent repr:hasRole ?role .
+                        } 
+                    }
+                    UNION
+                    {
+                        ?material p-plan:isOutputVarOf ?step .
+                    
+                        ?material prov:wasAttributedTo ?agent .
+                        OPTIONAL { 
+                            ?agent repr:name ?agentName .
+                            ?agent repr:hasRole ?role .
+                        } 
+                    }
+                    }
+                    
+                    
+            </pre>
+            <h5><b>Query 8:</b></h5>            
+            <p><b>Who created this experiment and when? Who modified it and when?</b></p>
+            <pre data-lang="sparql" class="query">Select DISTINCT * WHERE 
+                { 
+                    ?experiment a :Experiment ; 
+                                :name ?Experiment ; 
+                                prov:wasAttributedTo ?Agent .  
+                    OPTIONAL { 
+                        ?experiment prov:startedAtTime ?startedAtTime ; 
+                                    prov:generatedAtTime ?generatedAtTime 
+                    } 
+                }
+            </pre>
+            <h5><b>Query 9:</b></h5>            
+            <p><b>Which are the publications or external resources that were referenced?</b></p>
+            <pre data-lang="sparql" class="query">SELECT DISTINCT * WHERE
+                {
+                    ?experiment a repr:Experiment .
+                    ?step p-plan:isStepOfPlan ?experiment .
+                    ?publication p-plan:isOutputVarOf ?step ;
+                                rdf:type repr:Publication ;
+                                repr:doi ?publicationDOI .
+                    OPTIONAL { ?publication repr:pmcid ?pmcid  } .
+                    OPTIONAL { ?publication repr:wasReleasedOn ?releaseDate  } .
+                    OPTIONAL { ?publication repr:pubmedid ?PubMed }
+                    OPTIONAL { ?publication prov:wasAttributedTo ?author }
+
+                    
+                }
+            </pre>
+            <h5><b>Query 10:</b></h5>            
+            <p><b>List all the experiments which uses growth protocol (EFO_0003789) and studies on "Homo sapiens" and resulted in phenotype "shorter prophase" which passed the quality control.</b></p>
+            <pre data-lang="sparql" class="query">SELECT DISTINCT ?experiment ?image ?image_url WHERE
+                    {
+                        ?experiment a repr:Experiment .
+                        ?step p-plan:isStepOfPlan ?experiment .
+                        ?image p-plan:isOutputVarOf ?step ;
+                                    a repr:Image .
+                        ?screen p-plan:isOutputVarOf ?step ;
+                                a repr:Screen ;
+                                p-plan:isVariableOfPlan ?protocol .
+                        ?protocol a repr:Protocol ;
+                                repr:type ?type FILTER(?type="EFO_0003789") .
+                        ?image repr:reference ?organism .
+                        ?organism a repr:Organism ;
+                                        rdf:value ?organismvalue Filter(?organismvalue="Homo sapiens") .
+    
+                        ?image repr:reference ?phenotype .
+                        ?phenotype a repr:Phenotype ;
+                                   rdf:value ?value Filter(?value="shorter prophase") .
+    
+                        ?image repr:reference ?QualityControl .
+                        ?QualityControl a repr:QualityControl ;
+                                    rdf:value ?QualityControlValue FILTER(?QualityControlValue="pass") .
+                        ?image repr:isAvailableAt ?image_url 
+                        }
+            </pre>
+          </section>
+    </div>    
+  </body>
+</html>

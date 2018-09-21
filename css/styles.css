@@ -38,6 +38,11 @@
    text-align: justify;
   }
 
+  .query {
+    line-height: 1.9vmax;
+    font-size: 1.2vmax;
+  }
+
   .content h3 {
    color: #1B80CF;
   }
