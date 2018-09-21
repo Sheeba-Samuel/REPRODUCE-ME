@@ -1,0 +1,44 @@
+<table class="sparql" border="1">
+  <tr>
+    <th>experiment</th>
+    <th>experimentStep</th>
+    <th>experimentMaterial</th>
+    <th>experimentMaterialName</th>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0032</td>
+    <td>https://w3id.org/reproduceme#ImagingStudy_idr0032</td>
+    <td>https://w3id.org/reproduceme#Organism_idr0032</td>
+    <td>Arabidopsis thaliana</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0020</td>
+    <td>https://w3id.org/reproduceme#ImagingStudy_idr0020</td>
+    <td>https://w3id.org/reproduceme#Library_idr0020_1</td>
+    <td>idr0020-screenA-library.txt</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0020</td>
+    <td>https://w3id.org/reproduceme#ImagingStudy_idr0020</td>
+    <td>https://w3id.org/reproduceme#Organism_idr0020</td>
+    <td>Homo sapiens</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0038</td>
+    <td>https://w3id.org/reproduceme#ImagingStudy_idr0038</td>
+    <td>https://w3id.org/reproduceme#Organism_idr0038</td>
+    <td>Mus musculus</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0002</td>
+    <td>https://w3id.org/reproduceme#ImagingStudy_idr0002</td>
+    <td>https://w3id.org/reproduceme#Library_idr0002_1</td>
+    <td>idr0002-screenA-library.txt</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0002</td>
+    <td>https://w3id.org/reproduceme#ImagingStudy_idr0002</td>
+    <td>https://w3id.org/reproduceme#Organism_idr0002</td>
+    <td>Homo sapiens</td>
+  </tr>
+</table>

@@ -1,0 +1,93 @@
+<table class="sparql" border="1">
+  <tr>
+    <th>experiment</th>
+    <th>agent</th>
+    <th>agentName</th>
+    <th>role</th>
+    <th>material</th>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0032</td>
+    <td>https://w3id.org/reproduceme#Agent_idr0032_1</td>
+    <td>Raymond</td>
+    <td>submitter</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0020</td>
+    <td>https://w3id.org/reproduceme#Agent_idr0020_1</td>
+    <td>Alexis</td>
+    <td>submitter</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0038</td>
+    <td>https://w3id.org/reproduceme#Agent_idr0038_1</td>
+    <td>Marie</td>
+    <td>submitter</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0038</td>
+    <td>https://w3id.org/reproduceme#Agent_idr0038_2</td>
+    <td>Raphael</td>
+    <td>Principal Investigator</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0038</td>
+    <td>https://w3id.org/reproduceme#Agent_idr0038</td>
+    <td>University of Dundee</td>
+    <td>Data Publisher</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0002</td>
+    <td>https://w3id.org/reproduceme#Agent_idr0002_1</td>
+    <td>Jean-Karim</td>
+    <td>submitter</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0020</td>
+    <td>https://w3id.org/reproduceme#Agent_idr0020Library_1</td>
+    <td>Custom library (gift from Spiros Linardopoulos (Institute of Cancer Research, London, UK)  in which each gene is targeted by a Dharmacon OnTargetPlus (OTP) pool of four siRNAs.</td>
+    <td>Manufacturer</td>
+    <td>https://w3id.org/reproduceme#Library_idr0020_1</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0002</td>
+    <td>https://w3id.org/reproduceme#Agent_idr0002Library_1</td>
+    <td>Ambion</td>
+    <td>Manufacturer</td>
+    <td>https://w3id.org/reproduceme#Library_idr0002_1</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0032</td>
+    <td>Yang W, Schuster C, Beahan CT, Charoensawan V, Peaucelle A, Bacic A, Doblin MS, Wightman R, Meyerowitz EM</td>
+    <td></td>
+    <td></td>
+    <td>https://w3id.org/reproduceme#Publication_idr0032</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0020</td>
+    <td>Barr AR, Bakal C</td>
+    <td></td>
+    <td></td>
+    <td>https://w3id.org/reproduceme#Publication_idr0020</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0038</td>
+    <td>Marie Held, Ilaria Santeramo, Bettina Wilm, Patricia Murray, Raphael Levy</td>
+    <td></td>
+    <td></td>
+    <td>https://w3id.org/reproduceme#Publication_idr0038</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0002</td>
+    <td>&quot;Heriche JK, Lees JG, Morilla I, Walter T, Petrova B, Roberti MJ, Hossain MJ, Adler P, Fernandez JM, Krallinger M, Haering CH, Vilo J, Valencia A, Ranea JA, Orengo C, Ellenberg J.&quot;</td>
+    <td></td>
+    <td></td>
+    <td>https://w3id.org/reproduceme#Publication_idr0002</td>
+  </tr>
+</table>
