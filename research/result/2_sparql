@@ -1,0 +1,47 @@
+<table class="sparql" border="1">
+  <tr>
+    <th>experiment</th>
+    <th>experimentStep</th>
+    <th>experimentMethod</th>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0032</td>
+    <td>https://w3id.org/reproduceme#SubExperiment_idr0032_1</td>
+    <td>http://purl.obolibrary.org/obo/FBbi_00000246</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0032</td>
+    <td>https://w3id.org/reproduceme#SubExperiment_idr0032_1</td>
+    <td>fluorescence microscopy</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0038</td>
+    <td>https://w3id.org/reproduceme#SubExperiment_idr0038_1</td>
+    <td>http://purl.obolibrary.org/obo/FBbi_00000364</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0038</td>
+    <td>https://w3id.org/reproduceme#SubExperiment_idr0038_1</td>
+    <td>light sheet fluorescence microscopy</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0038</td>
+    <td>https://w3id.org/reproduceme#SubExperiment_idr0038_2</td>
+    <td>http://purl.obolibrary.org/obo/FBbi_00000364</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0038</td>
+    <td>https://w3id.org/reproduceme#SubExperiment_idr0038_2</td>
+    <td>light sheet fluorescence microscopy</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0038</td>
+    <td>https://w3id.org/reproduceme#SubExperiment_idr0038_3</td>
+    <td>http://purl.obolibrary.org/obo/FBbi_00000364</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0038</td>
+    <td>https://w3id.org/reproduceme#SubExperiment_idr0038_3</td>
+    <td>light sheet fluorescence microscopy</td>
+  </tr>
+</table>

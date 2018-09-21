@@ -1,0 +1,52 @@
+<table class="sparql" border="1">
+  <tr>
+    <th>experiment</th>
+    <th>step</th>
+    <th>publication</th>
+    <th>publicationDOI</th>
+    <th>PMC_ID</th>
+    <th>releaseDate</th>
+    <th>PubMed_ID</th>
+    <th>author</th>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0032</td>
+    <td>https://w3id.org/reproduceme#ImagingStudy_idr0032</td>
+    <td>https://w3id.org/reproduceme#Publication_idr0032</td>
+    <td>https://doi.org/10.1016/j.cub.2016.04.026</td>
+    <td>PMC5024349</td>
+    <td></td>
+    <td>27212401</td>
+    <td>Yang W, Schuster C, Beahan CT, Charoensawan V, Peaucelle A, Bacic A, Doblin MS, Wightman R, Meyerowitz EM</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0020</td>
+    <td>https://w3id.org/reproduceme#ImagingStudy_idr0020</td>
+    <td>https://w3id.org/reproduceme#Publication_idr0020</td>
+    <td>https://doi.org/10.1038/srep10564</td>
+    <td>PMC4453164</td>
+    <td></td>
+    <td>26037491</td>
+    <td>Barr AR, Bakal C</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0038</td>
+    <td>https://w3id.org/reproduceme#ImagingStudy_idr0038</td>
+    <td>https://w3id.org/reproduceme#Publication_idr0038</td>
+    <td>https://doi.org/10.1371/journal.pone.0199918</td>
+    <td>PMC6062017</td>
+    <td></td>
+    <td>30048451</td>
+    <td>Marie Held, Ilaria Santeramo, Bettina Wilm, Patricia Murray, Raphael Levy</td>
+  </tr>
+  <tr>
+    <td>https://w3id.org/reproduceme#Experiment_idr0002</td>
+    <td>https://w3id.org/reproduceme#ImagingStudy_idr0002</td>
+    <td>https://w3id.org/reproduceme#Publication_idr0002</td>
+    <td>http://dx.doi.org/10.1091/mbc.E13-04-0221</td>
+    <td>PMC4142622</td>
+    <td></td>
+    <td>24943848</td>
+    <td>&quot;Heriche JK, Lees JG, Morilla I, Walter T, Petrova B, Roberti MJ, Hossain MJ, Adler P, Fernandez JM, Krallinger M, Haering CH, Vilo J, Valencia A, Ranea JA, Orengo C, Ellenberg J.&quot;</td>
+  </tr>
+</table>
