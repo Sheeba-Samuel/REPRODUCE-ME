@@ -1,0 +1,46 @@
+1. 
+SELECT DISTINCT ?experiment ?input ?output WHERE
+                {
+                    ?experiment a repr:Experiment .
+                    ?experimentStep p-plan:isStepOfPlan ?experiment .
+                    {
+                    ?experimentInput p-plan:isInputVarOf ?experimentStep .
+                    ?experimentInput rdf:type ?experimentInputType .
+                    OPTIONAL { ?experimentInput repr:name ?experimentInputName } .
+                    }
+                    UNION {
+                    ?experimentOutput p-plan:isOutputVarOf ?experimentStep .
+                    ?experimentOutput rdf:type ?experimentOutputType .
+                    OPTIONAL { ?experimentOutput repr:name ?experimentOutputName } .
+
+                    }
+                }
+
+1. only type
+
+SELECT DISTINCT ?experimentInputType ?experimentOutputType
+from <urn:owl:inference:idr0002>
+WHERE          {
+                    ?experiment a repr:Experiment .
+                    ?experimentStep p-plan:isStepOfPlan ?experiment .
+{
+?experimentInput p-plan:isInputVarOf ?experimentStep .
+?experimentInput rdf:type ?experimentInputType .
+
+}
+UNION {
+?experimentOutput p-plan:isOutputVarOf ?experimentStep .
+?experimentOutput rdf:type ?experimentOutputType .
+
+
+}
+                }
+
+                3. {
+                    ?experiment a repr:Experiment .
+                    ?step p-plan:isStepOfPlan ?experiment .
+                    {
+?material p-plan:isInputVarOf ?step .
+?material repr:name ?materialName
+}
+                }
