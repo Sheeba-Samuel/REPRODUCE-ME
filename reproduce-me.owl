@@ -63,6 +63,47 @@
     
 
 
+    <!-- https://w3id.org/reproduceme#generated -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#generated">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/net/p-plan#hasOutputVar"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/reproduceme#hasExperimentMaterial -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#hasExperimentMaterial">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/net/p-plan#hasInputVar"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/reproduceme#hasExperimentalCondition -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#hasExperimentalCondition">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/net/p-plan#hasInputVar"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/reproduceme#hasExperimentalData -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#hasExperimentalData">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/net/p-plan#hasInputVar"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/reproduceme#hasPart -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#hasPart">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/reproduceme#isPartOf"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/reproduceme#hasSetting -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#hasSetting">
@@ -85,7 +126,6 @@
     <!-- https://w3id.org/reproduceme#isPartOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#isPartOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/reproduceme#hasPart"/>
         <rdfs:comment>An entity is part of another entity if one of its part belong to the other entity.</rdfs:comment>
         <rdfs:label xml:lang="en">isPartOf</rdfs:label>
     </owl:ObjectProperty>
@@ -96,6 +136,14 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#isRelatedTo">
         <rdfs:label xml:lang="en">isRelatedTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/reproduceme#isSettingOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#isSettingOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -114,6 +162,14 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#storedAt">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#atLocation"/>
         <rdfs:label xml:lang="en">storedAt</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/reproduceme#used -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#used">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/net/p-plan#hasInputVar"/>
     </owl:ObjectProperty>
     
 
@@ -167,62 +223,6 @@
     
 
 
-    <!-- https://w3id.org/reproduceme#generated -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#generated">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/net/p-plan#hasOutputVar"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/reproduceme#hasExperimentMaterial -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#hasExperimentMaterial">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/net/p-plan#hasInputVar"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/reproduceme#hasExperimentalCondition -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#hasExperimentalCondition">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/net/p-plan#hasInputVar"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/reproduceme#hasExperimentalData -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#hasExperimentalData">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/net/p-plan#hasInputVar"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/reproduceme#hasPart -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#hasPart">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/reproduceme#isSettingOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#isSettingOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/reproduceme#used -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme#used">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/net/p-plan#hasInputVar"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -231,6 +231,41 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- https://w3id.org/reproduceme#ORCID -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reproduceme#ORCID">
+        <rdfs:comment>ORCID identifier</rdfs:comment>
+        <rdfs:label>ORCID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reproduceme#address -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reproduceme#address">
+        <rdfs:comment>Address of an Agent</rdfs:comment>
+        <rdfs:label>Address</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reproduceme#description -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reproduceme#description">
+        <rdfs:label>description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reproduceme#doi -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reproduceme#doi">
+        <rdfs:comment>Publication persistent identifier</rdfs:comment>
+        <rdfs:label>doi</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
@@ -243,11 +278,54 @@
     
 
 
+    <!-- https://w3id.org/reproduceme#modifiedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reproduceme#modifiedAtTime">
+        <rdfs:comment>The time at which an entity was modified.</rdfs:comment>
+        <rdfs:label>modifiedAtTime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/reproduceme#name -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/reproduceme#name">
         <rdfs:comment xml:lang="en">The name of a thing.</rdfs:comment>
         <rdfs:label xml:lang="en">Name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reproduceme#pmcid -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reproduceme#pmcid">
+        <rdfs:comment>PMC ID</rdfs:comment>
+        <rdfs:label>PMC Id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reproduceme#pubmedid -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reproduceme#pubmedid">
+        <rdfs:label>PubMed ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reproduceme#receivedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reproduceme#receivedAtTime">
+        <rdfs:comment>The time at which an entity was received.</rdfs:comment>
+        <rdfs:label>receivedAtTime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reproduceme#type -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reproduceme#type">
+        <rdfs:label>type</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -345,6 +423,15 @@
     
 
 
+    <!-- https://w3id.org/reproduceme#AntisenseSequence -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#AntisenseSequence">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Variable"/>
+        <rdfs:label>AntisenseSequence</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reproduceme#Arc -->
 
     <owl:Class rdf:about="https://w3id.org/reproduceme#Arc">
@@ -378,6 +465,15 @@ For example, an argument of parameter of a function.</rdfs:comment>
     
 
 
+    <!-- https://w3id.org/reproduceme#Assay -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#Assay">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#ExperimentalData"/>
+        <rdfs:label>Assay</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reproduceme#Attenuation -->
 
     <owl:Class rdf:about="https://w3id.org/reproduceme#Attenuation">
@@ -385,6 +481,17 @@ For example, an argument of parameter of a function.</rdfs:comment>
         <rdfs:comment xml:lang="en">The Attenuation of the light source, A fraction, as a value from 0.0 to 1.0.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#LightSourceSettings_Attenuation"/>
         <rdfs:label xml:lang="en">Attenuation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reproduceme#Author -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#Author">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Person"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Role"/>
+        <rdfs:comment xml:lang="en">The person who authors a piece of work.</rdfs:comment>
+        <rdfs:label xml:lang="en">Author</rdfs:label>
     </owl:Class>
     
 
@@ -486,6 +593,15 @@ For example, a Jupyter Notebook cell.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Activity"/>
         <rdfs:comment xml:lang="en">The run of a cell of a Interactive Notebook.</rdfs:comment>
         <rdfs:label xml:lang="en">Notebook Cell Execution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reproduceme#CellLine -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#CellLine">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#ExperimentMaterial"/>
+        <rdfs:label xml:lang="en">Cell Line</rdfs:label>
     </owl:Class>
     
 
@@ -631,6 +747,15 @@ For example, a Jupyter Notebook cell.</rdfs:comment>
         <rdfs:comment xml:lang="en">Describes the technique used to achieve contrast for each channel.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel_ContrastMethod"/>
         <rdfs:label xml:lang="en">Contrast Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reproduceme#ControlComments -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#ControlComments">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Variable"/>
+        <rdfs:label>ControlComments</rdfs:label>
     </owl:Class>
     
 
@@ -790,6 +915,15 @@ For example, a Jupyter Notebook cell.</rdfs:comment>
         <rdfs:comment xml:lang="en">The Type of detector. E.g. CCD, PMT, EMCCD etc.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Detector_Type"/>
         <rdfs:label xml:lang="en">Detector Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reproduceme#DevelopmentalStage -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#DevelopmentalStage">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Variable"/>
+        <rdfs:label>DevelopmentalStage</rdfs:label>
     </owl:Class>
     
 
@@ -969,6 +1103,16 @@ For example, a specimen.</rdfs:comment>
         <rdfs:comment xml:lang="en">Refers to the type of an experiment.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Experiment_Type"/>
         <rdfs:label xml:lang="en">Experiment Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reproduceme#ExperimentalCondition -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#ExperimentalCondition">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#Setting"/>
+        <rdfs:comment xml:lang="en">The attributes or the conditions while an experiment is performed.</rdfs:comment>
+        <rdfs:label xml:lang="en">Experimental Condition</rdfs:label>
     </owl:Class>
     
 
@@ -1202,6 +1346,24 @@ For example, a specimen.</rdfs:comment>
     
 
 
+    <!-- https://w3id.org/reproduceme#GeneIdentifier -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#GeneIdentifier">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Variable"/>
+        <rdfs:label>GeneIdentifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reproduceme#GeneSymbol -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#GeneSymbol">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Variable"/>
+        <rdfs:label>GeneSymbol</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reproduceme#GenericExcitationSource -->
 
     <owl:Class rdf:about="https://w3id.org/reproduceme#GenericExcitationSource">
@@ -1227,6 +1389,17 @@ For example, a specimen.</rdfs:comment>
     <owl:Class rdf:about="https://w3id.org/reproduceme#HeatInactivation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#EnvironmentAttribute"/>
         <rdfs:label>Heat Inactivation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reproduceme#HighContentScreening -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#HighContentScreening">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Step"/>
+        <rdfs:comment xml:lang="en">A method that is used in biological research and drug discovery to identify substances such as small molecules, peptides, or RNAi that alter the phenotype of a cell in a desired manner</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">https://en.wikipedia.org/wiki/High-content_screening</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">High Content Screening</rdfs:label>
     </owl:Class>
     
 
@@ -1311,6 +1484,15 @@ For example, a microscopic image with metadata.</rdfs:comment>
     <owl:Class rdf:about="https://w3id.org/reproduceme#ImagingMethod">
         <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#Method"/>
         <rdfs:label xml:lang="en">Imaging Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reproduceme#ImagingStudy -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#ImagingStudy">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#ExperimentSetup"/>
+        <rdfs:label>Imaging Study</rdfs:label>
     </owl:Class>
     
 
@@ -1456,6 +1638,24 @@ For example, OMERO performs the task of script execution or import of metadata t
         <rdfs:comment xml:lang="en">The numerical aperture of the lens.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective_LensNA"/>
         <rdfs:label xml:lang="en">Lens Numerical Aperture</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reproduceme#Library -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#Library">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#ExperimentalData"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reproduceme#License -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#License">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Variable"/>
+        <rdfs:comment xml:lang="en">An official permission required to perform or own something.</rdfs:comment>
+        <rdfs:label xml:lang="en">License</rdfs:label>
     </owl:Class>
     
 
@@ -1868,6 +2068,15 @@ For example, Jupyter Notebook</rdfs:comment>
     
 
 
+    <!-- https://w3id.org/reproduceme#Phenotype -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#Phenotype">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Variable"/>
+        <rdfs:label>Phenotype</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reproduceme#PhotometricInterpretation -->
 
     <owl:Class rdf:about="https://w3id.org/reproduceme#PhotometricInterpretation">
@@ -2112,6 +2321,16 @@ For example, Jupyter Notebook</rdfs:comment>
     
 
 
+    <!-- https://w3id.org/reproduceme#ProcessedData -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#ProcessedData">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#ExperimentalData"/>
+        <rdfs:comment xml:lang="en">The data which is modified and processed for analysis or other experiments.</rdfs:comment>
+        <rdfs:label xml:lang="en">Processed Data</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reproduceme#ProgrammingLanguage -->
 
     <owl:Class rdf:about="https://w3id.org/reproduceme#ProgrammingLanguage">
@@ -2128,6 +2347,16 @@ For example, Jupyter Notebook</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#ExperimentMaterial"/>
         <rdfs:comment xml:lang="en">Biomoelcules responsible for performing variety of functions in an organism.</rdfs:comment>
         <rdfs:label xml:lang="en">Protein</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reproduceme#Protocol -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#Protocol">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Plan"/>
+        <rdfs:comment xml:lang="en">A set of instructions needed to perform an activity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Protocol</rdfs:label>
     </owl:Class>
     
 
@@ -2196,6 +2425,15 @@ reproduce some of that found in a screening database.</rdfs:comment>
     
 
 
+    <!-- https://w3id.org/reproduceme#QualityControl -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#QualityControl">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Variable"/>
+        <rdfs:label>QualityControl</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reproduceme#RNA -->
 
     <owl:Class rdf:about="https://w3id.org/reproduceme#RNA">
@@ -2232,6 +2470,16 @@ reproduce some of that found in a screening database.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Variable"/>
         <rdfs:comment xml:lang="en">The overall review provided by an agent to a thing.</rdfs:comment>
         <rdfs:label xml:lang="en">Rating</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reproduceme#RawData -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#RawData">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#ExperimentalData"/>
+        <rdfs:comment xml:lang="en">The data directly generated from an experiment without any modification or processing.</rdfs:comment>
+        <rdfs:label xml:lang="en">Raw Data</rdfs:label>
     </owl:Class>
     
 
@@ -2437,6 +2685,15 @@ reproduce some of that found in a screening database.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#ExperimentalData"/>
         <rdfs:comment xml:lang="en">A computer program written to perform a task in a scripting language.</rdfs:comment>
         <rdfs:label xml:lang="en">Script</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reproduceme#SenseSequence -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#SenseSequence">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Variable"/>
+        <rdfs:label>SenseSequence</rdfs:label>
     </owl:Class>
     
 
@@ -2671,6 +2928,23 @@ For example, a chemical solution used in an experiment.</rdfs:comment>
     
 
 
+    <!-- https://w3id.org/reproduceme#Study -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#Study">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Plan"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reproduceme#SubExperiment -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#SubExperiment">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Step"/>
+        <rdfs:label xml:lang="en">SubExperiment</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reproduceme#SupportedFileFormat -->
 
     <owl:Class rdf:about="https://w3id.org/reproduceme#SupportedFileFormat">
@@ -2795,6 +3069,15 @@ For example in a video stream.</rdfs:comment>
         <rdfs:comment xml:lang="en">The range of wavelengths that are transmitted by the filter.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#TransmittanceRange"/>
         <rdfs:label xml:lang="en">Transmittance Range</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reproduceme#Treatment -->
+
+    <owl:Class rdf:about="https://w3id.org/reproduceme#Treatment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#ExperimentSetup"/>
+        <rdfs:label>Treatment</rdfs:label>
     </owl:Class>
     
 
@@ -2960,100 +3243,20 @@ A Well has a number of WellSample elements that link to the Images collected in 
     
 
 
-    <!-- https://w3id.org/reproduceme#Author -->
+    <!-- https://w3id.org/reproduceme#siRNAIdentifier -->
 
-    <owl:Class rdf:about="https://w3id.org/reproduceme#Author">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Person"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Role"/>
-        <rdfs:comment xml:lang="en">The person who authors a piece of work.</rdfs:comment>
-        <rdfs:label xml:lang="en">Author</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/reproduceme#CellLine -->
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme#CellLine">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#ExperimentMaterial"/>
-        <rdfs:label xml:lang="en">Cell Line</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/reproduceme#ExperimentalCondition -->
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme#ExperimentalCondition">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#Setting"/>
-        <rdfs:comment xml:lang="en">The attributes or the conditions while an experiment is performed.</rdfs:comment>
-        <rdfs:label xml:lang="en">Experimental Condition</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/reproduceme#HighContentScreening -->
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme#HighContentScreening">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Step"/>
-        <rdfs:comment xml:lang="en">A method that is used in biological research and drug discovery to identify substances such as small molecules, peptides, or RNAi that alter the phenotype of a cell in a desired manner</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="en">https://en.wikipedia.org/wiki/High-content_screening</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">High Content Screening</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/reproduceme#License -->
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme#License">
+    <owl:Class rdf:about="https://w3id.org/reproduceme#siRNAIdentifier">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Variable"/>
-        <rdfs:comment xml:lang="en">An official permission required to perform or own something.</rdfs:comment>
-        <rdfs:label xml:lang="en">License</rdfs:label>
+        <rdfs:label>siRNAIdentifier</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/reproduceme#ProcessedData -->
+    <!-- https://w3id.org/reproduceme#siRNAPoolIdentifier -->
 
-    <owl:Class rdf:about="https://w3id.org/reproduceme#ProcessedData">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#ExperimentalData"/>
-        <rdfs:comment xml:lang="en">The data which is modified and processed for analysis or other experiments.</rdfs:comment>
-        <rdfs:label xml:lang="en">Processed Data</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/reproduceme#Protocol -->
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme#Protocol">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Plan"/>
-        <rdfs:comment xml:lang="en">A set of instructions needed to perform an activity.</rdfs:comment>
-        <rdfs:label xml:lang="en">Protocol</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/reproduceme#RawData -->
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme#RawData">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme#ExperimentalData"/>
-        <rdfs:comment xml:lang="en">The data directly generated from an experiment without any modification or processing.</rdfs:comment>
-        <rdfs:label xml:lang="en">Raw Data</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/reproduceme#Study -->
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme#Study">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Plan"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/reproduceme#SubExperiment -->
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme#SubExperiment">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Step"/>
-        <rdfs:label xml:lang="en">SubExperiment</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/reproduceme#siRNAPoolIdentifier">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Variable"/>
+        <rdfs:label>siRNAPoolIdentifier</rdfs:label>
     </owl:Class>
     
 
@@ -3101,6 +3304,15 @@ A Well has a number of WellSample elements that link to the Images collected in 
     <owl:NamedIndividual rdf:about="https://w3id.org/reproduceme#AVI">
         <rdf:type rdf:resource="https://w3id.org/reproduceme#SupportedFileFormat"/>
         <rdfs:label xml:lang="en">AVI (Audio Video Interleave)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/reproduceme#Adler-32 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/reproduceme#Adler-32">
+        <rdf:type rdf:resource="https://w3id.org/reproduceme#ChecksumAlgorithm"/>
+        <rdfs:label>CRC-32</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3309,6 +3521,14 @@ A Well has a number of WellSample elements that link to the Images collected in 
     <owl:NamedIndividual rdf:about="https://w3id.org/reproduceme#CCD">
         <rdf:type rdf:resource="https://w3id.org/reproduceme#DetectorType"/>
         <rdfs:label>CCD</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/reproduceme#CMOS -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/reproduceme#CMOS">
+        <rdf:type rdf:resource="https://w3id.org/reproduceme#DetectorType"/>
     </owl:NamedIndividual>
     
 
@@ -5289,31 +5509,6 @@ A Well has a number of WellSample elements that link to the Images collected in 
     <owl:NamedIndividual rdf:about="https://w3id.org/reproduceme#cellSensVSI">
         <rdf:type rdf:resource="https://w3id.org/reproduceme#SupportedFileFormat"/>
         <rdfs:label xml:lang="en">cellSens VSI</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/reproduceme#AIM -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/reproduceme#AIM">
-        <rdf:type rdf:resource="https://w3id.org/reproduceme#SupportedFileFormat"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/reproduceme#Adler-32 -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/reproduceme#Adler-32">
-        <rdf:type rdf:resource="https://w3id.org/reproduceme#ChecksumAlgorithm"/>
-        <rdfs:label>CRC-32</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/reproduceme#CMOS -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/reproduceme#CMOS">
-        <rdf:type rdf:resource="https://w3id.org/reproduceme#DetectorType"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
