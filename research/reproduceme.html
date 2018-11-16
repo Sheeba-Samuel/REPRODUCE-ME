@@ -2,23 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="Content-Language" content="en"/>    
+    <meta http-equiv="Content-Language" content="en"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../css/styles.css">    
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
-    
+
     <title>REPRODUCE-ME: Reproducibility of Scientific Experiments</title>
   </head>
-  <body vocab="http://schema.org/">    
+  <body vocab="http://schema.org/">
     <div class="licence"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
         <img alt="Creative Commons License" style="border-width:0" src="../images/license.png"/></a>
     </div>
     <div class="page" typeof="WebPage">
-        <nav class="navbar navbar-toggleable-md navbar-light">      
+        <nav class="navbar navbar-toggleable-md navbar-light">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto" typeof="BreadcrumbList">
             <li class="nav-item active">
@@ -48,12 +48,43 @@
     </div>
     <div class="content">
         <section>
-            <h3><b>The REPRODUCE-ME Ontology</b></h3> 
+            <h3><b>The REPRODUCE-ME Ontology</b></h3>
             <p>The REPRODUCE-ME ontology extended from PROV-O and P-Plan is used
                 to represent the whole picture of an experiment describing the path it
-                took from its design to result.</p>
-            <h5><b>Resources:</b></h5>            
-            <ul>           
+                took from its design to result. It is extended from PROV-O to represent all agents, activities and entities involved in an experiment.
+                It also extends from P-Plan to represent the steps, the input and output variables and the complete path taken from an input to an output of an experiment.
+                We aim to enable end-to-end reproducibility of scientific experiments by capturing and representing the complete provenance of a scientific experiment using the REPRODUCE-ME ontology.
+                Here we present a list of competency questions that are required to be answered for reproducing scientific experiments from the scientists from the Collaborative Research Centers (<a href="http://receptorlight.uni-jena.de/">CRC ReceptorLight</a>).
+                <ul class="questions">
+                    <li><p>What are the input and output variables of an experiment?</p></li>
+                    <li><p>Which are the methods and standard operating procedures used?</p></li>
+                    <li><p>Which are the files and materials that were used in a particular step?</p></li>
+                    <li><p>Which are the steps involved in an experiment which used a particular material?</p></li>
+                    <li><p>What is the complete path taken by a scientist for an experiment?</p></li>
+                    <li><p>Which are the instruments that are associated with an experiment and their settings when the output was generated?</p></li>
+                    <li><p>Which are the agents directly or indirectly responsible for an experiment?</p></li>
+                    <li><p>Who created this experiment and when? Who modified it and when?</p></li>
+                    <li><p>Which are the publications or external resources that were referenced in each step of an experiment?</p></li>
+                </ul>
+                Using the REPRODUCE-ME ontology, we can describe and semantically query the information for the following:
+                <ul>
+                    <li><p>Scientific experiments</p></li>
+                    <li><p>Input and output associated with an experiment</p></li>
+                    <li><p>Execution Environmental attributes of an experiment</p></li>
+                    <li><p>Experiment Materials and their preparation steps</p></li>
+                    <li><p>Steps used in an experiment</p></li>
+                    <li><p>Execution Order of steps and activities</p></li>
+                    <li><p>The agents involved in an experiment and their role</p></li>
+                    <li><p>Script/Jupyter Notebook execution in a multi-user environment provided by JupyterHub</p></li>
+                    <li><p>The OME data model</p></li>
+                    <li><p>Microscopic Image Acquisition properties</p></li>
+                    <li><p>Bio-Formats</p></li>
+                    <li><p>Instruments and their settings</p></li>
+                </ul>
+            </p>
+
+            <h5><b>Resources:</b></h5>
+            <ul>
             <li><p><a property="item" typeof="WebPage" href="../doc/index-en.html">Ontology Documentation</a></p></li>
             <li><p><a href="../reproduce-me.owl">Download Ontology</a></p></li>
             <li><p><a href="https://github.com/Sheeba-Samuel/REPRODUCE-ME/tree/master/ExperimentDatasets">Experiment Datasets</a></p></li>
@@ -70,6 +101,6 @@
         <section>
             <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic License.</a></p>
         </section>
-    </div>    
+    </div>
   </body>
 </html>
