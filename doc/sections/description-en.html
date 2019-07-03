@@ -1,3 +1,22 @@
+<html>
 <h2 id="desc" class="list">REPRODUCE-ME Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">
-This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+<span>
+<p><a href="#reproduce_me_ontology_example">Figure 1</a>. shows how the REPRODUCE-ME ontology is used to represent the provenance of a scientific experiment. A scientific experiment is represented as a p-plan:Plan which consists of several steps. Each step of a scientific experiment has input and output variables. The ontology also describes how the instruments, materials and settings are linked to the experiment. </p>
+<div id="reproduce_me_ontology_example" class="figure" style="text-align: center;">
+    <img src="resources/images/REPRODUCE-MEOntology.png" alt="A scientific experiment depicted using the REPRODUCE-ME ontology." width="636" height="429">
+    <div style="text-align: center;">
+        <a href="#reproduce_me_ontology_example">Figure 1</a>. The provenance of a scientific experiment depicted using the REPRODUCE-ME ontology.
+    </div>
+</div>
+<p><a href="#computational_experiment_example">Figure 2</a>. shows how the REPRODUCE-ME ontology is used to represent the provenance of an experiment using computational notebooks. A computational notebook is described as a sub plan of a scientific experiment. The cells in the notebook are considered as p-plan:Step and the execution of each cell is considered as an prov:Activity which uses and generates input and output respectively.
+The environmental attributes of the computational experiment is also described using the REPRODUCE-ME Ontology.
+</p>
+<div id="computational_experiment_example" class="figure" style="text-align: center;">
+    <img src="resources/images/ComputationalExperiment.png" alt="A scientific experiment depicted using the REPRODUCE-ME ontology." width="636" height="429">
+    <div style="text-align: center;">
+        <a href="#computational_experiment_example">Figure 2</a>. The provenance of an experiment using computational notebooks depicted using the REPRODUCE-ME ontology.
+    </div>
+</div>
+</span>
+
+</html>
