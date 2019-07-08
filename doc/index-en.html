@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/reproduceme","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/reproduceme","name":"REPRODUCE-ME Ontology", "headline":"The REPRODUCE-ME ontology describes a scientific experiment taking into focus the use-case of microscopy. The ontology describes the lifecycle of an experiment from its input to its result. The ontology describes the property of a microscopic image and its acquisition. It also describes terms from the OME data model. The Experiment describes the activities, entities, agents, steps, plans, variables, locations and time that is related to an experiment.", "datePublished":"2019-01-14", "version":"1.1", "license":"http://creativecommons.org/licenses/by-nc-sa/2.0/", "author":[{"@type":"Person","name":"Sheeba Samuel","url":"https://fusion.cs.uni-jena.de/fusion/members/sheeba-samuel/"}], "contributor":[{"@type":"Person","name":"Birgitta König-Ries","url":"https://w3id.org/%20Birgitta%20König-Ries"}]}</script>
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/reproduceme","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/reproduceme","name":"REPRODUCE-ME Ontology", "headline":"The REPRODUCE-ME ontology is an extension of the PROV-O and the P-Plan ontology to describe a complete path of a scientific experiment. It expresses the REPRODUCE-ME Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes and properties to represent a scientific experiment including its computational and non-computational steps to track the provenance of results. It describes an experiment and its data, agents, activities, plans, steps, variables, instruments, materials and settings required for its reproducibility.", "datePublished":"2019-01-14", "version":"1.1", "license":"http://creativecommons.org/licenses/by-nc-sa/2.0/", "author":[{"@type":"Person","name":"Sheeba Samuel","url":"https://fusion.cs.uni-jena.de/fusion/members/sheeba-samuel/"},{"@type":"Person","name":"Birgitta König-Ries","url":"https://fusion.cs.uni-jena.de/fusion/members/birgitta-konig-ries/"}]}</script>
 
 <script src="resources/jquery.js"></script>
 <script src="resources/marked.min.js"></script>
@@ -49,8 +49,8 @@ function loadTOC(){
       $("#introduction").load("sections/introduction-en.html");
       $("#overview").load("sections/overview-en.html");
       $("#description").load("sections/description-en.html");
-      $("#references").load("sections/references-en.html");
       $("#crossref").load("sections/crossref-en.html", null, loadHash);
+      $("#references").load("sections/references-en.html");
     });
     </script>
   </head>
@@ -59,7 +59,7 @@ function loadTOC(){
 <div class="container">
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
-<h1>The REPRODUCE-ME Ontology</h1>
+<h1>REPRODUCE-ME Ontology</h1>
 <h2>Release  2019-01-14</h2>
 
 
@@ -69,14 +69,13 @@ function loadTOC(){
 <dt>Revision:</dt>
 <dd>1.1</dd>
 <dt>Authors:</dt>
-<dd><a href="https://fusion.cs.uni-jena.de/fusion/members/sheeba-samuel/">Sheeba Samuel</a></dd>
-<dd><a href="https://fusion.cs.uni-jena.de/fusion/members/birgitta-konig-ries/">Birgitta König-Ries</a></dd>
+<dd><a href="https://fusion.cs.uni-jena.de/fusion/members/sheeba-samuel/">Sheeba Samuel</a>, Friedrich-Schiller University Jena, Germany</dd><dd><a href="https://fusion.cs.uni-jena.de/fusion/members/birgitta-konig-ries/">Birgitta König-Ries</a>, Friedrich-Schiller University Jena, Germany</dd>
 
 <dt>Imported Ontologies:</dt>
-<dd><a href="http://www.w3.org/ns/prov-o#">prov-o</a></dd>
-<dd><a href="http://purl.org/net/p-plan#">p-plan</a></dd>
+<dd><a href="http://purl.org/net/p-plan#">p-plan</a></dd><dd><a href="http://www.w3.org/ns/prov-o#">prov-o</a></dd>
 
 <dt>Download serialization:</dt><dd><span><a href="reproduce-me.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="reproduce-me.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="reproduce-me.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="reproduce-me.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://creativecommons.org/licenses/by-nc-sa/2.0/" target="_blank"><img src="https://img.shields.io/badge/License-http://creativecommons.org/licenses/by_nc_sa/2.0/-blue.svg" alt="http://creativecommons.org/licenses/by-nc-sa/2.0/" /></a>
+</dd>
 </dl>
 
 <hr/>
@@ -88,10 +87,9 @@ function loadTOC(){
 </div>     <div id="abstract"></div>
 <div id="toc"></div>     <div id="introduction"></div>
      <div id="overview"></div>
-     <div id="description"></div>
+	 <div id="description"></div>
      <div id="crossref"></div>
      <div id="references"></div>
-     <div id="changelog"></div>
 <html>
 <div id="acknowledgements">
 <h2 id="ack" class="list">Acknowledgements <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
