@@ -56,8 +56,19 @@
     </div>
     <div class="content">
         <section>
-            <h3><b>The REPRODUCE-ME Ontology</b></h3>
-            <p>The REPRODUCE-ME ontology extended from PROV-O and P-Plan is used
+            <h3><b>The REPRODUCE-ME Data Model and Ontology</b></h3>
+            <p>The REPRODUCE-ME Data Model is a generic data model for the representation of scientific experiments with their provenance information.
+                The aim of this model is to capture the general elements of scientific experiments for their understandability and reproducibility.
+                An Experiment is considered as the central point of the REPRODUCE-ME data model. The model consists of eight components: Data, Agent, Activity, Plan, Step,
+                Setting, Instrument, Material.</p>
+            <section>
+                <p>The following diagram shows an overview of the REPRODUCE-ME data model to represent a scientific experiment.</p>
+                    <div class="datamodel"><a rel="datamodel">
+                    <img alt="REPRODUCE-ME Data Model" style="width:70%;height:70%;" src="../images/REPRODUCEMEDataModel.png"/>
+                    </div>
+            </section>
+            <p>The REPRODUCE-ME Data Model forms a basis for the REPRODUCE-ME ontology.
+                The REPRODUCE-ME ontology extended from PROV-O and P-Plan is used
                 to represent the whole picture of an experiment describing the path it
                 took from its design to result. It is extended from PROV-O to represent all agents, activities and entities involved in an experiment.
                 It also extends from P-Plan to represent the steps, the input and output variables and the complete path taken from an input to an output of an experiment.

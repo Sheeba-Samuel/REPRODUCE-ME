@@ -57,16 +57,27 @@
     <div class="content">
         <section>
             <h3><b>CAESAR-A Collaborative Environment for Scientific Analysis with Reproducibility</b></h3>
-            <p>We present CAESAR, a framework for the  end-to-end provenance management of scientific experiments. This collaborative framework allows scientists
-                to capture, manage, query and visualize the complete path of a scientific experiment
-                consisting of computational and non-computational steps in an interoperable way. We focus on the provenance management of experiments in life-sciences particularly
-                concerned with imaging datasets. CAESAR is built on top of <a href="https://www.openmicroscopy.org/omero/">OMERO</a>. OMERO provides the scientific data management of imaging datasets. CAESAR is extended to include the provenance management of scientific experiments.
-                It consists of following modules to provide end-to-end provenance management:</p>
+            <p>We present CAESAR, a framework for the  end-to-end provenance management of scientific experiments.
+                This collaborative framework allows scientists to capture, manage, query and visualize the complete path of a scientific experiment
+                consisting of computational and non-computational steps in an interoperable way.
+                We focus on the provenance management of experiments in life-sciences particularly
+                concerned with imaging datasets.
+                CAESAR is built on top of <a href="https://www.openmicroscopy.org/omero/">OMERO</a>.
+                OMERO provides the scientific data management of imaging datasets.
+                CAESAR is extended to include the provenance management of scientific experiments.
+                <section>
+                    <p>The following diagram shows an overview of CAESAR and its modules to provide end-to-end provenance management .</p>
+                        <div class="caeasr"><a rel="caesar">
+                        <img alt="CAESAR" style="width:70%;height:70%;" src="../images/CAESAR.png"/>
+                        </div>
+                </section>
+                It consists of following modules:</p>
                 <section>
                     <ul>
                         <li><b>Provenance Capture</b></li>
-                        <p>The provenance of scientific experiments is captured using the metadata editor which is provided with rich facilities. The metadata extracted from the images is also
-                            linked to the experimental data provided by scientists. This module captures the experiment, its steps, plans, activites, instruments used and their settings, the agents involved, the materials used, etc.</p>
+                        <p>The provenance of scientific experiments is captured using the metadata editor which is provided with rich facilities.
+                            The metadata extracted from the images is also linked to the experimental data provided by scientists.
+                            This module captures the experiment, its steps, plans, activites, instruments used and their settings, the agents involved, the materials used, etc.</p>
                         <p>Resources</p>
                         <ul>
                             <li><a property="item" typeof="WebPage" href="https://github.com/CaesarReceptorLight/openmicroscopy">CAESAR-core</a></li>
@@ -74,15 +85,18 @@
                             <li><a property="item" typeof="WebPage" href="https://github.com/Sheeba-Samuel/ProvBook">ProvBook-Provenance of the Notebook</a></li>
                         </ul>
                         <li><b>Provenance Represent</b></li>
-                        <p>The provenance of scientific experiments is represented with the help of semantic web technologies. This is done using the REPRODUCE-ME ontology. It links the computational and non-computational steps and data of scientific experiments.</p>
+                        <p>The provenance of scientific experiments is represented with the help of semantic web technologies.
+                            This is done using the REPRODUCE-ME ontology.
+                            It links the computational and non-computational steps and data of scientific experiments.</p>
                         <p>Resources</p>
                         <ul>
                                 <li>The REPRODUCE-ME Data Model</li>
                                 <li><p><a property="item" typeof="WebPage" href="../doc/index-en.html">The REPRODUCE-ME Ontology</a></p></li>
                         </ul>
                         <li><b>Provenance Storage</b></li>
-                        <p>The provenance of scientific experiments is stored in PostgreSQL database. We provide an ontology-based data access of the databases. We provide the federation store
-                                of multiple databases in CAESAR and the mapping of the underlying databases to the ontology which provide a semantic approach to query the data using the rdf4j SPARQL Endpoint.</p>
+                        <p>The provenance of scientific experiments is stored in PostgreSQL database.
+                            We provide an ontology-based data access of the databases.
+                            We provide the federation store of multiple databases in CAESAR and the mapping of the underlying databases to the ontology which provide a semantic approach to query the data using the rdf4j SPARQL Endpoint.</p>
                         <p>Resources</p>
                         <ul>
                             <li><a property="item" typeof="WebPage" href="https://github.com/Sheeba-Samuel/ReOpen/blob/master/reproduce-me.obda">Mappings of Experiment and OMERO database to the REPRODUCE-ME ontology</a></li>
@@ -101,7 +115,15 @@
                                 <li><a property="item" typeof="WebPage" href="https://github.com/Sheeba-Samuel/provenancebook">The complete package of ProvBook with provenance capture, representation and difference.</a></li>
                         </ul>
                         <li><b>Provenance Visualize</b></li>
-                        <p>The provenance of scientific experiments is visualized using the Project Dashboard and ProvTrack modules. The Project Dashboard provides an overall view of the experiments conducted for a research project. The ProvTrack provides a complete path of the provenance of scientific experiments.</p>
+                        <p>The provenance of scientific experiments is visualized using the Project Dashboard and ProvTrack modules.
+                            The Project Dashboard provides an overall view of the experiments conducted for a research project.
+                            The ProvTrack provides a complete path of the provenance of scientific experiments.</p>
+                        <section>
+                            <p>The following diagram shows an overview of the ProvTrack to represent a complete path of a scientific experiment.</p>
+                                <div class="provtrack"><a rel="provtrack">
+                                <img alt="ProvTrack" style="width:70%;height:70%;" src="../images/ProvTrack.png"/>
+                                </div>
+                        </section>
                         <p>Resources</p>
                         <ul>
                             <li><a property="item" typeof="WebPage" href="https://github.com/CaesarReceptorLight/ProjectDashboard">Project Dashboard</a></li>
