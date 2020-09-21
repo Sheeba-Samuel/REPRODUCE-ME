@@ -1,110 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="Content-Language" content="en"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
-
-    <script type='application/ld+json'>
-      {
-        "@context": "http://www.schema.org",
-        "@type": "WebSite",
-        "name": "REPRODUCE-ME: Reproducibility of Scientific Experiments",
-        "alternateName": "CAESAR-A Collaborative Environment for Scientific Analysis with Reproducibility",
-        "url": "https://w3id.org/reproduceme/research"
-      }
-      </script>
-
-    <title>REPRODUCE-ME: Reproducibility of Scientific Experiments</title>
-  </head>
-  <body vocab="http://schema.org/">
-    <div class="licence"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-     <img alt="Creative Commons License" style="border-width:0" src="images/license.png"/></a>
-    </div>
-    <div class="page" typeof="WebPage">
-      <nav class="navbar navbar-toggleable-md navbar-light">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto" typeof="BreadcrumbList">
-            <li class="nav-item active">
-              <h4><a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a></h4>
-            </li>
-            <li property="itemListElement" typeof="ListItem" class="nav-item">
-                <h4><a property="item" typeof="WebPage" class="nav-link" href="publications.html">
-              <span property="name">Publications</span>
-              </a></h4>
-              <meta property="position" content="2"/>
-            </li>
-            <li property="itemListElement" typeof="ListItem" class="nav-item">
-                <h4><a property="item" typeof="WebPage" class="nav-link" href="resources.html">
-                <span property="name">Resources</span>
-              </a></h4>
-              <meta property="position" content="3"/>
-            </li>
-            <li property="itemListElement" typeof="ListItem" class="nav-item">
-                <h4><a property="item" typeof="WebPage" class="nav-link" href="contact.html">
-                <span property="name">Contact</span>
-              </a></h4>
-              <meta property="position" content="4"/>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="content">
-        <h2><b>REPRODUCE-ME: Reproducibility of Scientific Experiments</b></h2>
-        <p>Our research provides a list of work done for the Reproducibility of Scientific Experiments.</p>
-
-        <section>
-            <h3><b><a href="research/reproduceme.html">1. The REPRODUCE-ME Data Model and Ontology</a></b></h3>
-            <p>The REPRODUCE-ME Data Model is a generic data model for the representation of scientific experiments with their provenance information.
-              The aim of this model is to capture the general elements of scientific experiments for their understandability and reproducibility.
-              An Experiment is considered as the central point of the REPRODUCE-ME data model. The model consists of eight components: Data, Agent, Activity, Plan, Step,
-              Setting, Instrument, Material. The REPRODUCE-ME Data Model forms a basis for the REPRODUCE-ME ontology.
-              The REPRODUCE-ME ontology extended from PROV-O and P-Plan is used to represent the whole picture of an
-              experiment describing the path it took from its design to result.
-              We aim to enable end-to-end reproducibility of scientific experiments by capturing and representing
-              the complete provenance of a scientific experiment using the REPRODUCE-ME ontology.</p>
-
-
-        </section>
-
-        <section>
-            <h3><b><a href="research/provbook.html">2. ProvBook</a></b></h3>
-            <p>We present ProvBook, an extension of Jupyter Notebook, to capture and view the provenance over the course of time.
-              It also allows the user to share a notebook along with its provenance in RDF and also convert it back to a notebook.
-              We use the REPRODUCE-ME ontology extended from PROV-O and P-Plan to describe the provenance of a notebook.
-              This helps the scientists to compare their previous results with the current ones, check whether the experiments produce the results as expected and query the sequence of executions using SPARQL.
-              The notebook data in RDF can be used in combination with the experiments that used them and help to get a track of the complete path of the scientific experiments.</p>
-
-        </section>
-
-        <section>
-          <h3><b><a href="research/caesar.html">3. CAESAR-A Collaborative Environment for Scientific Analysis with Reproducibility</a></b></h3>
-          <p>We present CAESAR, a framework for the end-to-end provenance management of scientific experiments. This collaborative framework allows scientists
-              to capture, manage, query and visualize the complete path of a scientific experiment
-              consisting of computational and non-computational steps in an interoperable way.</p>
-        </section>
-
-        <section>
-          <h3><b><a href="https://doi.org/10.6084/m9.figshare.12084393.v1">4. ReproduceMeGit</a></b></h3>
-          <p>ReproduceMeGit is a visualization tool for analyzing the reproducibility of Jupyter Notebooks.
-            This will help repository users and owners to reproduce and directly analyze and assess the reproducibility of any GitHub repository containing Jupyter Notebooks.
-            The tool provides information on the number of notebooks that were successfully reproducible, those that resulted in exceptions, those with different results from the original notebooks, etc.
-            Each notebook in the repository along with the provenance information of its execution can also be exported in RDF with the integration of the ProvBook tool.</p>
-
-        </section>
-
-      <p><b>Acknowledgements</b>
-        <p>This research is supported by the Deutsche Forschungsgemeinschaft (DFG) in
-                Project Z2 of the CRC/TRR 166 High-end light microscopy elucidates membrane
-                receptor function -  <a property="item" typeof="WebPage" href="http://www.receptorlight.uni-jena.de/">ReceptorLight.</a>
-        </p>
-      </p>
-    </div>
-  </body>
+   <head>
+      <meta charset="utf-8"/>
+      <meta http-equiv="Content-Language" content="en"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+      <title>REPRODUCE-ME: Reproducibility of Scientific Experiments</title>
+      <meta property="dc:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
+      <meta property="og:url" content="https://w3id.org/reproduceme/research">
+      <meta property="og:image" content="">
+      <meta property="og:description" content="Sheeba Samuel's research work on Reproducibility of Scientific Experiments">
+      <meta name="twitter:site" content="@sheebasamuel">
+      <meta name="twitter:creator" content="@sheebasamuel">
+      <link rel="stylesheet" href="css/styles.css"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous"/>
+      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+      <script type="application/ld+json"></script>
+   </head>
+   <body vocab="http://schema.org/">
+      <div class="licence"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+         <img alt="Creative Commons License" style="border-width:0" src="images/license.png"/></a>
+      </div>
+      <div class="page" typeof="WebPage">
+         <nav class="navbar navbar-toggleable-md navbar-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav mr-auto" typeof="BreadcrumbList">
+                  <li class="nav-item active">
+                     <h4><a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a></h4>
+                  </li>
+                  <li property="itemListElement" typeof="ListItem" class="nav-item">
+                     <h4><a property="item" typeof="WebPage" class="nav-link" href="publications.html">
+                        <span property="name">Publications</span>
+                        </a>
+                     </h4>
+                     <meta property="position" content="2"/>
+                  </li>
+                  <li property="itemListElement" typeof="ListItem" class="nav-item">
+                     <h4><a property="item" typeof="WebPage" class="nav-link" href="resources.html">
+                        <span property="name">Resources</span>
+                        </a>
+                     </h4>
+                     <meta property="position" content="3"/>
+                  </li>
+                  <li property="itemListElement" typeof="ListItem" class="nav-item">
+                     <h4><a property="item" typeof="WebPage" class="nav-link" href="contact.html">
+                        <span property="name">Contact</span>
+                        </a>
+                     </h4>
+                     <meta property="position" content="4"/>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+      </div>
+      <div class="content">
+         <span itemscope itemtype="http://schema.org/Article">
+            <h2><b itemprop="articleSection">REPRODUCE-ME: Reproducibility of Scientific Experiments</b></h2>
+            <p itemprop="articleBody">Our research provides a list of work done for the Reproducibility of Scientific Experiments.</p>
+         </span>
+         <section itemscope itemtype="http://schema.org/Article">
+            <h3><b><a href="research/reproduceme.html">
+               <span itemprop="articleSection">1. The REPRODUCE-ME Data Model and Ontology</span></a></b>
+            </h3>
+            <p itemprop="articleBody">The REPRODUCE-ME Data Model is a generic data model for the representation of scientific experiments with their provenance information.
+               The aim of this model is to capture the general elements of scientific experiments for their understandability and reproducibility.
+               An Experiment is considered as the central point of the REPRODUCE-ME data model. The model consists of eight components: Data, Agent, Activity, Plan, Step,
+               Setting, Instrument, Material. The REPRODUCE-ME Data Model forms a basis for the REPRODUCE-ME ontology.
+               The REPRODUCE-ME ontology extended from PROV-O and P-Plan is used to represent the whole picture of an
+               experiment describing the path it took from its design to result.
+               We aim to enable end-to-end reproducibility of scientific experiments by capturing and representing
+               the complete provenance of a scientific experiment using the REPRODUCE-ME ontology.
+            </p>
+         </section>
+         <section itemscope itemtype="http://schema.org/Article">
+            <h3><b><a href="research/provbook.html">
+               <span itemprop="articleSection">2. ProvBook</span></a></b>
+            </h3>
+            <p itemprop="articleBody">We present ProvBook, an extension of Jupyter Notebook, to capture and view the provenance over the course of time.
+               It also allows the user to share a notebook along with its provenance in RDF and also convert it back to a notebook.
+               We use the REPRODUCE-ME ontology extended from PROV-O and P-Plan to describe the provenance of a notebook.
+               This helps the scientists to compare their previous results with the current ones, check whether the experiments produce the results as expected and query the sequence of executions using SPARQL.
+               The notebook data in RDF can be used in combination with the experiments that used them and help to get a track of the complete path of the scientific experiments.
+            </p>
+         </section>
+         <section itemscope itemtype="http://schema.org/Article">
+            <h3><b><a href="research/caesar.html">
+               <span itemprop="articleSection">3. CAESAR-A Collaborative Environment for Scientific Analysis with Reproducibility</span></a></b>
+            </h3>
+            <p itemprop="articleBody">We present CAESAR, a framework for the end-to-end provenance management of scientific experiments. This collaborative framework allows scientists
+               to capture, manage, query and visualize the complete path of a scientific experiment
+               consisting of computational and non-computational steps in an interoperable way.
+            </p>
+         </section>
+         <section itemscope itemtype="http://schema.org/Article">
+            <h3><b><a href="https://doi.org/10.6084/m9.figshare.12084393.v1">
+               <span itemprop="articleSection">4. ReproduceMeGit</span></a></b>
+            </h3>
+            <p itemprop="articleBody">ReproduceMeGit is a visualization tool for analyzing the reproducibility of Jupyter Notebooks.
+               This will help repository users and owners to reproduce and directly analyze and assess the reproducibility of any GitHub repository containing Jupyter Notebooks.
+               The tool provides information on the number of notebooks that were successfully reproducible, those that resulted in exceptions, those with different results from the original notebooks, etc.
+               Each notebook in the repository along with the provenance information of its execution can also be exported in RDF with the integration of the ProvBook tool.
+            </p>
+         </section>
+         <p><b>Acknowledgements</b>
+         </p>
+         <p>This research is supported by the Deutsche Forschungsgemeinschaft (DFG) in
+            Project Z2 of the CRC/TRR 166 High-end light microscopy elucidates membrane
+            receptor function -  <a property="item" typeof="WebPage" href="http://www.receptorlight.uni-jena.de/">ReceptorLight.</a>
+         </p>
+         <p></p>
+      </div>
+   </body>
 </html>
+
+
