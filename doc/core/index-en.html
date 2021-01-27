@@ -1,0 +1,2662 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>The ReproduceMe-Core ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/reproduceme-core","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/reproduceme-core","name":"The ReproduceMe-Core ontology", "headline":"The ReproduceMe-Core ontology is the core ontology of the ReproduceMe Ontology Network. The ReproduceMe-Core ontology is designed to provide a detailed abstract definition of structured knowledge for the provenance and reproducibility of scientific studies.
+It is based on the foundational ontologies: PROV-O and P-Plan. It is an extension of the PROV-O and the P-Plan ontology to describe a complete path of a scientific experiment. It expresses the REPRODUCE-ME Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes and properties to represent a scientific experiment including its computational and non-computational steps to track the provenance of results. It describes an experiment and its data, agents, activities, plans, steps, variables, instruments, materials and settings required for its reproducibility.", "datePublished":"2020-07-28", "version":"2.0", "license":"http://creativecommons.org/licenses/by-nc-sa/2.0/", "author":[{"@type":"Person","name":"Sheeba Samuel"},{"@type":"Person","name":"Birgitta König-Ries"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+ $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>The ReproduceMe-Core ontology</h1>
+<h2>Release  2020-07-28</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/reproduceme-core/2.0">https://w3id.org/reproduceme-core/2.0</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/reproduceme-core">https://w3id.org/reproduceme-core</a></dd>
+<dt>Previous version:</dt>
+<dd><a href="1.1">1.1</a></dd>
+<dt>Revision:</dt>
+<dd>2.0</dd>
+<dt>Authors:</dt>
+<dd>Sheeba Samuel</dd><dd>Birgitta König-Ries</dd>
+
+<dt>Imported Ontologies:</dt>
+<dd><a href="http://purl.org/net/p-plan#">p-plan#</a></dd><dd><a href="http://www.w3.org/ns/prov-o#">prov-o#</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://creativecommons.org/licenses/by-nc-sa/2.0/" target="_blank"><img src="https://img.shields.io/badge/License-http://creativecommons.org/licenses/by_nc_sa/2.0/-blue.svg" alt="http://creativecommons.org/licenses/by-nc-sa/2.0/" /></a>
+</dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/OOPSeval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Sheeba Samuel,Birgitta König-Ries. The ReproduceMe-Core ontology. Revision: 2.0. Retrieved from: https://w3id.org/reproduceme-core/2.0</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The ReproduceMe-Core ontology is the core ontology of the ReproduceMe Ontology Network. The ReproduceMe-Core ontology is designed to provide a detailed abstract definition of structured knowledge for the provenance and reproducibility of scientific studies.
+It is based on the foundational ontologies: PROV-O and P-Plan. It is an extension of the PROV-O and the P-Plan ontology to describe a complete path of a scientific experiment. It expresses the REPRODUCE-ME Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes and properties to represent a scientific experiment including its computational and non-computational steps to track the provenance of results. It describes an experiment and its data, agents, activities, plans, steps, variables, instruments, materials and settings required for its reproducibility.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>repr-core</b></td><td>&lt;https://w3id.org/reproduceme-core&gt;</td></tr>
+<tr><td><b>opla</b></td><td>&lt;http://ontologydesignpatterns.org/opla&gt;</td></tr>
+<tr><td><b>w3id-org</b></td><td>&lt;https://w3id.org&gt;</td></tr>
+<tr><td><b>ome-xsd-html</b></td><td>&lt;http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html&gt;</td></tr>
+<tr><td><b>ns</b></td><td>&lt;http://www.w3.org/ns&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
+<tr><td><b>p-plan</b></td><td>&lt;http://purl.org/net/p-plan&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
+<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
+<tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann&gt;</td></tr>
+<tr><td><b>prov</b></td><td>&lt;http://www.w3.org/ns/prov&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">The ReproduceMe-Core ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul class="hlist">
+   <li>
+      <a href="#Algorithm" title="https://w3id.org/reproduceme-core#Algorithm">Algorithm</a>
+   </li>
+   <li>
+      <a href="#Annotation" title="https://w3id.org/reproduceme-core#Annotation">Annotation</a>
+   </li>
+   <li>
+      <a href="#Author" title="https://w3id.org/reproduceme-core#Author">Author</a>
+   </li>
+   <li>
+      <a href="#CausalEffect" title="https://w3id.org/reproduceme-core#CausalEffect">Causal Effect</a>
+   </li>
+   <li>
+      <a href="#ComputationalStep"
+         title="https://w3id.org/reproduceme-core#ComputationalStep">Computational Step</a>
+   </li>
+   <li>
+      <a href="#Configuration" title="https://w3id.org/reproduceme-core#Configuration">Configuration</a>
+   </li>
+   <li>
+      <a href="#ContactPerson" title="https://w3id.org/reproduceme-core#ContactPerson">ContactPerson</a>
+   </li>
+   <li>
+      <a href="#Context" title="https://w3id.org/reproduceme-core#Context">Context</a>
+   </li>
+   <li>
+      <a href="#CopyrightHolder"
+         title="https://w3id.org/reproduceme-core#CopyrightHolder">Copyright Holder</a>
+   </li>
+   <li>
+      <a href="#DataType" title="https://w3id.org/reproduceme-core#DataType">DataType</a>
+   </li>
+   <li>
+      <a href="#Description" title="https://w3id.org/reproduceme-core#Description">Description</a>
+   </li>
+   <li>
+      <a href="#EnvironmentAttribute"
+         title="https://w3id.org/reproduceme-core#EnvironmentAttribute">Environment Attribute</a>
+   </li>
+   <li>
+      <a href="#EnvironmentSetup"
+         title="https://w3id.org/reproduceme-core#EnvironmentSetup">Environment Setup</a>
+   </li>
+   <li>
+      <a href="#EnvironmentSetupSetting"
+         title="https://w3id.org/reproduceme-core#EnvironmentSetupSetting">Environment Setup Setting</a>
+   </li>
+   <li>
+      <a href="#Experiment" title="https://w3id.org/reproduceme-core#Experiment">Experiment</a>
+   </li>
+   <li>
+      <a href="#ExperimentEnvironmentSetup"
+         title="https://w3id.org/reproduceme-core#ExperimentEnvironmentSetup">Experiment Environment Setup</a>
+   </li>
+   <li>
+      <a href="#ExperimentMaterial"
+         title="https://w3id.org/reproduceme-core#ExperimentMaterial">Experiment Material</a>
+   </li>
+   <li>
+      <a href="#ExperimentMaterialPreparation"
+         title="https://w3id.org/reproduceme-core#ExperimentMaterialPreparation">Experiment Material Preparation</a>
+   </li>
+   <li>
+      <a href="#ExperimentSetup"
+         title="https://w3id.org/reproduceme-core#ExperimentSetup">Experiment Setup</a>
+   </li>
+   <li>
+      <a href="#ExperimentalCondition"
+         title="https://w3id.org/reproduceme-core#ExperimentalCondition">Experimental Condition</a>
+   </li>
+   <li>
+      <a href="#ExperimentalData"
+         title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+   </li>
+   <li>
+      <a href="#Experimenter" title="https://w3id.org/reproduceme-core#Experimenter">Experimenter</a>
+   </li>
+   <li>
+      <a href="#File" title="https://w3id.org/reproduceme-core#File">File</a>
+   </li>
+   <li>
+      <a href="#FinalResult" title="https://w3id.org/reproduceme-core#FinalResult">Final Result</a>
+   </li>
+   <li>
+      <a href="#FinalStep" title="https://w3id.org/reproduceme-core#FinalStep">Final Step</a>
+   </li>
+   <li>
+      <a href="#FundingAgency" title="https://w3id.org/reproduceme-core#FundingAgency">Funding Agency</a>
+   </li>
+   <li>
+      <a href="#InputData" title="https://w3id.org/reproduceme-core#InputData">Input Data</a>
+   </li>
+   <li>
+      <a href="#Instrument" title="https://w3id.org/reproduceme-core#Instrument">Instrument</a>
+   </li>
+   <li>
+      <a href="#InstrumentSetting"
+         title="https://w3id.org/reproduceme-core#InstrumentSetting">Instrument Setting</a>
+   </li>
+   <li>
+      <a href="#IntermediateResult"
+         title="https://w3id.org/reproduceme-core#IntermediateResult">Intermediate Result</a>
+   </li>
+   <li>
+      <a href="#IntermediateStep"
+         title="https://w3id.org/reproduceme-core#IntermediateStep">Intermediate Step</a>
+   </li>
+   <li>
+      <a href="#License" title="https://w3id.org/reproduceme-core#License">License</a>
+   </li>
+   <li>
+      <a href="#LicenseDocument"
+         title="https://w3id.org/reproduceme-core#LicenseDocument">License Document</a>
+   </li>
+   <li>
+      <a href="#MaterialPreparationStep"
+         title="https://w3id.org/reproduceme-core#MaterialPreparationStep">Material Preparation Step</a>
+   </li>
+   <li>
+      <a href="#Metadata" title="https://w3id.org/reproduceme-core#Metadata">Metadata</a>
+   </li>
+   <li>
+      <a href="#Method" title="https://w3id.org/reproduceme-core#Method">Method</a>
+   </li>
+   <li>
+      <a href="#ModifiedVersion"
+         title="https://w3id.org/reproduceme-core#ModifiedVersion">Modified Version</a>
+   </li>
+   <li>
+      <a href="#NegativeResult"
+         title="https://w3id.org/reproduceme-core#NegativeResult">Negative Result</a>
+   </li>
+   <li>
+      <a href="#Non-computationalStep"
+         title="https://w3id.org/reproduceme-core#Non-computationalStep">Non-computational Step</a>
+   </li>
+   <li>
+      <a href="#Note" title="https://w3id.org/reproduceme-core#Note">Note</a>
+   </li>
+   <li>
+      <a href="#OriginalCreator"
+         title="https://w3id.org/reproduceme-core#OriginalCreator">Original Creator</a>
+   </li>
+   <li>
+      <a href="#Output" title="https://w3id.org/reproduceme-core#Output">Output</a>
+   </li>
+   <li>
+      <a href="#Owner" title="https://w3id.org/reproduceme-core#Owner">Owner</a>
+   </li>
+   <li>
+      <a href="#PositiveResult"
+         title="https://w3id.org/reproduceme-core#PositiveResult">Positive Result</a>
+   </li>
+   <li>
+      <a href="#Precondition" title="https://w3id.org/reproduceme-core#Precondition">Precondition</a>
+   </li>
+   <li>
+      <a href="#PrincipalInvestigator"
+         title="https://w3id.org/reproduceme-core#PrincipalInvestigator">Principal Investigator</a>
+   </li>
+   <li>
+      <a href="#ProcessedData" title="https://w3id.org/reproduceme-core#ProcessedData">Processed Data</a>
+   </li>
+   <li>
+      <a href="#ProspectiveProvenance"
+         title="https://w3id.org/reproduceme-core#ProspectiveProvenance">Prospective Provenance</a>
+   </li>
+   <li>
+      <a href="#Protocol" title="https://w3id.org/reproduceme-core#Protocol">Protocol</a>
+   </li>
+   <li>
+      <a href="#Publication" title="https://w3id.org/reproduceme-core#Publication">Publication</a>
+   </li>
+   <li>
+      <a href="#QualityControl"
+         title="https://w3id.org/reproduceme-core#QualityControl">QualityControl</a>
+   </li>
+   <li>
+      <a href="#Rating" title="https://w3id.org/reproduceme-core#Rating">Rating</a>
+   </li>
+   <li>
+      <a href="#RawData" title="https://w3id.org/reproduceme-core#RawData">Raw Data</a>
+   </li>
+   <li>
+      <a href="#ResearchGroup" title="https://w3id.org/reproduceme-core#ResearchGroup">Research Group</a>
+   </li>
+   <li>
+      <a href="#ResearchProject"
+         title="https://w3id.org/reproduceme-core#ResearchProject">Research Project</a>
+   </li>
+   <li>
+      <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+   </li>
+   <li>
+      <a href="#RetrospectiveProvenance"
+         title="https://w3id.org/reproduceme-core#RetrospectiveProvenance">Retrospective Provenance</a>
+   </li>
+   <li>
+      <a href="#RightsandPermissionsDocument"
+         title="https://w3id.org/reproduceme-core#RightsandPermissionsDocument">Rights and Permissions Document</a>
+   </li>
+   <li>
+      <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+   </li>
+   <li>
+      <a href="#Size" title="https://w3id.org/reproduceme-core#Size">Size</a>
+   </li>
+   <li>
+      <a href="#StandardOperatingProcedure"
+         title="https://w3id.org/reproduceme-core#StandardOperatingProcedure">Standard Operating Procedure</a>
+   </li>
+   <li>
+      <a href="#Study" title="https://w3id.org/reproduceme-core#Study">Study</a>
+   </li>
+   <li>
+      <a href="#Unit" title="https://w3id.org/reproduceme-core#Unit">Unit</a>
+   </li>
+   <li>
+      <a href="#Version" title="https://w3id.org/reproduceme-core#Version">Version</a>
+   </li>
+</ul><h4>Object Properties</h4><ul class="hlist">
+   <li>
+      <a href="#hasExperimentalCondition"
+         title="https://w3id.org/reproduceme-core#hasExperimentalCondition">hasExperimentalCondition</a>
+   </li>
+   <li>
+      <a href="#hasExperimentalData"
+         title="https://w3id.org/reproduceme-core#hasExperimentalData">hasExperimentalData</a>
+   </li>
+   <li>
+      <a href="#hasExperimentMaterial"
+         title="https://w3id.org/reproduceme-core#hasExperimentMaterial">hasExperimentalMaterial</a>
+   </li>
+   <li>
+      <a href="#hasPart" title="https://w3id.org/reproduceme-core#hasPart">hasPart</a>
+   </li>
+   <li>
+      <a href="#hasSetting" title="https://w3id.org/reproduceme-core#hasSetting">hasSetting</a>
+   </li>
+   <li>
+      <a href="#isAccessibleTo" title="https://w3id.org/reproduceme-core#isAccessibleTo">isAccessibleTo</a>
+   </li>
+   <li>
+      <a href="#isPartOf" title="https://w3id.org/reproduceme-core#isPartOf">isPartOf</a>
+   </li>
+   <li>
+      <a href="#isSettingOf" title="https://w3id.org/reproduceme-core#isSettingOf">isSettingOf</a>
+   </li>
+   <li>
+      <a href="#reference" title="https://w3id.org/reproduceme-core#reference">reference</a>
+   </li>
+   <li>
+      <a href="#storedAt" title="https://w3id.org/reproduceme-core#storedAt">storedAt</a>
+   </li>
+   <li>
+      <a href="#usedMethod" title="https://w3id.org/reproduceme-core#usedMethod">usedMethod</a>
+   </li>
+   <li>
+      <a href="#wasPerformedBy" title="https://w3id.org/reproduceme-core#wasPerformedBy">
+         <span>was performed by</span>
+      </a>
+   </li>
+   <li>
+      <a href="#wasCreatedBy" title="https://w3id.org/reproduceme-core#wasCreatedBy">wasCreatedBy</a>
+   </li>
+   <li>
+      <a href="#wasDistributedBy"
+         title="https://w3id.org/reproduceme-core#wasDistributedBy">wasDistributedBy</a>
+   </li>
+   <li>
+      <a href="#wasExtractedFrom"
+         title="https://w3id.org/reproduceme-core#wasExtractedFrom">wasExtractedFrom</a>
+   </li>
+   <li>
+      <a href="#wasUpdatedBy" title="https://w3id.org/reproduceme-core#wasUpdatedBy">wasUpdatedBy</a>
+   </li>
+</ul><h4>Data Properties</h4><ul class="hlist">
+   <li>
+      <a href="#address" title="https://w3id.org/reproduceme-core#address">Address</a>
+   </li>
+   <li>
+      <a href="#description" title="https://w3id.org/reproduceme-core#description">description</a>
+   </li>
+   <li>
+      <a href="#doi" title="https://w3id.org/reproduceme-core#doi">doi</a>
+   </li>
+   <li>
+      <a href="#id" title="https://w3id.org/reproduceme-core#id">Id</a>
+   </li>
+   <li>
+      <a href="#modifiedAtTime" title="https://w3id.org/reproduceme-core#modifiedAtTime">modifiedAtTime</a>
+   </li>
+   <li>
+      <a href="#name" title="https://w3id.org/reproduceme-core#name">Name</a>
+   </li>
+   <li>
+      <a href="#ORCID" title="https://w3id.org/reproduceme-core#ORCID">ORCID</a>
+   </li>
+   <li>
+      <a href="#pmcid" title="https://w3id.org/reproduceme-core#pmcid">PubMed Central ID</a>
+   </li>
+   <li>
+      <a href="#pubmedid" title="https://w3id.org/reproduceme-core#pubmedid">PubMed ID</a>
+   </li>
+   <li>
+      <a href="#receivedAtTime" title="https://w3id.org/reproduceme-core#receivedAtTime">receivedAtTime</a>
+   </li>
+</ul>
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross reference for The ReproduceMe-Core ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by The ReproduceMe-Core ontology.
+<div id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#Algorithm" title="https://w3id.org/reproduceme-core#Algorithm">Algorithm</a>
+      </li>
+      <li>
+         <a href="#Annotation" title="https://w3id.org/reproduceme-core#Annotation">Annotation</a>
+      </li>
+      <li>
+         <a href="#Author" title="https://w3id.org/reproduceme-core#Author">Author</a>
+      </li>
+      <li>
+         <a href="#CausalEffect" title="https://w3id.org/reproduceme-core#CausalEffect">Causal Effect</a>
+      </li>
+      <li>
+         <a href="#ComputationalStep"
+            title="https://w3id.org/reproduceme-core#ComputationalStep">Computational Step</a>
+      </li>
+      <li>
+         <a href="#Configuration" title="https://w3id.org/reproduceme-core#Configuration">Configuration</a>
+      </li>
+      <li>
+         <a href="#ContactPerson" title="https://w3id.org/reproduceme-core#ContactPerson">ContactPerson</a>
+      </li>
+      <li>
+         <a href="#Context" title="https://w3id.org/reproduceme-core#Context">Context</a>
+      </li>
+      <li>
+         <a href="#CopyrightHolder"
+            title="https://w3id.org/reproduceme-core#CopyrightHolder">Copyright Holder</a>
+      </li>
+      <li>
+         <a href="#DataType" title="https://w3id.org/reproduceme-core#DataType">DataType</a>
+      </li>
+      <li>
+         <a href="#Description" title="https://w3id.org/reproduceme-core#Description">Description</a>
+      </li>
+      <li>
+         <a href="#EnvironmentAttribute"
+            title="https://w3id.org/reproduceme-core#EnvironmentAttribute">Environment Attribute</a>
+      </li>
+      <li>
+         <a href="#EnvironmentSetup"
+            title="https://w3id.org/reproduceme-core#EnvironmentSetup">Environment Setup</a>
+      </li>
+      <li>
+         <a href="#EnvironmentSetupSetting"
+            title="https://w3id.org/reproduceme-core#EnvironmentSetupSetting">Environment Setup Setting</a>
+      </li>
+      <li>
+         <a href="#Experiment" title="https://w3id.org/reproduceme-core#Experiment">Experiment</a>
+      </li>
+      <li>
+         <a href="#ExperimentEnvironmentSetup"
+            title="https://w3id.org/reproduceme-core#ExperimentEnvironmentSetup">Experiment Environment Setup</a>
+      </li>
+      <li>
+         <a href="#ExperimentMaterial"
+            title="https://w3id.org/reproduceme-core#ExperimentMaterial">Experiment Material</a>
+      </li>
+      <li>
+         <a href="#ExperimentMaterialPreparation"
+            title="https://w3id.org/reproduceme-core#ExperimentMaterialPreparation">Experiment Material Preparation</a>
+      </li>
+      <li>
+         <a href="#ExperimentSetup"
+            title="https://w3id.org/reproduceme-core#ExperimentSetup">Experiment Setup</a>
+      </li>
+      <li>
+         <a href="#ExperimentalCondition"
+            title="https://w3id.org/reproduceme-core#ExperimentalCondition">Experimental Condition</a>
+      </li>
+      <li>
+         <a href="#ExperimentalData"
+            title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+      </li>
+      <li>
+         <a href="#Experimenter" title="https://w3id.org/reproduceme-core#Experimenter">Experimenter</a>
+      </li>
+      <li>
+         <a href="#File" title="https://w3id.org/reproduceme-core#File">File</a>
+      </li>
+      <li>
+         <a href="#FinalResult" title="https://w3id.org/reproduceme-core#FinalResult">Final Result</a>
+      </li>
+      <li>
+         <a href="#FinalStep" title="https://w3id.org/reproduceme-core#FinalStep">Final Step</a>
+      </li>
+      <li>
+         <a href="#FundingAgency" title="https://w3id.org/reproduceme-core#FundingAgency">Funding Agency</a>
+      </li>
+      <li>
+         <a href="#InputData" title="https://w3id.org/reproduceme-core#InputData">Input Data</a>
+      </li>
+      <li>
+         <a href="#Instrument" title="https://w3id.org/reproduceme-core#Instrument">Instrument</a>
+      </li>
+      <li>
+         <a href="#InstrumentSetting"
+            title="https://w3id.org/reproduceme-core#InstrumentSetting">Instrument Setting</a>
+      </li>
+      <li>
+         <a href="#IntermediateResult"
+            title="https://w3id.org/reproduceme-core#IntermediateResult">Intermediate Result</a>
+      </li>
+      <li>
+         <a href="#IntermediateStep"
+            title="https://w3id.org/reproduceme-core#IntermediateStep">Intermediate Step</a>
+      </li>
+      <li>
+         <a href="#License" title="https://w3id.org/reproduceme-core#License">License</a>
+      </li>
+      <li>
+         <a href="#LicenseDocument"
+            title="https://w3id.org/reproduceme-core#LicenseDocument">License Document</a>
+      </li>
+      <li>
+         <a href="#MaterialPreparationStep"
+            title="https://w3id.org/reproduceme-core#MaterialPreparationStep">Material Preparation Step</a>
+      </li>
+      <li>
+         <a href="#Metadata" title="https://w3id.org/reproduceme-core#Metadata">Metadata</a>
+      </li>
+      <li>
+         <a href="#Method" title="https://w3id.org/reproduceme-core#Method">Method</a>
+      </li>
+      <li>
+         <a href="#ModifiedVersion"
+            title="https://w3id.org/reproduceme-core#ModifiedVersion">Modified Version</a>
+      </li>
+      <li>
+         <a href="#NegativeResult"
+            title="https://w3id.org/reproduceme-core#NegativeResult">Negative Result</a>
+      </li>
+      <li>
+         <a href="#Non-computationalStep"
+            title="https://w3id.org/reproduceme-core#Non-computationalStep">Non-computational Step</a>
+      </li>
+      <li>
+         <a href="#Note" title="https://w3id.org/reproduceme-core#Note">Note</a>
+      </li>
+      <li>
+         <a href="#OriginalCreator"
+            title="https://w3id.org/reproduceme-core#OriginalCreator">Original Creator</a>
+      </li>
+      <li>
+         <a href="#Output" title="https://w3id.org/reproduceme-core#Output">Output</a>
+      </li>
+      <li>
+         <a href="#Owner" title="https://w3id.org/reproduceme-core#Owner">Owner</a>
+      </li>
+      <li>
+         <a href="#PositiveResult"
+            title="https://w3id.org/reproduceme-core#PositiveResult">Positive Result</a>
+      </li>
+      <li>
+         <a href="#Precondition" title="https://w3id.org/reproduceme-core#Precondition">Precondition</a>
+      </li>
+      <li>
+         <a href="#PrincipalInvestigator"
+            title="https://w3id.org/reproduceme-core#PrincipalInvestigator">Principal Investigator</a>
+      </li>
+      <li>
+         <a href="#ProcessedData" title="https://w3id.org/reproduceme-core#ProcessedData">Processed Data</a>
+      </li>
+      <li>
+         <a href="#ProspectiveProvenance"
+            title="https://w3id.org/reproduceme-core#ProspectiveProvenance">Prospective Provenance</a>
+      </li>
+      <li>
+         <a href="#Protocol" title="https://w3id.org/reproduceme-core#Protocol">Protocol</a>
+      </li>
+      <li>
+         <a href="#Publication" title="https://w3id.org/reproduceme-core#Publication">Publication</a>
+      </li>
+      <li>
+         <a href="#QualityControl"
+            title="https://w3id.org/reproduceme-core#QualityControl">QualityControl</a>
+      </li>
+      <li>
+         <a href="#Rating" title="https://w3id.org/reproduceme-core#Rating">Rating</a>
+      </li>
+      <li>
+         <a href="#RawData" title="https://w3id.org/reproduceme-core#RawData">Raw Data</a>
+      </li>
+      <li>
+         <a href="#ResearchGroup" title="https://w3id.org/reproduceme-core#ResearchGroup">Research Group</a>
+      </li>
+      <li>
+         <a href="#ResearchProject"
+            title="https://w3id.org/reproduceme-core#ResearchProject">Research Project</a>
+      </li>
+      <li>
+         <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+      </li>
+      <li>
+         <a href="#RetrospectiveProvenance"
+            title="https://w3id.org/reproduceme-core#RetrospectiveProvenance">Retrospective Provenance</a>
+      </li>
+      <li>
+         <a href="#RightsandPermissionsDocument"
+            title="https://w3id.org/reproduceme-core#RightsandPermissionsDocument">Rights and Permissions Document</a>
+      </li>
+      <li>
+         <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+      </li>
+      <li>
+         <a href="#Size" title="https://w3id.org/reproduceme-core#Size">Size</a>
+      </li>
+      <li>
+         <a href="#StandardOperatingProcedure"
+            title="https://w3id.org/reproduceme-core#StandardOperatingProcedure">Standard Operating Procedure</a>
+      </li>
+      <li>
+         <a href="#Study" title="https://w3id.org/reproduceme-core#Study">Study</a>
+      </li>
+      <li>
+         <a href="#Unit" title="https://w3id.org/reproduceme-core#Unit">Unit</a>
+      </li>
+      <li>
+         <a href="#Version" title="https://w3id.org/reproduceme-core#Version">Version</a>
+      </li>
+   </ul>
+   <div class="entity" id="Algorithm">
+      <h3>Algorithm<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Algorithm</p>
+      <div class="comment">
+         <span class="markdown">A set of rules or steps to be followed in a problem-solving operation.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Plan">plan</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Annotation">
+      <h3>Annotation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Annotation</p>
+      <div class="comment">
+         <span class="markdown">A description added to a thing which provides comment, note or description.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalData"
+               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Author">
+      <h3>Author<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Author</p>
+      <div class="comment">
+         <span class="markdown">The person who authors a piece of work.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="CausalEffect">
+      <h3>Causal Effect<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#CausalEffect</p>
+      <div class="comment">
+         <span class="markdown">The causal effects of an activity denotes the effects on an outcome because of another activity.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ComputationalStep">
+      <h3>Computational Step<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ComputationalStep</p>
+      <div class="comment">
+         <span class="markdown">The step or the process which uses computational resources involved in an experiment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Step">step</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Configuration">
+      <h3>Configuration<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Configuration</p>
+      <div class="comment">
+         <span class="markdown">The settings or changes applied to an instrument.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ContactPerson">
+      <h3>ContactPerson<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ContactPerson</p>
+      <div class="comment">
+         <span class="markdown">A person who has the role of being a contact person for a certain thing.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Context">
+      <h3>Context<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Context</p>
+      <div class="comment">
+         <span class="markdown">The background setting of an experiment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="CopyrightHolder">
+      <h3>Copyright Holder<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#CopyrightHolder</p>
+      <div class="comment">
+         <span class="markdown">The person who holds the copyright or the permission of an entity or an activity.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DataType">
+      <h3>DataType<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#DataType</p>
+      <div class="comment">
+         <span class="markdown">A type or format of a thing.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Description">
+      <h3>Description<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Description</p>
+      <div class="comment">
+         <span class="markdown">The text which is used to provide information about a thing.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalData"
+               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="EnvironmentAttribute">
+      <h3>Environment Attribute<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#EnvironmentAttribute</p>
+      <div class="comment">
+         <span class="markdown">The attributes of the experimental execution environment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalCondition"
+               title="https://w3id.org/reproduceme-core#ExperimentalCondition">Experimental Condition</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="EnvironmentSetup">
+      <h3>Environment Setup<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#EnvironmentSetup</p>
+      <div class="comment">
+         <span class="markdown">To setup the environment to perform an experiment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentSetup"
+               title="https://w3id.org/reproduceme-core#ExperimentSetup">Experiment Setup</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="EnvironmentSetupSetting">
+      <h3>Environment Setup Setting<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#EnvironmentSetupSetting</p>
+      <div class="comment">
+         <span class="markdown">The various attribute needed to setup the environment for an experiment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Experiment">
+      <h3>Experiment<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Experiment</p>
+      <div class="comment">
+         <span class="markdown">Experiment is an entity which describes the collective activity conducted in a science lab.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Plan">plan</span>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasExperimentalCondition"
+               title="https://w3id.org/reproduceme-core#hasExperimentalCondition">hasExperimentalCondition</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasExperimentalData"
+               title="https://w3id.org/reproduceme-core#hasExperimentalData">hasExperimentalData</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasExperimentMaterial"
+               title="https://w3id.org/reproduceme-core#hasExperimentMaterial">hasExperimentalMaterial</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ExperimentEnvironmentSetup">
+      <h3>Experiment Environment Setup<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ExperimentEnvironmentSetup</p>
+      <div class="comment">
+         <span class="markdown">A set of instructions to setup the environment for experiment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Plan">plan</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ExperimentMaterial">
+      <h3>Experiment Material<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ExperimentMaterial</p>
+      <div class="comment">
+         <span class="markdown">The materials or things used in an experiment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>, <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#wasExtractedFrom"
+               title="https://w3id.org/reproduceme-core#wasExtractedFrom">wasExtractedFrom</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasExperimentMaterial"
+               title="https://w3id.org/reproduceme-core#hasExperimentMaterial">hasExperimentalMaterial</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#wasExtractedFrom"
+               title="https://w3id.org/reproduceme-core#wasExtractedFrom">wasExtractedFrom</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ExperimentMaterialPreparation">
+      <h3>Experiment Material Preparation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ExperimentMaterialPreparation</p>
+      <div class="comment">
+         <span class="markdown">A procedure to prepare experiment materials.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Plan">plan</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ExperimentSetup">
+      <h3>Experiment Setup<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ExperimentSetup</p>
+      <div class="comment">
+         <span class="markdown">To setup the execution environment of an experiment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Step">step</span>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#EnvironmentSetup"
+               title="https://w3id.org/reproduceme-core#EnvironmentSetup">Environment Setup</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MaterialPreparationStep"
+               title="https://w3id.org/reproduceme-core#MaterialPreparationStep">Material Preparation Step</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ExperimentalCondition">
+      <h3>Experimental Condition<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ExperimentalCondition</p>
+      <div class="comment">
+         <span class="markdown">The attributes or the conditions while an experiment is performed.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#EnvironmentAttribute"
+               title="https://w3id.org/reproduceme-core#EnvironmentAttribute">Environment Attribute</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasExperimentalCondition"
+               title="https://w3id.org/reproduceme-core#hasExperimentalCondition">hasExperimentalCondition</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ExperimentalData">
+      <h3>Experimental Data<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ExperimentalData</p>
+      <div class="comment">
+         <span class="markdown">Data used in an experiment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>, <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Annotation" title="https://w3id.org/reproduceme-core#Annotation">Annotation</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Description" title="https://w3id.org/reproduceme-core#Description">Description</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#File" title="https://w3id.org/reproduceme-core#File">File</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#InputData" title="https://w3id.org/reproduceme-core#InputData">Input Data</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#License" title="https://w3id.org/reproduceme-core#License">License</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Metadata" title="https://w3id.org/reproduceme-core#Metadata">Metadata</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ModifiedVersion"
+               title="https://w3id.org/reproduceme-core#ModifiedVersion">Modified Version</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Note" title="https://w3id.org/reproduceme-core#Note">Note</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Output" title="https://w3id.org/reproduceme-core#Output">Output</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ProcessedData" title="https://w3id.org/reproduceme-core#ProcessedData">Processed Data</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ProspectiveProvenance"
+               title="https://w3id.org/reproduceme-core#ProspectiveProvenance">Prospective Provenance</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/reproduceme-core#Publication">Publication</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#RawData" title="https://w3id.org/reproduceme-core#RawData">Raw Data</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#RetrospectiveProvenance"
+               title="https://w3id.org/reproduceme-core#RetrospectiveProvenance">Retrospective Provenance</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasExperimentalData"
+               title="https://w3id.org/reproduceme-core#hasExperimentalData">hasExperimentalData</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Experimenter">
+      <h3>Experimenter<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Experimenter</p>
+      <div class="comment">
+         <span class="markdown">Experimenter is a person who is the owner of the Experiment and has its responsibility.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="File">
+      <h3>File<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#File</p>
+      <div class="comment">
+         <span class="markdown">A storage to store data. For example, a computer file.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalData"
+               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#LicenseDocument"
+               title="https://w3id.org/reproduceme-core#LicenseDocument">License Document</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#RightsandPermissionsDocument"
+               title="https://w3id.org/reproduceme-core#RightsandPermissionsDocument">Rights and Permissions Document</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="FinalResult">
+      <h3>Final Result<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#FinalResult</p>
+      <div class="comment">
+         <span class="markdown">It is the final result that is generated in an experiment which is eventually used in a publication.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="FinalStep">
+      <h3>Final Step<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#FinalStep</p>
+      <div class="comment">
+         <span class="markdown">The step that is performed at the end of an experiment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Step">step</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="FundingAgency">
+      <h3>Funding Agency<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#FundingAgency</p>
+      <div class="comment">
+         <span class="markdown">An organization responsible for granting funds for conducting a research project.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Organization">organization</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="InputData">
+      <h3>Input Data<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#InputData</p>
+      <div class="comment">
+         <span class="markdown">It is the data that is used as input to an experiment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalData"
+               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Instrument">
+      <h3>Instrument<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Instrument</p>
+      <div class="comment">
+         <span class="markdown">A device used to capture images.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Instrument">http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Instrument</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#isPartOf" title="https://w3id.org/reproduceme-core#isPartOf">isPartOf</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasPart" title="https://w3id.org/reproduceme-core#hasPart">hasPart</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="InstrumentSetting">
+      <h3>Instrument Setting<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#InstrumentSetting</p>
+      <div class="comment">
+         <span class="markdown">The settings of an instrument.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IntermediateResult">
+      <h3>Intermediate Result<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#IntermediateResult</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IntermediateStep">
+      <h3>Intermediate Step<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#IntermediateStep</p>
+      <div class="comment">
+         <span class="markdown">The step which is performed during an experiment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Step">step</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="License">
+      <h3>License<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#License</p>
+      <div class="comment">
+         <span class="markdown">An official permission required to perform or own something.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalData"
+               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="LicenseDocument">
+      <h3>License Document<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#LicenseDocument</p>
+      <div class="comment">
+         <span class="markdown">It is the document which provides official permission to use or own an entity.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#File" title="https://w3id.org/reproduceme-core#File">File</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MaterialPreparationStep">
+      <h3>Material Preparation Step<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#MaterialPreparationStep</p>
+      <div class="comment">
+         <span class="markdown">The step where materials are prepared for the experiment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentSetup"
+               title="https://w3id.org/reproduceme-core#ExperimentSetup">Experiment Setup</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Metadata">
+      <h3>Metadata<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Metadata</p>
+      <div class="comment">
+         <span class="markdown">Metadata is the data about data.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalData"
+               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Method">
+      <h3>Method<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Method</p>
+      <div class="comment">
+         <span class="markdown">The procedure used to perform a process.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Plan">plan</span>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#usedMethod" title="https://w3id.org/reproduceme-core#usedMethod">usedMethod</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ModifiedVersion">
+      <h3>Modified Version<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ModifiedVersion</p>
+      <div class="comment">
+         <span class="markdown">It describes the version information of an entity which tells if there is any difference from its earlier form.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalData"
+               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="NegativeResult">
+      <h3>Negative Result<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#NegativeResult</p>
+      <div class="comment">
+         <span class="markdown">These results are annotated as negative. This could be because of several reasons. The results which confute the hypothesis, the changes in experimental design or execution environment can cause negative results.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Non-computationalStep">
+      <h3>Non-computational Step<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Non-computationalStep</p>
+      <div class="comment">
+         <span class="markdown">The step or the process which does not depend on computational resources.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Step">step</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Note">
+      <h3>Note<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Note</p>
+      <div class="comment">
+         <span class="markdown">A comment or description of an experiment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalData"
+               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="OriginalCreator">
+      <h3>Original Creator<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#OriginalCreator</p>
+      <div class="comment">
+         <span class="markdown">The original attribution of a thing belongs to the OriginalCreator.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Output">
+      <h3>Output<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Output</p>
+      <div class="comment">
+         <span class="markdown">The result obtained after an activity.</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalData"
+               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Owner">
+      <h3>Owner<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Owner</p>
+      <div class="comment">
+         <span class="markdown">A person who owns a certain thing.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PositiveResult">
+      <h3>Positive Result<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#PositiveResult</p>
+      <div class="comment">
+         <span class="markdown">These results which are annotated as positive are the results that confirm the hypothesis of an experiment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Precondition">
+      <h3>Precondition<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Precondition</p>
+      <div class="comment">
+         <span class="markdown">The conditions that must be fulfilled before performing an activity.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PrincipalInvestigator">
+      <h3>Principal Investigator<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#PrincipalInvestigator</p>
+      <div class="comment">
+         <span class="markdown">An important person responsible for a ResearchProject.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ProcessedData">
+      <h3>Processed Data<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ProcessedData</p>
+      <div class="comment">
+         <span class="markdown">The data which is modified and processed for analysis or other experiments.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalData"
+               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ProspectiveProvenance">
+      <h3>Prospective Provenance<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ProspectiveProvenance</p>
+      <div class="comment">
+         <span class="markdown">The provenance information of an activity that specifies its plan.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalData"
+               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Protocol">
+      <h3>Protocol<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Protocol</p>
+      <div class="comment">
+         <span class="markdown">A set of instructions needed to perform an activity.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Plan">plan</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Publication">
+      <h3>Publication<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Publication</p>
+      <div class="comment">
+         <span class="markdown">A printed work or a file describing the work of one or more agents.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalData"
+               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#pmcid" title="https://w3id.org/reproduceme-core#pmcid">PubMed Central ID</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#pubmedid" title="https://w3id.org/reproduceme-core#pubmedid">PubMed ID</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#doi" title="https://w3id.org/reproduceme-core#doi">doi</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="QualityControl">
+      <h3>QualityControl<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#QualityControl</p>
+      <div class="comment">
+         <span class="markdown">A technique to check and control the quality of an entity.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Rating">
+      <h3>Rating<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Rating</p>
+      <div class="comment">
+         <span class="markdown">The overall review provided by an agent to a thing.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="RawData">
+      <h3>Raw Data<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#RawData</p>
+      <div class="comment">
+         <span class="markdown">The data directly generated from an experiment without any modification or processing.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalData"
+               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ResearchGroup">
+      <h3>Research Group<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ResearchGroup</p>
+      <div class="comment">
+         <span class="markdown">Group is an organization which belongs to a department of an institution consisting of people responsible for research and education.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Organization">organization</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ResearchProject">
+      <h3>Research Project<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ResearchProject</p>
+      <div class="comment">
+         <span class="markdown">A person or collaborative group working on a research plan to achieve certain goals.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Organization">organization</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Result">
+      <h3>Result<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Result</p>
+      <div class="comment">
+         <span class="markdown">The output of a step.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalData"
+               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#FinalResult" title="https://w3id.org/reproduceme-core#FinalResult">Final Result</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#IntermediateResult"
+               title="https://w3id.org/reproduceme-core#IntermediateResult">Intermediate Result</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#NegativeResult"
+               title="https://w3id.org/reproduceme-core#NegativeResult">Negative Result</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PositiveResult"
+               title="https://w3id.org/reproduceme-core#PositiveResult">Positive Result</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="RetrospectiveProvenance">
+      <h3>Retrospective Provenance<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#RetrospectiveProvenance</p>
+      <div class="comment">
+         <span class="markdown">The provenance information of what happened when an activity is performed.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExperimentalData"
+               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="RightsandPermissionsDocument">
+      <h3>Rights and Permissions Document<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#RightsandPermissionsDocument</p>
+      <div class="comment">
+         <span class="markdown">The document which tells whether other scientists are allowed to use or modify the data.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#File" title="https://w3id.org/reproduceme-core#File">File</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Setting">
+      <h3>Setting<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Setting</p>
+      <div class="comment">
+         <span class="markdown">The parameters or the situation in which the experiment was performed.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>, <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Configuration" title="https://w3id.org/reproduceme-core#Configuration">Configuration</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Context" title="https://w3id.org/reproduceme-core#Context">Context</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#EnvironmentSetupSetting"
+               title="https://w3id.org/reproduceme-core#EnvironmentSetupSetting">Environment Setup Setting</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ExperimentalCondition"
+               title="https://w3id.org/reproduceme-core#ExperimentalCondition">Experimental Condition</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#InstrumentSetting"
+               title="https://w3id.org/reproduceme-core#InstrumentSetting">Instrument Setting</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Precondition" title="https://w3id.org/reproduceme-core#Precondition">Precondition</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#QualityControl"
+               title="https://w3id.org/reproduceme-core#QualityControl">QualityControl</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Size" title="https://w3id.org/reproduceme-core#Size">Size</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Unit" title="https://w3id.org/reproduceme-core#Unit">Unit</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Version" title="https://w3id.org/reproduceme-core#Version">Version</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#isSettingOf" title="https://w3id.org/reproduceme-core#isSettingOf">isSettingOf</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasSetting" title="https://w3id.org/reproduceme-core#hasSetting">hasSetting</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Size">
+      <h3>Size<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Size</p>
+      <div class="comment">
+         <span class="markdown">A dimension of a thing.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="StandardOperatingProcedure">
+      <h3>Standard Operating Procedure<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#StandardOperatingProcedure</p>
+      <div class="comment">
+         <span class="markdown">A set of steb-by-step instructions  to carry out a complex routine.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Plan">plan</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Study">
+      <h3>Study<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Study</p>
+      <div class="comment">
+         <span class="markdown">A process to examine and analyze a data object to answer questions and discover new facts about it.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/net/p-plan#Plan">plan</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Unit">
+      <h3>Unit<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Unit</p>
+      <div class="comment">
+         <span class="markdown">A standard quantity of measurement.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Version">
+      <h3>Version<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Version</p>
+      <div class="comment">
+         <span class="markdown">A property of an entity which describes its difference with respect to its earlier form.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#hasExperimentalCondition"
+            title="https://w3id.org/reproduceme-core#hasExperimentalCondition">hasExperimentalCondition</a>
+      </li>
+      <li>
+         <a href="#hasExperimentalData"
+            title="https://w3id.org/reproduceme-core#hasExperimentalData">hasExperimentalData</a>
+      </li>
+      <li>
+         <a href="#hasExperimentMaterial"
+            title="https://w3id.org/reproduceme-core#hasExperimentMaterial">hasExperimentalMaterial</a>
+      </li>
+      <li>
+         <a href="#hasPart" title="https://w3id.org/reproduceme-core#hasPart">hasPart</a>
+      </li>
+      <li>
+         <a href="#hasSetting" title="https://w3id.org/reproduceme-core#hasSetting">hasSetting</a>
+      </li>
+      <li>
+         <a href="#isAccessibleTo" title="https://w3id.org/reproduceme-core#isAccessibleTo">isAccessibleTo</a>
+      </li>
+      <li>
+         <a href="#isPartOf" title="https://w3id.org/reproduceme-core#isPartOf">isPartOf</a>
+      </li>
+      <li>
+         <a href="#isSettingOf" title="https://w3id.org/reproduceme-core#isSettingOf">isSettingOf</a>
+      </li>
+      <li>
+         <a href="#reference" title="https://w3id.org/reproduceme-core#reference">reference</a>
+      </li>
+      <li>
+         <a href="#storedAt" title="https://w3id.org/reproduceme-core#storedAt">storedAt</a>
+      </li>
+      <li>
+         <a href="#usedMethod" title="https://w3id.org/reproduceme-core#usedMethod">usedMethod</a>
+      </li>
+      <li>
+         <a href="#wasPerformedBy" title="https://w3id.org/reproduceme-core#wasPerformedBy">
+            <span>was performed by</span>
+         </a>
+      </li>
+      <li>
+         <a href="#wasCreatedBy" title="https://w3id.org/reproduceme-core#wasCreatedBy">wasCreatedBy</a>
+      </li>
+      <li>
+         <a href="#wasDistributedBy"
+            title="https://w3id.org/reproduceme-core#wasDistributedBy">wasDistributedBy</a>
+      </li>
+      <li>
+         <a href="#wasExtractedFrom"
+            title="https://w3id.org/reproduceme-core#wasExtractedFrom">wasExtractedFrom</a>
+      </li>
+      <li>
+         <a href="#wasUpdatedBy" title="https://w3id.org/reproduceme-core#wasUpdatedBy">wasUpdatedBy</a>
+      </li>
+   </ul>
+   <div class="entity" id="hasExperimentalCondition">
+      <h3>hasExperimentalCondition<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#hasExperimentalCondition</p>
+      <div class="comment">
+         <span class="markdown">hasExperimentalCondition binds an experiment to its environmental condition.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://purl.org/net/p-plan#hasInputVar">has input var</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Experiment" title="https://w3id.org/reproduceme-core#Experiment">Experiment</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ExperimentalCondition"
+                  title="https://w3id.org/reproduceme-core#ExperimentalCondition">Experimental Condition</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasExperimentalData">
+      <h3>hasExperimentalData<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#hasExperimentalData</p>
+      <div class="comment">
+         <span class="markdown">hasExperimentalData binds an experiment to the data that was used in an experiment.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://purl.org/net/p-plan#hasInputVar">has input var</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Experiment" title="https://w3id.org/reproduceme-core#Experiment">Experiment</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ExperimentalData"
+                  title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasExperimentMaterial">
+      <h3>hasExperimentalMaterial<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#hasExperimentMaterial</p>
+      <div class="comment">
+         <span class="markdown">hasExperimentalMaterial binds an experiment to the data that was used in an experiment.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://purl.org/net/p-plan#hasInputVar">has input var</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Experiment" title="https://w3id.org/reproduceme-core#Experiment">Experiment</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ExperimentMaterial"
+                  title="https://w3id.org/reproduceme-core#ExperimentMaterial">Experiment Material</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasPart">
+      <h3>hasPart<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#hasPart</p>
+      <div class="comment">
+         <span class="markdown">An entity is part of another entity if one of its part belong to the other entity.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</span>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Instrument" title="https://w3id.org/reproduceme-core#Instrument">Instrument</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isPartOf" title="https://w3id.org/reproduceme-core#isPartOf">isPartOf</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSetting">
+      <h3>hasSetting<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#hasSetting</p>
+      <div class="comment">
+         <span class="markdown">hasSetting binds a thing or instrument to its configurations or settings.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isSettingOf" title="https://w3id.org/reproduceme-core#isSettingOf">isSettingOf</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isAccessibleTo">
+      <h3>isAccessibleTo<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#isAccessibleTo</p>
+      <div class="comment">
+         <span class="markdown">isAccessibleTo is a property which describes that an Entity is accessible or available to an Agent.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#wasInfluencedBy">was influenced by</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Agent">agent</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isPartOf">
+      <h3>isPartOf<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#isPartOf</p>
+      <div class="comment">
+         <span class="markdown">An entity is part of another entity if one of its part belong to the other entity.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Instrument" title="https://w3id.org/reproduceme-core#Instrument">Instrument</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#hasPart" title="https://w3id.org/reproduceme-core#hasPart">hasPart</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isSettingOf">
+      <h3>isSettingOf<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#isSettingOf</p>
+      <div class="comment">
+         <span class="markdown">isSettingOf binds a thing or instrument to its configurations or settings.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#hasSetting" title="https://w3id.org/reproduceme-core#hasSetting">hasSetting</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="reference">
+      <h3>reference<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#reference</p>
+      <div class="comment">
+         <span class="markdown">An entity which has used another entity as reference.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="storedAt">
+      <h3>storedAt<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#storedAt</p>
+      <div class="comment">
+         <span class="markdown">The storage location of an entity.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#atLocation">at location</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Location">location</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="usedMethod">
+      <h3>usedMethod<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#usedMethod</p>
+      <div class="comment">
+         <span class="markdown">A process which used a method to achieve something.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Method" title="https://w3id.org/reproduceme-core#Method">Method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="wasPerformedBy">
+      <h3>was performed by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#wasPerformedBy</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#wasInfluencedBy">was influenced by</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="wasCreatedBy">
+      <h3>wasCreatedBy<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#wasCreatedBy</p>
+      <div class="comment">
+         <span class="markdown">A relationship between an entity to its creator agent.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#wasAttributedTo">was attributed to</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Agent">agent</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="wasDistributedBy">
+      <h3>wasDistributedBy<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#wasDistributedBy</p>
+      <div class="comment">
+         <span class="markdown">A relationship between an entity to its distributor agent.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#wasAttributedTo">was attributed to</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Agent">agent</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="wasExtractedFrom">
+      <h3>wasExtractedFrom<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#wasExtractedFrom</p>
+      <div class="comment">
+         <span class="markdown">An experiment material which is extracted from another material.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#wasDerivedFrom">was derived from</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ExperimentMaterial"
+                  title="https://w3id.org/reproduceme-core#ExperimentMaterial">Experiment Material</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ExperimentMaterial"
+                  title="https://w3id.org/reproduceme-core#ExperimentMaterial">Experiment Material</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="wasUpdatedBy">
+      <h3>wasUpdatedBy<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#wasUpdatedBy</p>
+      <div class="comment">
+         <span class="markdown">An entity which is updated by another entity or an agent.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#wasGeneratedBy">was generated by</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Agent">agent</span>
+            </dd>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#address" title="https://w3id.org/reproduceme-core#address">Address</a>
+      </li>
+      <li>
+         <a href="#description" title="https://w3id.org/reproduceme-core#description">description</a>
+      </li>
+      <li>
+         <a href="#doi" title="https://w3id.org/reproduceme-core#doi">doi</a>
+      </li>
+      <li>
+         <a href="#id" title="https://w3id.org/reproduceme-core#id">Id</a>
+      </li>
+      <li>
+         <a href="#modifiedAtTime" title="https://w3id.org/reproduceme-core#modifiedAtTime">modifiedAtTime</a>
+      </li>
+      <li>
+         <a href="#name" title="https://w3id.org/reproduceme-core#name">Name</a>
+      </li>
+      <li>
+         <a href="#ORCID" title="https://w3id.org/reproduceme-core#ORCID">ORCID</a>
+      </li>
+      <li>
+         <a href="#pmcid" title="https://w3id.org/reproduceme-core#pmcid">PubMed Central ID</a>
+      </li>
+      <li>
+         <a href="#pubmedid" title="https://w3id.org/reproduceme-core#pubmedid">PubMed ID</a>
+      </li>
+      <li>
+         <a href="#receivedAtTime" title="https://w3id.org/reproduceme-core#receivedAtTime">receivedAtTime</a>
+      </li>
+   </ul>
+   <div class="entity" id="address">
+      <h3>Address<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#address</p>
+      <div class="comment">
+         <span class="markdown">Address of an Agent</span>
+      </div>
+   </div>
+   <div class="entity" id="description">
+      <h3>description<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#description</p>
+      <div class="comment">
+         <span class="markdown">Textual note of an entity.</span>
+      </div>
+   </div>
+   <div class="entity" id="doi">
+      <h3>doi<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#doi</p>
+      <div class="comment">
+         <span class="markdown">Publication persistent identifier</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Publication" title="https://w3id.org/reproduceme-core#Publication">Publication</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="id">
+      <h3>Id<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#id</p>
+      <div class="comment">
+         <span class="markdown">A unique identifier of an entity.</span>
+      </div>
+   </div>
+   <div class="entity" id="modifiedAtTime">
+      <h3>modifiedAtTime<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#modifiedAtTime</p>
+      <div class="comment">
+         <span class="markdown">The time at which an entity was modified.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#dateTime">date time</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="name">
+      <h3>Name<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#name</p>
+      <div class="comment">
+         <span class="markdown">The name of a thing.</span>
+      </div>
+   </div>
+   <div class="entity" id="ORCID">
+      <h3>ORCID<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ORCID</p>
+      <div class="comment">
+         <span class="markdown">A standard alphanumeric code to uniquely identify scientific and other academic authors and contributors.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/ns/prov#Agent">agent</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="pmcid">
+      <h3>PubMed Central ID<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#pmcid</p>
+      <div class="comment">
+         <span class="markdown">A standard unique PubMed Central identifier.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Publication" title="https://w3id.org/reproduceme-core#Publication">Publication</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="pubmedid">
+      <h3>PubMed ID<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#pubmedid</p>
+      <div class="comment">
+         <span class="markdown">A standard unique identifier for each PubMed record.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Publication" title="https://w3id.org/reproduceme-core#Publication">Publication</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="receivedAtTime">
+      <h3>receivedAtTime<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme-core#receivedAtTime</p>
+      <div class="comment">
+         <span class="markdown">The time at which an entity was received.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#dateTime">date time</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</div>
+<div id="acknowledgements">
+<h2 id="ack" class="list">Acknowledgements <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

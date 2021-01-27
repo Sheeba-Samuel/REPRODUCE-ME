@@ -1,0 +1,976 @@
+@prefix : <https://w3id.org/reproduceme-core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/reproduceme-core> .
+
+<https://w3id.org/reproduceme-core> rdf:type owl:Ontology ;
+                                     owl:versionIRI <https://w3id.org/reproduceme-core/2.0> ;
+                                     owl:imports <http://purl.org/net/p-plan#> ,
+                                                 <http://www.w3.org/ns/prov-o-20130430> ;
+                                     <http://purl.org/dc/terms/created> "2020-07-28"@en ;
+                                     <http://purl.org/dc/terms/creator> "Sheeba Samuel"@en ,
+                                                                        "Birgitta König-Ries" ;
+                                     <http://purl.org/dc/terms/description> """The ReproduceMe-Core ontology is the core ontology of the ReproduceMe Ontology Network. The ReproduceMe-Core ontology is designed to provide a detailed abstract definition of structured knowledge for the provenance and reproducibility of scientific studies.
+It is based on the foundational ontologies: PROV-O and P-Plan. It is an extension of the PROV-O and the P-Plan ontology to describe a complete path of a scientific experiment. It expresses the REPRODUCE-ME Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes and properties to represent a scientific experiment including its computational and non-computational steps to track the provenance of results. It describes an experiment and its data, agents, activities, plans, steps, variables, instruments, materials and settings required for its reproducibility."""@en ;
+                                     <http://purl.org/dc/terms/license> "http://creativecommons.org/licenses/by-nc-sa/2.0/" ;
+                                     <http://purl.org/dc/terms/modified> "2020-07-28"@en ;
+                                     <http://purl.org/dc/terms/title> "The ReproduceMe-Core ontology" ;
+                                     <http://purl.org/vocab/vann/preferredNamespacePrefix> "repr-core"@en ;
+                                     rdfs:label "The ReproduceMe-Core ontology"@en ;
+                                     owl:priorVersion "1.1"@en ;
+                                     owl:versionInfo "2.0"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla#isNativeTo
+<http://ontologydesignpatterns.org/opla#isNativeTo> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/reproduceme-core#hasExperimentMaterial
+:hasExperimentMaterial rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf <http://purl.org/net/p-plan#hasInputVar> ;
+                       rdfs:domain :Experiment ;
+                       rdfs:range :ExperimentMaterial ;
+                       rdfs:comment "hasExperimentalMaterial binds an experiment to the data that was used in an experiment."@en ;
+                       rdfs:label "hasExperimentalMaterial" .
+
+
+###  https://w3id.org/reproduceme-core#hasExperimentalCondition
+:hasExperimentalCondition rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf <http://purl.org/net/p-plan#hasInputVar> ;
+                          rdfs:domain :Experiment ;
+                          rdfs:range :ExperimentalCondition ;
+                          rdfs:comment "hasExperimentalCondition binds an experiment to its environmental condition."@en ;
+                          rdfs:label "hasExperimentalCondition"@en .
+
+
+###  https://w3id.org/reproduceme-core#hasExperimentalData
+:hasExperimentalData rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf <http://purl.org/net/p-plan#hasInputVar> ;
+                     rdfs:domain :Experiment ;
+                     rdfs:range :ExperimentalData ;
+                     rdfs:comment "hasExperimentalData binds an experiment to the data that was used in an experiment."@en ;
+                     rdfs:label "hasExperimentalData" .
+
+
+###  https://w3id.org/reproduceme-core#hasPart
+:hasPart rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :isPartOf ;
+         rdfs:range :Instrument ;
+         rdfs:comment "An entity is part of another entity if one of its part belong to the other entity."@en ;
+         rdfs:label "hasPart"@en .
+
+
+###  https://w3id.org/reproduceme-core#hasSetting
+:hasSetting rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isSettingOf ;
+            rdfs:range :Setting ;
+            rdfs:comment "hasSetting binds a thing or instrument to its configurations or settings."@en ;
+            rdfs:label "hasSetting"@en .
+
+
+###  https://w3id.org/reproduceme-core#isAccessibleTo
+:isAccessibleTo rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasInfluencedBy> ;
+                rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+                rdfs:range <http://www.w3.org/ns/prov#Agent> ;
+                rdfs:comment "isAccessibleTo is a property which describes that an Entity is accessible or available to an Agent."@en ;
+                rdfs:label "isAccessibleTo"@en .
+
+
+###  https://w3id.org/reproduceme-core#isPartOf
+:isPartOf rdf:type owl:ObjectProperty ;
+          rdfs:domain :Instrument ;
+          rdfs:comment "An entity is part of another entity if one of its part belong to the other entity."@en ;
+          rdfs:label "isPartOf"@en .
+
+
+###  https://w3id.org/reproduceme-core#isSettingOf
+:isSettingOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Setting ;
+             rdfs:comment "isSettingOf binds a thing or instrument to its configurations or settings."@en ;
+             rdfs:label "isSettingOf"@en .
+
+
+###  https://w3id.org/reproduceme-core#reference
+:reference rdf:type owl:ObjectProperty ;
+           rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+           rdfs:range <http://www.w3.org/ns/prov#Entity> ;
+           rdfs:comment "An entity which has used another entity as reference."@en ;
+           rdfs:label "reference"@en .
+
+
+###  https://w3id.org/reproduceme-core#storedAt
+:storedAt rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://www.w3.org/ns/prov#atLocation> ;
+          rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+          rdfs:range <http://www.w3.org/ns/prov#Location> ;
+          rdfs:comment "The storage location of an entity."@en ;
+          rdfs:label "storedAt"@en .
+
+
+###  https://w3id.org/reproduceme-core#usedMethod
+:usedMethod rdf:type owl:ObjectProperty ;
+            rdfs:range :Method ;
+            rdfs:comment "A process which used a method to achieve something."@en ;
+            rdfs:label "usedMethod"@en .
+
+
+###  https://w3id.org/reproduceme-core#wasCreatedBy
+:wasCreatedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAttributedTo> ;
+              rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+              rdfs:range <http://www.w3.org/ns/prov#Agent> ;
+              rdfs:comment "A relationship between an entity to its creator agent."@en ;
+              rdfs:label "wasCreatedBy"@en .
+
+
+###  https://w3id.org/reproduceme-core#wasDistributedBy
+:wasDistributedBy rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAttributedTo> ;
+                  rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+                  rdfs:range <http://www.w3.org/ns/prov#Agent> ;
+                  rdfs:comment "A relationship between an entity to its distributor agent."@en ;
+                  rdfs:label "wasDistributedBy"@en .
+
+
+###  https://w3id.org/reproduceme-core#wasExtractedFrom
+:wasExtractedFrom rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasDerivedFrom> ;
+                  rdfs:domain :ExperimentMaterial ;
+                  rdfs:range :ExperimentMaterial ;
+                  rdfs:comment "An experiment material which is extracted from another material."@en ;
+                  rdfs:label "wasExtractedFrom"@en .
+
+
+###  https://w3id.org/reproduceme-core#wasPerformedBy
+:wasPerformedBy rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasInfluencedBy> .
+
+
+###  https://w3id.org/reproduceme-core#wasUpdatedBy
+:wasUpdatedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+              rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+              rdfs:range <http://www.w3.org/ns/prov#Agent> ,
+                         <http://www.w3.org/ns/prov#Entity> ;
+              rdfs:comment "An entity which is updated by another entity or an agent."@en ;
+              rdfs:label "wasUpdatedBy"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/reproduceme-core#ORCID
+:ORCID rdf:type owl:DatatypeProperty ;
+       rdfs:domain <http://www.w3.org/ns/prov#Agent> ;
+       rdfs:comment "A standard alphanumeric code to uniquely identify scientific and other academic authors and contributors."@en ;
+       rdfs:label "ORCID" .
+
+
+###  https://w3id.org/reproduceme-core#address
+:address rdf:type owl:DatatypeProperty ;
+         rdfs:comment "Address of an Agent" ;
+         rdfs:label "Address" .
+
+
+###  https://w3id.org/reproduceme-core#description
+:description rdf:type owl:DatatypeProperty ;
+             rdfs:comment "Textual note of an entity." ;
+             rdfs:label "description" .
+
+
+###  https://w3id.org/reproduceme-core#doi
+:doi rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :Publication ;
+     rdfs:comment "Publication persistent identifier" ;
+     rdfs:label "doi" .
+
+
+###  https://w3id.org/reproduceme-core#id
+:id rdf:type owl:DatatypeProperty ;
+    rdfs:comment "A unique identifier of an entity."@en ;
+    rdfs:label "Id"@en .
+
+
+###  https://w3id.org/reproduceme-core#modifiedAtTime
+:modifiedAtTime rdf:type owl:DatatypeProperty ;
+                rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+                rdfs:range xsd:dateTime ;
+                rdfs:comment "The time at which an entity was modified." ;
+                rdfs:label "modifiedAtTime" .
+
+
+###  https://w3id.org/reproduceme-core#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The name of a thing."@en ;
+      rdfs:label "Name"@en .
+
+
+###  https://w3id.org/reproduceme-core#pmcid
+:pmcid rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Publication ;
+       rdfs:comment "A standard unique PubMed Central identifier."@en ;
+       rdfs:label "PubMed Central ID" .
+
+
+###  https://w3id.org/reproduceme-core#pubmedid
+:pubmedid rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Publication ;
+          rdfs:comment "A standard unique identifier for each PubMed record."@en ;
+          rdfs:label "PubMed ID" .
+
+
+###  https://w3id.org/reproduceme-core#receivedAtTime
+:receivedAtTime rdf:type owl:DatatypeProperty ;
+                rdfs:range xsd:dateTime ;
+                rdfs:comment "The time at which an entity was received." ;
+                rdfs:label "receivedAtTime" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/reproduceme-core#Algorithm
+:Algorithm rdf:type owl:Class ;
+           rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty <http://purl.org/net/p-plan#isSubPlanOfPlan> ;
+                             owl:someValuesFrom :Experiment
+                           ] ;
+           <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+           rdfs:comment "A set of rules or steps to be followed in a problem-solving operation."@en ;
+           rdfs:label "Algorithm"@en .
+
+
+###  https://w3id.org/reproduceme-core#Annotation
+:Annotation rdf:type owl:Class ;
+            rdfs:subClassOf :ExperimentalData ;
+            rdfs:comment "A description added to a thing which provides comment, note or description."@en ;
+            rdfs:label "Annotation"@en .
+
+
+###  https://w3id.org/reproduceme-core#Author
+:Author rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :address ;
+                          owl:allValuesFrom xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :name ;
+                          owl:allValuesFrom xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :ORCID ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:string
+                        ] ;
+        <http://ontologydesignpatterns.org/opla#isNativeTo> <http://www.w3.org/ns/prov#Agent> ;
+        rdfs:comment "The person who authors a piece of work."@en ;
+        rdfs:label "Author"@en .
+
+
+###  https://w3id.org/reproduceme-core#CausalEffect
+:CausalEffect rdf:type owl:Class ;
+              rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+              <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+              rdfs:comment "The causal effects of an activity denotes the effects on an outcome because of another activity."@en ;
+              rdfs:label "Causal Effect"@en .
+
+
+###  https://w3id.org/reproduceme-core#ComputationalStep
+:ComputationalStep rdf:type owl:Class ;
+                   rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
+                   <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+                   rdfs:comment "The step or the process which uses computational resources involved in an experiment."@en ;
+                   rdfs:label "Computational Step"@en .
+
+
+###  https://w3id.org/reproduceme-core#Configuration
+:Configuration rdf:type owl:Class ;
+               rdfs:subClassOf :Setting ;
+               rdfs:comment "The settings or changes applied to an instrument."@en ;
+               rdfs:label "Configuration"@en .
+
+
+###  https://w3id.org/reproduceme-core#ContactPerson
+:ContactPerson rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :address ;
+                                 owl:allValuesFrom xsd:string
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :name ;
+                                 owl:allValuesFrom xsd:string
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :ORCID ;
+                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string
+                               ] ;
+               <http://ontologydesignpatterns.org/opla#isNativeTo> <http://www.w3.org/ns/prov#Agent> ;
+               rdfs:comment "A person who has the role of being a contact person for a certain thing."@en ;
+               rdfs:label "ContactPerson"@en .
+
+
+###  https://w3id.org/reproduceme-core#Context
+:Context rdf:type owl:Class ;
+         rdfs:subClassOf :Setting ;
+         rdfs:comment "The background setting of an experiment."@en ;
+         rdfs:label "Context"@en .
+
+
+###  https://w3id.org/reproduceme-core#CopyrightHolder
+:CopyrightHolder rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :address ;
+                                   owl:allValuesFrom xsd:string
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :name ;
+                                   owl:allValuesFrom xsd:string
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :ORCID ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:string
+                                 ] ;
+                 <http://ontologydesignpatterns.org/opla#isNativeTo> <http://www.w3.org/ns/prov#Agent> ;
+                 rdfs:comment "The person who holds the copyright or the permission of an entity or an activity."@en ;
+                 rdfs:label "Copyright Holder"@en .
+
+
+###  https://w3id.org/reproduceme-core#DataType
+:DataType rdf:type owl:Class ;
+          rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+          <http://ontologydesignpatterns.org/opla#isNativeTo> :ExperimentalData ;
+          rdfs:comment "A type or format of a thing."@en ;
+          rdfs:label "DataType"@en .
+
+
+###  https://w3id.org/reproduceme-core#Description
+:Description rdf:type owl:Class ;
+             rdfs:subClassOf :ExperimentalData ;
+             rdfs:comment "The text which is used to provide information about a thing."@en ;
+             rdfs:label "Description"@en .
+
+
+###  https://w3id.org/reproduceme-core#EnvironmentAttribute
+:EnvironmentAttribute rdf:type owl:Class ;
+                      rdfs:subClassOf :ExperimentalCondition ;
+                      rdfs:comment "The attributes of the experimental execution environment."@en ;
+                      rdfs:label "Environment Attribute"@en .
+
+
+###  https://w3id.org/reproduceme-core#EnvironmentSetup
+:EnvironmentSetup rdf:type owl:Class ;
+                  rdfs:subClassOf :ExperimentSetup ;
+                  rdfs:comment "To setup the environment to perform an experiment."@en ;
+                  rdfs:label "Environment Setup"@en .
+
+
+###  https://w3id.org/reproduceme-core#EnvironmentSetupSetting
+:EnvironmentSetupSetting rdf:type owl:Class ;
+                         rdfs:subClassOf :Setting ;
+                         rdfs:comment "The various attribute needed to setup the environment for an experiment."@en ;
+                         rdfs:label "Environment Setup Setting"@en .
+
+
+###  https://w3id.org/reproduceme-core#Experiment
+:Experiment rdf:type owl:Class ;
+            rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://purl.org/net/p-plan#correspondsToVariable> ;
+                              owl:someValuesFrom :ExperimentalData
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://purl.org/net/p-plan#isSubPlanOfPlan> ;
+                              owl:someValuesFrom :Study
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://www.w3.org/ns/prov#wasAttributedTo> ;
+                              owl:allValuesFrom <http://www.w3.org/ns/prov#Agent>
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasExperimentMaterial ;
+                              owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                              owl:onClass :ExperimentMaterial
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasExperimentalCondition ;
+                              owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                              owl:onClass :ExperimentalCondition
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasExperimentalData ;
+                              owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                              owl:onClass :ExperimentalData
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasSetting ;
+                              owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Setting
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :modifiedAtTime ;
+                              owl:someValuesFrom xsd:dateTime
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :description ;
+                              owl:allValuesFrom xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :name ;
+                              owl:allValuesFrom xsd:string
+                            ] ;
+            <http://ontologydesignpatterns.org/opla#isNativeTo> :Study ;
+            rdfs:comment "Experiment is an entity which describes the collective activity conducted in a science lab." ;
+            rdfs:label "Experiment"@en .
+
+
+###  https://w3id.org/reproduceme-core#ExperimentEnvironmentSetup
+:ExperimentEnvironmentSetup rdf:type owl:Class ;
+                            rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty <http://purl.org/net/p-plan#isSubPlanOfPlan> ;
+                                              owl:someValuesFrom :Experiment
+                                            ] ;
+                            <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+                            rdfs:comment "A set of instructions to setup the environment for experiment."@en ;
+                            rdfs:label "Experiment Environment Setup"@en .
+
+
+###  https://w3id.org/reproduceme-core#ExperimentMaterial
+:ExperimentMaterial rdf:type owl:Class ;
+                    rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ,
+                                    <http://www.w3.org/ns/prov#Entity> ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :description ;
+                                      owl:allValuesFrom xsd:string
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :name ;
+                                      owl:allValuesFrom xsd:string
+                                    ] ;
+                    <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+                    rdfs:comment "The materials or things used in an experiment."@en ;
+                    rdfs:label "Experiment Material"@en .
+
+
+###  https://w3id.org/reproduceme-core#ExperimentMaterialPreparation
+:ExperimentMaterialPreparation rdf:type owl:Class ;
+                               rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty <http://purl.org/net/p-plan#isSubPlanOfPlan> ;
+                                                 owl:someValuesFrom :Experiment
+                                               ] ;
+                               <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+                               rdfs:comment "A procedure to prepare experiment materials."@en ;
+                               rdfs:label "Experiment Material Preparation"@en .
+
+
+###  https://w3id.org/reproduceme-core#ExperimentSetup
+:ExperimentSetup rdf:type owl:Class ;
+                 rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
+                 <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+                 rdfs:comment "To setup the execution environment of an experiment."@en ;
+                 rdfs:label "Experiment Setup"@en .
+
+
+###  https://w3id.org/reproduceme-core#ExperimentalCondition
+:ExperimentalCondition rdf:type owl:Class ;
+                       rdfs:subClassOf :Setting ;
+                       rdfs:comment "The attributes or the conditions while an experiment is performed."@en ;
+                       rdfs:label "Experimental Condition"@en .
+
+
+###  https://w3id.org/reproduceme-core#ExperimentalData
+:ExperimentalData rdf:type owl:Class ;
+                  rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ,
+                                  <http://www.w3.org/ns/prov#Entity> ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :storedAt ;
+                                    owl:someValuesFrom <http://www.w3.org/ns/prov#Location>
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :description ;
+                                    owl:allValuesFrom xsd:string
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :name ;
+                                    owl:allValuesFrom xsd:string
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :doi ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:string
+                                  ] ;
+                  <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+                  rdfs:comment "Data used in an experiment."@en ;
+                  rdfs:label "Experimental Data"@en .
+
+
+###  https://w3id.org/reproduceme-core#Experimenter
+:Experimenter rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :address ;
+                                owl:allValuesFrom xsd:string
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :name ;
+                                owl:allValuesFrom xsd:string
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :ORCID ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string
+                              ] ;
+              <http://ontologydesignpatterns.org/opla#isNativeTo> <http://www.w3.org/ns/prov#Agent> ;
+              rdfs:comment "Experimenter is a person who is the owner of the Experiment and has its responsibility." ;
+              rdfs:label "Experimenter"@en .
+
+
+###  https://w3id.org/reproduceme-core#File
+:File rdf:type owl:Class ;
+      rdfs:subClassOf :ExperimentalData ;
+      rdfs:comment "A storage to store data. For example, a computer file."@en ;
+      rdfs:label "File"@en .
+
+
+###  https://w3id.org/reproduceme-core#FinalResult
+:FinalResult rdf:type owl:Class ;
+             rdfs:subClassOf :Result ;
+             rdfs:comment "It is the final result that is generated in an experiment which is eventually used in a publication."@en ;
+             rdfs:label "Final Result"@en .
+
+
+###  https://w3id.org/reproduceme-core#FinalStep
+:FinalStep rdf:type owl:Class ;
+           rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
+           <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+           rdfs:comment "The step that is performed at the end of an experiment."@en ;
+           rdfs:label "Final Step"@en .
+
+
+###  https://w3id.org/reproduceme-core#FundingAgency
+:FundingAgency rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.w3.org/ns/prov#Organization> ;
+               <http://ontologydesignpatterns.org/opla#isNativeTo> <http://www.w3.org/ns/prov#Agent> ;
+               rdfs:comment "An organization responsible for granting funds for conducting a research project."@en ;
+               rdfs:label "Funding Agency"@en .
+
+
+###  https://w3id.org/reproduceme-core#InputData
+:InputData rdf:type owl:Class ;
+           rdfs:subClassOf :ExperimentalData ;
+           rdfs:comment "It is the data that is used as input to an experiment."@en ;
+           rdfs:label "Input Data"@en .
+
+
+###  https://w3id.org/reproduceme-core#Instrument
+:Instrument rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasSetting ;
+                              owl:someValuesFrom :Setting
+                            ] ;
+            <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+            rdfs:comment "A device used to capture images."@en ;
+            rdfs:isDefinedBy <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Instrument> ;
+            rdfs:label "Instrument"@en .
+
+
+###  https://w3id.org/reproduceme-core#InstrumentSetting
+:InstrumentSetting rdf:type owl:Class ;
+                   rdfs:subClassOf :Setting ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isSettingOf ;
+                                     owl:someValuesFrom :Instrument
+                                   ] ;
+                   rdfs:comment "The settings of an instrument."@en ;
+                   rdfs:label "Instrument Setting"@en .
+
+
+###  https://w3id.org/reproduceme-core#IntermediateResult
+:IntermediateResult rdf:type owl:Class ;
+                    rdfs:subClassOf :Result ;
+                    rdfs:label "Intermediate Result"@en ,
+                               "These results are obtained during the intermediate steps of an experiment."@en .
+
+
+###  https://w3id.org/reproduceme-core#IntermediateStep
+:IntermediateStep rdf:type owl:Class ;
+                  rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
+                  <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+                  rdfs:comment "The step which is performed during an experiment."@en ;
+                  rdfs:label "Intermediate Step"@en .
+
+
+###  https://w3id.org/reproduceme-core#License
+:License rdf:type owl:Class ;
+         rdfs:subClassOf :ExperimentalData ;
+         rdfs:comment "An official permission required to perform or own something."@en ;
+         rdfs:label "License"@en .
+
+
+###  https://w3id.org/reproduceme-core#LicenseDocument
+:LicenseDocument rdf:type owl:Class ;
+                 rdfs:subClassOf :File ;
+                 rdfs:comment "It is the document which provides official permission to use or own an entity."@en ;
+                 rdfs:label "License Document"@en .
+
+
+###  https://w3id.org/reproduceme-core#MaterialPreparationStep
+:MaterialPreparationStep rdf:type owl:Class ;
+                         rdfs:subClassOf :ExperimentSetup ;
+                         rdfs:comment "The step where materials are prepared for the experiment."@en ;
+                         rdfs:label "Material Preparation Step"@en .
+
+
+###  https://w3id.org/reproduceme-core#Metadata
+:Metadata rdf:type owl:Class ;
+          rdfs:subClassOf :ExperimentalData ;
+          rdfs:comment "Metadata is the data about data."@en ;
+          rdfs:label "Metadata"@en .
+
+
+###  https://w3id.org/reproduceme-core#Method
+:Method rdf:type owl:Class ;
+        rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ;
+        <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+        rdfs:comment "The procedure used to perform a process."@en ;
+        rdfs:label "Method"@en .
+
+
+###  https://w3id.org/reproduceme-core#ModifiedVersion
+:ModifiedVersion rdf:type owl:Class ;
+                 rdfs:subClassOf :ExperimentalData ;
+                 rdfs:comment "It describes the version information of an entity which tells if there is any difference from its earlier form."@en ;
+                 rdfs:label "Modified Version"@en .
+
+
+###  https://w3id.org/reproduceme-core#NegativeResult
+:NegativeResult rdf:type owl:Class ;
+                rdfs:subClassOf :Result ;
+                rdfs:comment "These results are annotated as negative. This could be because of several reasons. The results which confute the hypothesis, the changes in experimental design or execution environment can cause negative results."@en ;
+                rdfs:label "Negative Result"@en .
+
+
+###  https://w3id.org/reproduceme-core#Non-computationalStep
+:Non-computationalStep rdf:type owl:Class ;
+                       rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
+                       <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+                       rdfs:comment "The step or the process which does not depend on computational resources."@en ;
+                       rdfs:label "Non-computational Step"@en .
+
+
+###  https://w3id.org/reproduceme-core#Note
+:Note rdf:type owl:Class ;
+      rdfs:subClassOf :ExperimentalData ;
+      rdfs:comment "A comment or description of an experiment."@en ;
+      rdfs:label "Note"@en .
+
+
+###  https://w3id.org/reproduceme-core#OriginalCreator
+:OriginalCreator rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :address ;
+                                   owl:allValuesFrom xsd:string
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :name ;
+                                   owl:allValuesFrom xsd:string
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :ORCID ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:string
+                                 ] ;
+                 <http://ontologydesignpatterns.org/opla#isNativeTo> <http://www.w3.org/ns/prov#Agent> ;
+                 rdfs:comment "The original attribution of a thing belongs to the OriginalCreator."@en ;
+                 rdfs:label "Original Creator"@en .
+
+
+###  https://w3id.org/reproduceme-core#Output
+:Output rdf:type owl:Class ;
+        owl:equivalentClass :Result ;
+        rdfs:subClassOf :ExperimentalData ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty <http://purl.org/net/p-plan#isOutputVarOf> ;
+                          owl:someValuesFrom <http://purl.org/net/p-plan#Step>
+                        ] ;
+        rdfs:comment "The result obtained after an activity."@en ;
+        rdfs:label "Output"@en .
+
+
+###  https://w3id.org/reproduceme-core#Owner
+:Owner rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :address ;
+                         owl:allValuesFrom xsd:string
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :name ;
+                         owl:allValuesFrom xsd:string
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ORCID ;
+                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange xsd:string
+                       ] ;
+       <http://ontologydesignpatterns.org/opla#isNativeTo> <http://www.w3.org/ns/prov#Agent> ;
+       rdfs:comment "A person who owns a certain thing."@en ;
+       rdfs:label "Owner"@en .
+
+
+###  https://w3id.org/reproduceme-core#PositiveResult
+:PositiveResult rdf:type owl:Class ;
+                rdfs:subClassOf :Result ;
+                rdfs:comment "These results which are annotated as positive are the results that confirm the hypothesis of an experiment."@en ;
+                rdfs:label "Positive Result"@en .
+
+
+###  https://w3id.org/reproduceme-core#Precondition
+:Precondition rdf:type owl:Class ;
+              rdfs:subClassOf :Setting ;
+              rdfs:comment "The conditions that must be fulfilled before performing an activity."@en ;
+              rdfs:label "Precondition"@en .
+
+
+###  https://w3id.org/reproduceme-core#PrincipalInvestigator
+:PrincipalInvestigator rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :address ;
+                                         owl:allValuesFrom xsd:string
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :name ;
+                                         owl:allValuesFrom xsd:string
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :ORCID ;
+                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onDataRange xsd:string
+                                       ] ;
+                       <http://ontologydesignpatterns.org/opla#isNativeTo> <http://www.w3.org/ns/prov#Agent> ;
+                       rdfs:comment "An important person responsible for a ResearchProject."@en ;
+                       rdfs:label "Principal Investigator"@en .
+
+
+###  https://w3id.org/reproduceme-core#ProcessedData
+:ProcessedData rdf:type owl:Class ;
+               rdfs:subClassOf :ExperimentalData ;
+               rdfs:comment "The data which is modified and processed for analysis or other experiments."@en ;
+               rdfs:label "Processed Data"@en .
+
+
+###  https://w3id.org/reproduceme-core#ProspectiveProvenance
+:ProspectiveProvenance rdf:type owl:Class ;
+                       rdfs:subClassOf :ExperimentalData ;
+                       rdfs:comment "The provenance information of an activity that specifies its plan."@en ;
+                       rdfs:label "Prospective Provenance"@en .
+
+
+###  https://w3id.org/reproduceme-core#Protocol
+:Protocol rdf:type owl:Class ;
+          rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://purl.org/net/p-plan#isSubPlanOfPlan> ;
+                            owl:someValuesFrom :Experiment
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :description ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :name ;
+                            owl:allValuesFrom xsd:string
+                          ] ;
+          <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+          rdfs:comment "A set of instructions needed to perform an activity."@en ;
+          rdfs:label "Protocol"@en .
+
+
+###  https://w3id.org/reproduceme-core#Publication
+:Publication rdf:type owl:Class ;
+             rdfs:subClassOf :ExperimentalData ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :doi ;
+                               owl:allValuesFrom xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :pmcid ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :pubmedid ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ;
+             rdfs:comment "A printed work or a file describing the work of one or more agents."@en ;
+             rdfs:label "Publication"@en .
+
+
+###  https://w3id.org/reproduceme-core#QualityControl
+:QualityControl rdf:type owl:Class ;
+                rdfs:subClassOf :Setting ;
+                rdfs:comment "A technique to check and control the quality of an entity."@en ;
+                rdfs:label "QualityControl" .
+
+
+###  https://w3id.org/reproduceme-core#Rating
+:Rating rdf:type owl:Class ;
+        rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+        <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+        rdfs:comment "The overall review provided by an agent to a thing."@en ;
+        rdfs:label "Rating"@en .
+
+
+###  https://w3id.org/reproduceme-core#RawData
+:RawData rdf:type owl:Class ;
+         rdfs:subClassOf :ExperimentalData ;
+         rdfs:comment "The data directly generated from an experiment without any modification or processing."@en ;
+         rdfs:label "Raw Data"@en .
+
+
+###  https://w3id.org/reproduceme-core#ResearchGroup
+:ResearchGroup rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.w3.org/ns/prov#Organization> ;
+               <http://ontologydesignpatterns.org/opla#isNativeTo> <http://www.w3.org/ns/prov#Agent> ;
+               rdfs:comment "Group is an organization which belongs to a department of an institution consisting of people responsible for research and education." ;
+               rdfs:label "Research Group"@en .
+
+
+###  https://w3id.org/reproduceme-core#ResearchProject
+:ResearchProject rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.w3.org/ns/prov#Organization> ;
+                 <http://ontologydesignpatterns.org/opla#isNativeTo> <http://www.w3.org/ns/prov#Agent> ;
+                 rdfs:comment "A person or collaborative group working on a research plan to achieve certain goals."@en ;
+                 rdfs:label "Research Project"@en .
+
+
+###  https://w3id.org/reproduceme-core#Result
+:Result rdf:type owl:Class ;
+        rdfs:subClassOf :ExperimentalData ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty <http://purl.org/net/p-plan#isOutputVarOf> ;
+                          owl:someValuesFrom <http://purl.org/net/p-plan#Step>
+                        ] ;
+        rdfs:comment "The output of a step."@en ;
+        rdfs:label "Result"@en .
+
+
+###  https://w3id.org/reproduceme-core#RetrospectiveProvenance
+:RetrospectiveProvenance rdf:type owl:Class ;
+                         rdfs:subClassOf :ExperimentalData ;
+                         rdfs:comment "The provenance information of what happened when an activity is performed."@en ;
+                         rdfs:label "Retrospective Provenance"@en .
+
+
+###  https://w3id.org/reproduceme-core#RightsandPermissionsDocument
+:RightsandPermissionsDocument rdf:type owl:Class ;
+                              rdfs:subClassOf :File ;
+                              rdfs:comment "The document which tells whether other scientists are allowed to use or modify the data."@en ;
+                              rdfs:label "Rights and Permissions Document"@en .
+
+
+###  https://w3id.org/reproduceme-core#Setting
+:Setting rdf:type owl:Class ;
+         rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ,
+                         <http://www.w3.org/ns/prov#Entity> ;
+         <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+         rdfs:comment "The parameters or the situation in which the experiment was performed."@en ;
+         rdfs:label "Setting"@en .
+
+
+###  https://w3id.org/reproduceme-core#Size
+:Size rdf:type owl:Class ;
+      rdfs:subClassOf :Setting ;
+      rdfs:comment "A dimension of a thing."@en ;
+      rdfs:label "Size"@en .
+
+
+###  https://w3id.org/reproduceme-core#StandardOperatingProcedure
+:StandardOperatingProcedure rdf:type owl:Class ;
+                            rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty <http://purl.org/net/p-plan#isSubPlanOfPlan> ;
+                                              owl:someValuesFrom :Experiment
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :description ;
+                                              owl:allValuesFrom xsd:string
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :name ;
+                                              owl:allValuesFrom xsd:string
+                                            ] ;
+                            <http://ontologydesignpatterns.org/opla#isNativeTo> :Experiment ;
+                            rdfs:comment "A set of steb-by-step instructions  to carry out a complex routine."@en ;
+                            rdfs:label "Standard Operating Procedure"@en .
+
+
+###  https://w3id.org/reproduceme-core#Study
+:Study rdf:type owl:Class ;
+       rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty <http://www.w3.org/ns/prov#wasAttributedTo> ;
+                         owl:allValuesFrom <http://www.w3.org/ns/prov#Agent>
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :description ;
+                         owl:allValuesFrom xsd:string
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :name ;
+                         owl:allValuesFrom xsd:string
+                       ] ;
+       rdfs:comment "A process to examine and analyze a data object to answer questions and discover new facts about it." ;
+       rdfs:label "Study" .
+
+
+###  https://w3id.org/reproduceme-core#Unit
+:Unit rdf:type owl:Class ;
+      rdfs:subClassOf :Setting ;
+      rdfs:comment "A standard quantity of measurement."@en ;
+      rdfs:label "Unit"@en .
+
+
+###  https://w3id.org/reproduceme-core#Version
+:Version rdf:type owl:Class ;
+         rdfs:subClassOf :Setting ;
+         rdfs:comment "A property of an entity which describes its difference with respect to its earlier form."@en ;
+         rdfs:label "Version"@en .
+
+
+###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
