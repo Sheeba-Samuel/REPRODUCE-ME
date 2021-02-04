@@ -12,7 +12,6 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:repr-comp="https://w3id.org/reproduceme/computational#">
     <owl:Ontology rdf:about="https://w3id.org/reproduceme/computational">
-        <owl:versionIRI rdf:resource="https://w3id.org/reproduceme/computational/2.0"/>
         <owl:imports rdf:resource="https://w3id.org/reproduceme/core"/>
         <terms:created xml:lang="en">2020-07-28</terms:created>
         <terms:creator>Birgitta König-Ries</terms:creator>
@@ -23,8 +22,6 @@
         <terms:title>The ReproduceMe-Computational Ontology</terms:title>
         <vann:preferredNamespacePrefix xml:lang="en">repr-comp</vann:preferredNamespacePrefix>
         <rdfs:label>The ReproduceMe-Computational Ontology</rdfs:label>
-        <owl:priorVersion xml:lang="en">1.1</owl:priorVersion>
-        <owl:versionInfo xml:lang="en">2.0</owl:versionInfo>
     </owl:Ontology>
     
 
