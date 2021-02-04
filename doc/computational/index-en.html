@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/reproduceme-computational","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/reproduceme-computational","name":"The ReproduceMe-Computational Ontology", "headline":"The ReproduceMe-Computational ontology is an extension of the ReproduceMe-Core ontology to describe a complete path of a computational experiment. The ReproduceMe-Computational ontology is part of the ReproduceMe Ontology Network. The ontology targets to model the computational provenance focusing on the prospective and retrospective provenance of scripts and computational notebooks like Jupyter.", "datePublished":"2020-07-28", "version":"2.0", "license":"http://creativecommons.org/licenses/by-nc-sa/2.0/", "author":[{"@type":"Person","name":"Sheeba Samuel"},{"@type":"Person","name":"Birgitta König-Ries"}]}</script>
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/reproduceme/computational","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/reproduceme/computational","name":"The ReproduceMe-Computational Ontology", "headline":"The ReproduceMe-Computational ontology is an extension of the ReproduceMe-Core ontology to describe a complete path of a computational experiment. The ReproduceMe-Computational ontology is part of the ReproduceMe Ontology Network. The ontology targets to model the computational provenance focusing on the prospective and retrospective provenance of scripts and computational notebooks like Jupyter.", "datePublished":"2020-07-28", "version":"2.0", "license":"http://creativecommons.org/licenses/by-nc-sa/2.0/", "author":[{"@type":"Person","name":"Sheeba Samuel"},{"@type":"Person","name":"Birgitta König-Ries"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -58,9 +58,9 @@ function loadTOC(){
 
 <dl>
 <dt>This version:</dt>
-<dd><a href="https://w3id.org/reproduceme-computational/2.0">https://w3id.org/reproduceme-computational/2.0</a></dd>
+<dd><a href="https://w3id.org/reproduceme/computational/2.0">https://w3id.org/reproduceme/computational/2.0</a></dd>
 <dt>Latest version:</dt>
-<dd><a href="https://w3id.org/reproduceme-computational">https://w3id.org/reproduceme-computational</a></dd>
+<dd><a href="https://w3id.org/reproduceme/computational">https://w3id.org/reproduceme/computational</a></dd>
 <dt>Previous version:</dt>
 <dd><a href="1.1">1.1</a></dd>
 <dt>Revision:</dt>
@@ -70,7 +70,7 @@ function loadTOC(){
 
 <dt>Download serialization:</dt><dd><span><a href="reproduceme-computational.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="reproduceme-computational.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="reproduceme-computational.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="reproduceme-computational.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://creativecommons.org/licenses/by-nc-sa/2.0/" target="_blank"><img src="https://img.shields.io/badge/License-http://creativecommons.org/licenses/by_nc_sa/2.0/-blue.svg" alt="http://creativecommons.org/licenses/by-nc-sa/2.0/" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/OOPSeval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Sheeba Samuel,Birgitta König-Ries. The ReproduceMe-Computational Ontology. Revision: 2.0. Retrieved from: https://w3id.org/reproduceme-computational/2.0</dd>
+<dd>Sheeba Samuel,Birgitta König-Ries. The ReproduceMe-Computational Ontology. Revision: 2.0. Retrieved from: https://w3id.org/reproduceme/computational/2.0</dd>
 </dl>
 
 <hr/>
@@ -94,17 +94,17 @@ This is a place holder text for the introduction. The introduction should briefl
 <table>
 <caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
 <tbody>
-<tr><td><b>repr-comp</b></td><td>&lt;https://w3id.org/reproduceme-computational&gt;</td></tr>
+<tr><td><b>repr-comp</b></td><td>&lt;https://w3id.org/reproduceme/computational&gt;</td></tr>
 <tr><td><b>opla</b></td><td>&lt;http://ontologydesignpatterns.org/opla&gt;</td></tr>
-<tr><td><b>w3id-org</b></td><td>&lt;https://w3id.org&gt;</td></tr>
 <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
 <tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
 <tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
 <tr><td><b>p-plan</b></td><td>&lt;http://purl.org/net/p-plan&gt;</td></tr>
 <tr><td><b>error</b></td><td>&lt;http://org.semanticweb.owlapi/error&gt;</td></tr>
-<tr><td><b>reproduceme-core</b></td><td>&lt;https://w3id.org/reproduceme-core&gt;</td></tr>
+<tr><td><b>core</b></td><td>&lt;https://w3id.org/reproduceme/core&gt;</td></tr>
 <tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
 <tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
+<tr><td><b>reproduceme</b></td><td>&lt;https://w3id.org/reproduceme&gt;</td></tr>
 <tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann&gt;</td></tr>
 <tr><td><b>prov</b></td><td>&lt;http://www.w3.org/ns/prov&gt;</td></tr>
 </tbody>
@@ -122,69 +122,69 @@ This ontology has the following classes and properties.</span>
 <ul class="hlist">
    <li>
       <a href="#Argument"
-         title="https://w3id.org/reproduceme-computational#Argument">Argument</a>
+         title="https://w3id.org/reproduceme/computational#Argument">Argument</a>
    </li>
    <li>
       <a href="#ComputationalTool"
-         title="https://w3id.org/reproduceme-computational#ComputationalTool">Computational Tool</a>
+         title="https://w3id.org/reproduceme/computational#ComputationalTool">Computational Tool</a>
    </li>
    <li>
       <a href="#Function"
-         title="https://w3id.org/reproduceme-computational#Function">Function</a>
+         title="https://w3id.org/reproduceme/computational#Function">Function</a>
    </li>
    <li>
       <a href="#FunctionActivation"
-         title="https://w3id.org/reproduceme-computational#FunctionActivation">Function Activation</a>
+         title="https://w3id.org/reproduceme/computational#FunctionActivation">Function Activation</a>
    </li>
    <li>
       <a href="#Kernel"
-         title="https://w3id.org/reproduceme-computational#Kernel">Kernel</a>
+         title="https://w3id.org/reproduceme/computational#Kernel">Kernel</a>
    </li>
    <li>
       <a href="#Library"
-         title="https://w3id.org/reproduceme-computational#Library">Library</a>
+         title="https://w3id.org/reproduceme/computational#Library">Library</a>
    </li>
    <li>
       <a href="#Module"
-         title="https://w3id.org/reproduceme-computational#Module">Module</a>
+         title="https://w3id.org/reproduceme/computational#Module">Module</a>
    </li>
    <li>
       <a href="#Notebook"
-         title="https://w3id.org/reproduceme-computational#Notebook">Notebok</a>
+         title="https://w3id.org/reproduceme/computational#Notebook">Notebok</a>
    </li>
    <li>
-      <a href="#Cell" title="https://w3id.org/reproduceme-computational#Cell">Notebok Cell</a>
+      <a href="#Cell" title="https://w3id.org/reproduceme/computational#Cell">Notebok Cell</a>
    </li>
    <li>
       <a href="#CellExecution"
-         title="https://w3id.org/reproduceme-computational#CellExecution">Notebook Cell Execution</a>
+         title="https://w3id.org/reproduceme/computational#CellExecution">Notebook Cell Execution</a>
    </li>
    <li>
       <a href="#OperatingSystem"
-         title="https://w3id.org/reproduceme-computational#OperatingSystem">Operating System</a>
+         title="https://w3id.org/reproduceme/computational#OperatingSystem">Operating System</a>
    </li>
    <li>
       <a href="#Package"
-         title="https://w3id.org/reproduceme-computational#Package">Package</a>
+         title="https://w3id.org/reproduceme/computational#Package">Package</a>
    </li>
    <li>
       <a href="#Parameter"
-         title="https://w3id.org/reproduceme-computational#Parameter">Parameter</a>
+         title="https://w3id.org/reproduceme/computational#Parameter">Parameter</a>
    </li>
    <li>
       <a href="#ProgrammingLanguage"
-         title="https://w3id.org/reproduceme-computational#ProgrammingLanguage">Programming Language</a>
+         title="https://w3id.org/reproduceme/computational#ProgrammingLanguage">Programming Language</a>
    </li>
    <li>
       <a href="#Script"
-         title="https://w3id.org/reproduceme-computational#Script">Script</a>
+         title="https://w3id.org/reproduceme/computational#Script">Script</a>
    </li>
    <li>
       <a href="#Source"
-         title="https://w3id.org/reproduceme-computational#Source">Source</a>
+         title="https://w3id.org/reproduceme/computational#Source">Source</a>
    </li>
    <li>
-      <a href="#Trial" title="https://w3id.org/reproduceme-computational#Trial">Trial</a>
+      <a href="#Trial" title="https://w3id.org/reproduceme/computational#Trial">Trial</a>
    </li>
 </ul>
 </div>
@@ -198,69 +198,69 @@ This section provides details for each class and property defined by The Reprodu
    <ul class="hlist">
       <li>
          <a href="#Argument"
-            title="https://w3id.org/reproduceme-computational#Argument">Argument</a>
+            title="https://w3id.org/reproduceme/computational#Argument">Argument</a>
       </li>
       <li>
          <a href="#ComputationalTool"
-            title="https://w3id.org/reproduceme-computational#ComputationalTool">Computational Tool</a>
+            title="https://w3id.org/reproduceme/computational#ComputationalTool">Computational Tool</a>
       </li>
       <li>
          <a href="#Function"
-            title="https://w3id.org/reproduceme-computational#Function">Function</a>
+            title="https://w3id.org/reproduceme/computational#Function">Function</a>
       </li>
       <li>
          <a href="#FunctionActivation"
-            title="https://w3id.org/reproduceme-computational#FunctionActivation">Function Activation</a>
+            title="https://w3id.org/reproduceme/computational#FunctionActivation">Function Activation</a>
       </li>
       <li>
          <a href="#Kernel"
-            title="https://w3id.org/reproduceme-computational#Kernel">Kernel</a>
+            title="https://w3id.org/reproduceme/computational#Kernel">Kernel</a>
       </li>
       <li>
          <a href="#Library"
-            title="https://w3id.org/reproduceme-computational#Library">Library</a>
+            title="https://w3id.org/reproduceme/computational#Library">Library</a>
       </li>
       <li>
          <a href="#Module"
-            title="https://w3id.org/reproduceme-computational#Module">Module</a>
+            title="https://w3id.org/reproduceme/computational#Module">Module</a>
       </li>
       <li>
          <a href="#Notebook"
-            title="https://w3id.org/reproduceme-computational#Notebook">Notebok</a>
+            title="https://w3id.org/reproduceme/computational#Notebook">Notebok</a>
       </li>
       <li>
-         <a href="#Cell" title="https://w3id.org/reproduceme-computational#Cell">Notebok Cell</a>
+         <a href="#Cell" title="https://w3id.org/reproduceme/computational#Cell">Notebok Cell</a>
       </li>
       <li>
          <a href="#CellExecution"
-            title="https://w3id.org/reproduceme-computational#CellExecution">Notebook Cell Execution</a>
+            title="https://w3id.org/reproduceme/computational#CellExecution">Notebook Cell Execution</a>
       </li>
       <li>
          <a href="#OperatingSystem"
-            title="https://w3id.org/reproduceme-computational#OperatingSystem">Operating System</a>
+            title="https://w3id.org/reproduceme/computational#OperatingSystem">Operating System</a>
       </li>
       <li>
          <a href="#Package"
-            title="https://w3id.org/reproduceme-computational#Package">Package</a>
+            title="https://w3id.org/reproduceme/computational#Package">Package</a>
       </li>
       <li>
          <a href="#Parameter"
-            title="https://w3id.org/reproduceme-computational#Parameter">Parameter</a>
+            title="https://w3id.org/reproduceme/computational#Parameter">Parameter</a>
       </li>
       <li>
          <a href="#ProgrammingLanguage"
-            title="https://w3id.org/reproduceme-computational#ProgrammingLanguage">Programming Language</a>
+            title="https://w3id.org/reproduceme/computational#ProgrammingLanguage">Programming Language</a>
       </li>
       <li>
          <a href="#Script"
-            title="https://w3id.org/reproduceme-computational#Script">Script</a>
+            title="https://w3id.org/reproduceme/computational#Script">Script</a>
       </li>
       <li>
          <a href="#Source"
-            title="https://w3id.org/reproduceme-computational#Source">Source</a>
+            title="https://w3id.org/reproduceme/computational#Source">Source</a>
       </li>
       <li>
-         <a href="#Trial" title="https://w3id.org/reproduceme-computational#Trial">Trial</a>
+         <a href="#Trial" title="https://w3id.org/reproduceme/computational#Trial">Trial</a>
       </li>
    </ul>
    <div class="entity" id="Argument">
@@ -269,7 +269,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#Argument</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#Argument</p>
       <div class="comment">
          <span class="markdown">A parameter.
 For example, an argument of parameter of a function.</span>
@@ -278,7 +278,7 @@ For example, an argument of parameter of a function.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted"
-                  title="https://w3id.org/reproduceme-core#ExperimentalData">experimental data</span>
+                  title="https://w3id.org/reproduceme/core#ExperimentalData">experimental data</span>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -289,14 +289,14 @@ For example, an argument of parameter of a function.</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#ComputationalTool</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#ComputationalTool</p>
       <div class="comment">
          <span class="markdown">The tools that use computer-based systems for computation.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/reproduceme-core#Setting">setting</span>
+            <span class="dotted" title="https://w3id.org/reproduceme/core#Setting">setting</span>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -307,7 +307,7 @@ For example, an argument of parameter of a function.</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#Function</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#Function</p>
       <div class="comment">
          <span class="markdown">A programming language code snippet in a script which describes a procedure or a routine.</span>
       </div>
@@ -325,7 +325,7 @@ For example, an argument of parameter of a function.</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#FunctionActivation</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#FunctionActivation</p>
       <div class="comment">
          <span class="markdown">Function Activation is when a function is activated or run.</span>
       </div>
@@ -333,7 +333,7 @@ For example, an argument of parameter of a function.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted"
-                  title="https://w3id.org/reproduceme-core#ComputationalStep">computational step</span>
+                  title="https://w3id.org/reproduceme/core#ComputationalStep">computational step</span>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -344,14 +344,14 @@ For example, an argument of parameter of a function.</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#Kernel</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#Kernel</p>
       <div class="comment">
          <span class="markdown">An Interactive Notebook computation engine that executes the code written in a programming language.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/reproduceme-core#Setting">setting</span>
+            <span class="dotted" title="https://w3id.org/reproduceme/core#Setting">setting</span>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -362,7 +362,7 @@ For example, an argument of parameter of a function.</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#Library</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#Library</p>
       <div class="comment">
          <span class="markdown">A collection of resources used for the development of software.</span>
       </div>
@@ -370,7 +370,7 @@ For example, an argument of parameter of a function.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted"
-                  title="https://w3id.org/reproduceme-core#ExperimentalData">experimental data</span>
+                  title="https://w3id.org/reproduceme/core#ExperimentalData">experimental data</span>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -381,7 +381,7 @@ For example, an argument of parameter of a function.</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#Module</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#Module</p>
       <div class="comment">
          <span class="markdown">A part of a computer program or a software.</span>
       </div>
@@ -399,7 +399,7 @@ For example, an argument of parameter of a function.</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#Notebook</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#Notebook</p>
       <div class="comment">
          <span class="markdown">Interactive Notebook is a notebook for interactive computation and allow users to run code.
 For example, Jupyter Notebook</span>
@@ -408,7 +408,7 @@ For example, Jupyter Notebook</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted"
-                  title="https://w3id.org/reproduceme-core#ExperimentalData">experimental data</span>
+                  title="https://w3id.org/reproduceme/core#ExperimentalData">experimental data</span>
             <sup class="type-c" title="class">c</sup>, <span class="dotted" title="http://purl.org/net/p-plan#Plan">plan</span>
             <sup class="type-c" title="class">c</sup>
          </dd>
@@ -420,7 +420,7 @@ For example, Jupyter Notebook</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#Cell</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#Cell</p>
       <div class="comment">
          <span class="markdown">A cell is a multiline text input field in an Interactive Notebook which can either be code cells where code can be excuted or markdown cells where a descriptive text can be provided or raw cells where output can directly be entered. 
 For example, a Jupyter Notebook cell.</span>
@@ -429,7 +429,7 @@ For example, a Jupyter Notebook cell.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted"
-                  title="https://w3id.org/reproduceme-core#ComputationalStep">computational step</span>
+                  title="https://w3id.org/reproduceme/core#ComputationalStep">computational step</span>
             <sup class="type-c" title="class">c</sup>, <span class="dotted" title="http://org.semanticweb.owlapi/error#Error4">error4</span>
             <sup class="type-c" title="class">c</sup>, <span class="dotted" title="http://org.semanticweb.owlapi/error#Error5">error5</span>
             <sup class="type-c" title="class">c</sup>
@@ -442,7 +442,7 @@ For example, a Jupyter Notebook cell.</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#CellExecution</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#CellExecution</p>
       <div class="comment">
          <span class="markdown">The run of a cell of a Interactive Notebook.</span>
       </div>
@@ -463,14 +463,14 @@ For example, a Jupyter Notebook cell.</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#OperatingSystem</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#OperatingSystem</p>
       <div class="comment">
          <span class="markdown">A system software that supports and manages the hardware and the software resources and provides computer's functions.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/reproduceme-core#Setting">setting</span>
+            <span class="dotted" title="https://w3id.org/reproduceme/core#Setting">setting</span>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -481,14 +481,14 @@ For example, a Jupyter Notebook cell.</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#Package</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#Package</p>
       <div class="comment">
          <span class="markdown">A collection of programs and resources which are packed together.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/reproduceme-core#Setting">setting</span>
+            <span class="dotted" title="https://w3id.org/reproduceme/core#Setting">setting</span>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -499,7 +499,7 @@ For example, a Jupyter Notebook cell.</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#Parameter</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#Parameter</p>
       <div class="comment">
          <span class="markdown">These values are factors which define an operation or a system which is kept constant for a particular execution of an experiment or a calculation and varied over other executions.</span>
       </div>
@@ -507,7 +507,7 @@ For example, a Jupyter Notebook cell.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted"
-                  title="https://w3id.org/reproduceme-core#ExperimentalData">experimental data</span>
+                  title="https://w3id.org/reproduceme/core#ExperimentalData">experimental data</span>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -518,14 +518,14 @@ For example, a Jupyter Notebook cell.</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#ProgrammingLanguage</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#ProgrammingLanguage</p>
       <div class="comment">
          <span class="markdown">The language used for scripting. For eg. Java, Python.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/reproduceme-core#Setting">setting</span>
+            <span class="dotted" title="https://w3id.org/reproduceme/core#Setting">setting</span>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -536,7 +536,7 @@ For example, a Jupyter Notebook cell.</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#Script</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#Script</p>
       <div class="comment">
          <span class="markdown">A computer program written to perform a task in a scripting language.</span>
       </div>
@@ -544,7 +544,7 @@ For example, a Jupyter Notebook cell.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted"
-                  title="https://w3id.org/reproduceme-core#ExperimentalData">experimental data</span>
+                  title="https://w3id.org/reproduceme/core#ExperimentalData">experimental data</span>
             <sup class="type-c" title="class">c</sup>, <span class="dotted" title="http://purl.org/net/p-plan#Plan">plan</span>
             <sup class="type-c" title="class">c</sup>
          </dd>
@@ -556,7 +556,7 @@ For example, a Jupyter Notebook cell.</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#Source</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#Source</p>
       <div class="comment">
          <span class="markdown">The input of each cell in a Jupyter Notebook is described as Source.</span>
       </div>
@@ -564,7 +564,7 @@ For example, a Jupyter Notebook cell.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted"
-                  title="https://w3id.org/reproduceme-core#ExperimentalData">experimental data</span>
+                  title="https://w3id.org/reproduceme/core#ExperimentalData">experimental data</span>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -575,7 +575,7 @@ For example, a Jupyter Notebook cell.</span>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-computational#Trial</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/computational#Trial</p>
       <div class="comment">
          <span class="markdown">A run or execution of an activity.
 For example, one execution of a script.</span>

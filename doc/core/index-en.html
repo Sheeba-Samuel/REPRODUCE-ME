@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/reproduceme-core","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/reproduceme-core","name":"The ReproduceMe-Core ontology", "headline":"The ReproduceMe-Core ontology is the core ontology of the ReproduceMe Ontology Network. The ReproduceMe-Core ontology is designed to provide a detailed abstract definition of structured knowledge for the provenance and reproducibility of scientific studies.
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/reproduceme/core","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/reproduceme/core","name":"The ReproduceMe-Core ontology", "headline":"The ReproduceMe-Core ontology is the core ontology of the ReproduceMe Ontology Network. The ReproduceMe-Core ontology is designed to provide a detailed abstract definition of structured knowledge for the provenance and reproducibility of scientific studies.
 It is based on the foundational ontologies: PROV-O and P-Plan. It is an extension of the PROV-O and the P-Plan ontology to describe a complete path of a scientific experiment. It expresses the REPRODUCE-ME Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes and properties to represent a scientific experiment including its computational and non-computational steps to track the provenance of results. It describes an experiment and its data, agents, activities, plans, steps, variables, instruments, materials and settings required for its reproducibility.", "datePublished":"2020-07-28", "version":"2.0", "license":"http://creativecommons.org/licenses/by-nc-sa/2.0/", "author":[{"@type":"Person","name":"Sheeba Samuel"},{"@type":"Person","name":"Birgitta König-Ries"}]}</script>
 
 <script src="resources/jquery.js"></script> 
@@ -59,9 +59,9 @@ function loadTOC(){
 
 <dl>
 <dt>This version:</dt>
-<dd><a href="https://w3id.org/reproduceme-core/2.0">https://w3id.org/reproduceme-core/2.0</a></dd>
+<dd><a href="https://w3id.org/reproduceme/core/2.0">https://w3id.org/reproduceme/core/2.0</a></dd>
 <dt>Latest version:</dt>
-<dd><a href="https://w3id.org/reproduceme-core">https://w3id.org/reproduceme-core</a></dd>
+<dd><a href="https://w3id.org/reproduceme/core">https://w3id.org/reproduceme/core</a></dd>
 <dt>Previous version:</dt>
 <dd><a href="1.1">1.1</a></dd>
 <dt>Revision:</dt>
@@ -74,7 +74,7 @@ function loadTOC(){
 
 <dt>Download serialization:</dt><dd><span><a href="reproduceme-core.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="reproduceme-core.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="reproduceme-core.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="reproduceme-core.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://creativecommons.org/licenses/by-nc-sa/2.0/" target="_blank"><img src="https://img.shields.io/badge/License-http://creativecommons.org/licenses/by_nc_sa/2.0/-blue.svg" alt="http://creativecommons.org/licenses/by-nc-sa/2.0/" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/OOPSeval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Sheeba Samuel,Birgitta König-Ries. The ReproduceMe-Core ontology. Revision: 2.0. Retrieved from: https://w3id.org/reproduceme-core/2.0</dd>
+<dd>Sheeba Samuel,Birgitta König-Ries. The ReproduceMe-Core ontology. Revision: 2.0. Retrieved from: https://w3id.org/reproduceme/core/2.0</dd>
 </dl>
 
 <hr/>
@@ -99,9 +99,8 @@ This is a place holder text for the introduction. The introduction should briefl
 <table>
 <caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
 <tbody>
-<tr><td><b>repr-core</b></td><td>&lt;https://w3id.org/reproduceme-core&gt;</td></tr>
+<tr><td><b>repr-core</b></td><td>&lt;https://w3id.org/reproduceme/core&gt;</td></tr>
 <tr><td><b>opla</b></td><td>&lt;http://ontologydesignpatterns.org/opla&gt;</td></tr>
-<tr><td><b>w3id-org</b></td><td>&lt;https://w3id.org&gt;</td></tr>
 <tr><td><b>ome-xsd-html</b></td><td>&lt;http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html&gt;</td></tr>
 <tr><td><b>ns</b></td><td>&lt;http://www.w3.org/ns&gt;</td></tr>
 <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
@@ -110,6 +109,7 @@ This is a place holder text for the introduction. The introduction should briefl
 <tr><td><b>p-plan</b></td><td>&lt;http://purl.org/net/p-plan&gt;</td></tr>
 <tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
 <tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
+<tr><td><b>reproduceme</b></td><td>&lt;https://w3id.org/reproduceme&gt;</td></tr>
 <tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann&gt;</td></tr>
 <tr><td><b>prov</b></td><td>&lt;http://www.w3.org/ns/prov&gt;</td></tr>
 </tbody>
@@ -126,311 +126,311 @@ This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
 <ul class="hlist">
    <li>
-      <a href="#Algorithm" title="https://w3id.org/reproduceme-core#Algorithm">Algorithm</a>
+      <a href="#Algorithm" title="https://w3id.org/reproduceme/core#Algorithm">Algorithm</a>
    </li>
    <li>
-      <a href="#Annotation" title="https://w3id.org/reproduceme-core#Annotation">Annotation</a>
+      <a href="#Annotation" title="https://w3id.org/reproduceme/core#Annotation">Annotation</a>
    </li>
    <li>
-      <a href="#Author" title="https://w3id.org/reproduceme-core#Author">Author</a>
+      <a href="#Author" title="https://w3id.org/reproduceme/core#Author">Author</a>
    </li>
    <li>
-      <a href="#CausalEffect" title="https://w3id.org/reproduceme-core#CausalEffect">Causal Effect</a>
+      <a href="#CausalEffect" title="https://w3id.org/reproduceme/core#CausalEffect">Causal Effect</a>
    </li>
    <li>
       <a href="#ComputationalStep"
-         title="https://w3id.org/reproduceme-core#ComputationalStep">Computational Step</a>
+         title="https://w3id.org/reproduceme/core#ComputationalStep">Computational Step</a>
    </li>
    <li>
-      <a href="#Configuration" title="https://w3id.org/reproduceme-core#Configuration">Configuration</a>
+      <a href="#Configuration" title="https://w3id.org/reproduceme/core#Configuration">Configuration</a>
    </li>
    <li>
-      <a href="#ContactPerson" title="https://w3id.org/reproduceme-core#ContactPerson">ContactPerson</a>
+      <a href="#ContactPerson" title="https://w3id.org/reproduceme/core#ContactPerson">ContactPerson</a>
    </li>
    <li>
-      <a href="#Context" title="https://w3id.org/reproduceme-core#Context">Context</a>
+      <a href="#Context" title="https://w3id.org/reproduceme/core#Context">Context</a>
    </li>
    <li>
       <a href="#CopyrightHolder"
-         title="https://w3id.org/reproduceme-core#CopyrightHolder">Copyright Holder</a>
+         title="https://w3id.org/reproduceme/core#CopyrightHolder">Copyright Holder</a>
    </li>
    <li>
-      <a href="#DataType" title="https://w3id.org/reproduceme-core#DataType">DataType</a>
+      <a href="#DataType" title="https://w3id.org/reproduceme/core#DataType">DataType</a>
    </li>
    <li>
-      <a href="#Description" title="https://w3id.org/reproduceme-core#Description">Description</a>
+      <a href="#Description" title="https://w3id.org/reproduceme/core#Description">Description</a>
    </li>
    <li>
       <a href="#EnvironmentAttribute"
-         title="https://w3id.org/reproduceme-core#EnvironmentAttribute">Environment Attribute</a>
+         title="https://w3id.org/reproduceme/core#EnvironmentAttribute">Environment Attribute</a>
    </li>
    <li>
       <a href="#EnvironmentSetup"
-         title="https://w3id.org/reproduceme-core#EnvironmentSetup">Environment Setup</a>
+         title="https://w3id.org/reproduceme/core#EnvironmentSetup">Environment Setup</a>
    </li>
    <li>
       <a href="#EnvironmentSetupSetting"
-         title="https://w3id.org/reproduceme-core#EnvironmentSetupSetting">Environment Setup Setting</a>
+         title="https://w3id.org/reproduceme/core#EnvironmentSetupSetting">Environment Setup Setting</a>
    </li>
    <li>
-      <a href="#Experiment" title="https://w3id.org/reproduceme-core#Experiment">Experiment</a>
+      <a href="#Experiment" title="https://w3id.org/reproduceme/core#Experiment">Experiment</a>
    </li>
    <li>
       <a href="#ExperimentEnvironmentSetup"
-         title="https://w3id.org/reproduceme-core#ExperimentEnvironmentSetup">Experiment Environment Setup</a>
+         title="https://w3id.org/reproduceme/core#ExperimentEnvironmentSetup">Experiment Environment Setup</a>
    </li>
    <li>
       <a href="#ExperimentMaterial"
-         title="https://w3id.org/reproduceme-core#ExperimentMaterial">Experiment Material</a>
+         title="https://w3id.org/reproduceme/core#ExperimentMaterial">Experiment Material</a>
    </li>
    <li>
       <a href="#ExperimentMaterialPreparation"
-         title="https://w3id.org/reproduceme-core#ExperimentMaterialPreparation">Experiment Material Preparation</a>
+         title="https://w3id.org/reproduceme/core#ExperimentMaterialPreparation">Experiment Material Preparation</a>
    </li>
    <li>
       <a href="#ExperimentSetup"
-         title="https://w3id.org/reproduceme-core#ExperimentSetup">Experiment Setup</a>
+         title="https://w3id.org/reproduceme/core#ExperimentSetup">Experiment Setup</a>
    </li>
    <li>
       <a href="#ExperimentalCondition"
-         title="https://w3id.org/reproduceme-core#ExperimentalCondition">Experimental Condition</a>
+         title="https://w3id.org/reproduceme/core#ExperimentalCondition">Experimental Condition</a>
    </li>
    <li>
       <a href="#ExperimentalData"
-         title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+         title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
    </li>
    <li>
-      <a href="#Experimenter" title="https://w3id.org/reproduceme-core#Experimenter">Experimenter</a>
+      <a href="#Experimenter" title="https://w3id.org/reproduceme/core#Experimenter">Experimenter</a>
    </li>
    <li>
-      <a href="#File" title="https://w3id.org/reproduceme-core#File">File</a>
+      <a href="#File" title="https://w3id.org/reproduceme/core#File">File</a>
    </li>
    <li>
-      <a href="#FinalResult" title="https://w3id.org/reproduceme-core#FinalResult">Final Result</a>
+      <a href="#FinalResult" title="https://w3id.org/reproduceme/core#FinalResult">Final Result</a>
    </li>
    <li>
-      <a href="#FinalStep" title="https://w3id.org/reproduceme-core#FinalStep">Final Step</a>
+      <a href="#FinalStep" title="https://w3id.org/reproduceme/core#FinalStep">Final Step</a>
    </li>
    <li>
-      <a href="#FundingAgency" title="https://w3id.org/reproduceme-core#FundingAgency">Funding Agency</a>
+      <a href="#FundingAgency" title="https://w3id.org/reproduceme/core#FundingAgency">Funding Agency</a>
    </li>
    <li>
-      <a href="#InputData" title="https://w3id.org/reproduceme-core#InputData">Input Data</a>
+      <a href="#InputData" title="https://w3id.org/reproduceme/core#InputData">Input Data</a>
    </li>
    <li>
-      <a href="#Instrument" title="https://w3id.org/reproduceme-core#Instrument">Instrument</a>
+      <a href="#Instrument" title="https://w3id.org/reproduceme/core#Instrument">Instrument</a>
    </li>
    <li>
       <a href="#InstrumentSetting"
-         title="https://w3id.org/reproduceme-core#InstrumentSetting">Instrument Setting</a>
+         title="https://w3id.org/reproduceme/core#InstrumentSetting">Instrument Setting</a>
    </li>
    <li>
       <a href="#IntermediateResult"
-         title="https://w3id.org/reproduceme-core#IntermediateResult">Intermediate Result</a>
+         title="https://w3id.org/reproduceme/core#IntermediateResult">Intermediate Result</a>
    </li>
    <li>
       <a href="#IntermediateStep"
-         title="https://w3id.org/reproduceme-core#IntermediateStep">Intermediate Step</a>
+         title="https://w3id.org/reproduceme/core#IntermediateStep">Intermediate Step</a>
    </li>
    <li>
-      <a href="#License" title="https://w3id.org/reproduceme-core#License">License</a>
+      <a href="#License" title="https://w3id.org/reproduceme/core#License">License</a>
    </li>
    <li>
       <a href="#LicenseDocument"
-         title="https://w3id.org/reproduceme-core#LicenseDocument">License Document</a>
+         title="https://w3id.org/reproduceme/core#LicenseDocument">License Document</a>
    </li>
    <li>
       <a href="#MaterialPreparationStep"
-         title="https://w3id.org/reproduceme-core#MaterialPreparationStep">Material Preparation Step</a>
+         title="https://w3id.org/reproduceme/core#MaterialPreparationStep">Material Preparation Step</a>
    </li>
    <li>
-      <a href="#Metadata" title="https://w3id.org/reproduceme-core#Metadata">Metadata</a>
+      <a href="#Metadata" title="https://w3id.org/reproduceme/core#Metadata">Metadata</a>
    </li>
    <li>
-      <a href="#Method" title="https://w3id.org/reproduceme-core#Method">Method</a>
+      <a href="#Method" title="https://w3id.org/reproduceme/core#Method">Method</a>
    </li>
    <li>
       <a href="#ModifiedVersion"
-         title="https://w3id.org/reproduceme-core#ModifiedVersion">Modified Version</a>
+         title="https://w3id.org/reproduceme/core#ModifiedVersion">Modified Version</a>
    </li>
    <li>
       <a href="#NegativeResult"
-         title="https://w3id.org/reproduceme-core#NegativeResult">Negative Result</a>
+         title="https://w3id.org/reproduceme/core#NegativeResult">Negative Result</a>
    </li>
    <li>
       <a href="#Non-computationalStep"
-         title="https://w3id.org/reproduceme-core#Non-computationalStep">Non-computational Step</a>
+         title="https://w3id.org/reproduceme/core#Non-computationalStep">Non-computational Step</a>
    </li>
    <li>
-      <a href="#Note" title="https://w3id.org/reproduceme-core#Note">Note</a>
+      <a href="#Note" title="https://w3id.org/reproduceme/core#Note">Note</a>
    </li>
    <li>
       <a href="#OriginalCreator"
-         title="https://w3id.org/reproduceme-core#OriginalCreator">Original Creator</a>
+         title="https://w3id.org/reproduceme/core#OriginalCreator">Original Creator</a>
    </li>
    <li>
-      <a href="#Output" title="https://w3id.org/reproduceme-core#Output">Output</a>
+      <a href="#Output" title="https://w3id.org/reproduceme/core#Output">Output</a>
    </li>
    <li>
-      <a href="#Owner" title="https://w3id.org/reproduceme-core#Owner">Owner</a>
+      <a href="#Owner" title="https://w3id.org/reproduceme/core#Owner">Owner</a>
    </li>
    <li>
       <a href="#PositiveResult"
-         title="https://w3id.org/reproduceme-core#PositiveResult">Positive Result</a>
+         title="https://w3id.org/reproduceme/core#PositiveResult">Positive Result</a>
    </li>
    <li>
-      <a href="#Precondition" title="https://w3id.org/reproduceme-core#Precondition">Precondition</a>
+      <a href="#Precondition" title="https://w3id.org/reproduceme/core#Precondition">Precondition</a>
    </li>
    <li>
       <a href="#PrincipalInvestigator"
-         title="https://w3id.org/reproduceme-core#PrincipalInvestigator">Principal Investigator</a>
+         title="https://w3id.org/reproduceme/core#PrincipalInvestigator">Principal Investigator</a>
    </li>
    <li>
-      <a href="#ProcessedData" title="https://w3id.org/reproduceme-core#ProcessedData">Processed Data</a>
+      <a href="#ProcessedData" title="https://w3id.org/reproduceme/core#ProcessedData">Processed Data</a>
    </li>
    <li>
       <a href="#ProspectiveProvenance"
-         title="https://w3id.org/reproduceme-core#ProspectiveProvenance">Prospective Provenance</a>
+         title="https://w3id.org/reproduceme/core#ProspectiveProvenance">Prospective Provenance</a>
    </li>
    <li>
-      <a href="#Protocol" title="https://w3id.org/reproduceme-core#Protocol">Protocol</a>
+      <a href="#Protocol" title="https://w3id.org/reproduceme/core#Protocol">Protocol</a>
    </li>
    <li>
-      <a href="#Publication" title="https://w3id.org/reproduceme-core#Publication">Publication</a>
+      <a href="#Publication" title="https://w3id.org/reproduceme/core#Publication">Publication</a>
    </li>
    <li>
       <a href="#QualityControl"
-         title="https://w3id.org/reproduceme-core#QualityControl">QualityControl</a>
+         title="https://w3id.org/reproduceme/core#QualityControl">QualityControl</a>
    </li>
    <li>
-      <a href="#Rating" title="https://w3id.org/reproduceme-core#Rating">Rating</a>
+      <a href="#Rating" title="https://w3id.org/reproduceme/core#Rating">Rating</a>
    </li>
    <li>
-      <a href="#RawData" title="https://w3id.org/reproduceme-core#RawData">Raw Data</a>
+      <a href="#RawData" title="https://w3id.org/reproduceme/core#RawData">Raw Data</a>
    </li>
    <li>
-      <a href="#ResearchGroup" title="https://w3id.org/reproduceme-core#ResearchGroup">Research Group</a>
+      <a href="#ResearchGroup" title="https://w3id.org/reproduceme/core#ResearchGroup">Research Group</a>
    </li>
    <li>
       <a href="#ResearchProject"
-         title="https://w3id.org/reproduceme-core#ResearchProject">Research Project</a>
+         title="https://w3id.org/reproduceme/core#ResearchProject">Research Project</a>
    </li>
    <li>
-      <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+      <a href="#Result" title="https://w3id.org/reproduceme/core#Result">Result</a>
    </li>
    <li>
       <a href="#RetrospectiveProvenance"
-         title="https://w3id.org/reproduceme-core#RetrospectiveProvenance">Retrospective Provenance</a>
+         title="https://w3id.org/reproduceme/core#RetrospectiveProvenance">Retrospective Provenance</a>
    </li>
    <li>
       <a href="#RightsandPermissionsDocument"
-         title="https://w3id.org/reproduceme-core#RightsandPermissionsDocument">Rights and Permissions Document</a>
+         title="https://w3id.org/reproduceme/core#RightsandPermissionsDocument">Rights and Permissions Document</a>
    </li>
    <li>
-      <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+      <a href="#Setting" title="https://w3id.org/reproduceme/core#Setting">Setting</a>
    </li>
    <li>
-      <a href="#Size" title="https://w3id.org/reproduceme-core#Size">Size</a>
+      <a href="#Size" title="https://w3id.org/reproduceme/core#Size">Size</a>
    </li>
    <li>
       <a href="#StandardOperatingProcedure"
-         title="https://w3id.org/reproduceme-core#StandardOperatingProcedure">Standard Operating Procedure</a>
+         title="https://w3id.org/reproduceme/core#StandardOperatingProcedure">Standard Operating Procedure</a>
    </li>
    <li>
-      <a href="#Study" title="https://w3id.org/reproduceme-core#Study">Study</a>
+      <a href="#Study" title="https://w3id.org/reproduceme/core#Study">Study</a>
    </li>
    <li>
-      <a href="#Unit" title="https://w3id.org/reproduceme-core#Unit">Unit</a>
+      <a href="#Unit" title="https://w3id.org/reproduceme/core#Unit">Unit</a>
    </li>
    <li>
-      <a href="#Version" title="https://w3id.org/reproduceme-core#Version">Version</a>
+      <a href="#Version" title="https://w3id.org/reproduceme/core#Version">Version</a>
    </li>
 </ul><h4>Object Properties</h4><ul class="hlist">
    <li>
       <a href="#hasExperimentalCondition"
-         title="https://w3id.org/reproduceme-core#hasExperimentalCondition">hasExperimentalCondition</a>
+         title="https://w3id.org/reproduceme/core#hasExperimentalCondition">hasExperimentalCondition</a>
    </li>
    <li>
       <a href="#hasExperimentalData"
-         title="https://w3id.org/reproduceme-core#hasExperimentalData">hasExperimentalData</a>
+         title="https://w3id.org/reproduceme/core#hasExperimentalData">hasExperimentalData</a>
    </li>
    <li>
       <a href="#hasExperimentMaterial"
-         title="https://w3id.org/reproduceme-core#hasExperimentMaterial">hasExperimentalMaterial</a>
+         title="https://w3id.org/reproduceme/core#hasExperimentMaterial">hasExperimentalMaterial</a>
    </li>
    <li>
-      <a href="#hasPart" title="https://w3id.org/reproduceme-core#hasPart">hasPart</a>
+      <a href="#hasPart" title="https://w3id.org/reproduceme/core#hasPart">hasPart</a>
    </li>
    <li>
-      <a href="#hasSetting" title="https://w3id.org/reproduceme-core#hasSetting">hasSetting</a>
+      <a href="#hasSetting" title="https://w3id.org/reproduceme/core#hasSetting">hasSetting</a>
    </li>
    <li>
-      <a href="#isAccessibleTo" title="https://w3id.org/reproduceme-core#isAccessibleTo">isAccessibleTo</a>
+      <a href="#isAccessibleTo" title="https://w3id.org/reproduceme/core#isAccessibleTo">isAccessibleTo</a>
    </li>
    <li>
-      <a href="#isPartOf" title="https://w3id.org/reproduceme-core#isPartOf">isPartOf</a>
+      <a href="#isPartOf" title="https://w3id.org/reproduceme/core#isPartOf">isPartOf</a>
    </li>
    <li>
-      <a href="#isSettingOf" title="https://w3id.org/reproduceme-core#isSettingOf">isSettingOf</a>
+      <a href="#isSettingOf" title="https://w3id.org/reproduceme/core#isSettingOf">isSettingOf</a>
    </li>
    <li>
-      <a href="#reference" title="https://w3id.org/reproduceme-core#reference">reference</a>
+      <a href="#reference" title="https://w3id.org/reproduceme/core#reference">reference</a>
    </li>
    <li>
-      <a href="#storedAt" title="https://w3id.org/reproduceme-core#storedAt">storedAt</a>
+      <a href="#storedAt" title="https://w3id.org/reproduceme/core#storedAt">storedAt</a>
    </li>
    <li>
-      <a href="#usedMethod" title="https://w3id.org/reproduceme-core#usedMethod">usedMethod</a>
+      <a href="#usedMethod" title="https://w3id.org/reproduceme/core#usedMethod">usedMethod</a>
    </li>
    <li>
-      <a href="#wasPerformedBy" title="https://w3id.org/reproduceme-core#wasPerformedBy">
+      <a href="#wasPerformedBy" title="https://w3id.org/reproduceme/core#wasPerformedBy">
          <span>was performed by</span>
       </a>
    </li>
    <li>
-      <a href="#wasCreatedBy" title="https://w3id.org/reproduceme-core#wasCreatedBy">wasCreatedBy</a>
+      <a href="#wasCreatedBy" title="https://w3id.org/reproduceme/core#wasCreatedBy">wasCreatedBy</a>
    </li>
    <li>
       <a href="#wasDistributedBy"
-         title="https://w3id.org/reproduceme-core#wasDistributedBy">wasDistributedBy</a>
+         title="https://w3id.org/reproduceme/core#wasDistributedBy">wasDistributedBy</a>
    </li>
    <li>
       <a href="#wasExtractedFrom"
-         title="https://w3id.org/reproduceme-core#wasExtractedFrom">wasExtractedFrom</a>
+         title="https://w3id.org/reproduceme/core#wasExtractedFrom">wasExtractedFrom</a>
    </li>
    <li>
-      <a href="#wasUpdatedBy" title="https://w3id.org/reproduceme-core#wasUpdatedBy">wasUpdatedBy</a>
+      <a href="#wasUpdatedBy" title="https://w3id.org/reproduceme/core#wasUpdatedBy">wasUpdatedBy</a>
    </li>
 </ul><h4>Data Properties</h4><ul class="hlist">
    <li>
-      <a href="#address" title="https://w3id.org/reproduceme-core#address">Address</a>
+      <a href="#address" title="https://w3id.org/reproduceme/core#address">Address</a>
    </li>
    <li>
-      <a href="#description" title="https://w3id.org/reproduceme-core#description">description</a>
+      <a href="#description" title="https://w3id.org/reproduceme/core#description">description</a>
    </li>
    <li>
-      <a href="#doi" title="https://w3id.org/reproduceme-core#doi">doi</a>
+      <a href="#doi" title="https://w3id.org/reproduceme/core#doi">doi</a>
    </li>
    <li>
-      <a href="#id" title="https://w3id.org/reproduceme-core#id">Id</a>
+      <a href="#id" title="https://w3id.org/reproduceme/core#id">Id</a>
    </li>
    <li>
-      <a href="#modifiedAtTime" title="https://w3id.org/reproduceme-core#modifiedAtTime">modifiedAtTime</a>
+      <a href="#modifiedAtTime" title="https://w3id.org/reproduceme/core#modifiedAtTime">modifiedAtTime</a>
    </li>
    <li>
-      <a href="#name" title="https://w3id.org/reproduceme-core#name">Name</a>
+      <a href="#name" title="https://w3id.org/reproduceme/core#name">Name</a>
    </li>
    <li>
-      <a href="#ORCID" title="https://w3id.org/reproduceme-core#ORCID">ORCID</a>
+      <a href="#ORCID" title="https://w3id.org/reproduceme/core#ORCID">ORCID</a>
    </li>
    <li>
-      <a href="#pmcid" title="https://w3id.org/reproduceme-core#pmcid">PubMed Central ID</a>
+      <a href="#pmcid" title="https://w3id.org/reproduceme/core#pmcid">PubMed Central ID</a>
    </li>
    <li>
-      <a href="#pubmedid" title="https://w3id.org/reproduceme-core#pubmedid">PubMed ID</a>
+      <a href="#pubmedid" title="https://w3id.org/reproduceme/core#pubmedid">PubMed ID</a>
    </li>
    <li>
-      <a href="#receivedAtTime" title="https://w3id.org/reproduceme-core#receivedAtTime">receivedAtTime</a>
+      <a href="#receivedAtTime" title="https://w3id.org/reproduceme/core#receivedAtTime">receivedAtTime</a>
    </li>
 </ul>
 </div>
@@ -443,224 +443,224 @@ This section provides details for each class and property defined by The Reprodu
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
       <li>
-         <a href="#Algorithm" title="https://w3id.org/reproduceme-core#Algorithm">Algorithm</a>
+         <a href="#Algorithm" title="https://w3id.org/reproduceme/core#Algorithm">Algorithm</a>
       </li>
       <li>
-         <a href="#Annotation" title="https://w3id.org/reproduceme-core#Annotation">Annotation</a>
+         <a href="#Annotation" title="https://w3id.org/reproduceme/core#Annotation">Annotation</a>
       </li>
       <li>
-         <a href="#Author" title="https://w3id.org/reproduceme-core#Author">Author</a>
+         <a href="#Author" title="https://w3id.org/reproduceme/core#Author">Author</a>
       </li>
       <li>
-         <a href="#CausalEffect" title="https://w3id.org/reproduceme-core#CausalEffect">Causal Effect</a>
+         <a href="#CausalEffect" title="https://w3id.org/reproduceme/core#CausalEffect">Causal Effect</a>
       </li>
       <li>
          <a href="#ComputationalStep"
-            title="https://w3id.org/reproduceme-core#ComputationalStep">Computational Step</a>
+            title="https://w3id.org/reproduceme/core#ComputationalStep">Computational Step</a>
       </li>
       <li>
-         <a href="#Configuration" title="https://w3id.org/reproduceme-core#Configuration">Configuration</a>
+         <a href="#Configuration" title="https://w3id.org/reproduceme/core#Configuration">Configuration</a>
       </li>
       <li>
-         <a href="#ContactPerson" title="https://w3id.org/reproduceme-core#ContactPerson">ContactPerson</a>
+         <a href="#ContactPerson" title="https://w3id.org/reproduceme/core#ContactPerson">ContactPerson</a>
       </li>
       <li>
-         <a href="#Context" title="https://w3id.org/reproduceme-core#Context">Context</a>
+         <a href="#Context" title="https://w3id.org/reproduceme/core#Context">Context</a>
       </li>
       <li>
          <a href="#CopyrightHolder"
-            title="https://w3id.org/reproduceme-core#CopyrightHolder">Copyright Holder</a>
+            title="https://w3id.org/reproduceme/core#CopyrightHolder">Copyright Holder</a>
       </li>
       <li>
-         <a href="#DataType" title="https://w3id.org/reproduceme-core#DataType">DataType</a>
+         <a href="#DataType" title="https://w3id.org/reproduceme/core#DataType">DataType</a>
       </li>
       <li>
-         <a href="#Description" title="https://w3id.org/reproduceme-core#Description">Description</a>
+         <a href="#Description" title="https://w3id.org/reproduceme/core#Description">Description</a>
       </li>
       <li>
          <a href="#EnvironmentAttribute"
-            title="https://w3id.org/reproduceme-core#EnvironmentAttribute">Environment Attribute</a>
+            title="https://w3id.org/reproduceme/core#EnvironmentAttribute">Environment Attribute</a>
       </li>
       <li>
          <a href="#EnvironmentSetup"
-            title="https://w3id.org/reproduceme-core#EnvironmentSetup">Environment Setup</a>
+            title="https://w3id.org/reproduceme/core#EnvironmentSetup">Environment Setup</a>
       </li>
       <li>
          <a href="#EnvironmentSetupSetting"
-            title="https://w3id.org/reproduceme-core#EnvironmentSetupSetting">Environment Setup Setting</a>
+            title="https://w3id.org/reproduceme/core#EnvironmentSetupSetting">Environment Setup Setting</a>
       </li>
       <li>
-         <a href="#Experiment" title="https://w3id.org/reproduceme-core#Experiment">Experiment</a>
+         <a href="#Experiment" title="https://w3id.org/reproduceme/core#Experiment">Experiment</a>
       </li>
       <li>
          <a href="#ExperimentEnvironmentSetup"
-            title="https://w3id.org/reproduceme-core#ExperimentEnvironmentSetup">Experiment Environment Setup</a>
+            title="https://w3id.org/reproduceme/core#ExperimentEnvironmentSetup">Experiment Environment Setup</a>
       </li>
       <li>
          <a href="#ExperimentMaterial"
-            title="https://w3id.org/reproduceme-core#ExperimentMaterial">Experiment Material</a>
+            title="https://w3id.org/reproduceme/core#ExperimentMaterial">Experiment Material</a>
       </li>
       <li>
          <a href="#ExperimentMaterialPreparation"
-            title="https://w3id.org/reproduceme-core#ExperimentMaterialPreparation">Experiment Material Preparation</a>
+            title="https://w3id.org/reproduceme/core#ExperimentMaterialPreparation">Experiment Material Preparation</a>
       </li>
       <li>
          <a href="#ExperimentSetup"
-            title="https://w3id.org/reproduceme-core#ExperimentSetup">Experiment Setup</a>
+            title="https://w3id.org/reproduceme/core#ExperimentSetup">Experiment Setup</a>
       </li>
       <li>
          <a href="#ExperimentalCondition"
-            title="https://w3id.org/reproduceme-core#ExperimentalCondition">Experimental Condition</a>
+            title="https://w3id.org/reproduceme/core#ExperimentalCondition">Experimental Condition</a>
       </li>
       <li>
          <a href="#ExperimentalData"
-            title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+            title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
       </li>
       <li>
-         <a href="#Experimenter" title="https://w3id.org/reproduceme-core#Experimenter">Experimenter</a>
+         <a href="#Experimenter" title="https://w3id.org/reproduceme/core#Experimenter">Experimenter</a>
       </li>
       <li>
-         <a href="#File" title="https://w3id.org/reproduceme-core#File">File</a>
+         <a href="#File" title="https://w3id.org/reproduceme/core#File">File</a>
       </li>
       <li>
-         <a href="#FinalResult" title="https://w3id.org/reproduceme-core#FinalResult">Final Result</a>
+         <a href="#FinalResult" title="https://w3id.org/reproduceme/core#FinalResult">Final Result</a>
       </li>
       <li>
-         <a href="#FinalStep" title="https://w3id.org/reproduceme-core#FinalStep">Final Step</a>
+         <a href="#FinalStep" title="https://w3id.org/reproduceme/core#FinalStep">Final Step</a>
       </li>
       <li>
-         <a href="#FundingAgency" title="https://w3id.org/reproduceme-core#FundingAgency">Funding Agency</a>
+         <a href="#FundingAgency" title="https://w3id.org/reproduceme/core#FundingAgency">Funding Agency</a>
       </li>
       <li>
-         <a href="#InputData" title="https://w3id.org/reproduceme-core#InputData">Input Data</a>
+         <a href="#InputData" title="https://w3id.org/reproduceme/core#InputData">Input Data</a>
       </li>
       <li>
-         <a href="#Instrument" title="https://w3id.org/reproduceme-core#Instrument">Instrument</a>
+         <a href="#Instrument" title="https://w3id.org/reproduceme/core#Instrument">Instrument</a>
       </li>
       <li>
          <a href="#InstrumentSetting"
-            title="https://w3id.org/reproduceme-core#InstrumentSetting">Instrument Setting</a>
+            title="https://w3id.org/reproduceme/core#InstrumentSetting">Instrument Setting</a>
       </li>
       <li>
          <a href="#IntermediateResult"
-            title="https://w3id.org/reproduceme-core#IntermediateResult">Intermediate Result</a>
+            title="https://w3id.org/reproduceme/core#IntermediateResult">Intermediate Result</a>
       </li>
       <li>
          <a href="#IntermediateStep"
-            title="https://w3id.org/reproduceme-core#IntermediateStep">Intermediate Step</a>
+            title="https://w3id.org/reproduceme/core#IntermediateStep">Intermediate Step</a>
       </li>
       <li>
-         <a href="#License" title="https://w3id.org/reproduceme-core#License">License</a>
+         <a href="#License" title="https://w3id.org/reproduceme/core#License">License</a>
       </li>
       <li>
          <a href="#LicenseDocument"
-            title="https://w3id.org/reproduceme-core#LicenseDocument">License Document</a>
+            title="https://w3id.org/reproduceme/core#LicenseDocument">License Document</a>
       </li>
       <li>
          <a href="#MaterialPreparationStep"
-            title="https://w3id.org/reproduceme-core#MaterialPreparationStep">Material Preparation Step</a>
+            title="https://w3id.org/reproduceme/core#MaterialPreparationStep">Material Preparation Step</a>
       </li>
       <li>
-         <a href="#Metadata" title="https://w3id.org/reproduceme-core#Metadata">Metadata</a>
+         <a href="#Metadata" title="https://w3id.org/reproduceme/core#Metadata">Metadata</a>
       </li>
       <li>
-         <a href="#Method" title="https://w3id.org/reproduceme-core#Method">Method</a>
+         <a href="#Method" title="https://w3id.org/reproduceme/core#Method">Method</a>
       </li>
       <li>
          <a href="#ModifiedVersion"
-            title="https://w3id.org/reproduceme-core#ModifiedVersion">Modified Version</a>
+            title="https://w3id.org/reproduceme/core#ModifiedVersion">Modified Version</a>
       </li>
       <li>
          <a href="#NegativeResult"
-            title="https://w3id.org/reproduceme-core#NegativeResult">Negative Result</a>
+            title="https://w3id.org/reproduceme/core#NegativeResult">Negative Result</a>
       </li>
       <li>
          <a href="#Non-computationalStep"
-            title="https://w3id.org/reproduceme-core#Non-computationalStep">Non-computational Step</a>
+            title="https://w3id.org/reproduceme/core#Non-computationalStep">Non-computational Step</a>
       </li>
       <li>
-         <a href="#Note" title="https://w3id.org/reproduceme-core#Note">Note</a>
+         <a href="#Note" title="https://w3id.org/reproduceme/core#Note">Note</a>
       </li>
       <li>
          <a href="#OriginalCreator"
-            title="https://w3id.org/reproduceme-core#OriginalCreator">Original Creator</a>
+            title="https://w3id.org/reproduceme/core#OriginalCreator">Original Creator</a>
       </li>
       <li>
-         <a href="#Output" title="https://w3id.org/reproduceme-core#Output">Output</a>
+         <a href="#Output" title="https://w3id.org/reproduceme/core#Output">Output</a>
       </li>
       <li>
-         <a href="#Owner" title="https://w3id.org/reproduceme-core#Owner">Owner</a>
+         <a href="#Owner" title="https://w3id.org/reproduceme/core#Owner">Owner</a>
       </li>
       <li>
          <a href="#PositiveResult"
-            title="https://w3id.org/reproduceme-core#PositiveResult">Positive Result</a>
+            title="https://w3id.org/reproduceme/core#PositiveResult">Positive Result</a>
       </li>
       <li>
-         <a href="#Precondition" title="https://w3id.org/reproduceme-core#Precondition">Precondition</a>
+         <a href="#Precondition" title="https://w3id.org/reproduceme/core#Precondition">Precondition</a>
       </li>
       <li>
          <a href="#PrincipalInvestigator"
-            title="https://w3id.org/reproduceme-core#PrincipalInvestigator">Principal Investigator</a>
+            title="https://w3id.org/reproduceme/core#PrincipalInvestigator">Principal Investigator</a>
       </li>
       <li>
-         <a href="#ProcessedData" title="https://w3id.org/reproduceme-core#ProcessedData">Processed Data</a>
+         <a href="#ProcessedData" title="https://w3id.org/reproduceme/core#ProcessedData">Processed Data</a>
       </li>
       <li>
          <a href="#ProspectiveProvenance"
-            title="https://w3id.org/reproduceme-core#ProspectiveProvenance">Prospective Provenance</a>
+            title="https://w3id.org/reproduceme/core#ProspectiveProvenance">Prospective Provenance</a>
       </li>
       <li>
-         <a href="#Protocol" title="https://w3id.org/reproduceme-core#Protocol">Protocol</a>
+         <a href="#Protocol" title="https://w3id.org/reproduceme/core#Protocol">Protocol</a>
       </li>
       <li>
-         <a href="#Publication" title="https://w3id.org/reproduceme-core#Publication">Publication</a>
+         <a href="#Publication" title="https://w3id.org/reproduceme/core#Publication">Publication</a>
       </li>
       <li>
          <a href="#QualityControl"
-            title="https://w3id.org/reproduceme-core#QualityControl">QualityControl</a>
+            title="https://w3id.org/reproduceme/core#QualityControl">QualityControl</a>
       </li>
       <li>
-         <a href="#Rating" title="https://w3id.org/reproduceme-core#Rating">Rating</a>
+         <a href="#Rating" title="https://w3id.org/reproduceme/core#Rating">Rating</a>
       </li>
       <li>
-         <a href="#RawData" title="https://w3id.org/reproduceme-core#RawData">Raw Data</a>
+         <a href="#RawData" title="https://w3id.org/reproduceme/core#RawData">Raw Data</a>
       </li>
       <li>
-         <a href="#ResearchGroup" title="https://w3id.org/reproduceme-core#ResearchGroup">Research Group</a>
+         <a href="#ResearchGroup" title="https://w3id.org/reproduceme/core#ResearchGroup">Research Group</a>
       </li>
       <li>
          <a href="#ResearchProject"
-            title="https://w3id.org/reproduceme-core#ResearchProject">Research Project</a>
+            title="https://w3id.org/reproduceme/core#ResearchProject">Research Project</a>
       </li>
       <li>
-         <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+         <a href="#Result" title="https://w3id.org/reproduceme/core#Result">Result</a>
       </li>
       <li>
          <a href="#RetrospectiveProvenance"
-            title="https://w3id.org/reproduceme-core#RetrospectiveProvenance">Retrospective Provenance</a>
+            title="https://w3id.org/reproduceme/core#RetrospectiveProvenance">Retrospective Provenance</a>
       </li>
       <li>
          <a href="#RightsandPermissionsDocument"
-            title="https://w3id.org/reproduceme-core#RightsandPermissionsDocument">Rights and Permissions Document</a>
+            title="https://w3id.org/reproduceme/core#RightsandPermissionsDocument">Rights and Permissions Document</a>
       </li>
       <li>
-         <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+         <a href="#Setting" title="https://w3id.org/reproduceme/core#Setting">Setting</a>
       </li>
       <li>
-         <a href="#Size" title="https://w3id.org/reproduceme-core#Size">Size</a>
+         <a href="#Size" title="https://w3id.org/reproduceme/core#Size">Size</a>
       </li>
       <li>
          <a href="#StandardOperatingProcedure"
-            title="https://w3id.org/reproduceme-core#StandardOperatingProcedure">Standard Operating Procedure</a>
+            title="https://w3id.org/reproduceme/core#StandardOperatingProcedure">Standard Operating Procedure</a>
       </li>
       <li>
-         <a href="#Study" title="https://w3id.org/reproduceme-core#Study">Study</a>
+         <a href="#Study" title="https://w3id.org/reproduceme/core#Study">Study</a>
       </li>
       <li>
-         <a href="#Unit" title="https://w3id.org/reproduceme-core#Unit">Unit</a>
+         <a href="#Unit" title="https://w3id.org/reproduceme/core#Unit">Unit</a>
       </li>
       <li>
-         <a href="#Version" title="https://w3id.org/reproduceme-core#Version">Version</a>
+         <a href="#Version" title="https://w3id.org/reproduceme/core#Version">Version</a>
       </li>
    </ul>
    <div class="entity" id="Algorithm">
@@ -669,7 +669,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Algorithm</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Algorithm</p>
       <div class="comment">
          <span class="markdown">A set of rules or steps to be followed in a problem-solving operation.</span>
       </div>
@@ -686,7 +686,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Annotation</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Annotation</p>
       <div class="comment">
          <span class="markdown">A description added to a thing which provides comment, note or description.</span>
       </div>
@@ -694,7 +694,7 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalData"
-               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -705,7 +705,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Author</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Author</p>
       <div class="comment">
          <span class="markdown">The person who authors a piece of work.</span>
       </div>
@@ -722,7 +722,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#CausalEffect</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#CausalEffect</p>
       <div class="comment">
          <span class="markdown">The causal effects of an activity denotes the effects on an outcome because of another activity.</span>
       </div>
@@ -739,7 +739,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ComputationalStep</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#ComputationalStep</p>
       <div class="comment">
          <span class="markdown">The step or the process which uses computational resources involved in an experiment.</span>
       </div>
@@ -756,14 +756,14 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Configuration</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Configuration</p>
       <div class="comment">
          <span class="markdown">The settings or changes applied to an instrument.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <a href="#Setting" title="https://w3id.org/reproduceme/core#Setting">Setting</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -774,7 +774,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ContactPerson</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#ContactPerson</p>
       <div class="comment">
          <span class="markdown">A person who has the role of being a contact person for a certain thing.</span>
       </div>
@@ -791,14 +791,14 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Context</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Context</p>
       <div class="comment">
          <span class="markdown">The background setting of an experiment.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <a href="#Setting" title="https://w3id.org/reproduceme/core#Setting">Setting</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -809,7 +809,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#CopyrightHolder</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#CopyrightHolder</p>
       <div class="comment">
          <span class="markdown">The person who holds the copyright or the permission of an entity or an activity.</span>
       </div>
@@ -826,7 +826,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#DataType</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#DataType</p>
       <div class="comment">
          <span class="markdown">A type or format of a thing.</span>
       </div>
@@ -843,7 +843,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Description</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Description</p>
       <div class="comment">
          <span class="markdown">The text which is used to provide information about a thing.</span>
       </div>
@@ -851,7 +851,7 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalData"
-               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -862,7 +862,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#EnvironmentAttribute</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#EnvironmentAttribute</p>
       <div class="comment">
          <span class="markdown">The attributes of the experimental execution environment.</span>
       </div>
@@ -870,7 +870,7 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalCondition"
-               title="https://w3id.org/reproduceme-core#ExperimentalCondition">Experimental Condition</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalCondition">Experimental Condition</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -881,7 +881,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#EnvironmentSetup</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#EnvironmentSetup</p>
       <div class="comment">
          <span class="markdown">To setup the environment to perform an experiment.</span>
       </div>
@@ -889,7 +889,7 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentSetup"
-               title="https://w3id.org/reproduceme-core#ExperimentSetup">Experiment Setup</a>
+               title="https://w3id.org/reproduceme/core#ExperimentSetup">Experiment Setup</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -900,14 +900,14 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#EnvironmentSetupSetting</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#EnvironmentSetupSetting</p>
       <div class="comment">
          <span class="markdown">The various attribute needed to setup the environment for an experiment.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <a href="#Setting" title="https://w3id.org/reproduceme/core#Setting">Setting</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -918,7 +918,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Experiment</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Experiment</p>
       <div class="comment">
          <span class="markdown">Experiment is an entity which describes the collective activity conducted in a science lab.</span>
       </div>
@@ -930,11 +930,11 @@ This section provides details for each class and property defined by The Reprodu
          <dt>is in domain of</dt>
          <dd>
             <a href="#hasExperimentalCondition"
-               title="https://w3id.org/reproduceme-core#hasExperimentalCondition">hasExperimentalCondition</a>
+               title="https://w3id.org/reproduceme/core#hasExperimentalCondition">hasExperimentalCondition</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasExperimentalData"
-               title="https://w3id.org/reproduceme-core#hasExperimentalData">hasExperimentalData</a>
+               title="https://w3id.org/reproduceme/core#hasExperimentalData">hasExperimentalData</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasExperimentMaterial"
-               title="https://w3id.org/reproduceme-core#hasExperimentMaterial">hasExperimentalMaterial</a>
+               title="https://w3id.org/reproduceme/core#hasExperimentMaterial">hasExperimentalMaterial</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -945,7 +945,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ExperimentEnvironmentSetup</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#ExperimentEnvironmentSetup</p>
       <div class="comment">
          <span class="markdown">A set of instructions to setup the environment for experiment.</span>
       </div>
@@ -962,7 +962,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ExperimentMaterial</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#ExperimentMaterial</p>
       <div class="comment">
          <span class="markdown">The materials or things used in an experiment.</span>
       </div>
@@ -974,15 +974,15 @@ This section provides details for each class and property defined by The Reprodu
          <dt>is in domain of</dt>
          <dd>
             <a href="#wasExtractedFrom"
-               title="https://w3id.org/reproduceme-core#wasExtractedFrom">wasExtractedFrom</a>
+               title="https://w3id.org/reproduceme/core#wasExtractedFrom">wasExtractedFrom</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#hasExperimentMaterial"
-               title="https://w3id.org/reproduceme-core#hasExperimentMaterial">hasExperimentalMaterial</a>
+               title="https://w3id.org/reproduceme/core#hasExperimentMaterial">hasExperimentalMaterial</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#wasExtractedFrom"
-               title="https://w3id.org/reproduceme-core#wasExtractedFrom">wasExtractedFrom</a>
+               title="https://w3id.org/reproduceme/core#wasExtractedFrom">wasExtractedFrom</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -993,7 +993,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ExperimentMaterialPreparation</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#ExperimentMaterialPreparation</p>
       <div class="comment">
          <span class="markdown">A procedure to prepare experiment materials.</span>
       </div>
@@ -1010,7 +1010,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ExperimentSetup</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#ExperimentSetup</p>
       <div class="comment">
          <span class="markdown">To setup the execution environment of an experiment.</span>
       </div>
@@ -1022,9 +1022,9 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has sub-classes</dt>
          <dd>
             <a href="#EnvironmentSetup"
-               title="https://w3id.org/reproduceme-core#EnvironmentSetup">Environment Setup</a>
+               title="https://w3id.org/reproduceme/core#EnvironmentSetup">Environment Setup</a>
             <sup class="type-c" title="class">c</sup>, <a href="#MaterialPreparationStep"
-               title="https://w3id.org/reproduceme-core#MaterialPreparationStep">Material Preparation Step</a>
+               title="https://w3id.org/reproduceme/core#MaterialPreparationStep">Material Preparation Step</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1035,26 +1035,26 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ExperimentalCondition</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#ExperimentalCondition</p>
       <div class="comment">
          <span class="markdown">The attributes or the conditions while an experiment is performed.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <a href="#Setting" title="https://w3id.org/reproduceme/core#Setting">Setting</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
             <a href="#EnvironmentAttribute"
-               title="https://w3id.org/reproduceme-core#EnvironmentAttribute">Environment Attribute</a>
+               title="https://w3id.org/reproduceme/core#EnvironmentAttribute">Environment Attribute</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#hasExperimentalCondition"
-               title="https://w3id.org/reproduceme-core#hasExperimentalCondition">hasExperimentalCondition</a>
+               title="https://w3id.org/reproduceme/core#hasExperimentalCondition">hasExperimentalCondition</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1065,7 +1065,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ExperimentalData</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#ExperimentalData</p>
       <div class="comment">
          <span class="markdown">Data used in an experiment.</span>
       </div>
@@ -1076,30 +1076,30 @@ This section provides details for each class and property defined by The Reprodu
          </dd>
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#Annotation" title="https://w3id.org/reproduceme-core#Annotation">Annotation</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Description" title="https://w3id.org/reproduceme-core#Description">Description</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#File" title="https://w3id.org/reproduceme-core#File">File</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#InputData" title="https://w3id.org/reproduceme-core#InputData">Input Data</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#License" title="https://w3id.org/reproduceme-core#License">License</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Metadata" title="https://w3id.org/reproduceme-core#Metadata">Metadata</a>
+            <a href="#Annotation" title="https://w3id.org/reproduceme/core#Annotation">Annotation</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Description" title="https://w3id.org/reproduceme/core#Description">Description</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#File" title="https://w3id.org/reproduceme/core#File">File</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#InputData" title="https://w3id.org/reproduceme/core#InputData">Input Data</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#License" title="https://w3id.org/reproduceme/core#License">License</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Metadata" title="https://w3id.org/reproduceme/core#Metadata">Metadata</a>
             <sup class="type-c" title="class">c</sup>, <a href="#ModifiedVersion"
-               title="https://w3id.org/reproduceme-core#ModifiedVersion">Modified Version</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Note" title="https://w3id.org/reproduceme-core#Note">Note</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Output" title="https://w3id.org/reproduceme-core#Output">Output</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ProcessedData" title="https://w3id.org/reproduceme-core#ProcessedData">Processed Data</a>
+               title="https://w3id.org/reproduceme/core#ModifiedVersion">Modified Version</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Note" title="https://w3id.org/reproduceme/core#Note">Note</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Output" title="https://w3id.org/reproduceme/core#Output">Output</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ProcessedData" title="https://w3id.org/reproduceme/core#ProcessedData">Processed Data</a>
             <sup class="type-c" title="class">c</sup>, <a href="#ProspectiveProvenance"
-               title="https://w3id.org/reproduceme-core#ProspectiveProvenance">Prospective Provenance</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/reproduceme-core#Publication">Publication</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#RawData" title="https://w3id.org/reproduceme-core#RawData">Raw Data</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+               title="https://w3id.org/reproduceme/core#ProspectiveProvenance">Prospective Provenance</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://w3id.org/reproduceme/core#Publication">Publication</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#RawData" title="https://w3id.org/reproduceme/core#RawData">Raw Data</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Result" title="https://w3id.org/reproduceme/core#Result">Result</a>
             <sup class="type-c" title="class">c</sup>, <a href="#RetrospectiveProvenance"
-               title="https://w3id.org/reproduceme-core#RetrospectiveProvenance">Retrospective Provenance</a>
+               title="https://w3id.org/reproduceme/core#RetrospectiveProvenance">Retrospective Provenance</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#hasExperimentalData"
-               title="https://w3id.org/reproduceme-core#hasExperimentalData">hasExperimentalData</a>
+               title="https://w3id.org/reproduceme/core#hasExperimentalData">hasExperimentalData</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1110,7 +1110,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Experimenter</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Experimenter</p>
       <div class="comment">
          <span class="markdown">Experimenter is a person who is the owner of the Experiment and has its responsibility.</span>
       </div>
@@ -1127,7 +1127,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#File</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#File</p>
       <div class="comment">
          <span class="markdown">A storage to store data. For example, a computer file.</span>
       </div>
@@ -1135,15 +1135,15 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalData"
-               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
             <a href="#LicenseDocument"
-               title="https://w3id.org/reproduceme-core#LicenseDocument">License Document</a>
+               title="https://w3id.org/reproduceme/core#LicenseDocument">License Document</a>
             <sup class="type-c" title="class">c</sup>, <a href="#RightsandPermissionsDocument"
-               title="https://w3id.org/reproduceme-core#RightsandPermissionsDocument">Rights and Permissions Document</a>
+               title="https://w3id.org/reproduceme/core#RightsandPermissionsDocument">Rights and Permissions Document</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1154,14 +1154,14 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#FinalResult</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#FinalResult</p>
       <div class="comment">
          <span class="markdown">It is the final result that is generated in an experiment which is eventually used in a publication.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+            <a href="#Result" title="https://w3id.org/reproduceme/core#Result">Result</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1172,7 +1172,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#FinalStep</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#FinalStep</p>
       <div class="comment">
          <span class="markdown">The step that is performed at the end of an experiment.</span>
       </div>
@@ -1189,7 +1189,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#FundingAgency</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#FundingAgency</p>
       <div class="comment">
          <span class="markdown">An organization responsible for granting funds for conducting a research project.</span>
       </div>
@@ -1206,7 +1206,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#InputData</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#InputData</p>
       <div class="comment">
          <span class="markdown">It is the data that is used as input to an experiment.</span>
       </div>
@@ -1214,7 +1214,7 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalData"
-               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1225,7 +1225,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Instrument</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Instrument</p>
       <div class="comment">
          <span class="markdown">A device used to capture images.</span>
       </div>
@@ -1242,12 +1242,12 @@ This section provides details for each class and property defined by The Reprodu
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#isPartOf" title="https://w3id.org/reproduceme-core#isPartOf">isPartOf</a>
+            <a href="#isPartOf" title="https://w3id.org/reproduceme/core#isPartOf">isPartOf</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#hasPart" title="https://w3id.org/reproduceme-core#hasPart">hasPart</a>
+            <a href="#hasPart" title="https://w3id.org/reproduceme/core#hasPart">hasPart</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1258,14 +1258,14 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#InstrumentSetting</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#InstrumentSetting</p>
       <div class="comment">
          <span class="markdown">The settings of an instrument.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <a href="#Setting" title="https://w3id.org/reproduceme/core#Setting">Setting</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1276,11 +1276,11 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#IntermediateResult</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#IntermediateResult</p>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+            <a href="#Result" title="https://w3id.org/reproduceme/core#Result">Result</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1291,7 +1291,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#IntermediateStep</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#IntermediateStep</p>
       <div class="comment">
          <span class="markdown">The step which is performed during an experiment.</span>
       </div>
@@ -1308,7 +1308,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#License</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#License</p>
       <div class="comment">
          <span class="markdown">An official permission required to perform or own something.</span>
       </div>
@@ -1316,7 +1316,7 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalData"
-               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1327,14 +1327,14 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#LicenseDocument</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#LicenseDocument</p>
       <div class="comment">
          <span class="markdown">It is the document which provides official permission to use or own an entity.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#File" title="https://w3id.org/reproduceme-core#File">File</a>
+            <a href="#File" title="https://w3id.org/reproduceme/core#File">File</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1345,7 +1345,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#MaterialPreparationStep</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#MaterialPreparationStep</p>
       <div class="comment">
          <span class="markdown">The step where materials are prepared for the experiment.</span>
       </div>
@@ -1353,7 +1353,7 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentSetup"
-               title="https://w3id.org/reproduceme-core#ExperimentSetup">Experiment Setup</a>
+               title="https://w3id.org/reproduceme/core#ExperimentSetup">Experiment Setup</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1364,7 +1364,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Metadata</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Metadata</p>
       <div class="comment">
          <span class="markdown">Metadata is the data about data.</span>
       </div>
@@ -1372,7 +1372,7 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalData"
-               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1383,7 +1383,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Method</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Method</p>
       <div class="comment">
          <span class="markdown">The procedure used to perform a process.</span>
       </div>
@@ -1394,7 +1394,7 @@ This section provides details for each class and property defined by The Reprodu
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#usedMethod" title="https://w3id.org/reproduceme-core#usedMethod">usedMethod</a>
+            <a href="#usedMethod" title="https://w3id.org/reproduceme/core#usedMethod">usedMethod</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1405,7 +1405,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ModifiedVersion</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#ModifiedVersion</p>
       <div class="comment">
          <span class="markdown">It describes the version information of an entity which tells if there is any difference from its earlier form.</span>
       </div>
@@ -1413,7 +1413,7 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalData"
-               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1424,14 +1424,14 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#NegativeResult</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#NegativeResult</p>
       <div class="comment">
          <span class="markdown">These results are annotated as negative. This could be because of several reasons. The results which confute the hypothesis, the changes in experimental design or execution environment can cause negative results.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+            <a href="#Result" title="https://w3id.org/reproduceme/core#Result">Result</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1442,7 +1442,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Non-computationalStep</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Non-computationalStep</p>
       <div class="comment">
          <span class="markdown">The step or the process which does not depend on computational resources.</span>
       </div>
@@ -1459,7 +1459,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Note</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Note</p>
       <div class="comment">
          <span class="markdown">A comment or description of an experiment.</span>
       </div>
@@ -1467,7 +1467,7 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalData"
-               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1478,7 +1478,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#OriginalCreator</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#OriginalCreator</p>
       <div class="comment">
          <span class="markdown">The original attribution of a thing belongs to the OriginalCreator.</span>
       </div>
@@ -1495,20 +1495,20 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Output</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Output</p>
       <div class="comment">
          <span class="markdown">The result obtained after an activity.</span>
       </div>
       <dl class="description">
          <dt>is equivalent to</dt>
          <dd>
-            <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+            <a href="#Result" title="https://w3id.org/reproduceme/core#Result">Result</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalData"
-               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1519,7 +1519,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Owner</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Owner</p>
       <div class="comment">
          <span class="markdown">A person who owns a certain thing.</span>
       </div>
@@ -1536,14 +1536,14 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#PositiveResult</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#PositiveResult</p>
       <div class="comment">
          <span class="markdown">These results which are annotated as positive are the results that confirm the hypothesis of an experiment.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Result" title="https://w3id.org/reproduceme-core#Result">Result</a>
+            <a href="#Result" title="https://w3id.org/reproduceme/core#Result">Result</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1554,14 +1554,14 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Precondition</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Precondition</p>
       <div class="comment">
          <span class="markdown">The conditions that must be fulfilled before performing an activity.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <a href="#Setting" title="https://w3id.org/reproduceme/core#Setting">Setting</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1572,7 +1572,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#PrincipalInvestigator</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#PrincipalInvestigator</p>
       <div class="comment">
          <span class="markdown">An important person responsible for a ResearchProject.</span>
       </div>
@@ -1589,7 +1589,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ProcessedData</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#ProcessedData</p>
       <div class="comment">
          <span class="markdown">The data which is modified and processed for analysis or other experiments.</span>
       </div>
@@ -1597,7 +1597,7 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalData"
-               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1608,7 +1608,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ProspectiveProvenance</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#ProspectiveProvenance</p>
       <div class="comment">
          <span class="markdown">The provenance information of an activity that specifies its plan.</span>
       </div>
@@ -1616,7 +1616,7 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalData"
-               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1627,7 +1627,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Protocol</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Protocol</p>
       <div class="comment">
          <span class="markdown">A set of instructions needed to perform an activity.</span>
       </div>
@@ -1644,7 +1644,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Publication</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Publication</p>
       <div class="comment">
          <span class="markdown">A printed work or a file describing the work of one or more agents.</span>
       </div>
@@ -1652,14 +1652,14 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalData"
-               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#pmcid" title="https://w3id.org/reproduceme-core#pmcid">PubMed Central ID</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#pubmedid" title="https://w3id.org/reproduceme-core#pubmedid">PubMed ID</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#doi" title="https://w3id.org/reproduceme-core#doi">doi</a>
+            <a href="#pmcid" title="https://w3id.org/reproduceme/core#pmcid">PubMed Central ID</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#pubmedid" title="https://w3id.org/reproduceme/core#pubmedid">PubMed ID</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#doi" title="https://w3id.org/reproduceme/core#doi">doi</a>
             <sup class="type-dp" title="data property">dp</sup>
          </dd>
       </dl>
@@ -1670,14 +1670,14 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#QualityControl</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#QualityControl</p>
       <div class="comment">
          <span class="markdown">A technique to check and control the quality of an entity.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <a href="#Setting" title="https://w3id.org/reproduceme/core#Setting">Setting</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1688,7 +1688,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Rating</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Rating</p>
       <div class="comment">
          <span class="markdown">The overall review provided by an agent to a thing.</span>
       </div>
@@ -1705,7 +1705,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#RawData</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#RawData</p>
       <div class="comment">
          <span class="markdown">The data directly generated from an experiment without any modification or processing.</span>
       </div>
@@ -1713,7 +1713,7 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalData"
-               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1724,7 +1724,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ResearchGroup</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#ResearchGroup</p>
       <div class="comment">
          <span class="markdown">Group is an organization which belongs to a department of an institution consisting of people responsible for research and education.</span>
       </div>
@@ -1741,7 +1741,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ResearchProject</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#ResearchProject</p>
       <div class="comment">
          <span class="markdown">A person or collaborative group working on a research plan to achieve certain goals.</span>
       </div>
@@ -1758,7 +1758,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Result</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Result</p>
       <div class="comment">
          <span class="markdown">The output of a step.</span>
       </div>
@@ -1766,18 +1766,18 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalData"
-               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#FinalResult" title="https://w3id.org/reproduceme-core#FinalResult">Final Result</a>
+            <a href="#FinalResult" title="https://w3id.org/reproduceme/core#FinalResult">Final Result</a>
             <sup class="type-c" title="class">c</sup>, <a href="#IntermediateResult"
-               title="https://w3id.org/reproduceme-core#IntermediateResult">Intermediate Result</a>
+               title="https://w3id.org/reproduceme/core#IntermediateResult">Intermediate Result</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NegativeResult"
-               title="https://w3id.org/reproduceme-core#NegativeResult">Negative Result</a>
+               title="https://w3id.org/reproduceme/core#NegativeResult">Negative Result</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PositiveResult"
-               title="https://w3id.org/reproduceme-core#PositiveResult">Positive Result</a>
+               title="https://w3id.org/reproduceme/core#PositiveResult">Positive Result</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1788,7 +1788,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#RetrospectiveProvenance</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#RetrospectiveProvenance</p>
       <div class="comment">
          <span class="markdown">The provenance information of what happened when an activity is performed.</span>
       </div>
@@ -1796,7 +1796,7 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <a href="#ExperimentalData"
-               title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1807,14 +1807,14 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#RightsandPermissionsDocument</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#RightsandPermissionsDocument</p>
       <div class="comment">
          <span class="markdown">The document which tells whether other scientists are allowed to use or modify the data.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#File" title="https://w3id.org/reproduceme-core#File">File</a>
+            <a href="#File" title="https://w3id.org/reproduceme/core#File">File</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1825,7 +1825,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Setting</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Setting</p>
       <div class="comment">
          <span class="markdown">The parameters or the situation in which the experiment was performed.</span>
       </div>
@@ -1836,30 +1836,30 @@ This section provides details for each class and property defined by The Reprodu
          </dd>
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#Configuration" title="https://w3id.org/reproduceme-core#Configuration">Configuration</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Context" title="https://w3id.org/reproduceme-core#Context">Context</a>
+            <a href="#Configuration" title="https://w3id.org/reproduceme/core#Configuration">Configuration</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Context" title="https://w3id.org/reproduceme/core#Context">Context</a>
             <sup class="type-c" title="class">c</sup>, <a href="#EnvironmentSetupSetting"
-               title="https://w3id.org/reproduceme-core#EnvironmentSetupSetting">Environment Setup Setting</a>
+               title="https://w3id.org/reproduceme/core#EnvironmentSetupSetting">Environment Setup Setting</a>
             <sup class="type-c" title="class">c</sup>, <a href="#ExperimentalCondition"
-               title="https://w3id.org/reproduceme-core#ExperimentalCondition">Experimental Condition</a>
+               title="https://w3id.org/reproduceme/core#ExperimentalCondition">Experimental Condition</a>
             <sup class="type-c" title="class">c</sup>, <a href="#InstrumentSetting"
-               title="https://w3id.org/reproduceme-core#InstrumentSetting">Instrument Setting</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Precondition" title="https://w3id.org/reproduceme-core#Precondition">Precondition</a>
+               title="https://w3id.org/reproduceme/core#InstrumentSetting">Instrument Setting</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Precondition" title="https://w3id.org/reproduceme/core#Precondition">Precondition</a>
             <sup class="type-c" title="class">c</sup>, <a href="#QualityControl"
-               title="https://w3id.org/reproduceme-core#QualityControl">QualityControl</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Size" title="https://w3id.org/reproduceme-core#Size">Size</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Unit" title="https://w3id.org/reproduceme-core#Unit">Unit</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Version" title="https://w3id.org/reproduceme-core#Version">Version</a>
+               title="https://w3id.org/reproduceme/core#QualityControl">QualityControl</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Size" title="https://w3id.org/reproduceme/core#Size">Size</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Unit" title="https://w3id.org/reproduceme/core#Unit">Unit</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Version" title="https://w3id.org/reproduceme/core#Version">Version</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#isSettingOf" title="https://w3id.org/reproduceme-core#isSettingOf">isSettingOf</a>
+            <a href="#isSettingOf" title="https://w3id.org/reproduceme/core#isSettingOf">isSettingOf</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#hasSetting" title="https://w3id.org/reproduceme-core#hasSetting">hasSetting</a>
+            <a href="#hasSetting" title="https://w3id.org/reproduceme/core#hasSetting">hasSetting</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1870,14 +1870,14 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Size</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Size</p>
       <div class="comment">
          <span class="markdown">A dimension of a thing.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <a href="#Setting" title="https://w3id.org/reproduceme/core#Setting">Setting</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1888,7 +1888,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#StandardOperatingProcedure</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#StandardOperatingProcedure</p>
       <div class="comment">
          <span class="markdown">A set of steb-by-step instructions  to carry out a complex routine.</span>
       </div>
@@ -1905,7 +1905,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Study</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Study</p>
       <div class="comment">
          <span class="markdown">A process to examine and analyze a data object to answer questions and discover new facts about it.</span>
       </div>
@@ -1922,14 +1922,14 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Unit</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Unit</p>
       <div class="comment">
          <span class="markdown">A standard quantity of measurement.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <a href="#Setting" title="https://w3id.org/reproduceme/core#Setting">Setting</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1940,14 +1940,14 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#Version</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Version</p>
       <div class="comment">
          <span class="markdown">A property of an entity which describes its difference with respect to its earlier form.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+            <a href="#Setting" title="https://w3id.org/reproduceme/core#Setting">Setting</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1957,58 +1957,58 @@ This section provides details for each class and property defined by The Reprodu
    <ul class="hlist">
       <li>
          <a href="#hasExperimentalCondition"
-            title="https://w3id.org/reproduceme-core#hasExperimentalCondition">hasExperimentalCondition</a>
+            title="https://w3id.org/reproduceme/core#hasExperimentalCondition">hasExperimentalCondition</a>
       </li>
       <li>
          <a href="#hasExperimentalData"
-            title="https://w3id.org/reproduceme-core#hasExperimentalData">hasExperimentalData</a>
+            title="https://w3id.org/reproduceme/core#hasExperimentalData">hasExperimentalData</a>
       </li>
       <li>
          <a href="#hasExperimentMaterial"
-            title="https://w3id.org/reproduceme-core#hasExperimentMaterial">hasExperimentalMaterial</a>
+            title="https://w3id.org/reproduceme/core#hasExperimentMaterial">hasExperimentalMaterial</a>
       </li>
       <li>
-         <a href="#hasPart" title="https://w3id.org/reproduceme-core#hasPart">hasPart</a>
+         <a href="#hasPart" title="https://w3id.org/reproduceme/core#hasPart">hasPart</a>
       </li>
       <li>
-         <a href="#hasSetting" title="https://w3id.org/reproduceme-core#hasSetting">hasSetting</a>
+         <a href="#hasSetting" title="https://w3id.org/reproduceme/core#hasSetting">hasSetting</a>
       </li>
       <li>
-         <a href="#isAccessibleTo" title="https://w3id.org/reproduceme-core#isAccessibleTo">isAccessibleTo</a>
+         <a href="#isAccessibleTo" title="https://w3id.org/reproduceme/core#isAccessibleTo">isAccessibleTo</a>
       </li>
       <li>
-         <a href="#isPartOf" title="https://w3id.org/reproduceme-core#isPartOf">isPartOf</a>
+         <a href="#isPartOf" title="https://w3id.org/reproduceme/core#isPartOf">isPartOf</a>
       </li>
       <li>
-         <a href="#isSettingOf" title="https://w3id.org/reproduceme-core#isSettingOf">isSettingOf</a>
+         <a href="#isSettingOf" title="https://w3id.org/reproduceme/core#isSettingOf">isSettingOf</a>
       </li>
       <li>
-         <a href="#reference" title="https://w3id.org/reproduceme-core#reference">reference</a>
+         <a href="#reference" title="https://w3id.org/reproduceme/core#reference">reference</a>
       </li>
       <li>
-         <a href="#storedAt" title="https://w3id.org/reproduceme-core#storedAt">storedAt</a>
+         <a href="#storedAt" title="https://w3id.org/reproduceme/core#storedAt">storedAt</a>
       </li>
       <li>
-         <a href="#usedMethod" title="https://w3id.org/reproduceme-core#usedMethod">usedMethod</a>
+         <a href="#usedMethod" title="https://w3id.org/reproduceme/core#usedMethod">usedMethod</a>
       </li>
       <li>
-         <a href="#wasPerformedBy" title="https://w3id.org/reproduceme-core#wasPerformedBy">
+         <a href="#wasPerformedBy" title="https://w3id.org/reproduceme/core#wasPerformedBy">
             <span>was performed by</span>
          </a>
       </li>
       <li>
-         <a href="#wasCreatedBy" title="https://w3id.org/reproduceme-core#wasCreatedBy">wasCreatedBy</a>
+         <a href="#wasCreatedBy" title="https://w3id.org/reproduceme/core#wasCreatedBy">wasCreatedBy</a>
       </li>
       <li>
          <a href="#wasDistributedBy"
-            title="https://w3id.org/reproduceme-core#wasDistributedBy">wasDistributedBy</a>
+            title="https://w3id.org/reproduceme/core#wasDistributedBy">wasDistributedBy</a>
       </li>
       <li>
          <a href="#wasExtractedFrom"
-            title="https://w3id.org/reproduceme-core#wasExtractedFrom">wasExtractedFrom</a>
+            title="https://w3id.org/reproduceme/core#wasExtractedFrom">wasExtractedFrom</a>
       </li>
       <li>
-         <a href="#wasUpdatedBy" title="https://w3id.org/reproduceme-core#wasUpdatedBy">wasUpdatedBy</a>
+         <a href="#wasUpdatedBy" title="https://w3id.org/reproduceme/core#wasUpdatedBy">wasUpdatedBy</a>
       </li>
    </ul>
    <div class="entity" id="hasExperimentalCondition">
@@ -2017,7 +2017,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#hasExperimentalCondition</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#hasExperimentalCondition</p>
       <div class="comment">
          <span class="markdown">hasExperimentalCondition binds an experiment to its environmental condition.</span>
       </div>
@@ -2029,13 +2029,13 @@ This section provides details for each class and property defined by The Reprodu
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Experiment" title="https://w3id.org/reproduceme-core#Experiment">Experiment</a>
+               <a href="#Experiment" title="https://w3id.org/reproduceme/core#Experiment">Experiment</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <a href="#ExperimentalCondition"
-                  title="https://w3id.org/reproduceme-core#ExperimentalCondition">Experimental Condition</a>
+                  title="https://w3id.org/reproduceme/core#ExperimentalCondition">Experimental Condition</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2047,7 +2047,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#hasExperimentalData</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#hasExperimentalData</p>
       <div class="comment">
          <span class="markdown">hasExperimentalData binds an experiment to the data that was used in an experiment.</span>
       </div>
@@ -2059,13 +2059,13 @@ This section provides details for each class and property defined by The Reprodu
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Experiment" title="https://w3id.org/reproduceme-core#Experiment">Experiment</a>
+               <a href="#Experiment" title="https://w3id.org/reproduceme/core#Experiment">Experiment</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <a href="#ExperimentalData"
-                  title="https://w3id.org/reproduceme-core#ExperimentalData">Experimental Data</a>
+                  title="https://w3id.org/reproduceme/core#ExperimentalData">Experimental Data</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2077,7 +2077,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#hasExperimentMaterial</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#hasExperimentMaterial</p>
       <div class="comment">
          <span class="markdown">hasExperimentalMaterial binds an experiment to the data that was used in an experiment.</span>
       </div>
@@ -2089,13 +2089,13 @@ This section provides details for each class and property defined by The Reprodu
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Experiment" title="https://w3id.org/reproduceme-core#Experiment">Experiment</a>
+               <a href="#Experiment" title="https://w3id.org/reproduceme/core#Experiment">Experiment</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <a href="#ExperimentMaterial"
-                  title="https://w3id.org/reproduceme-core#ExperimentMaterial">Experiment Material</a>
+                  title="https://w3id.org/reproduceme/core#ExperimentMaterial">Experiment Material</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2107,7 +2107,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#hasPart</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#hasPart</p>
       <div class="comment">
          <span class="markdown">An entity is part of another entity if one of its part belong to the other entity.</span>
       </div>
@@ -2119,12 +2119,12 @@ This section provides details for each class and property defined by The Reprodu
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#Instrument" title="https://w3id.org/reproduceme-core#Instrument">Instrument</a>
+               <a href="#Instrument" title="https://w3id.org/reproduceme/core#Instrument">Instrument</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
             <dd>
-               <a href="#isPartOf" title="https://w3id.org/reproduceme-core#isPartOf">isPartOf</a>
+               <a href="#isPartOf" title="https://w3id.org/reproduceme/core#isPartOf">isPartOf</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -2136,7 +2136,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#hasSetting</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#hasSetting</p>
       <div class="comment">
          <span class="markdown">hasSetting binds a thing or instrument to its configurations or settings.</span>
       </div>
@@ -2144,12 +2144,12 @@ This section provides details for each class and property defined by The Reprodu
          <dl>
             <dt>has range</dt>
             <dd>
-               <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+               <a href="#Setting" title="https://w3id.org/reproduceme/core#Setting">Setting</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
             <dd>
-               <a href="#isSettingOf" title="https://w3id.org/reproduceme-core#isSettingOf">isSettingOf</a>
+               <a href="#isSettingOf" title="https://w3id.org/reproduceme/core#isSettingOf">isSettingOf</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -2161,7 +2161,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#isAccessibleTo</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#isAccessibleTo</p>
       <div class="comment">
          <span class="markdown">isAccessibleTo is a property which describes that an Entity is accessible or available to an Agent.</span>
       </div>
@@ -2188,7 +2188,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#isPartOf</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#isPartOf</p>
       <div class="comment">
          <span class="markdown">An entity is part of another entity if one of its part belong to the other entity.</span>
       </div>
@@ -2196,12 +2196,12 @@ This section provides details for each class and property defined by The Reprodu
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Instrument" title="https://w3id.org/reproduceme-core#Instrument">Instrument</a>
+               <a href="#Instrument" title="https://w3id.org/reproduceme/core#Instrument">Instrument</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
             <dd>
-               <a href="#hasPart" title="https://w3id.org/reproduceme-core#hasPart">hasPart</a>
+               <a href="#hasPart" title="https://w3id.org/reproduceme/core#hasPart">hasPart</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -2213,7 +2213,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#isSettingOf</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#isSettingOf</p>
       <div class="comment">
          <span class="markdown">isSettingOf binds a thing or instrument to its configurations or settings.</span>
       </div>
@@ -2225,12 +2225,12 @@ This section provides details for each class and property defined by The Reprodu
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Setting" title="https://w3id.org/reproduceme-core#Setting">Setting</a>
+               <a href="#Setting" title="https://w3id.org/reproduceme/core#Setting">Setting</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
             <dd>
-               <a href="#hasSetting" title="https://w3id.org/reproduceme-core#hasSetting">hasSetting</a>
+               <a href="#hasSetting" title="https://w3id.org/reproduceme/core#hasSetting">hasSetting</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -2242,7 +2242,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#reference</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#reference</p>
       <div class="comment">
          <span class="markdown">An entity which has used another entity as reference.</span>
       </div>
@@ -2265,7 +2265,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#storedAt</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#storedAt</p>
       <div class="comment">
          <span class="markdown">The storage location of an entity.</span>
       </div>
@@ -2292,7 +2292,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#usedMethod</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#usedMethod</p>
       <div class="comment">
          <span class="markdown">A process which used a method to achieve something.</span>
       </div>
@@ -2300,7 +2300,7 @@ This section provides details for each class and property defined by The Reprodu
          <dl>
             <dt>has range</dt>
             <dd>
-               <a href="#Method" title="https://w3id.org/reproduceme-core#Method">Method</a>
+               <a href="#Method" title="https://w3id.org/reproduceme/core#Method">Method</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2312,7 +2312,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#wasPerformedBy</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#wasPerformedBy</p>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
@@ -2328,7 +2328,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#wasCreatedBy</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#wasCreatedBy</p>
       <div class="comment">
          <span class="markdown">A relationship between an entity to its creator agent.</span>
       </div>
@@ -2355,7 +2355,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#wasDistributedBy</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#wasDistributedBy</p>
       <div class="comment">
          <span class="markdown">A relationship between an entity to its distributor agent.</span>
       </div>
@@ -2382,7 +2382,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#wasExtractedFrom</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#wasExtractedFrom</p>
       <div class="comment">
          <span class="markdown">An experiment material which is extracted from another material.</span>
       </div>
@@ -2395,13 +2395,13 @@ This section provides details for each class and property defined by The Reprodu
             <dt>has domain</dt>
             <dd>
                <a href="#ExperimentMaterial"
-                  title="https://w3id.org/reproduceme-core#ExperimentMaterial">Experiment Material</a>
+                  title="https://w3id.org/reproduceme/core#ExperimentMaterial">Experiment Material</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <a href="#ExperimentMaterial"
-                  title="https://w3id.org/reproduceme-core#ExperimentMaterial">Experiment Material</a>
+                  title="https://w3id.org/reproduceme/core#ExperimentMaterial">Experiment Material</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2413,7 +2413,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#wasUpdatedBy</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#wasUpdatedBy</p>
       <div class="comment">
          <span class="markdown">An entity which is updated by another entity or an agent.</span>
       </div>
@@ -2441,34 +2441,34 @@ This section provides details for each class and property defined by The Reprodu
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#address" title="https://w3id.org/reproduceme-core#address">Address</a>
+         <a href="#address" title="https://w3id.org/reproduceme/core#address">Address</a>
       </li>
       <li>
-         <a href="#description" title="https://w3id.org/reproduceme-core#description">description</a>
+         <a href="#description" title="https://w3id.org/reproduceme/core#description">description</a>
       </li>
       <li>
-         <a href="#doi" title="https://w3id.org/reproduceme-core#doi">doi</a>
+         <a href="#doi" title="https://w3id.org/reproduceme/core#doi">doi</a>
       </li>
       <li>
-         <a href="#id" title="https://w3id.org/reproduceme-core#id">Id</a>
+         <a href="#id" title="https://w3id.org/reproduceme/core#id">Id</a>
       </li>
       <li>
-         <a href="#modifiedAtTime" title="https://w3id.org/reproduceme-core#modifiedAtTime">modifiedAtTime</a>
+         <a href="#modifiedAtTime" title="https://w3id.org/reproduceme/core#modifiedAtTime">modifiedAtTime</a>
       </li>
       <li>
-         <a href="#name" title="https://w3id.org/reproduceme-core#name">Name</a>
+         <a href="#name" title="https://w3id.org/reproduceme/core#name">Name</a>
       </li>
       <li>
-         <a href="#ORCID" title="https://w3id.org/reproduceme-core#ORCID">ORCID</a>
+         <a href="#ORCID" title="https://w3id.org/reproduceme/core#ORCID">ORCID</a>
       </li>
       <li>
-         <a href="#pmcid" title="https://w3id.org/reproduceme-core#pmcid">PubMed Central ID</a>
+         <a href="#pmcid" title="https://w3id.org/reproduceme/core#pmcid">PubMed Central ID</a>
       </li>
       <li>
-         <a href="#pubmedid" title="https://w3id.org/reproduceme-core#pubmedid">PubMed ID</a>
+         <a href="#pubmedid" title="https://w3id.org/reproduceme/core#pubmedid">PubMed ID</a>
       </li>
       <li>
-         <a href="#receivedAtTime" title="https://w3id.org/reproduceme-core#receivedAtTime">receivedAtTime</a>
+         <a href="#receivedAtTime" title="https://w3id.org/reproduceme/core#receivedAtTime">receivedAtTime</a>
       </li>
    </ul>
    <div class="entity" id="address">
@@ -2477,7 +2477,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#address</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#address</p>
       <div class="comment">
          <span class="markdown">Address of an Agent</span>
       </div>
@@ -2488,7 +2488,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#description</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#description</p>
       <div class="comment">
          <span class="markdown">Textual note of an entity.</span>
       </div>
@@ -2499,7 +2499,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#doi</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#doi</p>
       <div class="comment">
          <span class="markdown">Publication persistent identifier</span>
       </div>
@@ -2511,7 +2511,7 @@ This section provides details for each class and property defined by The Reprodu
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Publication" title="https://w3id.org/reproduceme-core#Publication">Publication</a>
+               <a href="#Publication" title="https://w3id.org/reproduceme/core#Publication">Publication</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2523,7 +2523,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#id</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#id</p>
       <div class="comment">
          <span class="markdown">A unique identifier of an entity.</span>
       </div>
@@ -2534,7 +2534,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#modifiedAtTime</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#modifiedAtTime</p>
       <div class="comment">
          <span class="markdown">The time at which an entity was modified.</span>
       </div>
@@ -2557,7 +2557,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#name</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#name</p>
       <div class="comment">
          <span class="markdown">The name of a thing.</span>
       </div>
@@ -2568,7 +2568,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#ORCID</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#ORCID</p>
       <div class="comment">
          <span class="markdown">A standard alphanumeric code to uniquely identify scientific and other academic authors and contributors.</span>
       </div>
@@ -2587,7 +2587,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#pmcid</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#pmcid</p>
       <div class="comment">
          <span class="markdown">A standard unique PubMed Central identifier.</span>
       </div>
@@ -2595,7 +2595,7 @@ This section provides details for each class and property defined by The Reprodu
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Publication" title="https://w3id.org/reproduceme-core#Publication">Publication</a>
+               <a href="#Publication" title="https://w3id.org/reproduceme/core#Publication">Publication</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2607,7 +2607,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#pubmedid</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#pubmedid</p>
       <div class="comment">
          <span class="markdown">A standard unique identifier for each PubMed record.</span>
       </div>
@@ -2615,7 +2615,7 @@ This section provides details for each class and property defined by The Reprodu
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Publication" title="https://w3id.org/reproduceme-core#Publication">Publication</a>
+               <a href="#Publication" title="https://w3id.org/reproduceme/core#Publication">Publication</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2627,7 +2627,7 @@ This section provides details for each class and property defined by The Reprodu
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme-core#receivedAtTime</p>
+         <strong>IRI:</strong> https://w3id.org/reproduceme/core#receivedAtTime</p>
       <div class="comment">
          <span class="markdown">The time at which an entity was received.</span>
       </div>

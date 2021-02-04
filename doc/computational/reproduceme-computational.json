@@ -5,7 +5,7 @@
     "@id" : "http://purl.org/net/p-plan#isInputVarOf"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#FunctionActivation"
+    "@id" : "https://w3id.org/reproduceme/computational#FunctionActivation"
   } ]
 }, {
   "@id" : "_:genid10",
@@ -14,7 +14,7 @@
     "@id" : "http://purl.org/net/p-plan#isSubPlanOfPlan"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Script"
+    "@id" : "https://w3id.org/reproduceme/computational#Script"
   } ]
 }, {
   "@id" : "_:genid11",
@@ -23,7 +23,7 @@
     "@id" : "http://purl.org/net/p-plan#hasInputVar"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Argument"
+    "@id" : "https://w3id.org/reproduceme/computational#Argument"
   } ]
 }, {
   "@id" : "_:genid12",
@@ -32,13 +32,13 @@
     "@id" : "http://purl.org/net/p-plan#hasOutputVar"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#Output"
+    "@id" : "https://w3id.org/reproduceme/core#Output"
   } ]
 }, {
   "@id" : "_:genid13",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Script"
+    "@id" : "https://w3id.org/reproduceme/computational#Script"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.org/net/p-plan#isStepOfPlan"
@@ -50,7 +50,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#name"
+    "@id" : "https://w3id.org/reproduceme/core#name"
   } ]
 }, {
   "@id" : "_:genid15",
@@ -59,34 +59,34 @@
     "@id" : "http://purl.org/net/p-plan#isSubPlanOfPlan"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#Experiment"
+    "@id" : "https://w3id.org/reproduceme/core#Experiment"
   } ]
 }, {
   "@id" : "_:genid16",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#hasSetting"
+    "@id" : "https://w3id.org/reproduceme/core#hasSetting"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Kernel"
+    "@id" : "https://w3id.org/reproduceme/computational#Kernel"
   } ]
 }, {
   "@id" : "_:genid17",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#hasSetting"
+    "@id" : "https://w3id.org/reproduceme/core#hasSetting"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#OperatingSystem"
+    "@id" : "https://w3id.org/reproduceme/computational#OperatingSystem"
   } ]
 }, {
   "@id" : "_:genid18",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#hasSetting"
+    "@id" : "https://w3id.org/reproduceme/core#hasSetting"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#ProgrammingLanguage"
+    "@id" : "https://w3id.org/reproduceme/computational#ProgrammingLanguage"
   } ]
 }, {
   "@id" : "_:genid19",
@@ -104,7 +104,7 @@
     "@id" : "http://purl.org/net/p-plan#isPrecededBy"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Cell"
+    "@id" : "https://w3id.org/reproduceme/computational#Cell"
   } ]
 }, {
   "@id" : "_:genid20",
@@ -113,7 +113,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#name"
+    "@id" : "https://w3id.org/reproduceme/core#name"
   } ]
 }, {
   "@id" : "_:genid21",
@@ -122,7 +122,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#name"
+    "@id" : "https://w3id.org/reproduceme/core#name"
   } ]
 }, {
   "@id" : "_:genid22",
@@ -131,7 +131,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#name"
+    "@id" : "https://w3id.org/reproduceme/core#name"
   } ]
 }, {
   "@id" : "_:genid23",
@@ -140,7 +140,7 @@
     "@id" : "http://purl.org/net/p-plan#isSubPlanOfPlan"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#Experiment"
+    "@id" : "https://w3id.org/reproduceme/core#Experiment"
   } ]
 }, {
   "@id" : "_:genid24",
@@ -158,7 +158,7 @@
     "@id" : "http://www.w3.org/ns/prov#used"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Library"
+    "@id" : "https://w3id.org/reproduceme/computational#Library"
   } ]
 }, {
   "@id" : "_:genid26",
@@ -167,7 +167,7 @@
     "@id" : "http://www.w3.org/ns/prov#used"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Module"
+    "@id" : "https://w3id.org/reproduceme/computational#Module"
   } ]
 }, {
   "@id" : "_:genid27",
@@ -176,7 +176,7 @@
     "@id" : "http://www.w3.org/ns/prov#used"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#OperatingSystem"
+    "@id" : "https://w3id.org/reproduceme/computational#OperatingSystem"
   } ]
 }, {
   "@id" : "_:genid28",
@@ -185,13 +185,13 @@
     "@id" : "http://www.w3.org/ns/prov#used"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#ProgrammingLanguage"
+    "@id" : "https://w3id.org/reproduceme/computational#ProgrammingLanguage"
   } ]
 }, {
   "@id" : "_:genid29",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#FunctionActivation"
+    "@id" : "https://w3id.org/reproduceme/computational#FunctionActivation"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.org/net/p-plan#correspondsToStep"
@@ -200,7 +200,7 @@
   "@id" : "_:genid3",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Cell"
+    "@id" : "https://w3id.org/reproduceme/computational#Cell"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.org/net/p-plan#isPrecededBy"
@@ -221,29 +221,29 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#executionTime"
+    "@id" : "https://w3id.org/reproduceme/computational#executionTime"
   } ]
 }, {
   "@id" : "_:genid32",
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+  "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
   } ]
 }, {
   "@id" : "_:genid33",
-  "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ]
-}, {
-  "@id" : "_:genid34",
   "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid35",
+  "@id" : "_:genid34",
   "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid35",
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
   } ]
@@ -269,7 +269,7 @@
   "@id" : "_:genid4",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Notebook"
+    "@id" : "https://w3id.org/reproduceme/computational#Notebook"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.org/net/p-plan#isStepOfPlan"
@@ -281,7 +281,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#cellType"
+    "@id" : "https://w3id.org/reproduceme/computational#cellType"
   } ]
 }, {
   "@id" : "_:genid6",
@@ -305,7 +305,7 @@
   "@id" : "_:genid8",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Cell"
+    "@id" : "https://w3id.org/reproduceme/computational#Cell"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.org/net/p-plan#correspondsToStep"
@@ -317,7 +317,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#executionTime"
+    "@id" : "https://w3id.org/reproduceme/computational#executionTime"
   } ]
 }, {
   "@id" : "http://ontologydesignpatterns.org/opla#isNativeTo",
@@ -419,7 +419,7 @@
   "@id" : "http://www.w3.org/ns/prov#wasAttributedTo",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational",
+  "@id" : "https://w3id.org/reproduceme/computational",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/terms/created" : [ {
     "@language" : "en",
@@ -453,24 +453,24 @@
     "@value" : "The ReproduceMe-Computational Ontology"
   } ],
   "http://www.w3.org/2002/07/owl#imports" : [ {
-    "@id" : "https://w3id.org/reproduceme-core"
+    "@id" : "https://w3id.org/reproduceme/core"
   } ],
   "http://www.w3.org/2002/07/owl#priorVersion" : [ {
     "@language" : "en",
     "@value" : "1.1"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational/2.0"
+    "@id" : "https://w3id.org/reproduceme/computational/2.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@language" : "en",
     "@value" : "2.0"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#Argument",
+  "@id" : "https://w3id.org/reproduceme/computational#Argument",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://ontologydesignpatterns.org/opla#isNativeTo" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Script"
+    "@id" : "https://w3id.org/reproduceme/computational#Script"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -481,15 +481,15 @@
     "@value" : "Argument"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#ExperimentalData"
+    "@id" : "https://w3id.org/reproduceme/core#ExperimentalData"
   }, {
     "@id" : "_:genid1"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#Cell",
+  "@id" : "https://w3id.org/reproduceme/computational#Cell",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://ontologydesignpatterns.org/opla#isNativeTo" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Notebook"
+    "@id" : "https://w3id.org/reproduceme/computational#Notebook"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -504,7 +504,7 @@
   }, {
     "@id" : "http://org.semanticweb.owlapi/error#Error5"
   }, {
-    "@id" : "https://w3id.org/reproduceme-core#ComputationalStep"
+    "@id" : "https://w3id.org/reproduceme/core#ComputationalStep"
   }, {
     "@id" : "_:genid2"
   }, {
@@ -515,10 +515,10 @@
     "@id" : "_:genid5"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#CellExecution",
+  "@id" : "https://w3id.org/reproduceme/computational#CellExecution",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://ontologydesignpatterns.org/opla#isNativeTo" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Notebook"
+    "@id" : "https://w3id.org/reproduceme/computational#Notebook"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -546,7 +546,7 @@
     "@id" : "_:genid9"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#ComputationalTool",
+  "@id" : "https://w3id.org/reproduceme/computational#ComputationalTool",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -557,13 +557,13 @@
     "@value" : "Computational Tool"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#Setting"
+    "@id" : "https://w3id.org/reproduceme/core#Setting"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#Function",
+  "@id" : "https://w3id.org/reproduceme/computational#Function",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://ontologydesignpatterns.org/opla#isNativeTo" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Script"
+    "@id" : "https://w3id.org/reproduceme/computational#Script"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -579,10 +579,10 @@
     "@id" : "_:genid10"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#FunctionActivation",
+  "@id" : "https://w3id.org/reproduceme/computational#FunctionActivation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://ontologydesignpatterns.org/opla#isNativeTo" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Script"
+    "@id" : "https://w3id.org/reproduceme/computational#Script"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -593,7 +593,7 @@
     "@value" : "Function Activation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#ComputationalStep"
+    "@id" : "https://w3id.org/reproduceme/core#ComputationalStep"
   }, {
     "@id" : "_:genid11"
   }, {
@@ -602,7 +602,7 @@
     "@id" : "_:genid13"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#Kernel",
+  "@id" : "https://w3id.org/reproduceme/computational#Kernel",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -613,15 +613,15 @@
     "@value" : "Kernel"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#Setting"
+    "@id" : "https://w3id.org/reproduceme/core#Setting"
   }, {
     "@id" : "_:genid14"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#Library",
+  "@id" : "https://w3id.org/reproduceme/computational#Library",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://ontologydesignpatterns.org/opla#isNativeTo" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Script"
+    "@id" : "https://w3id.org/reproduceme/computational#Script"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A collection of resources used for the development of software."
@@ -630,13 +630,13 @@
     "@value" : "Library"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#ExperimentalData"
+    "@id" : "https://w3id.org/reproduceme/core#ExperimentalData"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#Module",
+  "@id" : "https://w3id.org/reproduceme/computational#Module",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://ontologydesignpatterns.org/opla#isNativeTo" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Script"
+    "@id" : "https://w3id.org/reproduceme/computational#Script"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -650,10 +650,10 @@
     "@id" : "http://purl.org/net/p-plan#Plan"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#Notebook",
+  "@id" : "https://w3id.org/reproduceme/computational#Notebook",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://ontologydesignpatterns.org/opla#isNativeTo" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#Experiment"
+    "@id" : "https://w3id.org/reproduceme/core#Experiment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -666,7 +666,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.org/net/p-plan#Plan"
   }, {
-    "@id" : "https://w3id.org/reproduceme-core#ExperimentalData"
+    "@id" : "https://w3id.org/reproduceme/core#ExperimentalData"
   }, {
     "@id" : "_:genid15"
   }, {
@@ -679,7 +679,7 @@
     "@id" : "_:genid19"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#OperatingSystem",
+  "@id" : "https://w3id.org/reproduceme/computational#OperatingSystem",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -690,12 +690,12 @@
     "@value" : "Operating System"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#Setting"
+    "@id" : "https://w3id.org/reproduceme/core#Setting"
   }, {
     "@id" : "_:genid20"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#Package",
+  "@id" : "https://w3id.org/reproduceme/computational#Package",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -706,15 +706,15 @@
     "@value" : "Package"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#Setting"
+    "@id" : "https://w3id.org/reproduceme/core#Setting"
   }, {
     "@id" : "_:genid21"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#Parameter",
+  "@id" : "https://w3id.org/reproduceme/computational#Parameter",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://ontologydesignpatterns.org/opla#isNativeTo" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Script"
+    "@id" : "https://w3id.org/reproduceme/computational#Script"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -725,10 +725,10 @@
     "@value" : "Parameter"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#ExperimentalData"
+    "@id" : "https://w3id.org/reproduceme/core#ExperimentalData"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#ProgrammingLanguage",
+  "@id" : "https://w3id.org/reproduceme/computational#ProgrammingLanguage",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -739,15 +739,15 @@
     "@value" : "Programming Language"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#Setting"
+    "@id" : "https://w3id.org/reproduceme/core#Setting"
   }, {
     "@id" : "_:genid22"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#Script",
+  "@id" : "https://w3id.org/reproduceme/computational#Script",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://ontologydesignpatterns.org/opla#isNativeTo" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#Experiment"
+    "@id" : "https://w3id.org/reproduceme/core#Experiment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -760,17 +760,17 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.org/net/p-plan#Plan"
   }, {
-    "@id" : "https://w3id.org/reproduceme-core#ExperimentalData"
+    "@id" : "https://w3id.org/reproduceme/core#ExperimentalData"
   }, {
     "@id" : "_:genid23"
   }, {
     "@id" : "_:genid24"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#Source",
+  "@id" : "https://w3id.org/reproduceme/computational#Source",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://ontologydesignpatterns.org/opla#isNativeTo" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Notebook"
+    "@id" : "https://w3id.org/reproduceme/computational#Notebook"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -781,13 +781,13 @@
     "@value" : "Source"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/reproduceme-core#ExperimentalData"
+    "@id" : "https://w3id.org/reproduceme/core#ExperimentalData"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#Trial",
+  "@id" : "https://w3id.org/reproduceme/computational#Trial",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://ontologydesignpatterns.org/opla#isNativeTo" : [ {
-    "@id" : "https://w3id.org/reproduceme-computational#Script"
+    "@id" : "https://w3id.org/reproduceme/computational#Script"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -819,30 +819,30 @@
     "@id" : "_:genid31"
   } ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#cellType",
+  "@id" : "https://w3id.org/reproduceme/computational#cellType",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-computational#executionTime",
+  "@id" : "https://w3id.org/reproduceme/computational#executionTime",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-core#ComputationalStep",
+  "@id" : "https://w3id.org/reproduceme/core#ComputationalStep",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-core#Experiment",
+  "@id" : "https://w3id.org/reproduceme/core#Experiment",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-core#ExperimentalData",
+  "@id" : "https://w3id.org/reproduceme/core#ExperimentalData",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-core#Output",
+  "@id" : "https://w3id.org/reproduceme/core#Output",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-core#Setting",
+  "@id" : "https://w3id.org/reproduceme/core#Setting",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-core#hasSetting",
+  "@id" : "https://w3id.org/reproduceme/core#hasSetting",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 }, {
-  "@id" : "https://w3id.org/reproduceme-core#name",
+  "@id" : "https://w3id.org/reproduceme/core#name",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
 } ]

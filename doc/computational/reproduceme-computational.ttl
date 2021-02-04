@@ -1,14 +1,14 @@
-@prefix : <https://w3id.org/reproduceme-computational#> .
+@prefix : <https://w3id.org/reproduceme/computational#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://w3id.org/reproduceme-computational> .
+@base <https://w3id.org/reproduceme/computational> .
 
-<https://w3id.org/reproduceme-computational> rdf:type owl:Ontology ;
-                                              owl:versionIRI <https://w3id.org/reproduceme-computational/2.0> ;
-                                              owl:imports <https://w3id.org/reproduceme-core> ;
+<https://w3id.org/reproduceme/computational> rdf:type owl:Ontology ;
+                                              owl:versionIRI <https://w3id.org/reproduceme/computational/2.0> ;
+                                              owl:imports <https://w3id.org/reproduceme/core> ;
                                               <http://purl.org/dc/terms/created> "2020-07-28"@en ;
                                               <http://purl.org/dc/terms/creator> "Sheeba Samuel"@en ,
                                                                                  "Birgitta König-Ries" ;
@@ -113,24 +113,24 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
 <http://www.w3.org/ns/prov#wasAttributedTo> rdf:type owl:ObjectProperty .
 
 
-###  https://w3id.org/reproduceme-core#hasSetting
-<https://w3id.org/reproduceme-core#hasSetting> rdf:type owl:ObjectProperty .
+###  https://w3id.org/reproduceme/core#hasSetting
+<https://w3id.org/reproduceme/core#hasSetting> rdf:type owl:ObjectProperty .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  https://w3id.org/reproduceme-computational#cellType
+###  https://w3id.org/reproduceme/computational#cellType
 :cellType rdf:type owl:DatatypeProperty .
 
 
-###  https://w3id.org/reproduceme-computational#executionTime
+###  https://w3id.org/reproduceme/computational#executionTime
 :executionTime rdf:type owl:DatatypeProperty .
 
 
-###  https://w3id.org/reproduceme-core#name
-<https://w3id.org/reproduceme-core#name> rdf:type owl:DatatypeProperty .
+###  https://w3id.org/reproduceme/core#name
+<https://w3id.org/reproduceme/core#name> rdf:type owl:DatatypeProperty .
 
 
 #################################################################
@@ -185,9 +185,9 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
 <http://www.w3.org/ns/prov#Location> rdf:type owl:Class .
 
 
-###  https://w3id.org/reproduceme-computational#Argument
+###  https://w3id.org/reproduceme/computational#Argument
 :Argument rdf:type owl:Class ;
-          rdfs:subClassOf <https://w3id.org/reproduceme-core#ExperimentalData> ,
+          rdfs:subClassOf <https://w3id.org/reproduceme/core#ExperimentalData> ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty <http://purl.org/net/p-plan#isInputVarOf> ;
                             owl:someValuesFrom :FunctionActivation
@@ -198,11 +198,11 @@ For example, an argument of parameter of a function."""@en ;
           rdfs:label "Argument"@en .
 
 
-###  https://w3id.org/reproduceme-computational#Cell
+###  https://w3id.org/reproduceme/computational#Cell
 :Cell rdf:type owl:Class ;
       rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error4> ,
                       <http://org.semanticweb.owlapi/error#Error5> ,
-                      <https://w3id.org/reproduceme-core#ComputationalStep> ,
+                      <https://w3id.org/reproduceme/core#ComputationalStep> ,
                       [ rdf:type owl:Restriction ;
                         owl:onProperty <http://purl.org/net/p-plan#isPrecededBy> ;
                         owl:someValuesFrom :Cell
@@ -225,7 +225,7 @@ For example, a Jupyter Notebook cell."""@en ;
       rdfs:label "Notebok Cell"@en .
 
 
-###  https://w3id.org/reproduceme-computational#CellExecution
+###  https://w3id.org/reproduceme/computational#CellExecution
 :CellExecution rdf:type owl:Class ;
                rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error1> ,
                                <http://org.semanticweb.owlapi/error#Error2> ,
@@ -252,14 +252,14 @@ For example, a Jupyter Notebook cell."""@en ;
                rdfs:label "Notebook Cell Execution"@en .
 
 
-###  https://w3id.org/reproduceme-computational#ComputationalTool
+###  https://w3id.org/reproduceme/computational#ComputationalTool
 :ComputationalTool rdf:type owl:Class ;
-                   rdfs:subClassOf <https://w3id.org/reproduceme-core#Setting> ;
+                   rdfs:subClassOf <https://w3id.org/reproduceme/core#Setting> ;
                    rdfs:comment "The tools that use computer-based systems for computation."@en ;
                    rdfs:label "Computational Tool"@en .
 
 
-###  https://w3id.org/reproduceme-computational#Function
+###  https://w3id.org/reproduceme/computational#Function
 :Function rdf:type owl:Class ;
           rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ,
                           [ rdf:type owl:Restriction ;
@@ -271,16 +271,16 @@ For example, a Jupyter Notebook cell."""@en ;
           rdfs:label "Function"@en .
 
 
-###  https://w3id.org/reproduceme-computational#FunctionActivation
+###  https://w3id.org/reproduceme/computational#FunctionActivation
 :FunctionActivation rdf:type owl:Class ;
-                    rdfs:subClassOf <https://w3id.org/reproduceme-core#ComputationalStep> ,
+                    rdfs:subClassOf <https://w3id.org/reproduceme/core#ComputationalStep> ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty <http://purl.org/net/p-plan#hasInputVar> ;
                                       owl:someValuesFrom :Argument
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty <http://purl.org/net/p-plan#hasOutputVar> ;
-                                      owl:someValuesFrom <https://w3id.org/reproduceme-core#Output>
+                                      owl:someValuesFrom <https://w3id.org/reproduceme/core#Output>
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty <http://purl.org/net/p-plan#isStepOfPlan> ;
@@ -291,26 +291,26 @@ For example, a Jupyter Notebook cell."""@en ;
                     rdfs:label "Function Activation"@en .
 
 
-###  https://w3id.org/reproduceme-computational#Kernel
+###  https://w3id.org/reproduceme/computational#Kernel
 :Kernel rdf:type owl:Class ;
-        rdfs:subClassOf <https://w3id.org/reproduceme-core#Setting> ,
+        rdfs:subClassOf <https://w3id.org/reproduceme/core#Setting> ,
                         [ rdf:type owl:Restriction ;
-                          owl:onProperty <https://w3id.org/reproduceme-core#name> ;
+                          owl:onProperty <https://w3id.org/reproduceme/core#name> ;
                           owl:allValuesFrom xsd:string
                         ] ;
         rdfs:comment "An Interactive Notebook computation engine that executes the code written in a programming language."@en ;
         rdfs:label "Kernel"@en .
 
 
-###  https://w3id.org/reproduceme-computational#Library
+###  https://w3id.org/reproduceme/computational#Library
 :Library rdf:type owl:Class ;
-         rdfs:subClassOf <https://w3id.org/reproduceme-core#ExperimentalData> ;
+         rdfs:subClassOf <https://w3id.org/reproduceme/core#ExperimentalData> ;
          <http://ontologydesignpatterns.org/opla#isNativeTo> :Script ;
          rdfs:comment "A collection of resources used for the development of software." ;
          rdfs:label "Library" .
 
 
-###  https://w3id.org/reproduceme-computational#Module
+###  https://w3id.org/reproduceme/computational#Module
 :Module rdf:type owl:Class ;
         rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ;
         <http://ontologydesignpatterns.org/opla#isNativeTo> :Script ;
@@ -318,103 +318,103 @@ For example, a Jupyter Notebook cell."""@en ;
         rdfs:label "Module"@en .
 
 
-###  https://w3id.org/reproduceme-computational#Notebook
+###  https://w3id.org/reproduceme/computational#Notebook
 :Notebook rdf:type owl:Class ;
           rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ,
-                          <https://w3id.org/reproduceme-core#ExperimentalData> ,
+                          <https://w3id.org/reproduceme/core#ExperimentalData> ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty <http://purl.org/net/p-plan#isSubPlanOfPlan> ;
-                            owl:someValuesFrom <https://w3id.org/reproduceme-core#Experiment>
+                            owl:someValuesFrom <https://w3id.org/reproduceme/core#Experiment>
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty <https://w3id.org/reproduceme-core#hasSetting> ;
+                            owl:onProperty <https://w3id.org/reproduceme/core#hasSetting> ;
                             owl:someValuesFrom :Kernel
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty <https://w3id.org/reproduceme-core#hasSetting> ;
+                            owl:onProperty <https://w3id.org/reproduceme/core#hasSetting> ;
                             owl:someValuesFrom :OperatingSystem
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty <https://w3id.org/reproduceme-core#hasSetting> ;
+                            owl:onProperty <https://w3id.org/reproduceme/core#hasSetting> ;
                             owl:someValuesFrom :ProgrammingLanguage
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty <http://www.w3.org/ns/prov#wasAttributedTo> ;
                             owl:allValuesFrom <http://www.w3.org/ns/prov#Agent>
                           ] ;
-          <http://ontologydesignpatterns.org/opla#isNativeTo> <https://w3id.org/reproduceme-core#Experiment> ;
+          <http://ontologydesignpatterns.org/opla#isNativeTo> <https://w3id.org/reproduceme/core#Experiment> ;
           rdfs:comment """Interactive Notebook is a notebook for interactive computation and allow users to run code.
 For example, Jupyter Notebook"""@en ;
           rdfs:label "Notebok"@en .
 
 
-###  https://w3id.org/reproduceme-computational#OperatingSystem
+###  https://w3id.org/reproduceme/computational#OperatingSystem
 :OperatingSystem rdf:type owl:Class ;
-                 rdfs:subClassOf <https://w3id.org/reproduceme-core#Setting> ,
+                 rdfs:subClassOf <https://w3id.org/reproduceme/core#Setting> ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty <https://w3id.org/reproduceme-core#name> ;
+                                   owl:onProperty <https://w3id.org/reproduceme/core#name> ;
                                    owl:allValuesFrom xsd:string
                                  ] ;
                  rdfs:comment "A system software that supports and manages the hardware and the software resources and provides computer's functions."@en ;
                  rdfs:label "Operating System"@en .
 
 
-###  https://w3id.org/reproduceme-computational#Package
+###  https://w3id.org/reproduceme/computational#Package
 :Package rdf:type owl:Class ;
-         rdfs:subClassOf <https://w3id.org/reproduceme-core#Setting> ,
+         rdfs:subClassOf <https://w3id.org/reproduceme/core#Setting> ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://w3id.org/reproduceme-core#name> ;
+                           owl:onProperty <https://w3id.org/reproduceme/core#name> ;
                            owl:allValuesFrom xsd:string
                          ] ;
          rdfs:comment "A collection of programs and resources which are packed together."@en ;
          rdfs:label "Package"@en .
 
 
-###  https://w3id.org/reproduceme-computational#Parameter
+###  https://w3id.org/reproduceme/computational#Parameter
 :Parameter rdf:type owl:Class ;
-           rdfs:subClassOf <https://w3id.org/reproduceme-core#ExperimentalData> ;
+           rdfs:subClassOf <https://w3id.org/reproduceme/core#ExperimentalData> ;
            <http://ontologydesignpatterns.org/opla#isNativeTo> :Script ;
            rdfs:comment "These values are factors which define an operation or a system which is kept constant for a particular execution of an experiment or a calculation and varied over other executions."@en ;
            rdfs:label "Parameter"@en .
 
 
-###  https://w3id.org/reproduceme-computational#ProgrammingLanguage
+###  https://w3id.org/reproduceme/computational#ProgrammingLanguage
 :ProgrammingLanguage rdf:type owl:Class ;
-                     rdfs:subClassOf <https://w3id.org/reproduceme-core#Setting> ,
+                     rdfs:subClassOf <https://w3id.org/reproduceme/core#Setting> ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty <https://w3id.org/reproduceme-core#name> ;
+                                       owl:onProperty <https://w3id.org/reproduceme/core#name> ;
                                        owl:allValuesFrom xsd:string
                                      ] ;
                      rdfs:comment "The language used for scripting. For eg. Java, Python."@en ;
                      rdfs:label "Programming Language"@en .
 
 
-###  https://w3id.org/reproduceme-computational#Script
+###  https://w3id.org/reproduceme/computational#Script
 :Script rdf:type owl:Class ;
         rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ,
-                        <https://w3id.org/reproduceme-core#ExperimentalData> ,
+                        <https://w3id.org/reproduceme/core#ExperimentalData> ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty <http://purl.org/net/p-plan#isSubPlanOfPlan> ;
-                          owl:someValuesFrom <https://w3id.org/reproduceme-core#Experiment>
+                          owl:someValuesFrom <https://w3id.org/reproduceme/core#Experiment>
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty <http://www.w3.org/ns/prov#wasAttributedTo> ;
                           owl:allValuesFrom <http://www.w3.org/ns/prov#Agent>
                         ] ;
-        <http://ontologydesignpatterns.org/opla#isNativeTo> <https://w3id.org/reproduceme-core#Experiment> ;
+        <http://ontologydesignpatterns.org/opla#isNativeTo> <https://w3id.org/reproduceme/core#Experiment> ;
         rdfs:comment "A computer program written to perform a task in a scripting language."@en ;
         rdfs:label "Script"@en .
 
 
-###  https://w3id.org/reproduceme-computational#Source
+###  https://w3id.org/reproduceme/computational#Source
 :Source rdf:type owl:Class ;
-        rdfs:subClassOf <https://w3id.org/reproduceme-core#ExperimentalData> ;
+        rdfs:subClassOf <https://w3id.org/reproduceme/core#ExperimentalData> ;
         <http://ontologydesignpatterns.org/opla#isNativeTo> :Notebook ;
         rdfs:comment "The input of each cell in a Jupyter Notebook is described as Source."@en ;
         rdfs:label "Source"@en .
 
 
-###  https://w3id.org/reproduceme-computational#Trial
+###  https://w3id.org/reproduceme/computational#Trial
 :Trial rdf:type owl:Class ;
        rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error6> ,
                        <http://org.semanticweb.owlapi/error#Error7> ,
@@ -453,36 +453,36 @@ For example, one execution of a script."""@en ;
        rdfs:label "Trial"@en .
 
 
-###  https://w3id.org/reproduceme-core#ComputationalStep
-<https://w3id.org/reproduceme-core#ComputationalStep> rdf:type owl:Class .
+###  https://w3id.org/reproduceme/core#ComputationalStep
+<https://w3id.org/reproduceme/core#ComputationalStep> rdf:type owl:Class .
 
 
-###  https://w3id.org/reproduceme-core#Experiment
-<https://w3id.org/reproduceme-core#Experiment> rdf:type owl:Class .
+###  https://w3id.org/reproduceme/core#Experiment
+<https://w3id.org/reproduceme/core#Experiment> rdf:type owl:Class .
 
 
-###  https://w3id.org/reproduceme-core#ExperimentalData
-<https://w3id.org/reproduceme-core#ExperimentalData> rdf:type owl:Class .
+###  https://w3id.org/reproduceme/core#ExperimentalData
+<https://w3id.org/reproduceme/core#ExperimentalData> rdf:type owl:Class .
 
 
-###  https://w3id.org/reproduceme-core#Output
-<https://w3id.org/reproduceme-core#Output> rdf:type owl:Class .
+###  https://w3id.org/reproduceme/core#Output
+<https://w3id.org/reproduceme/core#Output> rdf:type owl:Class .
 
 
-###  https://w3id.org/reproduceme-core#Setting
-<https://w3id.org/reproduceme-core#Setting> rdf:type owl:Class .
+###  https://w3id.org/reproduceme/core#Setting
+<https://w3id.org/reproduceme/core#Setting> rdf:type owl:Class .
 
 
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+[ owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
 ] .
 
-[ owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
