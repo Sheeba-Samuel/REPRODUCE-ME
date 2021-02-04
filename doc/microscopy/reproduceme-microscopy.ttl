@@ -7,7 +7,6 @@
 @base <https://w3id.org/reproduceme/microscopy> .
 
 <https://w3id.org/reproduceme/microscopy> rdf:type owl:Ontology ;
-                                           owl:versionIRI <https://w3id.org/reproduceme/microscopy/2.0> ;
                                            owl:imports <https://w3id.org/reproduceme/core> ;
                                            <http://purl.org/dc/terms/created> "2020-07-28"@en ;
                                            <http://purl.org/dc/terms/creator> "Sheeba Samuel"@en ,
@@ -17,9 +16,7 @@
                                            <http://purl.org/dc/terms/modified> "2020-07-28"@en ;
                                            <http://purl.org/dc/terms/title> "The ReproduceMe-Microscopy ontology" ;
                                            <http://purl.org/vocab/vann/preferredNamespacePrefix> "rme-core"@en ;
-                                           rdfs:label "The ReproduceMe-Microscopy ontology"@en ;
-                                           owl:priorVersion "1.1"@en ;
-                                           owl:versionInfo "2.0"@en .
+                                           rdfs:label "The ReproduceMe-Microscopy ontology"@en .
 
 #################################################################
 #    Annotation properties

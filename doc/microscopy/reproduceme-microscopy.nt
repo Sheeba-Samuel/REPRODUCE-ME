@@ -1,5 +1,4 @@
 <https://w3id.org/reproduceme/microscopy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/reproduceme/microscopy> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/reproduceme/microscopy/2.0> .
 <https://w3id.org/reproduceme/microscopy> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/reproduceme/core> .
 <https://w3id.org/reproduceme/microscopy> <http://purl.org/dc/terms/created> "2020-07-28"@en .
 <https://w3id.org/reproduceme/microscopy> <http://purl.org/dc/terms/creator> "Sheeba Samuel"@en .
@@ -10,8 +9,6 @@
 <https://w3id.org/reproduceme/microscopy> <http://purl.org/dc/terms/title> "The ReproduceMe-Microscopy ontology" .
 <https://w3id.org/reproduceme/microscopy> <http://purl.org/vocab/vann/preferredNamespacePrefix> "rme-core"@en .
 <https://w3id.org/reproduceme/microscopy> <http://www.w3.org/2000/01/rdf-schema#label> "The ReproduceMe-Microscopy ontology"@en .
-<https://w3id.org/reproduceme/microscopy> <http://www.w3.org/2002/07/owl#priorVersion> "1.1"@en .
-<https://w3id.org/reproduceme/microscopy> <http://www.w3.org/2002/07/owl#versionInfo> "2.0"@en .
 # 
 # 
 # #################################################################

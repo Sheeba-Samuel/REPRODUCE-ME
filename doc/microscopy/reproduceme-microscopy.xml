@@ -9,7 +9,6 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/reproduceme/microscopy">
-        <owl:versionIRI rdf:resource="https://w3id.org/reproduceme/microscopy/2.0"/>
         <owl:imports rdf:resource="https://w3id.org/reproduceme/core"/>
         <terms:created xml:lang="en">2020-07-28</terms:created>
         <terms:creator xml:lang="en">Sheeba Samuel</terms:creator>
@@ -20,8 +19,6 @@
         <terms:title>The ReproduceMe-Microscopy ontology</terms:title>
         <vann:preferredNamespacePrefix xml:lang="en">rme-core</vann:preferredNamespacePrefix>
         <rdfs:label xml:lang="en">The ReproduceMe-Microscopy ontology</rdfs:label>
-        <owl:priorVersion xml:lang="en">1.1</owl:priorVersion>
-        <owl:versionInfo xml:lang="en">2.0</owl:versionInfo>
     </owl:Ontology>
     
 

@@ -7,7 +7,6 @@
 @base <https://w3id.org/reproduceme/core> .
 
 <https://w3id.org/reproduceme/core> rdf:type owl:Ontology ;
-                                     owl:versionIRI <https://w3id.org/reproduceme/core/2.0> ;
                                      owl:imports <http://purl.org/net/p-plan#> ,
                                                  <http://www.w3.org/ns/prov-o-20130430> ;
                                      <http://purl.org/dc/terms/created> "2020-07-28"@en ;
@@ -19,9 +18,7 @@ It is based on the foundational ontologies: PROV-O and P-Plan. It is an extensio
                                      <http://purl.org/dc/terms/modified> "2020-07-28"@en ;
                                      <http://purl.org/dc/terms/title> "The ReproduceMe-Core ontology" ;
                                      <http://purl.org/vocab/vann/preferredNamespacePrefix> "repr-core"@en ;
-                                     rdfs:label "The ReproduceMe-Core ontology"@en ;
-                                     owl:priorVersion "1.1"@en ;
-                                     owl:versionInfo "2.0"@en .
+                                     rdfs:label "The ReproduceMe-Core ontology"@en .
 
 #################################################################
 #    Annotation properties

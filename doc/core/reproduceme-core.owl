@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://w3id.org/reproduceme/core/#"
-     xml:base="https://w3id.org/reproduceme/core/"
+<rdf:RDF xmlns="https://w3id.org/reproduceme/core#"
+     xml:base="https://w3id.org/reproduceme/core"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -12,9 +12,8 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:p-plan="http://purl.org/net/p-plan#"
-     xmlns:repr-core="https://w3id.org/reproduceme/core/">
+     xmlns:repr-core="https://w3id.org/reproduceme/core">
     <owl:Ontology rdf:about="https://w3id.org/reproduceme/core">
-        <owl:versionIRI rdf:resource="https://w3id.org/reproduceme/core/2.0"/>
         <owl:imports rdf:resource="http://purl.org/net/p-plan#"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/prov-o-20130430"/>
         <terms:created xml:lang="en">2020-07-28</terms:created>
@@ -27,8 +26,6 @@ It is based on the foundational ontologies: PROV-O and P-Plan. It is an extensio
         <terms:title>The ReproduceMe-Core ontology</terms:title>
         <vann:preferredNamespacePrefix xml:lang="en">repr-core</vann:preferredNamespacePrefix>
         <rdfs:label xml:lang="en">The ReproduceMe-Core ontology</rdfs:label>
-        <owl:priorVersion xml:lang="en">1.1</owl:priorVersion>
-        <owl:versionInfo xml:lang="en">2.0</owl:versionInfo>
     </owl:Ontology>
     
 

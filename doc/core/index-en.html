@@ -7,11 +7,11 @@
 
 <!-- SCHEMA.ORG METADATA -->
 <script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/reproduceme/core","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/reproduceme/core","name":"The ReproduceMe-Core ontology", "headline":"The ReproduceMe-Core ontology is the core ontology of the ReproduceMe Ontology Network. The ReproduceMe-Core ontology is designed to provide a detailed abstract definition of structured knowledge for the provenance and reproducibility of scientific studies.
-It is based on the foundational ontologies: PROV-O and P-Plan. It is an extension of the PROV-O and the P-Plan ontology to describe a complete path of a scientific experiment. It expresses the REPRODUCE-ME Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes and properties to represent a scientific experiment including its computational and non-computational steps to track the provenance of results. It describes an experiment and its data, agents, activities, plans, steps, variables, instruments, materials and settings required for its reproducibility.", "datePublished":"2020-07-28", "version":"2.0", "license":"http://creativecommons.org/licenses/by-nc-sa/2.0/", "author":[{"@type":"Person","name":"Sheeba Samuel"},{"@type":"Person","name":"Birgitta König-Ries"}]}</script>
+It is based on the foundational ontologies: PROV-O and P-Plan. It is an extension of the PROV-O and the P-Plan ontology to describe a complete path of a scientific experiment. It expresses the REPRODUCE-ME Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes and properties to represent a scientific experiment including its computational and non-computational steps to track the provenance of results. It describes an experiment and its data, agents, activities, plans, steps, variables, instruments, materials and settings required for its reproducibility.", "datePublished":"2020-07-28", "license":"http://creativecommons.org/licenses/by-nc-sa/2.0/", "author":[{"@type":"Person","name":"Sheeba Samuel"},{"@type":"Person","name":"Birgitta König-Ries"}]}</script>
 
-<script src="resources/jquery.js"></script> 
-<script src="resources/marked.min.js"></script> 
-    <script> 
+<script src="resources/jquery.js"></script>
+<script src="resources/marked.min.js"></script>
+    <script>
 function loadHash() {
   jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
 	var hash = location.hash;
@@ -41,13 +41,13 @@ function loadTOC(){
 		}
 	  });
 	  t+='</ul>';
-	  $("#toc").html(t); 
+	  $("#toc").html(t);
 }
  $.fn.ignore = function(sel){
         return this.clone().find(sel||">*").remove().end();
- }; 
-   </script> 
-  </head> 
+ };
+   </script>
+  </head>
 
 <body>
 <div class="container">
@@ -58,14 +58,8 @@ function loadTOC(){
 
 
 <dl>
-<dt>This version:</dt>
-<dd><a href="https://w3id.org/reproduceme/core/2.0">https://w3id.org/reproduceme/core/2.0</a></dd>
 <dt>Latest version:</dt>
 <dd><a href="https://w3id.org/reproduceme/core">https://w3id.org/reproduceme/core</a></dd>
-<dt>Previous version:</dt>
-<dd><a href="1.1">1.1</a></dd>
-<dt>Revision:</dt>
-<dd>2.0</dd>
 <dt>Authors:</dt>
 <dd>Sheeba Samuel</dd><dd>Birgitta König-Ries</dd>
 
@@ -74,7 +68,7 @@ function loadTOC(){
 
 <dt>Download serialization:</dt><dd><span><a href="reproduceme-core.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="reproduceme-core.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="reproduceme-core.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="reproduceme-core.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://creativecommons.org/licenses/by-nc-sa/2.0/" target="_blank"><img src="https://img.shields.io/badge/License-http://creativecommons.org/licenses/by_nc_sa/2.0/-blue.svg" alt="http://creativecommons.org/licenses/by-nc-sa/2.0/" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/OOPSeval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Sheeba Samuel,Birgitta König-Ries. The ReproduceMe-Core ontology. Revision: 2.0. Retrieved from: https://w3id.org/reproduceme/core/2.0</dd>
+<dd>Sheeba Samuel,Birgitta König-Ries. The ReproduceMe-Core ontology.</dd>
 </dl>
 
 <hr/>
@@ -87,7 +81,7 @@ function loadTOC(){
 The ReproduceMe-Core ontology is the core ontology of the ReproduceMe Ontology Network. The ReproduceMe-Core ontology is designed to provide a detailed abstract definition of structured knowledge for the provenance and reproducibility of scientific studies.
 It is based on the foundational ontologies: PROV-O and P-Plan. It is an extension of the PROV-O and the P-Plan ontology to describe a complete path of a scientific experiment. It expresses the REPRODUCE-ME Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes and properties to represent a scientific experiment including its computational and non-computational steps to track the provenance of results. It describes an experiment and its data, agents, activities, plans, steps, variables, instruments, materials and settings required for its reproducibility.</span>
 </div>
-<div id="toc"></div> 
+<div id="toc"></div>
 
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
@@ -117,7 +111,7 @@ This is a place holder text for the introduction. The introduction should briefl
 </div>
 </div>
 </div>
-  
+
 
 <!--OVERVIEW SECTION-->
     <div id="overview"><h2 id="overv" class="list">The ReproduceMe-Core ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
@@ -434,7 +428,7 @@ This ontology has the following classes and properties.</span>
    </li>
 </ul>
 </div>
-   
+
 
 <!--CROSSREF SECTION-->
    <div id="crossref"><h2 id="crossreference" class="list">Cross reference for The ReproduceMe-Core ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>

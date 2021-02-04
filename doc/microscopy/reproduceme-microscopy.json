@@ -413,17 +413,6 @@
   } ],
   "http://www.w3.org/2002/07/owl#imports" : [ {
     "@id" : "https://w3id.org/reproduceme/core"
-  } ],
-  "http://www.w3.org/2002/07/owl#priorVersion" : [ {
-    "@language" : "en",
-    "@value" : "1.1"
-  } ],
-  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://w3id.org/reproduceme/microscopy/2.0"
-  } ],
-  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@language" : "en",
-    "@value" : "2.0"
   } ]
 }, {
   "@id" : "https://w3id.org/reproduceme/microscopy#AIM",

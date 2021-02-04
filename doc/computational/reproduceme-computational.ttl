@@ -7,7 +7,6 @@
 @base <https://w3id.org/reproduceme/computational> .
 
 <https://w3id.org/reproduceme/computational> rdf:type owl:Ontology ;
-                                              owl:versionIRI <https://w3id.org/reproduceme/computational/2.0> ;
                                               owl:imports <https://w3id.org/reproduceme/core> ;
                                               <http://purl.org/dc/terms/created> "2020-07-28"@en ;
                                               <http://purl.org/dc/terms/creator> "Sheeba Samuel"@en ,
@@ -17,9 +16,7 @@
                                               <http://purl.org/dc/terms/modified> "2020-07-28"@en ;
                                               <http://purl.org/dc/terms/title> "The ReproduceMe-Computational Ontology" ;
                                               <http://purl.org/vocab/vann/preferredNamespacePrefix> "repr-comp"@en ;
-                                              rdfs:label "The ReproduceMe-Computational Ontology" ;
-                                              owl:priorVersion "1.1"@en ;
-                                              owl:versionInfo "2.0"@en .
+                                              rdfs:label "The ReproduceMe-Computational Ontology" .
 
 #################################################################
 #    Annotation properties
