@@ -10,6 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:repr-core="https://w3id.org/reproduceme/core"
      xmlns:repr-me="https://w3id.org/reproduceme/microscopy#">
     <owl:Ontology rdf:about="https://w3id.org/reproduceme/microscopy">
         <owl:imports rdf:resource="https://w3id.org/reproduceme/core"/>
@@ -20,7 +21,7 @@
         <terms:license>http://creativecommons.org/licenses/by-nc-sa/2.0/</terms:license>
         <terms:modified xml:lang="en">2020-07-28</terms:modified>
         <terms:title>The ReproduceMe-Microscopy ontology</terms:title>
-        <vann:preferredNamespacePrefix xml:lang="en">rme-core</vann:preferredNamespacePrefix>
+        <vann:preferredNamespacePrefix xml:lang="en">repr-me</vann:preferredNamespacePrefix>
         <rdfs:label xml:lang="en">The ReproduceMe-Microscopy ontology</rdfs:label>
     </owl:Ontology>
     
