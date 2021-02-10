@@ -7,89 +7,8 @@
 <https://w3id.org/reproduceme/microscopy> <http://purl.org/dc/terms/license> "http://creativecommons.org/licenses/by-nc-sa/2.0/" .
 <https://w3id.org/reproduceme/microscopy> <http://purl.org/dc/terms/modified> "2020-07-28"@en .
 <https://w3id.org/reproduceme/microscopy> <http://purl.org/dc/terms/title> "The ReproduceMe-Microscopy ontology" .
-<https://w3id.org/reproduceme/microscopy> <http://purl.org/vocab/vann/preferredNamespacePrefix> "rme-core"@en .
+<https://w3id.org/reproduceme/microscopy> <http://purl.org/vocab/vann/preferredNamespacePrefix> "repr-me"@en .
 <https://w3id.org/reproduceme/microscopy> <http://www.w3.org/2000/01/rdf-schema#label> "The ReproduceMe-Microscopy ontology"@en .
-# 
-# 
-# #################################################################
-# #
-# #    Annotation properties
-# #
-# #################################################################
-# 
-# 
-# http://purl.org/dc/terms/created
-<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/creator
-<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/description
-<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/license
-<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/modified
-<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/title
-<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/vocab/vann/preferredNamespacePrefix
-<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2002/07/owl#minQualifiedCardinality
-<http://www.w3.org/2002/07/owl#minQualifiedCardinality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Object Properties
-# #
-# #################################################################
-# 
-# 
-# http://purl.org/net/p-plan#correspondsToVariable
-<http://purl.org/net/p-plan#correspondsToVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://purl.org/net/p-plan#isStepOfPlan
-<http://purl.org/net/p-plan#isStepOfPlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://purl.org/net/p-plan#isSubPlanOfPlan
-<http://purl.org/net/p-plan#isSubPlanOfPlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/ns/prov#hadMember
-<http://www.w3.org/ns/prov#hadMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/ns/prov#wasAttributedTo
-<http://www.w3.org/ns/prov#wasAttributedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# https://w3id.org/reproduceme/core#hasSetting
-<https://w3id.org/reproduceme/core#hasSetting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Data properties
-# #
-# #################################################################
-# 
-# 
-# https://w3id.org/reproduceme/core#address
-<https://w3id.org/reproduceme/core#address> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/reproduceme/core#description
-<https://w3id.org/reproduceme/core#description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/reproduceme/core#id
-<https://w3id.org/reproduceme/core#id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/reproduceme/core#name
-<https://w3id.org/reproduceme/core#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
 # 
 # 
 # #################################################################
@@ -99,72 +18,11 @@
 # #################################################################
 # 
 # 
-# http://org.semanticweb.owlapi/error#Error1
-<http://org.semanticweb.owlapi/error#Error1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://purl.org/net/p-plan#Activity
-<http://purl.org/net/p-plan#Activity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://purl.org/net/p-plan#Plan
-<http://purl.org/net/p-plan#Plan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://purl.org/net/p-plan#Variable
-<http://purl.org/net/p-plan#Variable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/ns/prov#Agent
-<http://www.w3.org/ns/prov#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/ns/prov#Collection
-<http://www.w3.org/ns/prov#Collection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/ns/prov#Organization
-<http://www.w3.org/ns/prov#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/ns/prov#Person
-<http://www.w3.org/ns/prov#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/reproduceme/core#DataType
-<https://w3id.org/reproduceme/core#DataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/reproduceme/core#EnvironmentAttribute
-<https://w3id.org/reproduceme/core#EnvironmentAttribute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
 # https://w3id.org/reproduceme/core#Experiment
-<https://w3id.org/reproduceme/core#Experiment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/reproduceme/core#Experiment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
 _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/net/p-plan#correspondsToVariable> .
 _:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/reproduceme/microscopy#Image> .
-# 
-# https://w3id.org/reproduceme/core#ExperimentMaterial
-<https://w3id.org/reproduceme/core#ExperimentMaterial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/reproduceme/core#ExperimentSetup
-<https://w3id.org/reproduceme/core#ExperimentSetup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/reproduceme/core#ExperimentalCondition
-<https://w3id.org/reproduceme/core#ExperimentalCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/reproduceme/core#ExperimentalData
-<https://w3id.org/reproduceme/core#ExperimentalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/reproduceme/core#Experimenter
-<https://w3id.org/reproduceme/core#Experimenter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/reproduceme/core#Instrument
-<https://w3id.org/reproduceme/core#Instrument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/reproduceme/core#InstrumentSetting
-<https://w3id.org/reproduceme/core#InstrumentSetting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/reproduceme/core#Method
-<https://w3id.org/reproduceme/core#Method> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/reproduceme/core#Setting
-<https://w3id.org/reproduceme/core#Setting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/reproduceme/core#Study
-<https://w3id.org/reproduceme/core#Study> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # https://w3id.org/reproduceme/microscopy#AcquisitionMode
 <https://w3id.org/reproduceme/microscopy#AcquisitionMode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -757,12 +615,16 @@ _:genid17 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/repro
 # 
 # https://w3id.org/reproduceme/microscopy#ImageAcquisition
 <https://w3id.org/reproduceme/microscopy#ImageAcquisition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/reproduceme/microscopy#ImageAcquisition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://org.semanticweb.owlapi/error#Error1> .
 <https://w3id.org/reproduceme/microscopy#ImageAcquisition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/reproduceme/core#ExperimentSetup> .
 <https://w3id.org/reproduceme/microscopy#ImageAcquisition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
 _:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/net/p-plan#isStepOfPlan> .
 _:genid18 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/reproduceme/core#Experiment> .
+<https://w3id.org/reproduceme/microscopy#ImageAcquisition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/net/p-plan#hasOutputVar> .
+_:genid19 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid19 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/reproduceme/microscopy#Image> .
 <https://w3id.org/reproduceme/microscopy#ImageAcquisition> <http://www.w3.org/2000/01/rdf-schema#comment> "The process of acquiring image from device."@en .
 <https://w3id.org/reproduceme/microscopy#ImageAcquisition> <http://www.w3.org/2000/01/rdf-schema#label> "Image Acquisition"@en .
 # 
@@ -930,14 +792,14 @@ _:genid18 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/repro
 <https://w3id.org/reproduceme/microscopy#Manufacturer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/reproduceme/microscopy#Manufacturer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Organization> .
 <https://w3id.org/reproduceme/microscopy#Manufacturer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Person> .
-<https://w3id.org/reproduceme/microscopy#Manufacturer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/reproduceme/core#address> .
-_:genid19 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/reproduceme/microscopy#Manufacturer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
 _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/reproduceme/core#name> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/reproduceme/core#address> .
 _:genid20 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/reproduceme/microscopy#Manufacturer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/reproduceme/core#name> .
+_:genid21 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/reproduceme/microscopy#Manufacturer> <http://www.w3.org/2000/01/rdf-schema#comment> "The person who is responsible for the generation of an entity."@en .
 <https://w3id.org/reproduceme/microscopy#Manufacturer> <http://www.w3.org/2000/01/rdf-schema#label> "Manufacturer"@en .
 # 
@@ -1048,10 +910,10 @@ _:genid20 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/
 # https://w3id.org/reproduceme/microscopy#Objective
 <https://w3id.org/reproduceme/microscopy#Objective> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/reproduceme/microscopy#Objective> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/reproduceme/core#Instrument> .
-<https://w3id.org/reproduceme/microscopy#Objective> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/reproduceme/core#hasSetting> .
-_:genid21 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/reproduceme/microscopy#ObjectiveSettings> .
+<https://w3id.org/reproduceme/microscopy#Objective> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/reproduceme/core#hasSetting> .
+_:genid22 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/reproduceme/microscopy#ObjectiveSettings> .
 <https://w3id.org/reproduceme/microscopy#Objective> <http://www.w3.org/2000/01/rdf-schema#comment> "The microscope's objective lens."@en .
 <https://w3id.org/reproduceme/microscopy#Objective> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective> .
 <https://w3id.org/reproduceme/microscopy#Objective> <http://www.w3.org/2000/01/rdf-schema#label> "Objective"@en .
@@ -1242,30 +1104,30 @@ _:genid21 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/repro
 # https://w3id.org/reproduceme/microscopy#Project
 <https://w3id.org/reproduceme/microscopy#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/reproduceme/microscopy#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Collection> .
-<https://w3id.org/reproduceme/microscopy#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#hadMember> .
-_:genid22 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/reproduceme/microscopy#Dataset> .
 <https://w3id.org/reproduceme/microscopy#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
 _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasAttributedTo> .
-_:genid23 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/ns/prov#Agent> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#hadMember> .
+_:genid23 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/reproduceme/microscopy#Dataset> .
 <https://w3id.org/reproduceme/microscopy#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
 _:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasAttributedTo> .
-_:genid24 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/reproduceme/microscopy#ExperimenterGroup> .
+_:genid24 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/ns/prov#Agent> .
 <https://w3id.org/reproduceme/microscopy#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
 _:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/reproduceme/core#description> .
-_:genid25 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasAttributedTo> .
+_:genid25 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/reproduceme/microscopy#ExperimenterGroup> .
 <https://w3id.org/reproduceme/microscopy#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
 _:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/reproduceme/core#id> .
-_:genid26 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#integer> .
+_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/reproduceme/core#description> .
+_:genid26 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/reproduceme/microscopy#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid27 .
 _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/reproduceme/core#name> .
-_:genid27 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/reproduceme/core#id> .
+_:genid27 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/reproduceme/microscopy#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/reproduceme/core#name> .
+_:genid28 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/reproduceme/microscopy#Project> <http://www.w3.org/2000/01/rdf-schema#comment> "Project consists of zero or more Datasets.\nA dataset belong to one or more Projects." .
 <https://w3id.org/reproduceme/microscopy#Project> <http://www.w3.org/2000/01/rdf-schema#label> "Project" .
 <https://w3id.org/reproduceme/microscopy#Project> <http://www.w3.org/2000/01/rdf-schema#label> "http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Project" .
@@ -1447,10 +1309,10 @@ _:genid27 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/
 # https://w3id.org/reproduceme/microscopy#Session
 <https://w3id.org/reproduceme/microscopy#Session> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/reproduceme/microscopy#Session> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/net/p-plan#Activity> .
-<https://w3id.org/reproduceme/microscopy#Session> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid28 .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasAttributedTo> .
-_:genid28 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/prov#Agent> .
+<https://w3id.org/reproduceme/microscopy#Session> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasAttributedTo> .
+_:genid29 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/prov#Agent> .
 <https://w3id.org/reproduceme/microscopy#Session> <http://www.w3.org/2000/01/rdf-schema#comment> "A period of activity between a user is logged in and logged out of a system. For example, A OMERO session, JupyterNotebook session."@en .
 <https://w3id.org/reproduceme/microscopy#Session> <http://www.w3.org/2000/01/rdf-schema#label> "Session"@en .
 # 
@@ -2979,5 +2841,4 @@ _:genid28 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/pr
 <https://w3id.org/reproduceme/microscopy#cellSensVSI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/reproduceme/microscopy#SupportedFileFormat> .
 <https://w3id.org/reproduceme/microscopy#cellSensVSI> <http://www.w3.org/2000/01/rdf-schema#label> "cellSens VSI"@en .
 # 
-_:genid29 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 # Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

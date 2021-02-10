@@ -5,6 +5,8 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:opla="http://ontologydesignpatterns.org/opla#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/">
@@ -17,171 +19,9 @@
         <terms:license>http://creativecommons.org/licenses/by-nc-sa/2.0/</terms:license>
         <terms:modified xml:lang="en">2020-07-28</terms:modified>
         <terms:title>The ReproduceMe-Microscopy ontology</terms:title>
-        <vann:preferredNamespacePrefix xml:lang="en">rme-core</vann:preferredNamespacePrefix>
+        <vann:preferredNamespacePrefix xml:lang="en">repr-me</vann:preferredNamespacePrefix>
         <rdfs:label xml:lang="en">The ReproduceMe-Microscopy ontology</rdfs:label>
     </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- http://purl.org/dc/terms/created -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/creator -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/description -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/license -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/modified -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/title -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
-    
-
-
-    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#minQualifiedCardinality -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#minQualifiedCardinality"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- http://purl.org/net/p-plan#correspondsToVariable -->
-
-
-    <owl:ObjectProperty rdf:about="http://purl.org/net/p-plan#correspondsToVariable"/>
-    
-
-
-    <!-- http://purl.org/net/p-plan#isStepOfPlan -->
-
-
-    <owl:ObjectProperty rdf:about="http://purl.org/net/p-plan#isStepOfPlan"/>
-    
-
-
-    <!-- http://purl.org/net/p-plan#isSubPlanOfPlan -->
-
-
-    <owl:ObjectProperty rdf:about="http://purl.org/net/p-plan#isSubPlanOfPlan"/>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#hadMember -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#hadMember"/>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#wasAttributedTo -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAttributedTo"/>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#hasSetting -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/reproduceme/core#hasSetting"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#address -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/reproduceme/core#address"/>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#description -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/reproduceme/core#description"/>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#id -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/reproduceme/core#id"/>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#name -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/reproduceme/core#name"/>
     
 
 
@@ -197,157 +37,17 @@
     
 
 
-    <!-- http://org.semanticweb.owlapi/error#Error1 -->
-
-
-    <owl:Class rdf:about="http://org.semanticweb.owlapi/error#Error1"/>
-    
-
-
-    <!-- http://purl.org/net/p-plan#Activity -->
-
-
-    <owl:Class rdf:about="http://purl.org/net/p-plan#Activity"/>
-    
-
-
-    <!-- http://purl.org/net/p-plan#Plan -->
-
-
-    <owl:Class rdf:about="http://purl.org/net/p-plan#Plan"/>
-    
-
-
-    <!-- http://purl.org/net/p-plan#Variable -->
-
-
-    <owl:Class rdf:about="http://purl.org/net/p-plan#Variable"/>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#Agent -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/ns/prov#Agent"/>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#Collection -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/ns/prov#Collection"/>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#Organization -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/ns/prov#Organization"/>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#Person -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/ns/prov#Person"/>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#DataType -->
-
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme/core#DataType"/>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#EnvironmentAttribute -->
-
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme/core#EnvironmentAttribute"/>
-    
-
-
     <!-- https://w3id.org/reproduceme/core#Experiment -->
 
 
-    <owl:Class rdf:about="https://w3id.org/reproduceme/core#Experiment">
+    <rdf:Description rdf:about="https://w3id.org/reproduceme/core#Experiment">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/p-plan#correspondsToVariable"/>
                 <owl:someValuesFrom rdf:resource="https://w3id.org/reproduceme/microscopy#Image"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#ExperimentMaterial -->
-
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme/core#ExperimentMaterial"/>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#ExperimentSetup -->
-
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme/core#ExperimentSetup"/>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#ExperimentalCondition -->
-
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme/core#ExperimentalCondition"/>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#ExperimentalData -->
-
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme/core#ExperimentalData"/>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#Experimenter -->
-
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme/core#Experimenter"/>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#Instrument -->
-
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme/core#Instrument"/>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#InstrumentSetting -->
-
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme/core#InstrumentSetting"/>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#Method -->
-
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme/core#Method"/>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#Setting -->
-
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme/core#Setting"/>
-    
-
-
-    <!-- https://w3id.org/reproduceme/core#Study -->
-
-
-    <owl:Class rdf:about="https://w3id.org/reproduceme/core#Study"/>
+    </rdf:Description>
     
 
 
@@ -1392,12 +1092,18 @@ For example, a microscopic image with metadata.</rdfs:comment>
 
 
     <owl:Class rdf:about="https://w3id.org/reproduceme/microscopy#ImageAcquisition">
-        <rdfs:subClassOf rdf:resource="http://org.semanticweb.owlapi/error#Error1"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/reproduceme/core#ExperimentSetup"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/p-plan#isStepOfPlan"/>
                 <owl:someValuesFrom rdf:resource="https://w3id.org/reproduceme/core#Experiment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/p-plan#hasOutputVar"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/reproduceme/microscopy#Image"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">The process of acquiring image from device.</rdfs:comment>
@@ -5609,9 +5315,6 @@ A Well has a number of WellSample elements that link to the Images collected in 
         <rdf:type rdf:resource="https://w3id.org/reproduceme/microscopy#SupportedFileFormat"/>
         <rdfs:label xml:lang="en">cellSens VSI</rdfs:label>
     </owl:NamedIndividual>
-    <rdf:Description>
-        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-    </rdf:Description>
 </rdf:RDF>
 
 

@@ -62,6 +62,9 @@ function loadTOC(){
 <dt>Authors:</dt>
 <dd>Sheeba Samuel</dd><dd>Birgitta König-Ries</dd>
 
+<dt>Imported Ontologies:</dt>
+<dd><a href="http://purl.org/net/p-plan#">p-plan#</a></dd><dd><a href="http://www.w3.org/ns/prov-o#">prov-o#</a></dd><dd><a href="https://w3id.org/reproduceme/core">core</a></dd>
+
 <dt>Download serialization:</dt><dd><span><a href="reproduceme-microscopy.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="reproduceme-microscopy.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="reproduceme-microscopy.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="reproduceme-microscopy.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://creativecommons.org/licenses/by-nc-sa/2.0/" target="_blank"><img src="https://img.shields.io/badge/License-http://creativecommons.org/licenses/by_nc_sa/2.0/-blue.svg" alt="http://creativecommons.org/licenses/by-nc-sa/2.0/" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/OOPSeval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
 <dd>Sheeba Samuel,Birgitta König-Ries. The ReproduceMe-Microscopy ontology.</dd>
@@ -89,13 +92,13 @@ This is a place holder text for the introduction. The introduction should briefl
 <table>
 <caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
 <tbody>
-<tr><td><b>rme-core</b></td><td>&lt;https://w3id.org/reproduceme/microscopy&gt;</td></tr>
+<tr><td><b>repr-me</b></td><td>&lt;https://w3id.org/reproduceme/microscopy&gt;</td></tr>
+<tr><td><b>opla</b></td><td>&lt;http://ontologydesignpatterns.org/opla&gt;</td></tr>
 <tr><td><b>ome-xsd-html</b></td><td>&lt;http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html&gt;</td></tr>
 <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
 <tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
 <tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
 <tr><td><b>p-plan</b></td><td>&lt;http://purl.org/net/p-plan&gt;</td></tr>
-<tr><td><b>error</b></td><td>&lt;http://org.semanticweb.owlapi/error&gt;</td></tr>
 <tr><td><b>core</b></td><td>&lt;https://w3id.org/reproduceme/core&gt;</td></tr>
 <tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
 <tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
@@ -317,11 +320,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#ExcitationWavelength"
          title="https://w3id.org/reproduceme/microscopy#ExcitationWavelength">Excitation Wavelength</a>
-   </li>
-   <li>
-      <a href="#https://w3id.org/reproduceme/core#Experiment" title="https://w3id.org/reproduceme/core#Experiment">
-         <span>experiment</span>
-      </a>
    </li>
    <li>
       <a href="#ExperimentType"
@@ -2078,11 +2076,6 @@ This section provides details for each class and property defined by The Reprodu
             title="https://w3id.org/reproduceme/microscopy#ExcitationWavelength">Excitation Wavelength</a>
       </li>
       <li>
-         <a href="#https://w3id.org/reproduceme/core#Experiment" title="https://w3id.org/reproduceme/core#Experiment">
-            <span>experiment</span>
-         </a>
-      </li>
-      <li>
          <a href="#ExperimentType"
             title="https://w3id.org/reproduceme/microscopy#ExperimentType">
             <span>experiment type</span>
@@ -2809,7 +2802,6 @@ This section provides details for each class and property defined by The Reprodu
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentalData">experimental data</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -2843,7 +2835,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -2902,7 +2893,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Setting">setting</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -2917,7 +2907,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -2996,9 +2985,7 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted"
-                  title="https://w3id.org/reproduceme/core#ExperimentalData">experimental data</span>
-            <sup class="type-c" title="class">c</sup>, <span class="dotted" title="http://purl.org/net/p-plan#Plan">plan</span>
-            <sup class="type-c" title="class">c</sup>
+                  title="https://w3id.org/reproduceme/core#ExperimentalData">experimental data</span>, <span class="dotted" title="http://purl.org/net/p-plan#Plan">plan</span>
          </dd>
       </dl>
    </div>
@@ -3042,7 +3029,6 @@ This section provides details for each class and property defined by The Reprodu
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -3061,7 +3047,6 @@ This section provides details for each class and property defined by The Reprodu
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -3120,7 +3105,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -3169,7 +3153,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -3188,7 +3171,6 @@ This section provides details for each class and property defined by The Reprodu
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -3204,7 +3186,6 @@ This section provides details for each class and property defined by The Reprodu
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -3234,7 +3215,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -3298,7 +3278,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Setting">setting</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -3334,7 +3313,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Method">method</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has members</dt>
          <dd>
@@ -3368,7 +3346,6 @@ This section provides details for each class and property defined by The Reprodu
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -3527,7 +3504,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -3699,7 +3675,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://www.w3.org/ns/prov#Collection">collection</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -3734,7 +3709,6 @@ This section provides details for each class and property defined by The Reprodu
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentSetup">experiment setup</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -3758,7 +3732,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Instrument">instrument</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -3789,7 +3762,6 @@ This section provides details for each class and property defined by The Reprodu
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#InstrumentSetting">instrument setting</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -3870,7 +3842,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -3894,7 +3865,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Instrument">instrument</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -3946,9 +3916,7 @@ This section provides details for each class and property defined by The Reprodu
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="http://www.w3.org/ns/prov#Organization">organization</span>
-            <sup class="type-c" title="class">c</sup>, <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
-            <sup class="type-c" title="class">c</sup>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Organization">organization</span>, <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
          </dd>
       </dl>
    </div>
@@ -3967,7 +3935,6 @@ This section provides details for each class and property defined by The Reprodu
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -4036,7 +4003,6 @@ This section provides details for each class and property defined by The Reprodu
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -4065,24 +4031,6 @@ This section provides details for each class and property defined by The Reprodu
          </dd>
       </dl>
    </div>
-   <div class="entity" id="https://w3id.org/reproduceme/core#Experiment">
-      <h3>experiment<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/reproduceme/core#Experiment</p>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd/>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#ExperimentType"
-               title="https://w3id.org/reproduceme/microscopy#ExperimentType">experiment type</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
    <div class="entity" id="ExperimentType">
       <h3>experiment type<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -4093,8 +4041,7 @@ This section provides details for each class and property defined by The Reprodu
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#https://w3id.org/reproduceme/core#Experiment" title="https://w3id.org/reproduceme/core#Experiment">experiment</a>
-            <sup class="type-c" title="class">c</sup>
+            <span class="dotted" title="https://w3id.org/reproduceme/core#Experiment">experiment</span>
          </dd>
          <dt>has members</dt>
          <dd>
@@ -4143,7 +4090,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -4165,7 +4111,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://www.w3.org/ns/prov#Organization">organization</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -4228,7 +4173,6 @@ This section provides details for each class and property defined by The Reprodu
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -4375,7 +4319,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Instrument">instrument</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -4400,7 +4343,6 @@ This section provides details for each class and property defined by The Reprodu
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#InstrumentSetting">instrument setting</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -4499,7 +4441,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Instrument">instrument</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -4534,7 +4475,6 @@ This section provides details for each class and property defined by The Reprodu
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -4552,7 +4492,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#DataType">data type</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -4592,7 +4531,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -4629,7 +4567,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -4648,7 +4585,6 @@ This section provides details for each class and property defined by The Reprodu
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentalCondition">experimental condition</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -4664,7 +4600,6 @@ This section provides details for each class and property defined by The Reprodu
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#EnvironmentAttribute">environment attribute</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -4686,7 +4621,6 @@ This section provides details for each class and property defined by The Reprodu
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Method">method</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -4773,7 +4707,6 @@ For example, a microscopic image with metadata.</span>
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentalData">experimental data</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -4799,10 +4732,8 @@ For example, a microscopic image with metadata.</span>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="http://org.semanticweb.owlapi/error#Error1">error1</span>
-            <sup class="type-c" title="class">c</sup>, <span class="dotted"
+            <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentSetup">experiment setup</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -4820,7 +4751,6 @@ For example, a microscopic image with metadata.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Setting">setting</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -4869,7 +4799,6 @@ For example, a microscopic image with metadata.</span>
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#EnvironmentAttribute">environment attribute</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -4896,7 +4825,6 @@ For example, a microscopic image with metadata.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Method">method</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -4926,7 +4854,6 @@ For example, a microscopic image with metadata.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Study">study</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5052,7 +4979,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Activity">activity</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5096,7 +5022,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#InstrumentSetting">instrument setting</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -5250,7 +5175,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://www.w3.org/ns/prov#Collection">collection</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5275,7 +5199,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#InstrumentSetting">instrument setting</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -5308,7 +5231,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Instrument">instrument</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -5339,7 +5261,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentalData">experimental data</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5361,7 +5282,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5436,7 +5356,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#InstrumentSetting">instrument setting</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -5462,9 +5381,7 @@ For example, OMERO performs the task of script execution or import of metadata t
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="http://www.w3.org/ns/prov#Organization">organization</span>
-            <sup class="type-c" title="class">c</sup>, <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
-            <sup class="type-c" title="class">c</sup>
+            <span class="dotted" title="http://www.w3.org/ns/prov#Organization">organization</span>, <span class="dotted" title="http://www.w3.org/ns/prov#Person">person</span>
          </dd>
       </dl>
    </div>
@@ -5483,7 +5400,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentSetup">experiment setup</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -5529,7 +5445,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentalData">experimental data</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5548,7 +5463,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentalData">experimental data</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5591,7 +5505,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#EnvironmentAttribute">environment attribute</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5616,7 +5529,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentSetup">experiment setup</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5681,7 +5593,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Instrument">instrument</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -5706,7 +5617,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentSetup">experiment setup</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5785,7 +5695,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Setting">setting</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5803,7 +5712,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5821,7 +5729,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5890,7 +5797,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentSetup">experiment setup</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5914,7 +5820,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Instrument">instrument</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5939,7 +5844,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#InstrumentSetting">instrument setting</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -6004,7 +5908,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -6022,7 +5925,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Method">method</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -6041,7 +5943,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -6060,7 +5961,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentSetup">experiment setup</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -6078,7 +5978,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -6096,7 +5995,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -6403,7 +6301,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -6452,7 +6349,6 @@ For example, OMERO performs the task of script execution or import of metadata t
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentSetup">experiment setup</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -6684,7 +6580,6 @@ A dataset belong to one or more Projects.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://www.w3.org/ns/prov#Collection">collection</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -6703,7 +6598,6 @@ A dataset belong to one or more Projects.</span>
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -6816,7 +6710,6 @@ reproduce some of that found in a screening database.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -6832,7 +6725,6 @@ reproduce some of that found in a screening database.</span>
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#EnvironmentAttribute">environment attribute</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -6882,7 +6774,6 @@ reproduce some of that found in a screening database.</span>
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentalData">experimental data</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -7049,7 +6940,6 @@ reproduce some of that found in a screening database.</span>
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -7065,7 +6955,6 @@ reproduce some of that found in a screening database.</span>
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#EnvironmentAttribute">environment attribute</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -7084,7 +6973,6 @@ reproduce some of that found in a screening database.</span>
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -7245,7 +7133,6 @@ reproduce some of that found in a screening database.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -7304,7 +7191,6 @@ reproduce some of that found in a screening database.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Activity">activity</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -7322,7 +7208,6 @@ reproduce some of that found in a screening database.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="https://w3id.org/reproduceme/core#Setting">setting</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -7388,7 +7273,6 @@ records any transform applied to the ROI shape.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -7403,7 +7287,6 @@ records any transform applied to the ROI shape.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -7548,7 +7431,6 @@ For example, a chemical solution used in an experiment.</span>
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
          <dd>
@@ -7576,7 +7458,6 @@ For example, a chemical solution used in an experiment.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -7595,7 +7476,6 @@ For example, a chemical solution used in an experiment.</span>
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -7654,7 +7534,6 @@ For example, a chemical solution used in an experiment.</span>
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.org/net/p-plan#Variable">variable</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -7921,7 +7800,6 @@ For example, an experiment tag to identify and categorize the experiments.</span
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentalData">experimental data</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -7940,7 +7818,6 @@ For example, an experiment tag to identify and categorize the experiments.</span
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentSetup">experiment setup</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -8179,7 +8056,6 @@ For example in a video stream.</span>
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentSetup">experiment setup</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -8198,7 +8074,6 @@ For example in a video stream.</span>
          <dd>
             <span class="dotted"
                   title="https://w3id.org/reproduceme/core#ExperimentMaterial">experiment material</span>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
