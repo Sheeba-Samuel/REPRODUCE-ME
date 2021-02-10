@@ -10,6 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:repr-core="https://w3id.org/reproduceme/core"
      xmlns:repr-comp="https://w3id.org/reproduceme/computational#">
     <owl:Ontology rdf:about="https://w3id.org/reproduceme/computational">
         <owl:imports rdf:resource="https://w3id.org/reproduceme/core"/>
