@@ -13,19 +13,19 @@
       <meta property="og:description" content="Sheeba Samuel's research work on Reproducibility of Scientific Experiments">
       <meta name="twitter:site" content="@sheebasamuel">
       <meta name="twitter:creator" content="@sheebasamuel">
-      <link rel="stylesheet" href="css/styles.css"/>
+      <link rel="stylesheet" href="../css/styles.css"/>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous"/>
       <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
       <script type="application/ld+json"></script>
   </head>
-  <body vocab="http://schema.org/">    
+  <body vocab="http://schema.org/">
     <div class="licence"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
         <img alt="Creative Commons License" style="border-width:0" src="../images/license.png"/></a>
     </div>
     <div class="page" typeof="WebPage">
-        <nav class="navbar navbar-toggleable-md navbar-light">      
+        <nav class="navbar navbar-toggleable-md navbar-light">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto" typeof="BreadcrumbList">
             <li class="nav-item active">
@@ -55,11 +55,11 @@
     </div>
     <div class="content">
         <section>
-            <h3><b>The SPARQL Queries</b></h3> 
+            <h3><b>The SPARQL Queries</b></h3>
             <p>The SPARQL Queries used to evaluate the ontology.</p>
             <p>The metadata of the experiment datasets are used from <a href="https://github.com/IDR/idr-metadata">IDR website</a></p>
             <p>The results of the SPARQL Queries will be found <a href="https://github.com/Sheeba-Samuel/REPRODUCE-ME/tree/master/SPARQLQueryResults">here</a></p>
-            <h5><b>Query 1:</b></h5>            
+            <h5><b>Query 1:</b></h5>
             <p><b>What are the input and output variables of an experiment?</b></p>
             <pre data-lang="sparql" class="query">SELECT DISTINCT * WHERE
                 {
@@ -79,17 +79,17 @@
                 }
             </pre>
             <p><a href="result/1_sparql">Result</a></p>
-            <h5><b>Query 2:</b></h5>            
+            <h5><b>Query 2:</b></h5>
             <p><b>Which are the methods and standard operating procedures used?</b></p>
             <pre data-lang="sparql"  class="query">SELECT DISTINCT * WHERE
                     {
                         ?experiment a repr:Experiment .
-                        ?experimentStep p-plan:isStepOfPlan ?experiment ; 
+                        ?experimentStep p-plan:isStepOfPlan ?experiment ;
                                         repr:usedMethod ?experimentMethod .
                     }
             </pre>
             <p><a href="result/2_sparql">Result</a></p>
-            <h5><b>Query 3:</b></h5>            
+            <h5><b>Query 3:</b></h5>
             <p><b>Which are the files and materials that were used in a particular step?</b></p>
             <pre data-lang="sparql"  class="query">SELECT DISTINCT * WHERE
                 {
@@ -102,7 +102,7 @@
                 }
             </pre>
             <p><a href="result/3_sparql">Result</a></p>
-            <h5><b>Query 4:</b></h5>            
+            <h5><b>Query 4:</b></h5>
             <p><b>Which are the steps involved in an experiment which used a particular material?</b></p>
             <pre data-lang="sparql" class="query">SELECT DISTINCT ?experiment ?experimentStep ?experimentOutput ?value WHERE
                 {
@@ -116,7 +116,7 @@
                 }
             </pre>
             <p><a href="result/4_sparql">Result</a></p>
-            <h5><b>Query 5:</b></h5>            
+            <h5><b>Query 5:</b></h5>
             <p><b>What is the complete path taken by a scientist for an experiment?</b></p>
             <pre data-lang="sparql" class="query">SELECT DISTINCT * WHERE
                 {
@@ -144,24 +144,24 @@
                 }
             </pre>
             <p><a href="result/5_sparql">Result</a></p>
-            <h5><b>Query 6:</b></h5>            
+            <h5><b>Query 6:</b></h5>
             <p><b>Which are the instruments that are associated with an experiment and their settings when the output was generated?</b></p>
             <pre data-lang="sparql" class="query">SELECT DISTINCT * WHERE
                 {
-                    ?image a repr:Image ; 
+                    ?image a repr:Image ;
                     ?instrument p-plan:correspondsToVariable ?image .
-                    ?instrument_part a :Detector ; 
+                    ?instrument_part a :Detector ;
                                     :isPartOf ?instrument .
                     ?instrument_part :hasSetting ?setting .
                     ?setting a :Setting ;
                          rdfs:label ?SettingName .
                     OPTIONAL { ?setting prov:value ?SettingValue } .
-                    OPTIONAL { 
-                        ?instrument_type prov:specializationOf ?instrument_part ; 
-                                         prov:value ?InstrumentType } . 	
+                    OPTIONAL {
+                        ?instrument_type prov:specializationOf ?instrument_part ;
+                                         prov:value ?InstrumentType } .
                 }
             </pre>
-            <h5><b>Query 7:</b></h5>            
+            <h5><b>Query 7:</b></h5>
             <p><b>Which are the agents directly or indirectly responsible for an experiment?</b></p>
             <pre data-lang="sparql" class="query">SELECT DISTINCT ?experiment ?agent ?agentName ?role ?material WHERE
                 {
@@ -175,40 +175,40 @@
                     UNION
                     {
                         ?material p-plan:isInputVarOf ?step .
-                        
+
                         ?material prov:wasAttributedTo ?agent .
-                        OPTIONAL { 
+                        OPTIONAL {
                             ?agent repr:name ?agentName .
                             ?agent repr:hasRole ?role .
-                        } 
+                        }
                     }
                     UNION
                     {
                         ?material p-plan:isOutputVarOf ?step .
-                    
+
                         ?material prov:wasAttributedTo ?agent .
-                        OPTIONAL { 
+                        OPTIONAL {
                             ?agent repr:name ?agentName .
                             ?agent repr:hasRole ?role .
-                        } 
+                        }
                     }
                     }
             </pre>
             <p><a href="result/7_sparql">Result</a></p>
-            <h5><b>Query 8:</b></h5>            
+            <h5><b>Query 8:</b></h5>
             <p><b>Who created this experiment and when? Who modified it and when?</b></p>
-            <pre data-lang="sparql" class="query">Select DISTINCT * WHERE 
-                { 
-                    ?experiment a :Experiment ; 
-                                :name ?Experiment ; 
-                                prov:wasAttributedTo ?Agent .  
-                    OPTIONAL { 
-                        ?experiment prov:startedAtTime ?startedAtTime ; 
-                                    prov:generatedAtTime ?generatedAtTime 
-                    } 
+            <pre data-lang="sparql" class="query">Select DISTINCT * WHERE
+                {
+                    ?experiment a :Experiment ;
+                                :name ?Experiment ;
+                                prov:wasAttributedTo ?Agent .
+                    OPTIONAL {
+                        ?experiment prov:startedAtTime ?startedAtTime ;
+                                    prov:generatedAtTime ?generatedAtTime
+                    }
                 }
             </pre>
-            <h5><b>Query 9:</b></h5>            
+            <h5><b>Query 9:</b></h5>
             <p><b>Which are the publications or external resources that were referenced?</b></p>
             <pre data-lang="sparql" class="query">SELECT DISTINCT * WHERE
                 {
@@ -222,11 +222,11 @@
                     OPTIONAL { ?publication repr:pubmedid ?PubMed }
                     OPTIONAL { ?publication prov:wasAttributedTo ?author }
 
-                    
+
                 }
             </pre>
             <p><a href="result/9_sparql">Result</a></p>
-            <h5><b>Query 10:</b></h5>            
+            <h5><b>Query 10:</b></h5>
             <p><b>List all the experiments which uses growth protocol (EFO_0003789) and studies on "Homo sapiens" and resulted in phenotype "shorter prophase" which passed the quality control.</b></p>
             <pre data-lang="sparql" class="query">SELECT DISTINCT ?experiment ?image ?image_url WHERE
                     {
@@ -242,19 +242,19 @@
                         ?image repr:reference ?organism .
                         ?organism a repr:Organism ;
                                         rdf:value ?organismvalue Filter(?organismvalue="Homo sapiens") .
-    
+
                         ?image repr:reference ?phenotype .
                         ?phenotype a repr:Phenotype ;
                                    rdf:value ?value Filter(?value="shorter prophase") .
-    
+
                         ?image repr:reference ?QualityControl .
                         ?QualityControl a repr:QualityControl ;
                                     rdf:value ?QualityControlValue FILTER(?QualityControlValue="pass") .
-                        ?image repr:isAvailableAt ?image_url 
+                        ?image repr:isAvailableAt ?image_url
                         }
             </pre>
             <p><a href="result/10_sparql">Result</a></p>
           </section>
-    </div>    
+    </div>
   </body>
 </html>
