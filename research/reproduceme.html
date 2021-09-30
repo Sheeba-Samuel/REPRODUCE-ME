@@ -1,124 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="utf-8"/>
-      <meta http-equiv="Content-Language" content="en"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-      <title>REPRODUCE-ME: Reproducibility of Scientific Experiments</title>
-      <meta property="dc:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
-      <meta property="og:type" content="website">
-      <meta property="og:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
-      <meta property="og:url" content="https://w3id.org/reproduceme/research">
-      <meta property="og:image" content="">
-      <meta property="og:description" content="Sheeba Samuel's research work on Reproducibility of Scientific Experiments">
-      <meta name="twitter:site" content="@sheebasamuel">
-      <meta name="twitter:creator" content="@sheebasamuel">
-      <link rel="stylesheet" href="../css/styles.css"/>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous"/>
-      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
-      <script type="application/ld+json"></script>
-  </head>
-  <body vocab="http://schema.org/">
-    <div class="licence"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-        <img alt="Creative Commons License" style="border-width:0" src="../images/license.png"/></a>
-    </div>
-    <div class="page" typeof="WebPage">
-        <nav class="navbar navbar-toggleable-md navbar-light">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto" typeof="BreadcrumbList">
-            <li class="nav-item active">
-                <h4><a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a></h4>
-            </li>
-            <li property="itemListElement" typeof="ListItem" class="nav-item">
-                <h4><a property="item" typeof="WebPage" class="nav-link" href="../publications.html">
-                <span property="name">Publications</span>
-                </a></h4>
-                <meta property="position" content="2"/>
-            </li>
-            <li property="itemListElement" typeof="ListItem" class="nav-item">
-                <h4><a property="item" typeof="WebPage" class="nav-link" href="../resources.html">
-                <span property="name">Resources</span>
-                </a></h4>
-                <meta property="position" content="3"/>
-            </li>
-            <li property="itemListElement" typeof="ListItem" class="nav-item">
-                <h4><a property="item" typeof="WebPage" class="nav-link" href="../contact.html">
-                <span property="name">Contact</span>
-                </a></h4>
-                <meta property="position" content="4"/>
-            </li>
-            </ul>
-        </div>
-        </nav>
-    </div>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>REPRODUCE-ME: Reproducibility of Scientific Experiments</title>
+    <meta property="dc:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
+    <meta property="og:url" content="https://w3id.org/reproduceme/research">
+    <meta property="og:image" content="">
+    <meta property="og:description"
+        content="Sheeba Samuel's research work on Reproducibility of Scientific Experiments">
+    <meta name="twitter:site" content="@sheebasamuel">
+    <meta name="twitter:creator" content="@sheebasamuel">
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script type="application/ld+json"></script>
+</head>
+
+<body vocab="http://schema.org/" class="d-flex flex-column h-100">
+
+    <header>
+       <!-- Fixed navbar -->
+       <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+          <div class="container-fluid page" typeof="WebPage">
+             <a class="navbar-brand nav-link" href="../index.html">Home</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0" typeof="BreadcrumbList">
+                   <li property="itemListElement" typeof="ListItem" class="nav-item">
+                      <a property="item" typeof="WebPage" class="nav-link" aria-current="page"
+                         href="../publications.html">Publications</a>
+                   </li>
+                   <li property="itemListElement" typeof="ListItem" class="nav-item">
+                      <a property="item" typeof="WebPage" class="nav-link" href="../resources.html">Resources</a>
+                   </li>
+                   <li property="itemListElement" typeof="ListItem" class="nav-item">
+                      <a property="item" typeof="WebPage" class="nav-link" href="../contact.html">Contact</a>
+                   </li>
+                </ul>
+             </div>
+          </div>
+       </nav>
+    </header>
     <div class="content">
         <section>
             <h3><b>The REPRODUCE-ME Data Model and Ontology</b></h3>
-            <p>The REPRODUCE-ME Data Model is a generic data model for the representation of scientific experiments with their provenance information.
-                The aim of this model is to capture the general elements of scientific experiments for their understandability and reproducibility.
-                An Experiment is considered as the central point of the REPRODUCE-ME data model. The model consists of eight components: Data, Agent, Activity, Plan, Step,
+            <p>The REPRODUCE-ME Data Model is a generic data model for the representation of scientific experiments with
+                their provenance information.
+                The aim of this model is to capture the general elements of scientific experiments for their
+                understandability and reproducibility.
+                An Experiment is considered as the central point of the REPRODUCE-ME data model. The model consists of
+                eight components: Data, Agent, Activity, Plan, Step,
                 Setting, Instrument, Material.</p>
             <section>
-                <p>The following diagram shows an overview of the REPRODUCE-ME data model to represent a scientific experiment.</p>
-                    <div class="datamodel"><a rel="datamodel">
-                    <img alt="REPRODUCE-ME Data Model" style="width:70%;height:70%;" src="../images/REPRODUCEMEDataModel.png"/>
-                    </div>
+                <p>The following diagram shows an overview of the REPRODUCE-ME data model to represent a scientific
+                    experiment.</p>
+                <div class="datamodel"><a rel="datamodel">
+                        <img alt="REPRODUCE-ME Data Model" style="width:70%;height:70%;"
+                            src="../images/REPRODUCEMEDataModel.png" />
+                </div>
             </section>
             <p>The REPRODUCE-ME Data Model forms a basis for the REPRODUCE-ME ontology.
                 The REPRODUCE-ME ontology extended from PROV-O and P-Plan is used
                 to represent the whole picture of an experiment describing the path it
-                took from its design to result. It is extended from PROV-O to represent all agents, activities and entities involved in an experiment.
-                It also extends from P-Plan to represent the steps, the input and output variables and the complete path taken from an input to an output of an experiment.
-                We aim to enable end-to-end reproducibility of scientific experiments by capturing and representing the complete provenance of a scientific experiment using the REPRODUCE-ME ontology.
-                Here we present a list of competency questions that are required to be answered for reproducing scientific experiments from the scientists from the Collaborative Research Centers (<a href="http://receptorlight.uni-jena.de/">CRC ReceptorLight</a>).
-                <ul class="questions">
-                    <li><p>What are the input and output variables of an experiment?</p></li>
-                    <li><p>Which are the methods and standard operating procedures used?</p></li>
-                    <li><p>Which are the files and materials that were used in a particular step?</p></li>
-                    <li><p>Which are the steps involved in an experiment which used a particular material?</p></li>
-                    <li><p>What is the complete path taken by a scientist for an experiment?</p></li>
-                    <li><p>Which are the instruments that are associated with an experiment and their settings when the output was generated?</p></li>
-                    <li><p>Which are the agents directly or indirectly responsible for an experiment?</p></li>
-                    <li><p>Who created this experiment and when? Who modified it and when?</p></li>
-                    <li><p>Which are the publications or external resources that were referenced in each step of an experiment?</p></li>
-                </ul>
-                Using the REPRODUCE-ME ontology, we can describe and semantically query the information for the following:
-                <ul>
-                    <li><p>Scientific experiments</p></li>
-                    <li><p>Input and output associated with an experiment</p></li>
-                    <li><p>Execution Environmental attributes of an experiment</p></li>
-                    <li><p>Experiment Materials and their preparation steps</p></li>
-                    <li><p>Steps used in an experiment</p></li>
-                    <li><p>Execution Order of steps and activities</p></li>
-                    <li><p>The agents involved in an experiment and their role</p></li>
-                    <li><p>Script/Jupyter Notebook execution in a multi-user environment provided by JupyterHub</p></li>
-                    <li><p>The OME data model</p></li>
-                    <li><p>Microscopic Image Acquisition properties</p></li>
-                    <li><p>Bio-Formats</p></li>
-                    <li><p>Instruments and their settings</p></li>
-                </ul>
+                took from its design to result. It is extended from PROV-O to represent all agents, activities and
+                entities involved in an experiment.
+                It also extends from P-Plan to represent the steps, the input and output variables and the complete path
+                taken from an input to an output of an experiment.
+                We aim to enable end-to-end reproducibility of scientific experiments by capturing and representing the
+                complete provenance of a scientific experiment using the REPRODUCE-ME ontology.
+                Here we present a list of competency questions that are required to be answered for reproducing
+                scientific experiments from the scientists from the Collaborative Research Centers (<a
+                    href="http://receptorlight.uni-jena.de/">CRC ReceptorLight</a>).
+            <ul class="questions">
+                <li>
+                    <p>What are the input and output variables of an experiment?</p>
+                </li>
+                <li>
+                    <p>Which are the methods and standard operating procedures used?</p>
+                </li>
+                <li>
+                    <p>Which are the files and materials that were used in a particular step?</p>
+                </li>
+                <li>
+                    <p>Which are the steps involved in an experiment which used a particular material?</p>
+                </li>
+                <li>
+                    <p>What is the complete path taken by a scientist for an experiment?</p>
+                </li>
+                <li>
+                    <p>Which are the instruments that are associated with an experiment and their settings when the
+                        output was generated?</p>
+                </li>
+                <li>
+                    <p>Which are the agents directly or indirectly responsible for an experiment?</p>
+                </li>
+                <li>
+                    <p>Who created this experiment and when? Who modified it and when?</p>
+                </li>
+                <li>
+                    <p>Which are the publications or external resources that were referenced in each step of an
+                        experiment?</p>
+                </li>
+            </ul>
+            Using the REPRODUCE-ME ontology, we can describe and semantically query the information for the following:
+            <ul>
+                <li>
+                    <p>Scientific experiments</p>
+                </li>
+                <li>
+                    <p>Input and output associated with an experiment</p>
+                </li>
+                <li>
+                    <p>Execution Environmental attributes of an experiment</p>
+                </li>
+                <li>
+                    <p>Experiment Materials and their preparation steps</p>
+                </li>
+                <li>
+                    <p>Steps used in an experiment</p>
+                </li>
+                <li>
+                    <p>Execution Order of steps and activities</p>
+                </li>
+                <li>
+                    <p>The agents involved in an experiment and their role</p>
+                </li>
+                <li>
+                    <p>Script/Jupyter Notebook execution in a multi-user environment provided by JupyterHub</p>
+                </li>
+                <li>
+                    <p>The OME data model</p>
+                </li>
+                <li>
+                    <p>Microscopic Image Acquisition properties</p>
+                </li>
+                <li>
+                    <p>Bio-Formats</p>
+                </li>
+                <li>
+                    <p>Instruments and their settings</p>
+                </li>
+            </ul>
             </p>
 
             <h5><b>Resources:</b></h5>
             <ul>
-            <li><p><a property="item" typeof="WebPage" href="../doc/index-en.html">Ontology Documentation</a></p></li>
-            <li><p><a href="../reproduce-me.owl">Download Ontology</a></p></li>
-            <li><p><a href="https://github.com/Sheeba-Samuel/REPRODUCE-ME/tree/master/ExperimentDatasets">Experiment Datasets</a></p></li>
-            <li><p><a href="sparql.html">SPARQL Queries</a></p></li>
-            <li><p><a href="https://github.com/Sheeba-Samuel/REPRODUCE-ME/tree/master/Scripts/">Evaluation Scripts</a></p></li>
+                <li>
+                    <p><a property="item" typeof="WebPage" href="../doc/index-en.html">Ontology Documentation</a></p>
+                </li>
+                <li>
+                    <p><a href="../reproduce-me.owl">Download Ontology</a></p>
+                </li>
+                <li>
+                    <p><a href="https://github.com/Sheeba-Samuel/REPRODUCE-ME/tree/master/ExperimentDatasets">Experiment
+                            Datasets</a></p>
+                </li>
+                <li>
+                    <p><a href="sparql.html">SPARQL Queries</a></p>
+                </li>
+                <li>
+                    <p><a href="https://github.com/Sheeba-Samuel/REPRODUCE-ME/tree/master/Scripts/">Evaluation
+                            Scripts</a></p>
+                </li>
             </ul>
-          </section>
-        <section>
-          <p>The following diagram shows how the REPRODUCE-ME ontology is used to describe the computational and non-computational parts of a scientific experiment taking into account the use case of life science experiments.</p>
-            <div class="ontology"><a rel="ontology">
-              <img alt="REPRODUCE-ME" style="width:70%;height:70%;" src="../images/ontology.png"/>
-             </div>
         </section>
         <section>
-            <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic License.</a></p>
+            <p>The following diagram shows how the REPRODUCE-ME ontology is used to describe the computational and
+                non-computational parts of a scientific experiment taking into account the use case of life science
+                experiments.</p>
+            <div class="ontology"><a rel="ontology">
+                    <img alt="REPRODUCE-ME" style="width:70%;height:70%;" src="../images/ontology.png" />
+            </div>
+        </section>
+        <section>
+            <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">Creative Commons
+                    Attribution-NonCommercial-ShareAlike 2.0 Generic License.</a></p>
         </section>
     </div>
-  </body>
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">
+                <div class="licence"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                        <img alt="Creative Commons License" style="border-width:0" src="../images/license.png" /></a>
+                </div>
+            </span>
+        </div>
+    </footer>
+</body>
+
 </html>

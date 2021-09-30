@@ -1,76 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="utf-8"/>
-      <meta http-equiv="Content-Language" content="en"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-      <title>REPRODUCE-ME: Reproducibility of Scientific Experiments</title>
-      <meta property="dc:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
-      <meta property="og:type" content="website">
-      <meta property="og:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
-      <meta property="og:url" content="https://w3id.org/reproduceme/research">
-      <meta property="og:image" content="">
-      <meta property="og:description" content="Sheeba Samuel's research work on Reproducibility of Scientific Experiments">
-      <meta name="twitter:site" content="@sheebasamuel">
-      <meta name="twitter:creator" content="@sheebasamuel">
-      <link rel="stylesheet" href="../css/styles.css"/>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous"/>
-      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
-      <script type="application/ld+json"></script>
-  </head>
-  <body vocab="http://schema.org/">
-    <div class="licence"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-        <img alt="Creative Commons License" style="border-width:0" src="../images/license.png"/></a>
-    </div>
-    <div class="page" typeof="WebPage">
-        <nav class="navbar navbar-toggleable-md navbar-light">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto" typeof="BreadcrumbList">
-            <li class="nav-item active">
-                <h4><a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a></h4>
-            </li>
-            <li property="itemListElement" typeof="ListItem" class="nav-item">
-                <h4><a property="item" typeof="WebPage" class="nav-link" href="../publications.html">
-                <span property="name">Publications</span>
-                </a></h4>
-                <meta property="position" content="2"/>
-            </li>
-            <li property="itemListElement" typeof="ListItem" class="nav-item">
-                <h4><a property="item" typeof="WebPage" class="nav-link" href="../resources.html">
-                <span property="name">Resources</span>
-                </a></h4>
-                <meta property="position" content="3"/>
-            </li>
-            <li property="itemListElement" typeof="ListItem" class="nav-item">
-                <h4><a property="item" typeof="WebPage" class="nav-link" href="../contact.html">
-                <span property="name">Contact</span>
-                </a></h4>
-                <meta property="position" content="4"/>
-            </li>
-            </ul>
-        </div>
-        </nav>
-    </div>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>REPRODUCE-ME: Reproducibility of Scientific Experiments</title>
+    <meta property="dc:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
+    <meta property="og:url" content="https://w3id.org/reproduceme/research">
+    <meta property="og:image" content="">
+    <meta property="og:description"
+        content="Sheeba Samuel's research work on Reproducibility of Scientific Experiments">
+    <meta name="twitter:site" content="@sheebasamuel">
+    <meta name="twitter:creator" content="@sheebasamuel">
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script type="application/ld+json"></script>
+</head>
+
+<body vocab="http://schema.org/" class="d-flex flex-column h-100">
+
+    <header>
+       <!-- Fixed navbar -->
+       <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+          <div class="container-fluid page" typeof="WebPage">
+             <a class="navbar-brand nav-link" href="../index.html">Home</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0" typeof="BreadcrumbList">
+                   <li property="itemListElement" typeof="ListItem" class="nav-item">
+                      <a property="item" typeof="WebPage" class="nav-link" aria-current="page"
+                         href="../publications.html">Publications</a>
+                   </li>
+                   <li property="itemListElement" typeof="ListItem" class="nav-item">
+                      <a property="item" typeof="WebPage" class="nav-link" href="../resources.html">Resources</a>
+                   </li>
+                   <li property="itemListElement" typeof="ListItem" class="nav-item">
+                      <a property="item" typeof="WebPage" class="nav-link" href="../contact.html">Contact</a>
+                   </li>
+                </ul>
+             </div>
+          </div>
+       </nav>
+    </header>
     <div class="content">
         <section>
             <h3><b>ReproduceMe Ontology Network (ReproduceMeON)</b></h3>
             <p>ReproduceMeON is a an ontology network for the reproducibility of scientific studies.
-                The ontology network, which includes the foundational and core ontologies, attempts to bring together different aspects of the provenance of scientific studies from various applications to support their reproducibility.
-                The repository provides the development process of ReproduceMeON and the design methodology of developing core ontologies for the provenance of scientific experiments and machine learning using a semi-automated approach.
-                The repository provides a systematic literature review in different areas in provenance, scientific experiments, Machine Learning, computational, microscopy, and scientific workflows.
+                The ontology network, which includes the foundational and core ontologies, attempts to bring together
+                different aspects of the provenance of scientific studies from various applications to support their
+                reproducibility.
+                The repository provides the development process of ReproduceMeON and the design methodology of
+                developing core ontologies for the provenance of scientific experiments and machine learning using a
+                semi-automated approach.
+                The repository provides a systematic literature review in different areas in provenance, scientific
+                experiments, Machine Learning, computational, microscopy, and scientific workflows.
                 We also provide the state of the art ontolgies used for the development of ReproduceMeON.
-                Ontology matching techniques are used to select and develop core ontology for each sub-domain and link to other ontologies in the sub-domain.</p>
+                Ontology matching techniques are used to select and develop core ontology for each sub-domain and link
+                to other ontologies in the sub-domain.</p>
             <ul>
                 <li>
-                    <p>Repository: <a property="item" typeof="WebPage" href="https://github.com/fusion-jena/ReproduceMeON">https://github.com/fusion-jena/ReproduceMeON</a>
+                    <p>Repository: <a property="item" typeof="WebPage"
+                            href="https://github.com/fusion-jena/ReproduceMeON">https://github.com/fusion-jena/ReproduceMeON</a>
                 </li>
-                <li><p class="conference" typeof="schema:ScholarlyArticle">Publication: Towards an Ontology Network for the reproducibility of scientific studies.
-                    Sheeba Samuel, Alsayed Algergawy, Birgitta König-Ries, 8th International Workshop on Ontologies and Conceptual Modeling, co-located with FOIS, 2021 (To appear)</p>
+                <li>
+                    <p class="conference" typeof="schema:ScholarlyArticle">Publication: Towards an Ontology Network for
+                        the reproducibility of scientific studies.
+                        Sheeba Samuel, Alsayed Algergawy, Birgitta König-Ries, 8th International Workshop on Ontologies
+                        and Conceptual Modeling, co-located with FOIS, 2021 (To appear)</p>
                 </li>
             </ul>
         </section>
     </div>
-  </body>
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">
+                <div class="licence"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                        <img alt="Creative Commons License" style="border-width:0" src="../images/license.png" /></a>
+                </div>
+            </span>
+        </div>
+    </footer>
+</body>
+
 </html>

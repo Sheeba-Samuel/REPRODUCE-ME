@@ -1,150 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="utf-8"/>
-      <meta http-equiv="Content-Language" content="en"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-      <title>REPRODUCE-ME: Reproducibility of Scientific Experiments</title>
-      <meta property="dc:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
-      <meta property="og:type" content="website">
-      <meta property="og:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
-      <meta property="og:url" content="https://w3id.org/reproduceme/research">
-      <meta property="og:image" content="">
-      <meta property="og:description" content="Sheeba Samuel's research work on Reproducibility of Scientific Experiments">
-      <meta name="twitter:site" content="@sheebasamuel">
-      <meta name="twitter:creator" content="@sheebasamuel">
-      <link rel="stylesheet" href="../css/styles.css"/>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous"/>
-      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
-      <script type="application/ld+json"></script>
-  </head>
-  <body vocab="http://schema.org/">
-    <div class="licence"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-        <img alt="Creative Commons License" style="border-width:0" src="../images/license.png"/></a>
-    </div>
-    <div class="page" typeof="WebPage">
-        <nav class="navbar navbar-toggleable-md navbar-light">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto" typeof="BreadcrumbList">
-            <li class="nav-item active">
-                <h4><a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a></h4>
-            </li>
-            <li property="itemListElement" typeof="ListItem" class="nav-item">
-                <h4><a property="item" typeof="WebPage" class="nav-link" href="../publications.html">
-                <span property="name">Publications</span>
-                </a></h4>
-                <meta property="position" content="2"/>
-            </li>
-            <li property="itemListElement" typeof="ListItem" class="nav-item">
-                <h4><a property="item" typeof="WebPage" class="nav-link" href="../resources.html">
-                <span property="name">Resources</span>
-                </a></h4>
-                <meta property="position" content="3"/>
-            </li>
-            <li property="itemListElement" typeof="ListItem" class="nav-item">
-                <h4><a property="item" typeof="WebPage" class="nav-link" href="../contact.html">
-                <span property="name">Contact</span>
-                </a></h4>
-                <meta property="position" content="4"/>
-            </li>
-            </ul>
-        </div>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>REPRODUCE-ME: Reproducibility of Scientific Experiments</title>
+    <meta property="dc:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
+    <meta property="og:url" content="https://w3id.org/reproduceme/research">
+    <meta property="og:image" content="">
+    <meta property="og:description"
+        content="Sheeba Samuel's research work on Reproducibility of Scientific Experiments">
+    <meta name="twitter:site" content="@sheebasamuel">
+    <meta name="twitter:creator" content="@sheebasamuel">
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script type="application/ld+json"></script>
+</head>
+
+<body vocab="http://schema.org/" class="d-flex flex-column h-100">
+
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+            <div class="container-fluid page" typeof="WebPage">
+                <a class="navbar-brand nav-link" href="../index.html">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0" typeof="BreadcrumbList">
+                        <li property="itemListElement" typeof="ListItem" class="nav-item">
+                            <a property="item" typeof="WebPage" class="nav-link" aria-current="page"
+                                href="../publications.html">Publications</a>
+                        </li>
+                        <li property="itemListElement" typeof="ListItem" class="nav-item">
+                            <a property="item" typeof="WebPage" class="nav-link" href="../resources.html">Resources</a>
+                        </li>
+                        <li property="itemListElement" typeof="ListItem" class="nav-item">
+                            <a property="item" typeof="WebPage" class="nav-link" href="../contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-    </div>
+    </header>
     <div class="content">
         <section>
             <h3><b>CAESAR-A Collaborative Environment for Scientific Analysis with Reproducibility</b></h3>
-            <p>We present CAESAR, a framework for the  end-to-end provenance management of scientific experiments.
-                This collaborative framework allows scientists to capture, manage, query and visualize the complete path of a scientific experiment
+            <p>We present CAESAR, a framework for the end-to-end provenance management of scientific experiments.
+                This collaborative framework allows scientists to capture, manage, query and visualize the complete path
+                of a scientific experiment
                 consisting of computational and non-computational steps in an interoperable way.
                 We focus on the provenance management of experiments in life-sciences particularly
                 concerned with imaging datasets.
                 CAESAR is built on top of <a href="https://www.openmicroscopy.org/omero/">OMERO</a>.
                 OMERO provides the scientific data management of imaging datasets.
                 CAESAR is extended to include the provenance management of scientific experiments.
-                <section>
-                    <p>The following diagram shows an overview of CAESAR and its modules to provide end-to-end provenance management .</p>
-                        <div class="caeasr"><a rel="caesar">
-                        <img alt="CAESAR" style="width:70%;height:70%;" src="../images/CAESAR.png"/>
-                        </div>
-                </section>
-                It consists of following modules:</p>
-                <section>
+            <section>
+                <p>The following diagram shows an overview of CAESAR and its modules to provide end-to-end provenance
+                    management .</p>
+                <div class="caeasr"><a rel="caesar">
+                        <img alt="CAESAR" style="width:70%;height:70%;" src="../images/CAESAR.png" />
+                </div>
+            </section>
+            It consists of following modules:</p>
+            <section>
+                <ul>
+                    <li><b>Provenance Capture</b></li>
+                    <p>The provenance of scientific experiments is captured using the metadata editor which is provided
+                        with rich facilities.
+                        The metadata extracted from the images is also linked to the experimental data provided by
+                        scientists.
+                        This module captures the experiment, its steps, plans, activites, instruments used and their
+                        settings, the agents involved, the materials used, etc.</p>
+                    <p>Resources</p>
                     <ul>
-                        <li><b>Provenance Capture</b></li>
-                        <p>The provenance of scientific experiments is captured using the metadata editor which is provided with rich facilities.
-                            The metadata extracted from the images is also linked to the experimental data provided by scientists.
-                            This module captures the experiment, its steps, plans, activites, instruments used and their settings, the agents involved, the materials used, etc.</p>
-                        <p>Resources</p>
-                        <ul>
-                            <li><a property="item" typeof="WebPage" href="https://github.com/CaesarReceptorLight/openmicroscopy">CAESAR-core</a></li>
-                            <li><a property="item" typeof="WebPage" href="https://github.com/CaesarReceptorLight/Experiment">Experiment-Metadata Editor</a></li>
-                            <li><a property="item" typeof="WebPage" href="https://github.com/Sheeba-Samuel/ProvBook">ProvBook-Provenance of the Notebook</a></li>
-                        </ul>
-                        <li><b>Provenance Represent</b></li>
-                        <p>The provenance of scientific experiments is represented with the help of semantic web technologies.
-                            This is done using the REPRODUCE-ME ontology.
-                            It links the computational and non-computational steps and data of scientific experiments.</p>
-                        <p>Resources</p>
-                        <ul>
-                                <li>The REPRODUCE-ME Data Model</li>
-                                <li><p><a property="item" typeof="WebPage" href="../doc/index-en.html">The REPRODUCE-ME Ontology</a></p></li>
-                        </ul>
-                        <li><b>Provenance Storage</b></li>
-                        <p>The provenance of scientific experiments is stored in PostgreSQL database.
-                            We provide an ontology-based data access of the databases.
-                            We provide the federation store of multiple databases in CAESAR and the mapping of the underlying databases to the ontology which provide a semantic approach to query the data using the rdf4j SPARQL Endpoint.</p>
-                        <p>Resources</p>
-                        <ul>
-                            <li><a property="item" typeof="WebPage" href="https://github.com/Sheeba-Samuel/ReOpen/blob/master/reproduce-me.obda">Mappings of Experiment and OMERO database to the REPRODUCE-ME ontology</a></li>
-                        </ul>
-                        <li><b>Provenance Query</b></li>
-                        <p>The provenance of scientific experiments is queried using SQL or SPARQL.</p>
-                        <p>Resources</p>
-                        <ul>
-                                <li><p><a href="./sparql.html">SPARQL Queries</a></p></li>
-                        </ul>
-                        <li><b>Provenance Compare</b></li>
-                        <p>The provenance difference of scientific experiments is provided by ProvBook and the version history of experiments is provided by CAESAR.</p>
-                        <p>Resources</p>
-                        <ul>
-                                <li><a property="item" typeof="WebPage" href="https://github.com/Sheeba-Samuel/ProvBook">The Jupyter nbextension of ProvBook</a></li>
-                                <li><a property="item" typeof="WebPage" href="https://github.com/Sheeba-Samuel/provenancebook">The complete package of ProvBook with provenance capture, representation and difference.</a></li>
-                        </ul>
-                        <li><b>Provenance Visualize</b></li>
-                        <p>The provenance of scientific experiments is visualized using the Project Dashboard and ProvTrack modules.
-                            The Project Dashboard provides an overall view of the experiments conducted for a research project.
-                            The ProvTrack provides a complete path of the provenance of scientific experiments.</p>
-                        <section>
-                            <p>The following diagram shows an overview of the ProvTrack to represent a complete path of a scientific experiment.</p>
-                                <div class="provtrack"><a rel="provtrack">
-                                <img alt="ProvTrack" style="width:70%;height:70%;" src="../images/ProvTrack.png"/>
-                                </div>
-                        </section>
-                        <p>Resources</p>
-                        <ul>
-                            <li><a property="item" typeof="WebPage" href="https://github.com/CaesarReceptorLight/ProjectDashboard">Project Dashboard</a></li>
-                            <li><a property="item" typeof="WebPage" href="https://github.com/CaesarReceptorLight/ProvTrack">ProvTrack</a></li>
-                        </ul>
+                        <li><a property="item" typeof="WebPage"
+                                href="https://github.com/CaesarReceptorLight/openmicroscopy">CAESAR-core</a></li>
+                        <li><a property="item" typeof="WebPage"
+                                href="https://github.com/CaesarReceptorLight/Experiment">Experiment-Metadata Editor</a>
+                        </li>
+                        <li><a property="item" typeof="WebPage"
+                                href="https://github.com/Sheeba-Samuel/ProvBook">ProvBook-Provenance of the Notebook</a>
+                        </li>
                     </ul>
-                </section>
-                <p><b>Source Code</b></p>
-                <ul>
-                    <li><a property="item" typeof="WebPage" href="https://github.com/CaesarReceptorLight">CAESAR</a></li>
+                    <li><b>Provenance Represent</b></li>
+                    <p>The provenance of scientific experiments is represented with the help of semantic web
+                        technologies.
+                        This is done using the REPRODUCE-ME ontology.
+                        It links the computational and non-computational steps and data of scientific experiments.</p>
+                    <p>Resources</p>
+                    <ul>
+                        <li>The REPRODUCE-ME Data Model</li>
+                        <li>
+                            <p><a property="item" typeof="WebPage" href="../doc/index-en.html">The REPRODUCE-ME
+                                    Ontology</a></p>
+                        </li>
+                    </ul>
+                    <li><b>Provenance Storage</b></li>
+                    <p>The provenance of scientific experiments is stored in PostgreSQL database.
+                        We provide an ontology-based data access of the databases.
+                        We provide the federation store of multiple databases in CAESAR and the mapping of the
+                        underlying databases to the ontology which provide a semantic approach to query the data using
+                        the rdf4j SPARQL Endpoint.</p>
+                    <p>Resources</p>
+                    <ul>
+                        <li><a property="item" typeof="WebPage"
+                                href="https://github.com/Sheeba-Samuel/ReOpen/blob/master/reproduce-me.obda">Mappings of
+                                Experiment and OMERO database to the REPRODUCE-ME ontology</a></li>
+                    </ul>
+                    <li><b>Provenance Query</b></li>
+                    <p>The provenance of scientific experiments is queried using SQL or SPARQL.</p>
+                    <p>Resources</p>
+                    <ul>
+                        <li>
+                            <p><a href="./sparql.html">SPARQL Queries</a></p>
+                        </li>
+                    </ul>
+                    <li><b>Provenance Compare</b></li>
+                    <p>The provenance difference of scientific experiments is provided by ProvBook and the version
+                        history of experiments is provided by CAESAR.</p>
+                    <p>Resources</p>
+                    <ul>
+                        <li><a property="item" typeof="WebPage" href="https://github.com/Sheeba-Samuel/ProvBook">The
+                                Jupyter nbextension of ProvBook</a></li>
+                        <li><a property="item" typeof="WebPage"
+                                href="https://github.com/Sheeba-Samuel/provenancebook">The complete package of ProvBook
+                                with provenance capture, representation and difference.</a></li>
+                    </ul>
+                    <li><b>Provenance Visualize</b></li>
+                    <p>The provenance of scientific experiments is visualized using the Project Dashboard and ProvTrack
+                        modules.
+                        The Project Dashboard provides an overall view of the experiments conducted for a research
+                        project.
+                        The ProvTrack provides a complete path of the provenance of scientific experiments.</p>
+                    <section>
+                        <p>The following diagram shows an overview of the ProvTrack to represent a complete path of a
+                            scientific experiment.</p>
+                        <div class="provtrack"><a rel="provtrack">
+                                <img alt="ProvTrack" style="width:70%;height:70%;" src="../images/ProvTrack.png" />
+                        </div>
+                    </section>
+                    <p>Resources</p>
+                    <ul>
+                        <li><a property="item" typeof="WebPage"
+                                href="https://github.com/CaesarReceptorLight/ProjectDashboard">Project Dashboard</a>
+                        </li>
+                        <li><a property="item" typeof="WebPage"
+                                href="https://github.com/CaesarReceptorLight/ProvTrack">ProvTrack</a></li>
+                    </ul>
                 </ul>
-                <p><b>Materials and Results for Evaluation</b></p>
-                <ul>
-                    <li><a property="item" typeof="WebPage" href="https://github.com/Sheeba-Samuel/CAESAREvaluation">CAESAR Evaluation</a></li>
-                </ul>
-                <p><b>For more information:</b></p>
-                <ul>
-                    <li><p class="conference"><b>The Story of an Experiment:A Provenance-based Semantic Approach towards Research Reproducibility</b>,
-                            Sheeba Samuel, Kathrin Groeneveld, Frank Taubert, Daniel Walther, Tom Kache, Teresa Langenstück, Birgitta König-Ries, H. Martin Bücker and Christoph Biskup, The 11th International Conference on Semantic Web Applications and Tools for Health Care and Life Sciences (SWAT4HCLS 2018), 3-6 December, 2018, antwerp, Belgium (<a href="https://doi.org/10.6084/m9.figshare.7345865.v2">Preprint, </a><a href="https://doi.org/10.6084/m9.figshare.7413560.v1">Slides, </a><a href="http://ceur-ws.org/Vol-2275/paper2.pdf">Link</a>)</p></li>
-                </ul>
+            </section>
+            <p><b>Source Code</b></p>
+            <ul>
+                <li><a property="item" typeof="WebPage" href="https://github.com/CaesarReceptorLight">CAESAR</a></li>
+            </ul>
+            <p><b>Materials and Results for Evaluation</b></p>
+            <ul>
+                <li><a property="item" typeof="WebPage" href="https://github.com/Sheeba-Samuel/CAESAREvaluation">CAESAR
+                        Evaluation</a></li>
+            </ul>
+            <p><b>For more information:</b></p>
+            <ul>
+                <li>
+                    <p class="conference"><b>The Story of an Experiment:A Provenance-based Semantic Approach towards
+                            Research Reproducibility</b>,
+                        Sheeba Samuel, Kathrin Groeneveld, Frank Taubert, Daniel Walther, Tom Kache, Teresa Langenstück,
+                        Birgitta König-Ries, H. Martin Bücker and Christoph Biskup, The 11th International Conference on
+                        Semantic Web Applications and Tools for Health Care and Life Sciences (SWAT4HCLS 2018), 3-6
+                        December, 2018, antwerp, Belgium (<a
+                            href="https://doi.org/10.6084/m9.figshare.7345865.v2">Preprint, </a><a
+                            href="https://doi.org/10.6084/m9.figshare.7413560.v1">Slides, </a><a
+                            href="http://ceur-ws.org/Vol-2275/paper2.pdf">Link</a>)</p>
+                </li>
+            </ul>
         </section>
-
     </div>
-  </body>
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">
+                <div class="licence"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                        <img alt="Creative Commons License" style="border-width:0" src="../images/license.png" /></a>
+                </div>
+            </span>
+        </div>
+    </footer>
+</body>
+
 </html>

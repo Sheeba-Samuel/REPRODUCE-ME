@@ -1,95 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="utf-8"/>
-      <meta http-equiv="Content-Language" content="en"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-      <title>REPRODUCE-ME: Reproducibility of Scientific Experiments</title>
-      <meta property="dc:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
-      <meta property="og:type" content="website">
-      <meta property="og:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
-      <meta property="og:url" content="https://w3id.org/reproduceme/research">
-      <meta property="og:image" content="">
-      <meta property="og:description" content="Sheeba Samuel's research work on Reproducibility of Scientific Experiments">
-      <meta name="twitter:site" content="@sheebasamuel">
-      <meta name="twitter:creator" content="@sheebasamuel">
-      <link rel="stylesheet" href="../css/styles.css"/>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous"/>
-      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
-      <script type="application/ld+json"></script>
-  </head>
-  <body vocab="http://schema.org/">
-    <div class="licence"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-        <img alt="Creative Commons License" style="border-width:0" src="../images/license.png"/></a>
-    </div>
-    <div class="page" typeof="WebPage">
-        <nav class="navbar navbar-toggleable-md navbar-light">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto" typeof="BreadcrumbList">
-            <li class="nav-item active">
-                <h4><a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a></h4>
-            </li>
-            <li property="itemListElement" typeof="ListItem" class="nav-item">
-                <h4><a property="item" typeof="WebPage" class="nav-link" href="../publications.html">
-                <span property="name">Publications</span>
-                </a></h4>
-                <meta property="position" content="2"/>
-            </li>
-            <li property="itemListElement" typeof="ListItem" class="nav-item">
-                <h4><a property="item" typeof="WebPage" class="nav-link" href="../resources.html">
-                <span property="name">Resources</span>
-                </a></h4>
-                <meta property="position" content="3"/>
-            </li>
-            <li property="itemListElement" typeof="ListItem" class="nav-item">
-                <h4><a property="item" typeof="WebPage" class="nav-link" href="../contact.html">
-                <span property="name">Contact</span>
-                </a></h4>
-                <meta property="position" content="4"/>
-            </li>
-            </ul>
-        </div>
-        </nav>
-    </div>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>REPRODUCE-ME: Reproducibility of Scientific Experiments</title>
+    <meta property="dc:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="REPRODUCE-ME: Reproducibility of Scientific Experiments">
+    <meta property="og:url" content="https://w3id.org/reproduceme/research">
+    <meta property="og:image" content="">
+    <meta property="og:description"
+        content="Sheeba Samuel's research work on Reproducibility of Scientific Experiments">
+    <meta name="twitter:site" content="@sheebasamuel">
+    <meta name="twitter:creator" content="@sheebasamuel">
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script type="application/ld+json"></script>
+</head>
+
+<body vocab="http://schema.org/" class="d-flex flex-column h-100">
+
+    <header>
+       <!-- Fixed navbar -->
+       <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+          <div class="container-fluid page" typeof="WebPage">
+             <a class="navbar-brand nav-link" href="../index.html">Home</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0" typeof="BreadcrumbList">
+                   <li property="itemListElement" typeof="ListItem" class="nav-item">
+                      <a property="item" typeof="WebPage" class="nav-link" aria-current="page"
+                         href="../publications.html">Publications</a>
+                   </li>
+                   <li property="itemListElement" typeof="ListItem" class="nav-item">
+                      <a property="item" typeof="WebPage" class="nav-link" href="../resources.html">Resources</a>
+                   </li>
+                   <li property="itemListElement" typeof="ListItem" class="nav-item">
+                      <a property="item" typeof="WebPage" class="nav-link" href="../contact.html">Contact</a>
+                   </li>
+                </ul>
+             </div>
+          </div>
+       </nav>
+    </header>
     <div class="content">
         <section>
             <h3><b>ProvBook</b></h3>
-            <p>We present ProvBook, an extension of Jupyter Notebook, to capture and view the provenance over the course of time. It also allows the user to share a notebook along with its provenance in RDF and also convert it back to a notebook. We use the REPRODUCE-ME ontology extended from PROV-O and P-Plan to describe the provenance of a notebook. This helps the scientists to compare their previous results with the current ones, check whether the experiments produce the results as expected and query the sequence of executions using SPARQL. The notebook data in RDF can be used in combination with the experiments that used them and help to get a track of the complete path of the scientific experiments.</p>
-            <p>This extension displays the provenance of each notebook cell. Every cell is extended with a provenance area with a slider. The provenance area shows the history of the execution of each code cells. As you move the slider, you could see the start and end time of each execution, how long it took to execute, the number of runs, the source and output of each execution. It also shows the provenance of text cells where it shows the the modified time and the source.
-                <p>ProvBook provides three features:</p>
-                <p><b>1. provbook</b> : Displays the provenance of a Jupyter Notebook.</p>
-                <p><b>2. notebook_rdf</b> : Convert Jupyter Notebooks to RDF and the converted RDF back to Jupyter Notebooks.</p>
-                <p><b>3. provbookdiff</b> : The provenance difference of any two executions of a code cell of a Jupyter Notebook. </p>
+            <p>We present ProvBook, an extension of Jupyter Notebook, to capture and view the provenance over the course
+                of time. It also allows the user to share a notebook along with its provenance in RDF and also convert
+                it back to a notebook. We use the REPRODUCE-ME ontology extended from PROV-O and P-Plan to describe the
+                provenance of a notebook. This helps the scientists to compare their previous results with the current
+                ones, check whether the experiments produce the results as expected and query the sequence of executions
+                using SPARQL. The notebook data in RDF can be used in combination with the experiments that used them
+                and help to get a track of the complete path of the scientific experiments.</p>
+            <p>This extension displays the provenance of each notebook cell. Every cell is extended with a provenance
+                area with a slider. The provenance area shows the history of the execution of each code cells. As you
+                move the slider, you could see the start and end time of each execution, how long it took to execute,
+                the number of runs, the source and output of each execution. It also shows the provenance of text cells
+                where it shows the the modified time and the source.
+            <p>ProvBook provides three features:</p>
+            <p><b>1. provbook</b> : Displays the provenance of a Jupyter Notebook.</p>
+            <p><b>2. notebook_rdf</b> : Convert Jupyter Notebooks to RDF and the converted RDF back to Jupyter
+                Notebooks.</p>
+            <p><b>3. provbookdiff</b> : The provenance difference of any two executions of a code cell of a Jupyter
+                Notebook. </p>
         </section>
         <section>
             <p>A Jupyter Notebook code cell with the provenance data of its executions.</p>
-            <div class="provbook"><img alt="ProvBook-Display" style="width:70%;height:70%;" src="../images/provbook1.png"/>
+            <div class="provbook"><img alt="ProvBook-Display" style="width:70%;height:70%;"
+                    src="../images/provbook1.png" />
             </div>
         </section>
         <section>
             <p>A Jupyter Notebook can be downloaded as RDF along with its provenance.</p>
-            <div class="provbook"><img alt="ProvBook-RDF" style="width:70%;height:70%;" src="../images/provbook2.png"/>
+            <div class="provbook"><img alt="ProvBook-RDF" style="width:70%;height:70%;" src="../images/provbook2.png" />
             </div>
         </section>
         <section>
             <p>A user can select two different executions to see the difference in the input and the output.</p>
-            <div class="provbook"><img alt="ProvBookDifference-Select" style="width:70%;height:70%;" src="../images/ProvBookDiff-1.png"/>
+            <div class="provbook"><img alt="ProvBookDifference-Select" style="width:70%;height:70%;"
+                    src="../images/ProvBookDiff-1.png" />
             </div>
         </section>
         <section>
             <p>Provenance Difference of two executions of a Jupyter Notebook code cell.</p>
-            <div class="provbook"><img alt="ProvBookDifference-Display" style="width:70%;height:70%;" src="../images/ProvBookDiff-2.png"/>
+            <div class="provbook"><img alt="ProvBookDifference-Display" style="width:70%;height:70%;"
+                    src="../images/ProvBookDiff-2.png" />
             </div>
         </section>
         <ul>
-            <li><p>Demo: <a property="item" typeof="WebPage" href="https://doi.org/10.6084/m9.figshare.6401096.v1">https://doi.org/10.6084/m9.figshare.6401096.v1</a></p></li>
-            <li><p>Source Code: <a property="item" typeof="WebPage" href="https://github.com/Sheeba-Samuel/ProvBook">https://github.com/Sheeba-Samuel/ProvBook</a></p></li>
-            <li><p class="conference" typeof="schema:ScholarlyArticle">Publication: ProvBook: Provenance-based Semantic Enrichment of Interactive Notebooks for Reproducibility,
-                    Sheeba Samuel, Birgitta König-Ries, The 17th International Semantic Web Conference (ISWC) 2018 Demo Track, 8-12 October, 2018, Monterey, California, USA (<a href="https://doi.org/10.6084/m9.figshare.6401096.v1">Demo, </a><a href="http://ceur-ws.org/Vol-2180/paper-57.pdf">Link</a>)</p>
+            <li>
+                <p>Demo: <a property="item" typeof="WebPage"
+                        href="https://doi.org/10.6084/m9.figshare.6401096.v1">https://doi.org/10.6084/m9.figshare.6401096.v1</a>
+                </p>
+            </li>
+            <li>
+                <p>Source Code: <a property="item" typeof="WebPage"
+                        href="https://github.com/Sheeba-Samuel/ProvBook">https://github.com/Sheeba-Samuel/ProvBook</a>
+                </p>
+            </li>
+            <li>
+                <p class="conference" typeof="schema:ScholarlyArticle">Publication: ProvBook: Provenance-based Semantic
+                    Enrichment of Interactive Notebooks for Reproducibility,
+                    Sheeba Samuel, Birgitta König-Ries, The 17th International Semantic Web Conference (ISWC) 2018 Demo
+                    Track, 8-12 October, 2018, Monterey, California, USA (<a
+                        href="https://doi.org/10.6084/m9.figshare.6401096.v1">Demo, </a><a
+                        href="http://ceur-ws.org/Vol-2180/paper-57.pdf">Link</a>)</p>
             </li>
         </ul>
     </div>
-  </body>
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">
+                <div class="licence"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                        <img alt="Creative Commons License" style="border-width:0" src="../images/license.png" /></a>
+                </div>
+            </span>
+        </div>
+    </footer>
+</body>
+
 </html>

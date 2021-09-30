@@ -1,64 +1,70 @@
-  body{
-    background-color: #FFFFFF;
-  }
+body{
+  background-color: #FFFFFF;
+}
 
-  .title {
-    position:relative;
-    top: 40vh;
-    text-align: center;
-    line-height: 7vh;
-    font-size: 2.0vmax;
-    font-family: 'Arial';
-  }
+.title {
+  position:relative;
+  top: 40vh;
+  text-align: center;
+  line-height: 7vh;
+  font-size: 2.0vmax;
+  font-family: 'Arial';
+}
 
-  .title a:link,
-  .title a:visited{
-   text-decoration: none;
-   color:#FFFFFF;
-  }
+.title a:link,
+.title a:visited{
+  text-decoration: none;
+  color:#FFFFFF;
+}
 
-  .licence {
-    position:fixed;
-    text-align: right;
-    bottom:0;
-    right:0;
-  }
+.licence {
+  position:fixed;
+  text-align: right;
+  bottom:0;
+  right:0;
+}
 
-  .content {
-   line-height: 2.4vmax;
-   font-size: 1.25vmax;
-   font-family: 'Arial';
-   margin-left: 10%;
-   margin-right: 10%;
-   margin-top: 5%;
-   text-align: justify;
-  }
+.content {
+  line-height: 2.4vmax;
+  font-size: 1.25vmax;
+  font-family: 'Arial';
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 11%;
+  text-align: justify;
+}
 
-  .query {
-    line-height: 1.9vmax;
-    font-size: 1.2vmax;
-  }
+.query {
+  line-height: 1.9vmax;
+  font-size: 1.2vmax;
+}
 
-  .content h3 {
-   color: #1B80CF;
-  }
+.content h3 {
+  color: #1B80CF;
+}
 
-  .content h4{
-    color: #939393;
-  }
+.content h4{
+  color: #939393;
+}
 
-  .content a:link,
-  .content a:visited{
-   color:#1B80CF;
-  }
+.content a:link,
+.content a:visited{
+  color:#1B80CF;
+  text-decoration: none;
+}
 
- .content ul{
-   line-height: 5.0vh;
-  }
+.content ul{
+  line-height: 5.0vh;
+}
 
-  .navbar-nav {
-    margin-left: 25%;
-  }
-  .nav-item {
-    margin-right: 15%;
-  }
+.navbar-nav {
+  margin-left: 25%;
+}
+.nav-item {
+  margin-right: 15%;
+}
+
+.nav-link {
+  color: #1B80CF !important;
+  font-size: 1.5em !important;
+}
